@@ -1,803 +1,1025 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ORIGEN SURFACES | Arquitectura y Superficies</title>
+<title>ORIGEN SURFACES | Arquitectura y Superficies</title>
 
-  <meta name="description" content="ORIGEN SURFACES. Soluciones para arquitectura, piscinas y superficies.">
+<meta name="description" content="ORIGEN SURFACES. Superficies seleccionadas para arquitectura, piscinas y proyectos.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
 
-    html {
-      scroll-behavior: smooth;
-    }
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f1eb;
-      color: #242824;
-      line-height: 1.5;
-    }
+html{
+    scroll-behavior:smooth;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f2ec;
+    color:#202522;
+    line-height:1.6;
+}
 
-    /* NAV */
+a{
+    color:inherit;
+    text-decoration:none;
+}
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
+img{
+    display:block;
+    width:100%;
+}
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+.container{
+    width:min(1180px, 90%);
+    margin:auto;
+}
 
-      padding: 22px 6%;
-      background: rgba(244,241,235,0.92);
-      backdrop-filter: blur(12px);
+/* =========================
+   NAVEGACIÓN
+========================= */
 
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:24px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(245,242,236,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(32,37,34,.08);
+}
 
-    .logo {
-      font-size: 18px;
-      letter-spacing: 4px;
-      font-weight: 700;
-    }
+.logo{
+    font-size:22px;
+    font-weight:600;
+    letter-spacing:7px;
+}
 
-    .logo span {
-      display: block;
-      font-size: 8px;
-      letter-spacing: 3px;
-      font-weight: 400;
-      margin-top: 3px;
-    }
+.logo small{
+    display:block;
+    font-size:7px;
+    letter-spacing:4px;
+    margin-top:2px;
+}
 
-    .menu {
-      display: flex;
-      gap: 32px;
-      font-size: 13px;
-    }
+nav{
+    display:flex;
+    gap:34px;
+    font-size:13px;
+}
 
-    .menu a {
-      opacity: .75;
-      transition: .3s;
-    }
+nav a{
+    opacity:.72;
+    transition:.3s;
+}
 
-    .menu a:hover {
-      opacity: 1;
-    }
+nav a:hover{
+    opacity:1;
+}
 
-    /* HERO */
+/* =========================
+   PORTADA
+========================= */
 
-    .hero {
-      min-height: 100vh;
-      padding: 150px 6% 70px;
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+    background:#243c38;
+}
 
-      display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .hero-text {
-      max-width: 560px;
-    }
-
-    .eyebrow {
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #77776e;
-      margin-bottom: 25px;
-    }
-
-    h1 {
-      font-size: clamp(48px, 7vw, 92px);
-      line-height: .92;
-      font-weight: 400;
-      letter-spacing: -4px;
-      margin-bottom: 35px;
-    }
-
-    h1 strong {
-      font-weight: 700;
-    }
-
-    .hero-text p {
-      max-width: 430px;
-      color: #686a63;
-      font-size: 17px;
-      margin-bottom: 35px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 15px 25px;
-      background: #273d3a;
-      color: white;
-      font-size: 12px;
-      letter-spacing: 1px;
-      transition: .3s;
-    }
-
-    .button:hover {
-      background: #172724;
-      transform: translateY(-2px);
-    }
-
-    /* HERO IMAGE */
-
-    .hero-image {
-      min-height: 650px;
-      position: relative;
-      overflow: hidden;
-
-      background:
+.hero-image{
+    position:absolute;
+    inset:0;
+    background-image:
         linear-gradient(
-          135deg,
-          rgba(38,69,66,.45),
-          rgba(20,30,29,.15)
+            180deg,
+            rgba(0,0,0,.05) 30%,
+            rgba(0,0,0,.62) 100%
         ),
-        linear-gradient(
-          160deg,
-          #b6a58b 0%,
-          #718b85 45%,
-          #294c4a 100%
-        );
+        url("agua.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:white;
+    padding:0 0 9vh 6%;
+    max-width:850px;
+}
+
+.eyebrow{
+    font-size:11px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-family:Georgia, serif;
+    font-size:clamp(54px,8vw,110px);
+    line-height:.9;
+    font-weight:400;
+    margin-bottom:28px;
+}
+
+.hero h1 em{
+    font-style:italic;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:560px;
+    opacity:.9;
+    margin-bottom:32px;
+}
+
+.button{
+    display:inline-block;
+    padding:15px 25px;
+    background:#243d39;
+    color:white;
+    font-size:12px;
+    letter-spacing:1.5px;
+    transition:.3s;
+}
+
+.button:hover{
+    background:#172a27;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    padding:130px 0;
+    text-align:center;
+}
+
+.intro .eyebrow{
+    color:#65716b;
+}
+
+.intro h2{
+    font-family:Georgia, serif;
+    font-size:clamp(42px,6vw,76px);
+    font-weight:400;
+    line-height:1;
+    max-width:850px;
+    margin:0 auto 30px;
+}
+
+.intro p{
+    max-width:650px;
+    margin:auto;
+    color:#626963;
+    font-size:17px;
+}
+
+/* =========================
+   PISCINAS
+========================= */
+
+.section{
+    padding:100px 0;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:45px;
+    gap:30px;
+}
+
+.section-title h2{
+    font-family:Georgia, serif;
+    font-size:clamp(42px,5vw,70px);
+    font-weight:400;
+    line-height:1;
+}
+
+.section-title p{
+    max-width:430px;
+    color:#69716c;
+    font-size:15px;
+}
+
+.pool-main{
+    overflow:hidden;
+    position:relative;
+    background:#ddd;
+}
+
+.pool-main img{
+    aspect-ratio:16/9;
+    object-fit:cover;
+}
+
+.pool-caption{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:45px;
+    color:white;
+    background:linear-gradient(transparent,rgba(0,0,0,.65));
+}
+
+.pool-caption h3{
+    font-family:Georgia, serif;
+    font-size:38px;
+    font-weight:400;
+}
+
+.pool-caption p{
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.collections{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin-top:14px;
+}
+
+.collection{
+    position:relative;
+    overflow:hidden;
+    aspect-ratio:1/1;
+    background:#ccc;
+}
+
+.collection img{
+    height:100%;
+    object-fit:cover;
+    transition:transform .6s;
+}
+
+.collection:hover img{
+    transform:scale(1.04);
+}
+
+.collection-info{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:25px 20px 18px;
+    color:white;
+    background:linear-gradient(transparent,rgba(0,0,0,.7));
+}
+
+.collection-info h3{
+    font-size:18px;
+    letter-spacing:2px;
+    font-weight:400;
+}
+
+.collection-info span{
+    font-size:10px;
+    letter-spacing:2px;
+    opacity:.8;
+}
+
+/* =========================
+   SECA / MOJADA
+========================= */
+
+.material{
+    background:#263b37;
+    color:white;
+    padding:100px 0;
+}
+
+.material .section-title p{
+    color:#c6cfca;
+}
+
+.material-image{
+    position:relative;
+}
+
+.material-image img{
+    aspect-ratio:16/8;
+    object-fit:cover;
+}
+
+.material-labels{
+    position:absolute;
+    top:25px;
+    left:25px;
+    right:25px;
+    display:flex;
+    justify-content:space-between;
+    color:white;
+    font-size:12px;
+    letter-spacing:4px;
+}
+
+/* =========================
+   SUPERFICIES
+========================= */
+
+.surface-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:20px;
+    align-items:stretch;
+}
+
+.surface-large{
+    min-height:620px;
+    position:relative;
+    overflow:hidden;
+}
+
+.surface-large img{
+    height:100%;
+    object-fit:cover;
+}
+
+.surface-text{
+    padding:55px;
+    background:#e5e0d7;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.surface-text .eyebrow{
+    color:#69736d;
+}
+
+.surface-text h2{
+    font-family:Georgia, serif;
+    font-size:clamp(42px,5vw,65px);
+    font-weight:400;
+    line-height:1;
+    margin-bottom:25px;
+}
+
+.surface-text p{
+    color:#656d68;
+    max-width:430px;
+}
+
+/* =========================
+   PROYECTO
+========================= */
+
+.project{
+    padding:120px 0;
+}
+
+.project-image{
+    position:relative;
+}
+
+.project-image img{
+    aspect-ratio:16/8;
+    object-fit:cover;
+}
+
+.project-overlay{
+    position:absolute;
+    left:0;
+    bottom:0;
+    padding:55px;
+    color:white;
+    max-width:650px;
+}
+
+.project-overlay h2{
+    font-family:Georgia, serif;
+    font-size:clamp(42px,6vw,75px);
+    line-height:1;
+    font-weight:400;
+    margin-bottom:22px;
+}
+
+.project-overlay p{
+    font-size:16px;
+}
+
+/* =========================
+   ORIGEN
+========================= */
+
+.origen{
+    padding:120px 0;
+    background:#e5e0d7;
+}
+
+.origen-inner{
+    max-width:900px;
+}
+
+.origen h2{
+    font-family:Georgia, serif;
+    font-size:clamp(50px,7vw,90px);
+    line-height:.95;
+    font-weight:400;
+    margin-bottom:35px;
+}
+
+.origen h2 em{
+    font-style:italic;
+}
+
+.origen p{
+    max-width:650px;
+    color:#626963;
+    font-size:18px;
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contact{
+    background:#172b28;
+    color:white;
+    text-align:center;
+    padding:120px 20px;
+}
+
+.contact .eyebrow{
+    color:#aebdb6;
+}
+
+.contact h2{
+    font-family:Georgia, serif;
+    font-weight:400;
+    font-size:clamp(50px,7vw,90px);
+    line-height:1;
+    margin-bottom:30px;
+}
+
+.contact p{
+    color:#c5cfca;
+    margin-bottom:35px;
+}
+
+.whatsapp{
+    display:inline-block;
+    padding:17px 30px;
+    background:#f5f2ec;
+    color:#172b28;
+    font-size:13px;
+    letter-spacing:1px;
+    margin-bottom:35px;
+}
+
+.social{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+.handle{
+    margin-top:18px;
+    color:#aebdb6;
+}
+
+.phone{
+    margin-top:10px;
+    font-size:17px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#101d1b;
+    color:#8d9994;
+    text-align:center;
+    padding:25px;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:800px){
+
+    header{
+        padding:18px 5%;
     }
 
-    .hero-image::before {
-      content: "";
-      position: absolute;
-      inset: 12%;
-      border: 1px solid rgba(255,255,255,.35);
+    nav{
+        gap:14px;
+        font-size:11px;
     }
 
-    .water {
-      position: absolute;
-      width: 120%;
-      height: 42%;
-      left: -10%;
-      bottom: 0;
-
-      background:
-        repeating-linear-gradient(
-          170deg,
-          rgba(255,255,255,.08) 0px,
-          rgba(255,255,255,.08) 1px,
-          transparent 1px,
-          transparent 17px
-        );
-
-      transform: skewY(-5deg);
+    .logo{
+        font-size:18px;
+        letter-spacing:5px;
     }
 
-    .stone {
-      position: absolute;
-      left: 8%;
-      right: 8%;
-      bottom: 28%;
-      height: 32%;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,.15),
-          rgba(0,0,0,.06)
-        ),
-        #b7aa92;
-
-      box-shadow: 0 30px 60px rgba(0,0,0,.18);
+    .hero-content{
+        padding:0 6% 8vh;
     }
 
-    .tile-pattern {
-      position: absolute;
-      left: 12%;
-      right: 12%;
-      bottom: 31%;
-      height: 25%;
-
-      background-image:
-        linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px);
-
-      background-size: 10% 20%;
-      opacity: .8;
+    .hero h1{
+        font-size:58px;
     }
 
-    /* INTRO */
-
-    .intro {
-      padding: 130px 6%;
-      text-align: center;
-      background: #e7e2d9;
+    .intro,
+    .section,
+    .project,
+    .origen,
+    .contact,
+    .material{
+        padding:80px 0;
     }
 
-    .intro h2 {
-      max-width: 850px;
-      margin: auto;
-
-      font-size: clamp(34px, 5vw, 62px);
-      line-height: 1.05;
-      font-weight: 400;
-      letter-spacing: -2px;
+    .section-title{
+        display:block;
     }
 
-    .intro p {
-      max-width: 650px;
-      margin: 30px auto 0;
-      color: #6d6e68;
+    .section-title p{
+        margin-top:20px;
     }
 
-    /* COLLECTIONS */
-
-    section {
-      padding: 110px 6%;
+    .collections{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .section-title {
-      margin-bottom: 55px;
+    .surface-grid{
+        grid-template-columns:1fr;
     }
 
-    .section-title small {
-      display: block;
-      color: #77776e;
-      font-size: 10px;
-      letter-spacing: 3px;
-      margin-bottom: 12px;
+    .surface-large{
+        min-height:auto;
     }
 
-    .section-title h2 {
-      font-size: clamp(34px, 4vw, 54px);
-      font-weight: 400;
-      letter-spacing: -2px;
+    .surface-large img{
+        height:auto;
+        aspect-ratio:4/5;
     }
 
-    .collections {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+    .surface-text{
+        padding:40px 30px;
     }
 
-    .collection {
-      min-height: 460px;
-      position: relative;
-      overflow: hidden;
-
-      display: flex;
-      align-items: flex-end;
-
-      padding: 35px;
-
-      color: white;
+    .project-overlay{
+        padding:30px;
     }
 
-    .collection::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+    .social{
+        flex-wrap:wrap;
+    }
+}
 
-      background:
-        linear-gradient(
-          to top,
-          rgba(0,0,0,.62),
-          rgba(0,0,0,.02) 65%
-        );
+@media(max-width:520px){
+
+    nav a:nth-child(2),
+    nav a:nth-child(3){
+        display:none;
     }
 
-    .collection-content {
-      position: relative;
-      z-index: 2;
+    .hero h1{
+        font-size:48px;
     }
 
-    .collection h3 {
-      font-size: 34px;
-      font-weight: 400;
-      margin-bottom: 7px;
+    .collections{
+        grid-template-columns:1fr 1fr;
+        gap:8px;
     }
 
-    .collection p {
-      font-size: 13px;
-      opacity: .85;
+    .collection-info{
+        padding:20px 12px 12px;
     }
 
-    .bali {
-      background:
-        repeating-linear-gradient(
-          0deg,
-          rgba(255,255,255,.08) 0,
-          rgba(255,255,255,.08) 1px,
-          transparent 1px,
-          transparent 32px
-        ),
-        linear-gradient(145deg, #789c96, #294d4b);
+    .collection-info h3{
+        font-size:14px;
     }
 
-    .travertino {
-      background:
-        repeating-linear-gradient(
-          145deg,
-          rgba(100,80,50,.12) 0,
-          rgba(100,80,50,.12) 2px,
-          transparent 2px,
-          transparent 28px
-        ),
-        #b9aa90;
+    .pool-caption{
+        padding:25px;
     }
 
-    .oxido {
-      background:
-        radial-gradient(circle at 30% 30%, #b76e42, transparent 30%),
-        linear-gradient(145deg, #513c34, #8b5941);
-    }
+}
 
-    .ceramica {
-      background:
-        repeating-linear-gradient(
-          90deg,
-          rgba(255,255,255,.15) 0,
-          rgba(255,255,255,.15) 1px,
-          transparent 1px,
-          transparent 55px
-        ),
-        linear-gradient(145deg, #d1cbc0, #747e7a);
-    }
-
-    /* POOLS */
-
-    .pool {
-      background: #263b3a;
-      color: white;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .pool .eyebrow {
-      color: #aebdb9;
-    }
-
-    .pool h2 {
-      font-size: clamp(40px, 5vw, 65px);
-      line-height: 1;
-      font-weight: 400;
-      letter-spacing: -3px;
-      margin-bottom: 30px;
-    }
-
-    .pool p {
-      color: #c2cbc8;
-      max-width: 500px;
-      margin-bottom: 30px;
-    }
-
-    .pool-image {
-      min-height: 500px;
-
-      background:
-        linear-gradient(
-          150deg,
-          rgba(255,255,255,.08),
-          transparent
-        ),
-        repeating-linear-gradient(
-          0deg,
-          rgba(255,255,255,.06) 0,
-          rgba(255,255,255,.06) 1px,
-          transparent 1px,
-          transparent 30px
-        ),
-        linear-gradient(
-          145deg,
-          #6c9792,
-          #234c4b
-        );
-    }
-
-    /* PROCESS */
-
-    .process {
-      background: #f4f1eb;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 35px;
-    }
-
-    .step {
-      border-top: 1px solid #bbb8b0;
-      padding-top: 25px;
-    }
-
-    .number {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: #77776e;
-      margin-bottom: 45px;
-    }
-
-    .step h3 {
-      font-size: 25px;
-      font-weight: 400;
-      margin-bottom: 12px;
-    }
-
-    .step p {
-      color: #77776e;
-      font-size: 14px;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: #ddd8ce;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: clamp(42px, 6vw, 75px);
-      font-weight: 400;
-      letter-spacing: -3px;
-      margin-bottom: 25px;
-    }
-
-    .contact p {
-      color: #666861;
-      margin-bottom: 35px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #202c2b;
-      color: white;
-      padding: 55px 6%;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    footer .logo {
-      font-size: 15px;
-    }
-
-    footer p {
-      color: #aab1ae;
-      font-size: 11px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 850px) {
-
-      .menu {
-        display: none;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 120px;
-      }
-
-      .hero-image {
-        min-height: 480px;
-      }
-
-      .collections {
-        grid-template-columns: 1fr;
-      }
-
-      .pool {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-      .steps {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      footer {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- NAV -->
+<header>
 
-  <nav>
-    <a href="#" class="logo">
-      ORIGEN
-      <span>SURFACES</span>
+    <a href="#inicio" class="logo">
+        ORIGEN
+        <small>SURFACES</small>
     </a>
 
-    <div class="menu">
-      <a href="#colecciones">Colecciones</a>
-      <a href="#piscinas">Piscinas</a>
-      <a href="#origen">Origen</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </nav>
+    <nav>
+        <a href="#colecciones">Colecciones</a>
+        <a href="#piscinas">Piscinas</a>
+        <a href="#origen">Origen</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+</header>
 
 
-  <!-- HERO -->
+<!-- =========================
+     PORTADA
+========================= -->
 
-  <header class="hero">
+<section class="hero" id="inicio">
 
-    <div class="hero-text">
+    <div class="hero-image"></div>
 
-      <div class="eyebrow">
-        Arquitectura · Superficies
-      </div>
+    <div class="hero-content">
 
-      <h1>
-        La grandeza<br>
-        de lo <strong>simple.</strong>
-      </h1>
-
-      <p>
-        Superficies seleccionadas para transformar
-        espacios. Materiales, textura y arquitectura
-        pensados como una sola cosa.
-      </p>
-
-      <a href="#colecciones" class="button">
-        EXPLORAR COLECCIONES
-      </a>
-
-    </div>
-
-
-    <div class="hero-image">
-
-      <div class="stone"></div>
-      <div class="tile-pattern"></div>
-      <div class="water"></div>
-
-    </div>
-
-  </header>
-
-
-  <!-- INTRO -->
-
-  <section class="intro" id="origen">
-
-    <h2>
-      No elegimos materiales.
-      Diseñamos cómo se siente un espacio.
-    </h2>
-
-    <p>
-      ORIGEN SURFACES nace desde una mirada arquitectónica:
-      entender el proyecto, encontrar la superficie adecuada
-      y acompañar cada decisión.
-    </p>
-
-  </section>
-
-
-  <!-- COLLECTIONS -->
-
-  <section id="colecciones">
-
-    <div class="section-title">
-      <small>ORIGEN SURFACES</small>
-      <h2>Colecciones</h2>
-    </div>
-
-    <div class="collections">
-
-      <article class="collection bali">
-
-        <div class="collection-content">
-          <h3>Bali 10×10</h3>
-          <p>Agua · textura · profundidad</p>
+        <div class="eyebrow">
+            Arquitectura · Superficies
         </div>
 
-      </article>
-
-
-      <article class="collection travertino">
-
-        <div class="collection-content">
-          <h3>Travertino</h3>
-          <p>Piedra natural · arquitectura</p>
-        </div>
-
-      </article>
-
-
-      <article class="collection oxido">
-
-        <div class="collection-content">
-          <h3>Óxidos</h3>
-          <p>Materia · carácter · contemporáneo</p>
-        </div>
-
-      </article>
-
-
-      <article class="collection ceramica">
-
-        <div class="collection-content">
-          <h3>Cerámicas</h3>
-          <p>Color · diseño · identidad</p>
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- POOLS -->
-
-  <section class="pool" id="piscinas">
-
-    <div>
-
-      <div class="eyebrow">
-        SOLUCIONES PARA PISCINAS
-      </div>
-
-      <h2>
-        El agua también
-        es arquitectura.
-      </h2>
-
-      <p>
-        Revestimientos seleccionados para crear
-        piscinas que cambian con la luz, el agua
-        y el entorno.
-      </p>
-
-      <a href="#contacto" class="button">
-        HABLAR CON ORIGEN
-      </a>
-
-    </div>
-
-
-    <div class="pool-image"></div>
-
-  </section>
-
-
-  <!-- PROCESS -->
-
-  <section class="process">
-
-    <div class="section-title">
-
-      <small>NUESTRO ENFOQUE</small>
-
-      <h2>
-        Del proyecto a la superficie.
-      </h2>
-
-    </div>
-
-
-    <div class="steps">
-
-      <div class="step">
-
-        <div class="number">
-          01
-        </div>
-
-        <h3>Entendemos</h3>
+        <h1>
+            La grandeza<br>
+            de lo <em>simple.</em>
+        </h1>
 
         <p>
-          Conocemos el proyecto, el espacio,
-          el uso y la intención estética.
+            Superficies seleccionadas para transformar espacios.
+            Materiales, textura y arquitectura pensados como una sola cosa.
         </p>
 
-      </div>
-
-
-      <div class="step">
-
-        <div class="number">
-          02
-        </div>
-
-        <h3>Seleccionamos</h3>
-
-        <p>
-          Buscamos materiales que realmente
-          tengan sentido para cada proyecto.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <div class="number">
-          03
-        </div>
-
-        <h3>Acompañamos</h3>
-
-        <p>
-          Te ayudamos a resolver materiales,
-          cantidades y decisiones de obra.
-        </p>
-
-      </div>
+        <a href="#colecciones" class="button">
+            EXPLORAR COLECCIONES
+        </a>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- CONTACT -->
+<!-- =========================
+     INTRO
+========================= -->
 
-  <section class="contact" id="contacto">
+<section class="intro">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            ORIGEN SURFACES
+        </div>
+
+        <h2>
+            El material también crea una experiencia.
+        </h2>
+
+        <p>
+            Seleccionamos superficies para proyectos donde la arquitectura,
+            el agua, la luz y la materia dialogan entre sí.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PISCINAS
+========================= -->
+
+<section class="section" id="piscinas">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Piscinas
+            </h2>
+
+            <p>
+                Revestimientos pensados para transformar
+                la percepción del agua y del espacio.
+            </p>
+
+        </div>
+
+
+        <div class="pool-main">
+
+            <img src="piscina.jpg" alt="Piscina revestida con superficies ORIGEN">
+
+            <div class="pool-caption">
+
+                <p>
+                    Superficie · Agua · Luz
+                </p>
+
+                <h3>
+                    El agua comienza en la superficie.
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="collections" id="colecciones">
+
+            <div class="collection">
+
+                <img src="maui.jpg" alt="Piscina Maui">
+
+                <div class="collection-info">
+                    <h3>MAUI</h3>
+                    <span>AZUL TURQUESA</span>
+                </div>
+
+            </div>
+
+
+            <div class="collection">
+
+                <img src="itapua.jpg" alt="Piscina Itapuá">
+
+                <div class="collection-info">
+                    <h3>ITAPUÁ</h3>
+                    <span>AZUL PROFUNDO</span>
+                </div>
+
+            </div>
+
+
+            <div class="collection">
+
+                <img src="tonga.jpg" alt="Piscina Tonga">
+
+                <div class="collection-info">
+                    <h3>TONGA</h3>
+                    <span>VERDE TROPICAL</span>
+                </div>
+
+            </div>
+
+
+            <div class="collection">
+
+                <img src="vis.jpg" alt="Piscina Vis">
+
+                <div class="collection-info">
+                    <h3>VIS</h3>
+                    <span>AZUL CRISTALINO</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SECA / MOJADA
+========================= -->
+
+<section class="material">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                La materia<br>
+                en transformación.
+            </h2>
+
+            <p>
+                Una superficie nunca se percibe igual.
+                La luz, el agua y el entorno forman parte de ella.
+            </p>
+
+        </div>
+
+
+        <div class="material-image">
+
+            <img src="seca-mojada.jpg" alt="Superficie seca y mojada">
+
+            <div class="material-labels">
+                <span>SECA</span>
+                <span>MOJADA</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SUPERFICIES
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="surface-grid">
+
+            <div class="surface-large">
+
+                <img src="superficie-negra.jpg"
+                     alt="Superficie negra con agua">
+
+            </div>
+
+
+            <div class="surface-text">
+
+                <div class="eyebrow">
+                    SUPERFICIES
+                </div>
+
+                <h2>
+                    Textura.<br>
+                    Materia.<br>
+                    Luz.
+                </h2>
+
+                <p>
+                    Revestimientos que construyen atmósferas.
+                    Desde una piscina hasta una pared,
+                    cada superficie forma parte de la arquitectura.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROYECTO
+========================= -->
+
+<section class="project">
+
+    <div class="container">
+
+        <div class="project-image">
+
+            <img src="proyecto.jpg"
+                 alt="ORIGEN acompañando un proyecto de arquitectura">
+
+            <div class="project-overlay">
+
+                <div class="eyebrow">
+                    ORIGEN · PROYECTO
+                </div>
+
+                <h2>
+                    Elegir una superficie también es diseñar.
+                </h2>
+
+                <p>
+                    Acompañamos cada proyecto en la elección,
+                    especificación y cotización de sus materiales.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ORIGEN
+========================= -->
+
+<section class="origen" id="origen">
+
+    <div class="container">
+
+        <div class="origen-inner">
+
+            <div class="eyebrow">
+                QUIÉNES SOMOS
+            </div>
+
+            <h2>
+                Pensamos el espacio<br>
+                desde su <em>origen.</em>
+            </h2>
+
+            <p>
+                ORIGEN SURFACES selecciona materiales y superficies
+                para arquitectura, piscinas y espacios contemporáneos.
+                Nuestro trabajo comienza entendiendo el proyecto
+                y termina encontrando la superficie adecuada.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section class="contact" id="contacto">
 
     <div class="eyebrow">
-      ORIGEN SURFACES
+        HABLEMOS DE TU PROYECTO
     </div>
 
     <h2>
-      Hagamos algo simple.
-      Algo extraordinario.
+        Encontrá<br>
+        tu superficie.
     </h2>
 
     <p>
-      Contanos qué estás proyectando.
+        Consultanos por materiales, proyectos,
+        piscinas y especificaciones.
     </p>
 
     <a
-      href="https://www.instagram.com/origen.surfaces/"
-      target="_blank"
-      class="button">
-      CONTACTAR A ORIGEN
+        class="whatsapp"
+        href="https://wa.me/5491147004804"
+        target="_blank">
+        HABLAR POR WHATSAPP
     </a>
 
-  </section>
+    <div class="social">
 
+        <a href="https://www.instagram.com/origen.surfaces/"
+           target="_blank">
+            Instagram
+        </a>
 
-  <!-- FOOTER -->
+        <a href="#"
+           target="_blank">
+            Facebook
+        </a>
 
-  <footer>
+        <a href="#"
+           target="_blank">
+            X
+        </a>
 
-    <div class="logo">
-      ORIGEN
-      <span>SURFACES</span>
     </div>
 
-    <p>
-      Arquitectura · Superficies · Buenos Aires
-    </p>
+    <div class="handle">
+        @origen.surfaces
+    </div>
 
-  </footer>
+    <div class="phone">
+        +54 9 11 4700-4804
+    </div>
+
+</section>
+
+
+<footer>
+
+    ORIGEN SURFACES · ARQUITECTURA · SUPERFICIES
+
+</footer>
 
 </body>
 </html>
