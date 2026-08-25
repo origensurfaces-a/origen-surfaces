@@ -1088,20 +1088,21 @@ footer{
 
                 <optgroup label="PIEDRA NATURAL">
 
-                    <option value="bali">
-                        Piedra Bali Natural · 1,00 m²/caja
-                    </option>
+    <option value="bali">
+        Piedra Bali Natural
+    </option>
 
-                </optgroup>
+</optgroup>
 
-                <optgroup label="OTROS">
+<optgroup label="PIEDRAS Y SUPERFICIES">
 
-                    <option value="travertino">
-                        Travertino
-                    </option>
+    <option value="travertino">
+        Travertino
+    </option>
 
-                </optgroup>
+</optgroup>
 
+             
             </select>
         </div>
 
@@ -1427,47 +1428,39 @@ function calcularPiscina() {
 
         "bali": "Piedra Bali Natural",
 
-        "travertino": "Travertino"
-    };
+           };
 
     const nombreMaterial = nombres[revestimiento] || "Revestimiento";
 
-    let cantidadMaterial = "";
+   let cantidadMaterial = "";
 
-    /* ==========================================
-       TRAVERTINO
-       Se calcula por m² porque todavía no
-       definimos rendimiento por caja.
-       ========================================== */
+if (revestimiento === "travertino") {
 
-    if (revestimiento === "travertino") {
+    cantidadMaterial =
+        superficieConDesperdicio.toFixed(2) + " m²";
 
-        cantidadMaterial =
-            superficieConDesperdicio.toFixed(2) + " m²";
+} else {
 
-    } else {
+    const rendimientoCaja = rendimientos[revestimiento];
 
-        const rendimientoCaja = rendimientos[revestimiento];
-
-        if (!rendimientoCaja) {
-            alert("Todavía no tenemos definido el rendimiento de este revestimiento.");
-            return;
-        }
-
-        const cajas = Math.ceil(
-            superficieConDesperdicio / rendimientoCaja
-        );
-
-        const metrosComprados = cajas * rendimientoCaja;
-
-        cantidadMaterial =
-            cajas +
-            (cajas === 1 ? " caja" : " cajas") +
-            " · " +
-            metrosComprados.toFixed(2) +
-            " m²";
+    if (!rendimientoCaja) {
+        alert("Todavía no tenemos definido el rendimiento de este revestimiento.");
+        return;
     }
 
+    const cajas = Math.ceil(
+        superficieConDesperdicio / rendimientoCaja
+    );
+
+    const metrosComprados = cajas * rendimientoCaja;
+
+    cantidadMaterial =
+        cajas +
+        (cajas === 1 ? " caja" : " cajas") +
+        " · " +
+        metrosComprados.toFixed(2) +
+        " m²";
+}
     /* ==========================================
        MOSTRAR RESULTADO
        ========================================== */
