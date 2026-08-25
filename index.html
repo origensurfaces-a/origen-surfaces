@@ -1094,14 +1094,15 @@ footer{
 
 </optgroup>
 
-<optgroup label="PIEDRAS Y SUPERFICIES">
+<optgroup label="PIEDRA NATURAL">
 
-    <option value="travertino">
-        Travertino
+    <option value="bali">
+        Piedra Bali Natural
     </option>
 
 </optgroup>
 
+</select>
              
             </select>
         </div>
@@ -1434,16 +1435,9 @@ function calcularPiscina() {
 
    let cantidadMaterial = "";
 
-if (revestimiento === "travertino") {
+const rendimientoCaja = rendimientos[revestimiento];
 
-    cantidadMaterial =
-        superficieConDesperdicio.toFixed(2) + " m²";
-
-} else {
-
-    const rendimientoCaja = rendimientos[revestimiento];
-
-    if (!rendimientoCaja) {
+       if (!rendimientoCaja) {
         alert("Todavía no tenemos definido el rendimiento de este revestimiento.");
         return;
     }
