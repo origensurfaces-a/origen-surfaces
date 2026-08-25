@@ -660,7 +660,97 @@ footer{
     </div>
 
   </div>
+<!-- CALCULADORA DE PISCINAS -->
+<div class="calculadora-piscina">
 
+    <div class="calculadora-intro">
+        <div class="eyebrow">CALCULADORA ORIGEN</div>
+
+        <h2>
+            Calculá tu piscina<br>
+            <em>de forma simple.</em>
+        </h2>
+
+        <p>
+            Ingresá las medidas de tu piscina y estimá la superficie
+            necesaria para elegir tu revestimiento.
+        </p>
+    </div>
+
+    <div class="calculadora-form">
+
+        <div class="campo">
+            <label for="largo">Largo de la piscina</label>
+            <input type="number" id="largo" placeholder="Ej. 8" min="0" step="0.01">
+            <span>metros</span>
+        </div>
+
+        <div class="campo">
+            <label for="ancho">Ancho de la piscina</label>
+            <input type="number" id="ancho" placeholder="Ej. 4" min="0" step="0.01">
+            <span>metros</span>
+        </div>
+
+        <div class="campo">
+            <label for="profundidad">Profundidad promedio</label>
+            <input type="number" id="profundidad" placeholder="Ej. 1.50" min="0" step="0.01">
+            <span>metros</span>
+        </div>
+
+        <div class="campo">
+            <label for="revestimiento">Elegí tu revestimiento</label>
+
+            <select id="revestimiento">
+                <option value="">Seleccionar</option>
+                <option value="strufaldi">Strufaldi</option>
+                <option value="blue">Blue / Córsega</option>
+                <option value="java">Java</option>
+            </select>
+        </div>
+
+        <button type="button" class="button" onclick="calcularPiscina()">
+            CALCULAR
+        </button>
+
+    </div>
+
+    <div id="resultado-piscina" class="resultado-piscina">
+
+        <div class="resultado-titulo">
+            Tu estimación ORIGEN
+        </div>
+
+        <div class="resultado-datos">
+
+            <div>
+                <span>Superficie</span>
+                <strong id="resultado-superficie">—</strong>
+            </div>
+
+            <div>
+                <span>Con 10% de desperdicio</span>
+                <strong id="resultado-desperdicio">—</strong>
+            </div>
+
+            <div>
+                <span>Revestimiento</span>
+                <strong id="resultado-material">—</strong>
+            </div>
+
+            <div>
+                <span>Material necesario</span>
+                <strong id="resultado-cantidad">—</strong>
+            </div>
+
+        </div>
+
+        <a href="https://wa.me/5491147004804" class="button">
+            QUIERO COTIZAR MI PISCINA
+        </a>
+
+    </div>
+
+</div>
 </section>
 
 
