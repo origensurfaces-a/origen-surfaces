@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ORIGEN SURFACES | Superficies · Materiales · Soluciones</title>
-
-<meta name="description" content="ORIGEN SURFACES. Superficies, materiales y soluciones para transformar espacios.">
-
-<style>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ORIGEN SURFACES | Superficies · Materiales · Soluciones</title><meta name="description" content="ORIGEN SURFACES. Superficies, materiales y soluciones para transformar espacios."><style>
 :root{
   --fondo:#f7f4ee;
   --fondo-verde:#eef1ec;
@@ -53,10 +43,6 @@ a{
   width:min(1320px,calc(100% - 100px));
   margin:auto;
 }
-
-/* =========================
-   NAV
-========================= */
 
 header{
   height:96px;
@@ -103,10 +89,6 @@ header{
 .menu a:hover{
   color:var(--verde);
 }
-
-/* =========================
-   HERO
-========================= */
 
 .hero{
   min-height:calc(100vh - 96px);
@@ -199,10 +181,6 @@ h2 em{
   object-position:center center;
 }
 
-/* =========================
-   INTRO
-========================= */
-
 .intro{
   padding:150px 0;
   background:var(--blanco);
@@ -228,10 +206,6 @@ h2 em{
   color:#656963;
   padding-top:15px;
 }
-
-/* =========================
-   PISCINAS
-========================= */
 
 .piscinas{
   background:var(--fondo-verde);
@@ -275,10 +249,6 @@ h2 em{
   color:#59615d;
   font-size:17px;
 }
-
-/* =========================
-   CALCULADORA ORIGEN
-========================= */
 
 .calculadora-piscina{
   margin-top:80px;
@@ -409,10 +379,6 @@ h2 em{
   font-weight:500;
 }
 
-/* =========================
-   MATERIA
-========================= */
-
 .materia{
   padding:140px 0;
   background:var(--blanco);
@@ -452,10 +418,6 @@ h2 em{
   font-size:17px;
 }
 
-/* =========================
-   PROYECTOS
-========================= */
-
 .proyectos{
   padding:140px 0;
   background:#f1eee8;
@@ -488,3 +450,562 @@ h2 em{
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
+}
+
+.proyecto-copy .eyebrow{
+  color:#d9e0dc;
+}
+
+.proyecto-copy h3{
+  color:white;
+  font-size:48px;
+  line-height:1;
+  margin-bottom:25px;
+}
+
+.proyecto-copy p{
+  color:#d9dfdb;
+  font-size:16px;
+}
+
+.origen{
+  padding:170px 0;
+  background:var(--fondo);
+}
+
+.origen-inner{
+  max-width:1150px;
+}
+
+.origen h2{
+  font-size:clamp(58px,7vw,105px);
+  line-height:.92;
+  letter-spacing:-.055em;
+}
+
+.origen p{
+  max-width:850px;
+  margin-top:48px;
+  font-size:20px;
+  line-height:1.75;
+  color:#626762;
+}
+
+.contacto{
+  padding:120px 0;
+  background:var(--verde);
+  color:white;
+}
+
+.contacto h2{
+  color:white;
+  font-size:clamp(55px,6vw,90px);
+  line-height:.95;
+}
+
+.contacto p{
+  max-width:600px;
+  margin:30px 0 40px;
+  color:#d8dfdb;
+  font-size:18px;
+}
+
+.contacto .button{
+  background:white;
+  color:var(--verde);
+}
+
+footer{
+  padding:35px 0;
+  background:#293a34;
+  color:#cfd6d1;
+  font-size:12px;
+  letter-spacing:.12em;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+}
+
+@media(max-width:900px){
+
+  header{
+    height:80px;
+  }
+
+  .container{
+    width:min(100% - 40px,700px);
+  }
+
+  .menu{
+    gap:15px;
+    font-size:12px;
+  }
+
+  .logo{
+    font-size:20px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-copy{
+    padding:80px 30px;
+    min-height:650px;
+  }
+
+  .hero-photo{
+    min-height:500px;
+  }
+
+  .intro,
+  .piscinas,
+  .materia,
+  .proyectos,
+  .origen{
+    padding:90px 0;
+  }
+
+  .intro-grid,
+  .piscina-grid,
+  .materia-grid,
+  .proyecto{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .piscina-photo,
+  .materia-photo,
+  .proyecto-photo{
+    min-height:450px;
+  }
+
+  .piscina-copy,
+  .materia-copy,
+  .proyecto-copy{
+    padding:60px 35px;
+  }
+
+  .proyecto-copy{
+    min-height:400px;
+  }
+
+  .calculadora-piscina{
+    grid-template-columns:1fr;
+    padding:70px 30px;
+  }
+
+  .resultado-piscina{
+    grid-column:auto;
+  }
+
+  .resultado-datos{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    gap:15px;
+  }
+}
+
+@media(max-width:600px){
+
+  .menu{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:58px;
+  }
+
+  .hero-subtitle{
+    font-size:28px;
+  }
+
+  .hero-copy{
+    padding:70px 25px;
+  }
+
+  .intro-grid{
+    gap:35px;
+  }
+
+  .piscina-copy h2,
+  .materia-copy h2,
+  .proyectos h2{
+    font-size:52px;
+  }
+
+  .calculadora-piscina{
+    padding:60px 20px;
+  }
+
+  .calculadora-form,
+  .resultado-piscina{
+    padding:30px 22px;
+  }
+
+  .resultado-datos{
+    grid-template-columns:1fr;
+  }
+}
+</style></head><body><header><div class="container nav"><a href="#inicio" class="logo"> ORIGEN <span>SURFACES</span></a><nav class="menu"><a href="#colecciones">Colecciones</a><a href="#piscinas">Piscinas</a><a href="#origen">Origen</a><a href="#contacto">Contacto</a></nav></div></header><main id="inicio"><section class="hero"><div class="hero-copy"><div class="eyebrow"> SUPERFICIES · MATERIALES · SOLUCIONES </div><h1> La grandeza<br> de lo <em>simple.</em></h1><div class="hero-subtitle"> Te acompañamos<br> en cada proyecto. </div><p class="hero-text"> Seleccionamos superficies y materiales para ayudarte a encontrar la solución adecuada para tu espacio, tu estilo y tu proyecto. </p><a href="#origen" class="button"> CONOCER ORIGEN </a></div><div class="hero-photo"><img src="4523e62bbfeec5d5ad60836e75814d5f.jpg" alt="Interior contemporáneo con superficies naturales"></div></section><section class="intro" id="colecciones"><div class="container intro-grid"><div><div class="eyebrow"> ORIGEN SURFACES </div><h2> Elegir un material también es parte del proyecto. </h2></div><div class="intro-text"><p> Creemos que una superficie no es solamente un acabado. Cambia la manera en que habitamos un espacio, cómo entra la luz, cómo se siente una textura y cómo se relaciona cada elemento. </p><br><p> Por eso seleccionamos materiales pensando en el conjunto: arquitectura, agua, luz, textura y estilo. </p></div></div></section><section class="piscinas" id="piscinas"><div class="container piscina-grid"><div class="piscina-photo"><img src="10972ded-f193-42f2-8874-64af8b932a44.png" alt="Piscina contemporánea"></div><div class="piscina-copy"><div class="eyebrow"> SUPERFICIES PARA PISCINAS </div><h2> El agua también<br> se <em>diseña.</em></h2><p> El revestimiento cambia la forma en que percibimos el agua. Color, textura, luz y materia trabajan juntos para crear una experiencia. </p><a href="#contacto" class="button"> CONSULTAR </a></div></div><div class="calculadora-piscina"><div class="calculadora-intro"><div class="eyebrow"> CALCULADORA ORIGEN </div><h2> Calculá tu piscina<br><em>de forma simple.</em></h2><p> Ingresá las medidas de tu piscina y elegí el revestimiento. ORIGEN estima la superficie, agrega un 10% de desperdicio y calcula la cantidad de material necesaria. </p></div><div class="calculadora-form"><div class="campo"><label for="largo"> Largo de la piscina </label><input type="number" id="largo" placeholder="Ej. 8" min="0" step="0.01"><span> metros </span></div><div class="campo"><label for="ancho"> Ancho de la piscina </label><input type="number" id="ancho" placeholder="Ej. 4" min="0" step="0.01"><span> metros </span></div><div class="campo"><label for="profundidad"> Profundidad promedio </label><input type="number" id="profundidad" placeholder="Ej. 1.50" min="0" step="0.01"><span> metros </span></div><div class="campo"><label for="revestimiento"> Elegí tu revestimiento </label><select id="revestimiento"><option value=""> Seleccionar </option><optgroup label="CERÁMICA 10 × 10"><option value="moorea-10"> Moorea · 10 × 10 · 1,95 m²/caja </option><option value="tonga-10"> Tonga · 10 × 10 · 1,95 m²/caja </option><option value="kauai-10"> Kauai · 10 × 10 · 1,95 m²/caja </option><option value="samoa-bright-10"> Samoa Bright · 10 × 10 · 1,95 m²/caja </option><option value="malawi-10"> Malawi · 10 × 10 · 1,95 m²/caja </option><option value="portland-10"> Portland · 10 × 10 · 1,95 m²/caja </option><option value="palau-bright-10"> Palau Bright · 10 × 10 · 1,95 m²/caja </option><option value="vis-10"> Vis · 10 × 10 · 1,95 m²/caja </option><option value="samoa-10"> Samoa · 10 × 10 · 1,95 m²/caja </option><option value="palau-10"> Palau · 10 × 10 · 1,95 m²/caja </option><option value="maui-10"> Mauí · 10 × 10 · 1,95 m²/caja </option><option value="kaimu-10"> Kaimú · 10 × 10 · 1,95 m²/caja </option><option value="cobalto-10"> Cobalto · 10 × 10 · 1,95 m²/caja </option><option value="ceu-10"> Céu · 10 × 10 · 1,95 m²/caja </option></optgroup><optgroup label="CERÁMICA 20 × 20"><option value="palau-20"> Palau · 20 × 20 · 1,50 m²/caja </option><option value="kaimu-20"> Kaimú · 20 × 20 · 1,50 m²/caja </option><option value="vis-20"> Vis · 20 × 20 · 1,50 m²/caja </option><option value="portland-20"> Portland · 20 × 20 · 1,50 m²/caja </option><option value="malawi-20"> Malawi · 20 × 20 · 1,50 m²/caja </option></optgroup><optgroup label="VENECITAS"><option value="algarve"> Algarve · 2,07 m²/caja </option><option value="bodrum"> Bodrum · 2,07 m²/caja </option><option value="caribbean"> Caribbean · 2,07 m²/caja </option><option value="maldivas"> Maldivas · 2,07 m²/caja </option><option value="corsega"> Córsega · 2,07 m²/caja </option><option value="ibiza"> Ibiza · 2,07 m²/caja </option><option value="beige"> Beige · 1,44 m²/caja </option><option value="blue"> Blue · 1,44 m²/caja </option><option value="seychelles-claro"> Seychelles Claro · 1,44 m²/caja </option><option value="seychelles-oscuro"> Seychelles Oscuro · 1,44 m²/caja </option><option value="blanco"> Blanco · 1,44 m²/caja </option></optgroup><optgroup label="PORCELANATO"><option value="porcelanato"> Porcelanato · 2,06 m²/caja </option></optgroup><optgroup label="VENECITA CLÁSICA"><option value="clasica"> Venecita Clásica · 4,28 m²/caja </option></optgroup><optgroup label="VENECITA PREMIUM"><option value="premium"> Venecita Premium · 2,00 m²/caja </option></optgroup><optgroup label="PIEDRA BALI · 10 × 10"><option value="bali-black"> Piedra Bali Black · 10 × 10 · 1,00 m²/caja </option><option value="bali-green"> Piedra Bali Green · 10 × 10 · 1,00 m²/caja </option></optgroup><optgroup label="PIEDRA NATURAL"><option value="travertino"> Travertino · cálculo por m² </option></optgroup></select></div><div id="error-calculadora" class="error-calculadora"></div><button type="button" class="button" onclick="calcularPiscina()"> CALCULAR </button></div><div id="resultado-piscina" class="resultado-piscina"><div class="resultado-titulo"> Tu estimación ORIGEN </div><div class="resultado-datos"><div><span> Superficie real </span><strong id="resultado-superficie"> — </strong></div><div><span> Con 10% de desperdicio </span><strong id="resultado-desperdicio"> — </strong></div><div><span> Revestimiento </span><strong id="resultado-material"> — </strong></div><div><span> Material necesario </span><strong id="resultado-cantidad"> — </strong></div></div><a href="https://wa.me/5491147004804" class="button" target="_blank"> QUIERO COTIZAR MI PISCINA </a></div></div></section><section class="materia"><div class="container materia-grid"><div class="materia-photo"><img src="9c7236e83277cf400b03c5c4deff2a32.jpg" alt="Materiales y superficies naturales"></div><div class="materia-copy"><div class="eyebrow"> MATERIA </div><h2> La superficie<br> cambia con<br> la <em>luz.</em></h2><p> Una misma textura puede transformar completamente su apariencia cuando entra en contacto con el agua, la luz o el entorno. </p></div></div></section><section class="proyectos"><div class="container"><div class="proyectos-head"><div class="eyebrow"> PROYECTOS </div><h2> Cada proyecto<br> encuentra su <em>superficie.</em></h2></div><div class="proyecto"><div class="proyecto-photo"><img src="32643f41df2848c16278f4a11da80f01.jpg" alt="Proyecto arquitectónico acompañado por ORIGEN"></div><div class="proyecto-copy"><div class="eyebrow"> PROYECTO · ORIGEN </div><h3> Una superficie<br> bien elegida<br> cambia todo. </h3><p> Acompañamos cada proyecto en la elección de materiales, pensando en la arquitectura, el espacio y la forma en que va a ser vivido. <br><br> Buscamos que cada superficie no solo se vea bien, sino que tenga sentido dentro del conjunto. </p></div></div></div></section><section class="origen" id="origen"><div class="container origen-inner"><div class="eyebrow"> ORIGEN </div><h2> Estamos para hacer<br> más simple la elección<br> de una <em>superficie.</em></h2><p> ORIGEN SURFACES nace para conectar proyectos con materiales, superficies y soluciones. Seleccionamos cada propuesta pensando en el espacio, el estilo y la forma en que va a ser vivido. <br><br> Trabajamos para que elegir una superficie sea un proceso más simple, más claro y más conectado con el proyecto. <br><br> No se trata solamente de elegir un producto. Se trata de encontrar juntos la superficie adecuada para cada espacio. </p></div></section><section class="contacto" id="contacto"><div class="container"><div class="eyebrow"> HABLEMOS DE TU PROYECTO </div><h2> Una buena elección<br> empieza por conversar. </h2><p> Contanos qué estás proyectando y te ayudamos a encontrar la superficie adecuada. </p><p> Nuestro alcance comercial abarca Buenos Aires de norte a sur, Córdoba y alrededores, Catamarca, La Rioja y Entre Ríos. </p><a href="https://wa.me/5491147004804" class="button" target="_blank"> HABLAR CON ORIGEN </a></div></section></main><footer><div class="container footer-inner"><div> ORIGEN SURFACES </div><div> SUPERFICIES · MATERIALES · SOLUCIONES </div></div></footer><script>
+
+function calcularPiscina(){
+
+  const largoInput =
+    document.getElementById("largo");
+
+  const anchoInput =
+    document.getElementById("ancho");
+
+  const profundidadInput =
+    document.getElementById("profundidad");
+
+  const revestimientoInput =
+    document.getElementById("revestimiento");
+
+  const error =
+    document.getElementById("error-calculadora");
+
+  const resultado =
+    document.getElementById("resultado-piscina");
+
+
+  const largo =
+    parseFloat(largoInput.value);
+
+  const ancho =
+    parseFloat(anchoInput.value);
+
+  const profundidad =
+    parseFloat(profundidadInput.value);
+
+  const revestimiento =
+    revestimientoInput.value;
+
+
+  error.style.display = "none";
+  error.textContent = "";
+
+
+  if(
+    !Number.isFinite(largo) ||
+    !Number.isFinite(ancho) ||
+    !Number.isFinite(profundidad) ||
+    largo <= 0 ||
+    ancho <= 0 ||
+    profundidad <= 0
+  ){
+
+    error.textContent =
+      "Completá largo, ancho y profundidad con valores mayores a cero.";
+
+    error.style.display = "block";
+
+    resultado.classList.remove("activo");
+
+    return;
+  }
+
+
+  if(!revestimiento){
+
+    error.textContent =
+      "Elegí un revestimiento para calcular la cantidad de material.";
+
+    error.style.display = "block";
+
+    resultado.classList.remove("activo");
+
+    return;
+  }
+
+
+  const superficiePiso =
+    largo * ancho;
+
+  const superficieParedes =
+    2 * (largo + ancho) * profundidad;
+
+  const superficieReal =
+    superficiePiso + superficieParedes;
+
+
+  const superficieConDesperdicio =
+    superficieReal * 1.10;
+
+
+  const rendimientos = {
+
+    "moorea-10": 1.95,
+    "tonga-10": 1.95,
+    "kauai-10": 1.95,
+    "samoa-bright-10": 1.95,
+    "malawi-10": 1.95,
+    "portland-10": 1.95,
+    "palau-bright-10": 1.95,
+    "vis-10": 1.95,
+    "samoa-10": 1.95,
+    "palau-10": 1.95,
+    "maui-10": 1.95,
+    "kaimu-10": 1.95,
+    "cobalto-10": 1.95,
+    "ceu-10": 1.95,
+
+    "palau-20": 1.50,
+    "kaimu-20": 1.50,
+    "vis-20": 1.50,
+    "portland-20": 1.50,
+    "malawi-20": 1.50,
+
+    "algarve": 2.07,
+    "bodrum": 2.07,
+    "caribbean": 2.07,
+    "maldivas": 2.07,
+    "corsega": 2.07,
+    "ibiza": 2.07,
+
+    "beige": 1.44,
+    "blue": 1.44,
+    "seychelles-claro": 1.44,
+    "seychelles-oscuro": 1.44,
+    "blanco": 1.44,
+
+    "porcelanato": 2.06,
+
+    "clasica": 4.28,
+    "premium": 2.00,
+
+    "bali-black": 1.00,
+    "bali-green": 1.00
+
+  };
+
+
+  const nombres = {
+
+    "moorea-10":
+      "Moorea · 10 × 10",
+
+    "tonga-10":
+      "Tonga · 10 × 10",
+
+    "kauai-10":
+      "Kauai · 10 × 10",
+
+    "samoa-bright-10":
+      "Samoa Bright · 10 × 10",
+
+    "malawi-10":
+      "Malawi · 10 × 10",
+
+    "portland-10":
+      "Portland · 10 × 10",
+
+    "palau-bright-10":
+      "Palau Bright · 10 × 10",
+
+    "vis-10":
+      "Vis · 10 × 10",
+
+    "samoa-10":
+      "Samoa · 10 × 10",
+
+    "palau-10":
+      "Palau · 10 × 10",
+
+    "maui-10":
+      "Mauí · 10 × 10",
+
+    "kaimu-10":
+      "Kaimú · 10 × 10",
+
+    "cobalto-10":
+      "Cobalto · 10 × 10",
+
+    "ceu-10":
+      "Céu · 10 × 10",
+
+    "palau-20":
+      "Palau · 20 × 20",
+
+    "kaimu-20":
+      "Kaimú · 20 × 20",
+
+    "vis-20":
+      "Vis · 20 × 20",
+
+    "portland-20":
+      "Portland · 20 × 20",
+
+    "malawi-20":
+      "Malawi · 20 × 20",
+
+    "algarve":
+      "Algarve",
+
+    "bodrum":
+      "Bodrum",
+
+    "caribbean":
+      "Caribbean",
+
+    "maldivas":
+      "Maldivas",
+
+    "corsega":
+      "Córsega",
+
+    "ibiza":
+      "Ibiza",
+
+    "beige":
+      "Beige",
+
+    "blue":
+      "Blue",
+
+    "seychelles-claro":
+      "Seychelles Claro",
+
+    "seychelles-oscuro":
+      "Seychelles Oscuro",
+
+    "blanco":
+      "Blanco",
+
+    "porcelanato":
+      "Porcelanato",
+
+    "clasica":
+      "Venecita Clásica",
+
+    "premium":
+      "Venecita Premium",
+
+    "bali-black":
+      "Piedra Bali Black · 10 × 10",
+
+    "bali-green":
+      "Piedra Bali Green · 10 × 10",
+
+    "travertino":
+      "Travertino"
+
+  };
+
+
+  const nombreMaterial =
+    nombres[revestimiento] || "Revestimiento";
+
+
+  let cantidadMaterial = "";
+
+
+  if(revestimiento === "travertino"){
+
+    cantidadMaterial =
+      superficieConDesperdicio.toFixed(2) +
+      " m²";
+
+  }else{
+
+    const rendimientoCaja =
+      rendimientos[revestimiento];
+
+
+    if(!rendimientoCaja){
+
+      error.textContent =
+        "No está definido el rendimiento de este revestimiento.";
+
+      error.style.display = "block";
+
+      resultado.classList.remove("activo");
+
+      return;
+    }
+
+
+    const cajas =
+      Math.ceil(
+        superficieConDesperdicio /
+        rendimientoCaja
+      );
+
+
+    const metrosComprados =
+      cajas * rendimientoCaja;
+
+
+    cantidadMaterial =
+      cajas +
+      (cajas === 1 ? " caja" : " cajas") +
+      " · " +
+      metrosComprados.toFixed(2) +
+      " m²";
+
+
+    if(
+      revestimiento === "bali-black" ||
+      revestimiento === "bali-green"
+    ){
+
+      const unidades =
+        cajas * 96;
+
+      cantidadMaterial +=
+        " · aprox. " +
+        unidades +
+        " piezas";
+
+    }
+
+  }
+
+
+  document.getElementById(
+    "resultado-superficie"
+  ).textContent =
+    superficieReal.toFixed(2) +
+    " m²";
+
+
+  document.getElementById(
+    "resultado-desperdicio"
+  ).textContent =
+    superficieConDesperdicio.toFixed(2) +
+    " m²";
+
+
+  document.getElementById(
+    "resultado-material"
+  ).textContent =
+    nombreMaterial;
+
+
+  document.getElementById(
+    "resultado-cantidad"
+  ).textContent =
+    cantidadMaterial;
+
+
+  resultado.classList.add("activo");
+
+
+  setTimeout(function(){
+
+    resultado.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+
+  },100);
+
+}
+
+</script></body></html>
