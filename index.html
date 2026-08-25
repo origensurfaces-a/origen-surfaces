@@ -11,661 +11,782 @@
 <style>
 
 :root{
---fondo:#f7f4ee;
---fondo-verde:#eef1ec;
---verde:#34473f;
---verde-suave:#53655d;
---texto:#41423e;
---arena:#e6ddce;
---blanco:#fffdf9;
---linea:rgba(52,71,63,.16);
+  --fondo:#f7f4ee;
+  --fondo-verde:#eef1ec;
+  --verde:#34473f;
+  --verde-suave:#53655d;
+  --texto:#41423e;
+  --arena:#e6ddce;
+  --blanco:#fffdf9;
+  --linea:rgba(52,71,63,.16);
+  --error-fondo:#f6e2df;
+  --error-texto:#8a3d35;
 }
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-background:var(--fondo);
-color:var(--texto);
-font-family:Arial,Helvetica,sans-serif;
-line-height:1.6;
+  background:var(--fondo);
+  color:var(--texto);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6;
+}
+
+img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 a{
-color:inherit;
-text-decoration:none;
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+select{
+  font:inherit;
 }
 
 .container{
-width:min(1320px,calc(100% - 100px));
-margin:auto;
+  width:min(1320px,calc(100% - 100px));
+  margin:auto;
 }
 
+
+/* =========================
+   NAV
+========================= */
+
 header{
-height:96px;
-border-bottom:1px solid var(--linea);
-background:rgba(247,244,238,.96);
-position:sticky;
-top:0;
-z-index:20;
+  height:96px;
+  border-bottom:1px solid var(--linea);
+  background:rgba(247,244,238,.96);
+  position:sticky;
+  top:0;
+  z-index:20;
 }
 
 .nav{
-height:100%;
-display:flex;
-align-items:center;
-justify-content:space-between;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .logo{
-color:var(--verde);
-font-weight:700;
-font-size:25px;
-letter-spacing:.30em;
-line-height:1;
+  color:var(--verde);
+  font-weight:700;
+  font-size:25px;
+  letter-spacing:.30em;
+  line-height:1;
 }
 
 .logo span{
-display:block;
-font-size:9px;
-letter-spacing:.48em;
-margin-top:10px;
+  display:block;
+  font-size:9px;
+  letter-spacing:.48em;
+  margin-top:10px;
 }
 
 .menu{
-display:flex;
-gap:40px;
-color:#666862;
-font-size:15px;
+  display:flex;
+  gap:40px;
+  color:#666862;
+  font-size:15px;
 }
 
 .menu a{
-transition:.25s ease;
+  transition:.25s ease;
 }
 
 .menu a:hover{
-color:var(--verde);
+  color:var(--verde);
 }
 
-.hero{
-min-height:calc(100vh - 96px);
-display:grid;
-grid-template-columns:1fr 1fr;
+
+/* =========================
+   BOTONES
+========================= */
+
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:max-content;
+  min-height:54px;
+  padding:0 30px;
+  border:0;
+  background:var(--verde-suave);
+  color:white;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.17em;
+  transition:.25s ease;
 }
 
-.hero-copy{
-padding:110px 9%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-background:linear-gradient(135deg,#f7f4ee 0%,#eee8dc 100%);
+.button:hover{
+  background:var(--verde);
+  transform:translateY(-2px);
 }
+
+
+/* =========================
+   TIPOGRAFÍA
+========================= */
 
 .eyebrow{
-font-size:12px;
-letter-spacing:.38em;
-color:#64746d;
-margin-bottom:32px;
+  font-size:12px;
+  letter-spacing:.38em;
+  color:#64746d;
+  margin-bottom:32px;
 }
 
 h1,
 h2,
 h3{
-font-family:Georgia,"Times New Roman",serif;
-font-weight:400;
-color:var(--verde);
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  color:var(--verde);
+}
+
+h1 em,
+h2 em,
+h3 em{
+  font-style:italic;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:calc(100vh - 96px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.hero-copy{
+  padding:110px 9%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:linear-gradient(
+    135deg,
+    #f7f4ee 0%,
+    #eee8dc 100%
+  );
 }
 
 .hero h1{
-font-size:clamp(58px,6vw,94px);
-line-height:.92;
-letter-spacing:-.045em;
-max-width:650px;
-}
-
-.hero h1 em,
-h2 em{
-font-style:italic;
+  font-size:clamp(58px,6vw,94px);
+  line-height:.92;
+  letter-spacing:-.045em;
+  max-width:650px;
 }
 
 .hero-subtitle{
-font-family:Georgia,"Times New Roman",serif;
-font-size:34px;
-line-height:1.12;
-color:#344b56;
-margin:42px 0 28px;
-max-width:500px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:34px;
+  line-height:1.12;
+  color:#344b56;
+  margin:42px 0 28px;
+  max-width:500px;
 }
 
 .hero-text{
-max-width:590px;
-font-size:17px;
-color:#5f6561;
-margin-bottom:38px;
-}
-
-.button{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-width:max-content;
-min-height:54px;
-padding:0 30px;
-background:var(--verde-suave);
-color:white;
-font-size:12px;
-letter-spacing:.17em;
-transition:.25s ease;
-}
-
-.button:hover{
-background:var(--verde);
-transform:translateY(-2px);
+  max-width:590px;
+  font-size:17px;
+  color:#5f6561;
+  margin-bottom:38px;
 }
 
 .hero-photo{
-height:calc(100vh - 96px);
-min-height:calc(100vh - 96px);
-background:#e8e3da;
-overflow:hidden;
+  height:calc(100vh - 96px);
+  min-height:calc(100vh - 96px);
+  background:#e8e3da;
+  overflow:hidden;
 }
 
 .hero-photo img{
-display:block;
-width:100%;
-height:100%;
-object-fit:cover;
-object-position:center center;
+  object-position:center center;
 }
 
+
+/* =========================
+   INTRO
+========================= */
+
 .intro{
-padding:150px 0;
-background:var(--blanco);
+  padding:150px 0;
+  background:var(--blanco);
 }
 
 .intro-grid{
-display:grid;
-grid-template-columns:1fr 1.3fr;
-gap:100px;
-align-items:start;
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  gap:100px;
+  align-items:start;
 }
 
 .intro h2{
-font-size:clamp(46px,5vw,78px);
-line-height:.98;
-letter-spacing:-.04em;
+  font-size:clamp(46px,5vw,78px);
+  line-height:.98;
+  letter-spacing:-.04em;
 }
 
 .intro-text{
-max-width:650px;
-font-size:19px;
-line-height:1.75;
-color:#656963;
-padding-top:15px;
+  max-width:650px;
+  font-size:19px;
+  line-height:1.75;
+  color:#656963;
+  padding-top:15px;
 }
 
+
+/* =========================
+   PISCINAS
+========================= */
+
 .piscinas{
-background:var(--fondo-verde);
-padding:130px 0;
+  background:var(--fondo-verde);
+  padding:130px 0;
 }
 
 .piscina-grid{
-display:grid;
-grid-template-columns:1.05fr 1fr;
-min-height:650px;
-align-items:stretch;
+  display:grid;
+  grid-template-columns:1.05fr 1fr;
+  min-height:650px;
+  align-items:stretch;
 }
 
 .piscina-photo{
-min-height:650px;
-overflow:hidden;
+  min-height:650px;
+  overflow:hidden;
 }
 
 .piscina-copy{
-background:#e9eee9;
-padding:80px;
-display:flex;
-flex-direction:column;
-justify-content:center;
+  background:#e9eee9;
+  padding:80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
 .piscina-copy .eyebrow{
-margin-bottom:25px;
+  margin-bottom:25px;
 }
 
 .piscina-copy h2{
-font-size:clamp(48px,5vw,76px);
-line-height:.98;
-letter-spacing:-.045em;
-max-width:600px;
+  font-size:clamp(48px,5vw,76px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  max-width:600px;
 }
 
 .piscina-copy p{
-max-width:580px;
-margin:35px 0;
-color:#59615d;
-font-size:17px;
+  max-width:580px;
+  margin:35px 0;
+  color:#59615d;
+  font-size:17px;
 }
 
-/* CALCULADORA */
+
+/* =========================
+   CALCULADORA ORIGEN
+========================= */
 
 .calculadora-piscina{
-margin-top:80px;
-padding:90px 70px;
-background:var(--verde);
-color:var(--blanco);
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:start;
+  margin-top:80px;
+  padding:90px 70px;
+  background:var(--verde);
+  color:var(--blanco);
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:start;
 }
 
 .calculadora-intro{
-max-width:620px;
+  max-width:620px;
 }
 
 .calculadora-intro .eyebrow{
-color:#b8c9c0;
-margin-bottom:25px;
+  color:#b8c9c0;
+  margin-bottom:25px;
 }
 
 .calculadora-intro h2{
-color:white;
-font-size:clamp(48px,5vw,76px);
-line-height:.98;
-letter-spacing:-.045em;
-margin:0 0 30px;
+  color:white;
+  font-size:clamp(48px,5vw,76px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  margin-bottom:30px;
 }
 
 .calculadora-intro p{
-max-width:520px;
-color:#dce5e0;
-font-size:18px;
-line-height:1.6;
+  max-width:520px;
+  color:#dce5e0;
+  font-size:18px;
+  line-height:1.6;
 }
 
+
+/* FORMULARIO */
+
 .calculadora-form{
-background:#eef2ee;
-color:var(--texto);
-padding:45px;
-display:flex;
-flex-direction:column;
-gap:25px;
+  background:#eef2ee;
+  color:var(--texto);
+  padding:45px;
+
+  display:flex;
+  flex-direction:column;
+  gap:25px;
 }
 
 .campo{
-display:flex;
-flex-direction:column;
-gap:9px;
+  display:flex;
+  flex-direction:column;
+  gap:9px;
 }
 
 .campo label{
-font-size:15px;
-letter-spacing:.02em;
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:.02em;
 }
 
 .campo input,
 .campo select{
-width:100%;
-padding:16px 18px;
-border:1px solid #c9d1cc;
-border-radius:0;
-background:#fff;
-color:var(--texto);
-font-family:inherit;
-font-size:16px;
+  width:100%;
+  min-height:54px;
+  padding:16px 18px;
+
+  border:1px solid #c9d1cc;
+  border-radius:8px;
+
+  outline:none;
+  background:#fff;
+  color:var(--texto);
+
+  font-size:16px;
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.campo input:focus,
+.campo select:focus{
+  border-color:var(--verde-suave);
+  box-shadow:0 0 0 4px rgba(83,101,93,.10);
 }
 
 .campo span{
-font-size:13px;
-color:#6b7771;
+  font-size:13px;
+  color:#6b7771;
 }
 
-.calculadora-form .button{
-border:0;
-cursor:pointer;
-width:100%;
-}
+
+/* ERROR */
 
 .error-calculadora{
-display:none;
-padding:15px;
-background:#f4dddd;
-color:#7b2d2d;
-font-size:14px;
+  display:none;
+  padding:15px;
+
+  border-radius:8px;
+
+  background:var(--error-fondo);
+  color:var(--error-texto);
+
+  font-size:14px;
+  line-height:1.5;
 }
 
+.error-calculadora.activo{
+  display:block;
+}
+
+
+/* RESULTADO */
+
 .resultado-piscina{
-grid-column:1 / -1;
-background:#f7f4ee;
-color:var(--texto);
-padding:45px;
-display:none;
+  grid-column:1 / -1;
+
+  background:#f7f4ee;
+  color:var(--texto);
+
+  padding:45px;
+
+  display:none;
 }
 
 .resultado-piscina.activo{
-display:block;
+  display:block;
 }
 
 .resultado-titulo{
-font-size:13px;
-letter-spacing:.18em;
-text-transform:uppercase;
-margin-bottom:30px;
-color:#597068;
+  font-size:13px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:30px;
+  color:#597068;
 }
 
 .resultado-datos{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
-margin-bottom:35px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+  margin-bottom:35px;
 }
 
 .resultado-datos div{
-display:flex;
-flex-direction:column;
-gap:10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
 .resultado-datos span{
-font-size:13px;
-color:#69756f;
+  font-size:13px;
+  color:#69756f;
 }
 
 .resultado-datos strong{
-font-size:25px;
-font-weight:500;
+  font-size:25px;
+  font-weight:500;
+  color:var(--verde);
 }
 
-/* MATERIA */
+.whatsapp-button{
+  background:#53655d;
+}
+
+.whatsapp-button:hover{
+  background:#34473f;
+}
+
+
+/* =========================
+   MATERIA
+========================= */
 
 .materia{
-padding:140px 0;
-background:var(--blanco);
+  padding:140px 0;
+  background:var(--blanco);
 }
 
 .materia-grid{
-display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:80px;
-align-items:stretch;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:80px;
+  align-items:stretch;
 }
 
 .materia-photo{
-min-height:650px;
-background:#e7e1d5;
-overflow:hidden;
+  min-height:650px;
+  background:#e7e1d5;
+  overflow:hidden;
 }
 
 .materia-copy{
-background:var(--arena);
-padding:80px;
-display:flex;
-flex-direction:column;
-justify-content:center;
+  background:var(--arena);
+  padding:80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
 .materia-copy h2{
-font-size:clamp(50px,5vw,80px);
-line-height:.96;
-letter-spacing:-.045em;
+  font-size:clamp(50px,5vw,80px);
+  line-height:.96;
+  letter-spacing:-.045em;
 }
 
 .materia-copy p{
-margin-top:38px;
-max-width:500px;
-color:#666b65;
-font-size:17px;
+  margin-top:38px;
+  max-width:500px;
+  color:#666b65;
+  font-size:17px;
 }
 
-/* PROYECTOS */
+
+/* =========================
+   PROYECTOS
+========================= */
 
 .proyectos{
-padding:140px 0;
-background:#f1eee8;
+  padding:140px 0;
+  background:#f1eee8;
 }
 
 .proyectos-head{
-margin-bottom:55px;
+  margin-bottom:55px;
 }
 
 .proyectos h2{
-font-size:clamp(50px,5vw,76px);
-line-height:1;
+  font-size:clamp(50px,5vw,76px);
+  line-height:1;
 }
 
 .proyecto{
-display:grid;
-grid-template-columns:1.5fr .8fr;
-min-height:600px;
+  display:grid;
+  grid-template-columns:1.5fr .8fr;
+  min-height:600px;
 }
 
 .proyecto-photo{
-min-height:600px;
-overflow:hidden;
+  min-height:600px;
+  overflow:hidden;
 }
 
 .proyecto-copy{
-background:var(--verde);
-color:white;
-padding:70px;
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
+  background:var(--verde);
+  color:white;
+  padding:70px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
 }
 
 .proyecto-copy .eyebrow{
-color:#d9e0dc;
+  color:#d9e0dc;
 }
 
 .proyecto-copy h3{
-color:white;
-font-size:48px;
-line-height:1;
-margin-bottom:25px;
+  color:white;
+  font-size:48px;
+  line-height:1;
+  margin-bottom:25px;
 }
 
 .proyecto-copy p{
-color:#d9dfdb;
-font-size:16px;
+  color:#d9dfdb;
+  font-size:16px;
 }
 
-/* ORIGEN */
+
+/* =========================
+   ORIGEN
+========================= */
 
 .origen{
-padding:170px 0;
-background:var(--fondo);
+  padding:170px 0;
+  background:var(--fondo);
 }
 
 .origen-inner{
-max-width:1150px;
+  max-width:1150px;
 }
 
 .origen h2{
-font-size:clamp(58px,7vw,105px);
-line-height:.92;
-letter-spacing:-.055em;
+  font-size:clamp(58px,7vw,105px);
+  line-height:.92;
+  letter-spacing:-.055em;
 }
 
 .origen p{
-max-width:850px;
-margin-top:48px;
-font-size:20px;
-line-height:1.75;
-color:#626762;
+  max-width:850px;
+  margin-top:48px;
+  font-size:20px;
+  line-height:1.75;
+  color:#626762;
 }
 
-/* CONTACTO */
+
+/* =========================
+   CONTACTO
+========================= */
 
 .contacto{
-padding:120px 0;
-background:var(--verde);
-color:white;
+  padding:120px 0;
+  background:var(--verde);
+  color:white;
 }
 
 .contacto h2{
-color:white;
-font-size:clamp(55px,6vw,90px);
-line-height:.95;
+  color:white;
+  font-size:clamp(55px,6vw,90px);
+  line-height:.95;
 }
 
 .contacto p{
-max-width:600px;
-margin:30px 0 40px;
-color:#d8dfdb;
-font-size:18px;
+  max-width:600px;
+  margin:30px 0 40px;
+  color:#d8dfdb;
+  font-size:18px;
 }
 
 .contacto .button{
-background:white;
-color:var(--verde);
+  background:white;
+  color:var(--verde);
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
-padding:35px 0;
-background:#293a34;
-color:#cfd6d1;
-font-size:12px;
-letter-spacing:.12em;
+  padding:35px 0;
+  background:#293a34;
+  color:#cfd6d1;
+  font-size:12px;
+  letter-spacing:.12em;
 }
 
 .footer-inner{
-display:flex;
-justify-content:space-between;
+  display:flex;
+  justify-content:space-between;
 }
+
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:900px){
 
-header{
-height:80px;
+  header{
+    height:80px;
+  }
+
+  .container{
+    width:min(100% - 40px,700px);
+  }
+
+  .menu{
+    gap:15px;
+    font-size:12px;
+  }
+
+  .logo{
+    font-size:20px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-copy{
+    padding:80px 30px;
+    min-height:650px;
+  }
+
+  .hero-photo{
+    min-height:500px;
+  }
+
+  .intro,
+  .piscinas,
+  .materia,
+  .proyectos,
+  .origen{
+    padding:90px 0;
+  }
+
+  .intro-grid,
+  .piscina-grid,
+  .materia-grid,
+  .proyecto{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .piscina-photo,
+  .materia-photo,
+  .proyecto-photo{
+    min-height:450px;
+  }
+
+  .piscina-copy,
+  .materia-copy,
+  .proyecto-copy{
+    padding:60px 35px;
+  }
+
+  .proyecto-copy{
+    min-height:400px;
+  }
+
+  .calculadora-piscina{
+    grid-template-columns:1fr;
+    padding:70px 30px;
+  }
+
+  .resultado-piscina{
+    grid-column:auto;
+  }
+
+  .resultado-datos{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    gap:15px;
+  }
+
 }
 
-.container{
-width:min(100% - 40px,700px);
-}
-
-.menu{
-gap:15px;
-font-size:12px;
-}
-
-.logo{
-font-size:20px;
-}
-
-.hero{
-grid-template-columns:1fr;
-}
-
-.hero-copy{
-padding:80px 30px;
-min-height:650px;
-}
-
-.hero-photo{
-min-height:500px;
-}
-
-.intro,
-.piscinas,
-.materia,
-.proyectos,
-.origen{
-padding:90px 0;
-}
-
-.intro-grid,
-.piscina-grid,
-.materia-grid,
-.proyecto{
-grid-template-columns:1fr;
-gap:0;
-}
-
-.piscina-photo,
-.materia-photo,
-.proyecto-photo{
-min-height:450px;
-}
-
-.piscina-copy,
-.materia-copy,
-.proyecto-copy{
-padding:60px 35px;
-}
-
-.proyecto-copy{
-min-height:400px;
-}
-
-.calculadora-piscina{
-grid-template-columns:1fr;
-padding:70px 30px;
-}
-
-.resultado-piscina{
-grid-column:auto;
-}
-
-.resultado-datos{
-grid-template-columns:1fr 1fr;
-}
-
-.footer-inner{
-flex-direction:column;
-gap:15px;
-}
-
-}
 
 @media(max-width:600px){
 
-.menu{
-display:none;
-}
+  .menu{
+    display:none;
+  }
 
-.hero h1{
-font-size:58px;
-}
+  .hero h1{
+    font-size:58px;
+  }
 
-.hero-subtitle{
-font-size:28px;
-}
+  .hero-subtitle{
+    font-size:28px;
+  }
 
-.hero-copy{
-padding:70px 25px;
-}
+  .hero-copy{
+    padding:70px 25px;
+  }
 
-.intro-grid{
-gap:35px;
-}
+  .intro-grid{
+    gap:35px;
+  }
 
-.piscina-copy h2,
-.materia-copy h2,
-.proyectos h2{
-font-size:52px;
-}
+  .piscina-copy h2,
+  .materia-copy h2,
+  .proyectos h2{
+    font-size:52px;
+  }
 
-.calculadora-piscina{
-padding:60px 20px;
-}
+  .calculadora-piscina{
+    padding:60px 20px;
+  }
 
-.calculadora-form,
-.resultado-piscina{
-padding:30px 22px;
-}
+  .calculadora-form,
+  .resultado-piscina{
+    padding:30px 22px;
+  }
 
-.resultado-datos{
-grid-template-columns:1fr;
-}
+  .resultado-datos{
+    grid-template-columns:1fr;
+  }
+
+  .resultado-datos strong{
+    font-size:23px;
+  }
 
 }
 
@@ -673,38 +794,27 @@ grid-template-columns:1fr;
 
 </head>
 
+
 <body>
+
 
 <header>
 
-<div class="container nav">
+  <div class="container nav">
 
-<a href="#inicio" class="logo">
-ORIGEN
-<span>SURFACES</span>
-</a>
+    <a href="#inicio" class="logo">
+      ORIGEN
+      <span>SURFACES</span>
+    </a>
 
-<nav class="menu">
+    <nav class="menu">
+      <a href="#colecciones">Colecciones</a>
+      <a href="#piscinas">Piscinas</a>
+      <a href="#origen">Origen</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
 
-<a href="#colecciones">
-Colecciones
-</a>
-
-<a href="#piscinas">
-Piscinas
-</a>
-
-<a href="#origen">
-Origen
-</a>
-
-<a href="#contacto">
-Contacto
-</a>
-
-</nav>
-
-</div>
+  </div>
 
 </header>
 
@@ -712,561 +822,811 @@ Contacto
 <main id="inicio">
 
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-<div class="hero-copy">
+  <div class="hero-copy">
 
-<div class="eyebrow">
-SUPERFICIES · MATERIALES · SOLUCIONES
-</div>
+    <div class="eyebrow">
+      SUPERFICIES · MATERIALES · SOLUCIONES
+    </div>
 
-<h1>
-La grandeza<br>
-de lo <em>simple.</em>
-</h1>
+    <h1>
+      La grandeza<br>
+      de lo <em>simple.</em>
+    </h1>
 
-<div class="hero-subtitle">
-Te acompañamos<br>
-en cada proyecto.
-</div>
+    <div class="hero-subtitle">
+      Te acompañamos<br>
+      en cada proyecto.
+    </div>
 
-<p class="hero-text">
-Seleccionamos superficies y materiales para ayudarte a encontrar
-la solución adecuada para tu espacio, tu estilo y tu proyecto.
-</p>
+    <p class="hero-text">
+      Seleccionamos superficies y materiales para ayudarte a encontrar
+      la solución adecuada para tu espacio, tu estilo y tu proyecto.
+    </p>
 
-<a href="#origen" class="button">
-CONOCER ORIGEN
-</a>
+    <a href="#origen" class="button">
+      CONOCER ORIGEN
+    </a>
 
-</div>
+  </div>
 
 
-<div class="hero-photo">
+  <div class="hero-photo">
 
-<img
-src="4523e62bbfeec5d5ad60836e75814d5f.jpg"
-alt="Interior contemporáneo con superficies naturales">
+    <img
+      src="4523e62bbfeec5d5ad60836e75814d5f.jpg"
+      alt="Interior contemporáneo con superficies naturales"
+    >
 
-</div>
+  </div>
 
 </section>
 
+
+<!-- =========================
+     INTRO
+========================= -->
 
 <section class="intro" id="colecciones">
 
-<div class="container intro-grid">
+  <div class="container intro-grid">
 
-<div>
+    <div>
 
-<div class="eyebrow">
-ORIGEN SURFACES
-</div>
+      <div class="eyebrow">
+        ORIGEN SURFACES
+      </div>
 
-<h2>
-Elegir un material también es parte del proyecto.
-</h2>
+      <h2>
+        Elegir un material también es parte del proyecto.
+      </h2>
 
-</div>
+    </div>
 
 
-<div class="intro-text">
+    <div class="intro-text">
 
-<p>
-Creemos que una superficie no es solamente un acabado.
-Cambia la manera en que habitamos un espacio, cómo entra la luz,
-cómo se siente una textura y cómo se relaciona cada elemento.
-</p>
+      <p>
+        Creemos que una superficie no es solamente un acabado.
+        Cambia la manera en que habitamos un espacio, cómo entra la luz,
+        cómo se siente una textura y cómo se relaciona cada elemento.
+      </p>
 
-<br>
+      <br>
 
-<p>
-Por eso seleccionamos materiales pensando en el conjunto:
-arquitectura, agua, luz, textura y estilo.
-</p>
+      <p>
+        Por eso seleccionamos materiales pensando en el conjunto:
+        arquitectura, agua, luz, textura y estilo.
+      </p>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
+
+<!-- =========================
+     PISCINAS
+========================= -->
 
 <section class="piscinas" id="piscinas">
 
+  <div class="container piscina-grid">
 
-<div class="container piscina-grid">
+    <div class="piscina-photo">
 
+      <img
+        src="10972ded-f193-42f2-8874-64af8b932a44.png"
+        alt="Piscina contemporánea"
+      >
 
-<div class="piscina-photo">
+    </div>
 
-<img
-src="10972ded-f193-42f2-8874-64af8b932a44.png"
-alt="Piscina contemporánea">
 
-</div>
+    <div class="piscina-copy">
 
+      <div class="eyebrow">
+        SUPERFICIES PARA PISCINAS
+      </div>
 
-<div class="piscina-copy">
+      <h2>
+        El agua también<br>
+        se <em>diseña.</em>
+      </h2>
 
-<div class="eyebrow">
-SUPERFICIES PARA PISCINAS
-</div>
+      <p>
+        El revestimiento cambia la forma en que percibimos el agua.
+        Color, textura, luz y materia trabajan juntos para crear
+        una experiencia.
+      </p>
 
-<h2>
-El agua también<br>
-se <em>diseña.</em>
-</h2>
+      <a href="#calculadora" class="button">
+        CALCULAR MI PISCINA
+      </a>
 
-<p>
-El revestimiento cambia la forma en que percibimos el agua.
-Color, textura, luz y materia trabajan juntos para crear una experiencia.
-</p>
+    </div>
 
-<a href="#contacto" class="button">
-CONSULTAR
-</a>
+  </div>
 
-</div>
 
-</div>
-
-
-<!-- CALCULADORA ORIGEN -->
-
-<div class="calculadora-piscina">
-
-
-<div class="calculadora-intro">
-
-<div class="eyebrow">
-CALCULADORA ORIGEN
-</div>
-
-<h2>
-Calculá tu piscina<br>
-<em>de forma simple.</em>
-</h2>
-
-<p>
-Ingresá el largo y el ancho de tu piscina y elegí el revestimiento.
-ORIGEN calcula la superficie, agrega automáticamente un 10% de desperdicio
-y determina la cantidad de cajas necesarias.
-</p>
-
-</div>
-
-
-<div class="calculadora-form">
-
-
-<div class="campo">
-
-<label for="largo">
-Largo de la piscina
-</label>
-
-<input
-type="number"
-id="largo"
-placeholder="Ej. 8"
-min="0"
-step="0.01"
-inputmode="decimal">
-
-<span>
-metros
-</span>
-
-</div>
-
-
-<div class="campo">
-
-<label for="ancho">
-Ancho de la piscina
-</label>
-
-<input
-type="number"
-id="ancho"
-placeholder="Ej. 5"
-min="0"
-step="0.01"
-inputmode="decimal">
-
-<span>
-metros
-</span>
-
-</div>
-
-
-<div class="campo">
-
-<label for="revestimiento">
-Elegí tu revestimiento
-</label>
-
-
-<select id="revestimiento">
-
-<option value="">
-Seleccionar
-</option>
-
-
-<optgroup label="CERÁMICA 10 × 10">
-
-<option
-value="portland-10"
-data-rendimiento="1.95">
-Portland 10×10 · 1,95 m²/caja
-</option>
-
-</optgroup>
-
-
-<optgroup label="CERÁMICA 20 × 20">
-
-<option
-value="revestimiento-20"
-data-rendimiento="1.50">
-Revestimiento 20×20 · 1,50 m²/caja
-</option>
-
-</optgroup>
-
-
-<optgroup label="REVESTIMIENTOS · 2,07 m²/caja">
-
-<option
-value="revestimiento-207"
-data-rendimiento="2.07">
-Revestimiento 2.07 · 2,07 m²/caja
-</option>
-
-</optgroup>
-
-
-<optgroup label="REVESTIMIENTOS · 1,44 m²/caja">
-
-<option
-value="revestimiento-144"
-data-rendimiento="1.44">
-Revestimiento 1.44 · 1,44 m²/caja
-</option>
-
-</optgroup>
-
-
-<optgroup label="VENECITA CLÁSICA">
-
-<option
-value="linea-clasica"
-data-rendimiento="4.28">
-Línea Clásica · 4,28 m²/caja
-</option>
-
-</optgroup>
-
-
-<optgroup label="VENECITA PREMIUM">
-
-<option
-value="linea-premium"
-data-rendimiento="2.00">
-Línea Premium · 2,00 m²/caja
-</option>
-
-</optgroup>
-
-
-<optgroup label="PIEDRA BALI">
-
-<option
-value="piedra-bali"
-data-rendimiento="1.00">
-Piedra Bali · 1,00 m²/caja
-</option>
-
-</optgroup>
-
-</select>
-
-</div>
-
+<!-- =========================
+     CALCULADORA ORIGEN
+========================= -->
 
 <div
-id="error-calculadora"
-class="error-calculadora">
-</div>
+  class="calculadora-piscina"
+  id="calculadora"
+>
+
+  <div class="calculadora-intro">
+
+    <div class="eyebrow">
+      CALCULADORA ORIGEN
+    </div>
+
+    <h2>
+      Calculá tu piscina<br>
+      <em>de forma simple.</em>
+    </h2>
+
+    <p>
+      Ingresá el largo y el ancho de tu piscina y elegí el revestimiento.
+      ORIGEN calcula la superficie, agrega automáticamente un 10% de
+      desperdicio y determina la cantidad de cajas necesarias.
+    </p>
+
+  </div>
 
 
-<button
-type="button"
-class="button"
-onclick="calcularPiscina()">
-
-CALCULAR
-
-</button>
-
-</div>
+  <div class="calculadora-form">
 
 
-<div
-id="resultado-piscina"
-class="resultado-piscina">
+    <div class="campo">
+
+      <label for="largo">
+        Largo de la piscina
+      </label>
+
+      <input
+        type="number"
+        id="largo"
+        placeholder="Ej. 8"
+        min="0"
+        step="0.01"
+        inputmode="decimal"
+      >
+
+      <span>
+        metros
+      </span>
+
+    </div>
 
 
-<div class="resultado-titulo">
-Tu estimación ORIGEN
-</div>
+    <div class="campo">
+
+      <label for="ancho">
+        Ancho de la piscina
+      </label>
+
+      <input
+        type="number"
+        id="ancho"
+        placeholder="Ej. 5"
+        min="0"
+        step="0.01"
+        inputmode="decimal"
+      >
+
+      <span>
+        metros
+      </span>
+
+    </div>
 
 
-<div class="resultado-datos">
+    <div class="campo">
+
+      <label for="revestimiento">
+        Elegí tu revestimiento
+      </label>
+
+      <select id="revestimiento">
+
+        <option value="">
+          Seleccionar
+        </option>
 
 
-<div>
+        <!-- CERÁMICA 10 × 10 -->
 
-<span>
-Superficie real
-</span>
+        <optgroup label="CERÁMICA 10 × 10">
 
-<strong id="resultado-superficie">
-—
-</strong>
+          <option
+            value="moorea-10"
+            data-rendimiento="1.95"
+          >
+            Moorea · 10 × 10 · 1,95 m²/caja
+          </option>
 
-</div>
+          <option
+            value="tonga-10"
+            data-rendimiento="1.95"
+          >
+            Tonga · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option
+            value="kauai-10"
+            data-rendimiento="1.95"
+          >
+            Kauai · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option
+            value="samoa-bright-10"
+            data-rendimiento="1.95"
+          >
+            Samoa Bright · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option
+            value="malawi-10"
+            data-rendimiento="1.95"
+          >
+            Malawi · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option
+            value="portland-10"
+            data-rendimiento="1.95"
+          >
+            Portland · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option
+            value="palau-bright-10"
+            data-rendimiento="1.95"
+          >
+            Palau Bright · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option
+            value="vis-10"
+            data-rendimiento="1.95"
+          >
+            Vis · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option
+            value="samoa-10"
+            data-rendimiento="1.95"
+          >
+            Samoa · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option
+            value="palau-10"
+            data-rendimiento="1.95"
+          >
+            Palau · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option
+            value="maui-10"
+            data-rendimiento="1.95"
+          >
+            Mauí · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option
+            value="kaimu-10"
+            data-rendimiento="1.95"
+          >
+            Kaimú · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option
+            value="cobalto-10"
+            data-rendimiento="1.95"
+          >
+            Cobalto · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option
+            value="ceu-10"
+            data-rendimiento="1.95"
+          >
+            Céu · 10 × 10 · 1,95 m²/caja
+          </option>
+
+        </optgroup>
 
 
-<div>
+        <!-- CERÁMICA 20 × 20 -->
 
-<span>
-Superficie con 10% de desperdicio
-</span>
+        <optgroup label="CERÁMICA 20 × 20">
 
-<strong id="resultado-desperdicio">
-—
-</strong>
+          <option
+            value="palau-20"
+            data-rendimiento="1.50"
+          >
+            Palau · 20 × 20 · 1,50 m²/caja
+          </option>
 
-</div>
+          <option
+            value="kaimu-20"
+            data-rendimiento="1.50"
+          >
+            Kaimú · 20 × 20 · 1,50 m²/caja
+          </option>
 
+          <option
+            value="vis-20"
+            data-rendimiento="1.50"
+          >
+            Vis · 20 × 20 · 1,50 m²/caja
+          </option>
 
-<div>
+          <option
+            value="portland-20"
+            data-rendimiento="1.50"
+          >
+            Portland · 20 × 20 · 1,50 m²/caja
+          </option>
 
-<span>
-Cajas a comprar
-</span>
+          <option
+            value="malawi-20"
+            data-rendimiento="1.50"
+          >
+            Malawi · 20 × 20 · 1,50 m²/caja
+          </option>
 
-<strong id="resultado-cajas">
-—
-</strong>
-
-</div>
-
-
-<div>
-
-<span>
-Total de m² que vas a comprar
-</span>
-
-<strong id="resultado-m2-comprados">
-—
-</strong>
-
-</div>
-
-
-</div>
-
-
-<a
-href="https://wa.me/5491147004804"
-class="button"
-target="_blank">
-
-QUIERO COTIZAR MI PISCINA
-
-</a>
+        </optgroup>
 
 
-</div>
+        <!-- VENECITAS 2,07 -->
 
+        <optgroup label="VENECITAS · 2,07 m²/caja">
+
+          <option
+            value="algarve"
+            data-rendimiento="2.07"
+          >
+            Algarve · 2,07 m²/caja
+          </option>
+
+          <option
+            value="bodrum"
+            data-rendimiento="2.07"
+          >
+            Bodrum · 2,07 m²/caja
+          </option>
+
+          <option
+            value="caribbean"
+            data-rendimiento="2.07"
+          >
+            Caribbean · 2,07 m²/caja
+          </option>
+
+          <option
+            value="maldivas"
+            data-rendimiento="2.07"
+          >
+            Maldivas · 2,07 m²/caja
+          </option>
+
+          <option
+            value="corsega"
+            data-rendimiento="2.07"
+          >
+            Córsega · 2,07 m²/caja
+          </option>
+
+          <option
+            value="ibiza"
+            data-rendimiento="2.07"
+          >
+            Ibiza · 2,07 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- VENECITAS 1,44 -->
+
+        <optgroup label="VENECITAS · 1,44 m²/caja">
+
+          <option
+            value="beige"
+            data-rendimiento="1.44"
+          >
+            Beige · 1,44 m²/caja
+          </option>
+
+          <option
+            value="blue"
+            data-rendimiento="1.44"
+          >
+            Blue · 1,44 m²/caja
+          </option>
+
+          <option
+            value="seychelles-claro"
+            data-rendimiento="1.44"
+          >
+            Seychelles Claro · 1,44 m²/caja
+          </option>
+
+          <option
+            value="seychelles-oscuro"
+            data-rendimiento="1.44"
+          >
+            Seychelles Oscuro · 1,44 m²/caja
+          </option>
+
+          <option
+            value="blanco"
+            data-rendimiento="1.44"
+          >
+            Blanco · 1,44 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- VENECITA CLÁSICA -->
+
+        <optgroup label="VENECITA CLÁSICA">
+
+          <option
+            value="clasica"
+            data-rendimiento="4.28"
+          >
+            Venecita Clásica · 4,28 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- VENECITA PREMIUM -->
+
+        <optgroup label="VENECITA PREMIUM">
+
+          <option
+            value="premium"
+            data-rendimiento="2.00"
+          >
+            Venecita Premium · 2,00 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- PIEDRA BALI -->
+
+        <optgroup label="PIEDRA BALI · 10 × 10">
+
+          <option
+            value="bali-black"
+            data-rendimiento="1.00"
+          >
+            Piedra Bali Black · 10 × 10 · 1,00 m²/caja
+          </option>
+
+          <option
+            value="bali-green"
+            data-rendimiento="1.00"
+          >
+            Piedra Bali Green · 10 × 10 · 1,00 m²/caja
+          </option>
+
+        </optgroup>
+
+      </select>
+
+    </div>
+
+
+    <div
+      id="error-calculadora"
+      class="error-calculadora"
+      role="alert"
+      aria-live="polite"
+    ></div>
+
+
+    <button
+      type="button"
+      class="button"
+      id="boton-calcular"
+    >
+      CALCULAR
+    </button>
+
+  </div>
+
+
+  <!-- RESULTADO -->
+
+  <div
+    id="resultado-piscina"
+    class="resultado-piscina"
+  >
+
+    <div class="resultado-titulo">
+      Tu estimación ORIGEN
+    </div>
+
+
+    <div class="resultado-datos">
+
+
+      <div>
+
+        <span>
+          Superficie real
+        </span>
+
+        <strong id="resultado-superficie">
+          —
+        </strong>
+
+      </div>
+
+
+      <div>
+
+        <span>
+          Superficie con 10% de desperdicio
+        </span>
+
+        <strong id="resultado-desperdicio">
+          —
+        </strong>
+
+      </div>
+
+
+      <div>
+
+        <span>
+          Cajas a comprar
+        </span>
+
+        <strong id="resultado-cajas">
+          —
+        </strong>
+
+      </div>
+
+
+      <div>
+
+        <span>
+          Total de m² que vas a comprar
+        </span>
+
+        <strong id="resultado-m2">
+          —
+        </strong>
+
+      </div>
+
+
+    </div>
+
+
+    <a
+      href="#"
+      id="whatsapp-calculadora"
+      class="button whatsapp-button"
+      target="_blank"
+      rel="noopener"
+    >
+      QUIERO COTIZAR MI PISCINA
+    </a>
+
+  </div>
 
 </div>
 
 </section>
 
+
+<!-- =========================
+     MATERIA
+========================= -->
 
 <section class="materia">
 
+  <div class="container materia-grid">
 
-<div class="container materia-grid">
+    <div class="materia-photo">
+
+      <img
+        src="9c7236e83277cf400b03c5c4deff2a32.jpg"
+        alt="Materiales y superficies naturales"
+      >
+
+    </div>
 
 
-<div class="materia-photo">
+    <div class="materia-copy">
 
-<img
-src="9c7236e83277cf400b03c5c4deff2a32.jpg"
-alt="Materiales y superficies naturales">
+      <div class="eyebrow">
+        MATERIA
+      </div>
 
-</div>
+      <h2>
+        La superficie<br>
+        cambia con<br>
+        la <em>luz.</em>
+      </h2>
 
+      <p>
+        Una misma textura puede transformar completamente su apariencia
+        cuando entra en contacto con el agua, la luz o el entorno.
+      </p>
 
-<div class="materia-copy">
+    </div>
 
-<div class="eyebrow">
-MATERIA
-</div>
-
-<h2>
-La superficie<br>
-cambia con<br>
-la <em>luz.</em>
-</h2>
-
-<p>
-Una misma textura puede transformar completamente su apariencia
-cuando entra en contacto con el agua, la luz o el entorno.
-</p>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
+
+<!-- =========================
+     PROYECTOS
+========================= -->
 
 <section class="proyectos">
 
+  <div class="container">
 
-<div class="container">
+    <div class="proyectos-head">
 
+      <div class="eyebrow">
+        PROYECTOS
+      </div>
 
-<div class="proyectos-head">
+      <h2>
+        Cada proyecto<br>
+        encuentra su <em>superficie.</em>
+      </h2>
 
-<div class="eyebrow">
-PROYECTOS
-</div>
-
-<h2>
-Cada proyecto<br>
-encuentra su <em>superficie.</em>
-</h2>
-
-</div>
+    </div>
 
 
-<div class="proyecto">
+    <div class="proyecto">
+
+      <div class="proyecto-photo">
+
+        <img
+          src="32643f41df2848c16278f4a11da80f01.jpg"
+          alt="Proyecto arquitectónico acompañado por ORIGEN"
+        >
+
+      </div>
 
 
-<div class="proyecto-photo">
+      <div class="proyecto-copy">
 
-<img
-src="32643f41df2848c16278f4a11da80f01.jpg"
-alt="Proyecto arquitectónico acompañado por ORIGEN">
+        <div class="eyebrow">
+          PROYECTO · ORIGEN
+        </div>
 
-</div>
+        <h3>
+          Una superficie<br>
+          bien elegida<br>
+          cambia todo.
+        </h3>
 
+        <p>
+          Acompañamos cada proyecto en la elección de materiales,
+          pensando en la arquitectura, el espacio y la forma en que
+          va a ser vivido.
 
-<div class="proyecto-copy">
+          <br><br>
 
-<div class="eyebrow">
-PROYECTO · ORIGEN
-</div>
+          Buscamos que cada superficie no solo se vea bien,
+          sino que tenga sentido dentro del conjunto.
+        </p>
 
-<h3>
-Una superficie<br>
-bien elegida<br>
-cambia todo.
-</h3>
+      </div>
 
-<p>
-Acompañamos cada proyecto en la elección de materiales,
-pensando en la arquitectura, el espacio y la forma en que va a ser vivido.
-<br><br>
-Buscamos que cada superficie no solo se vea bien,
-sino que tenga sentido dentro del conjunto.
-</p>
+    </div>
 
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
+
+<!-- =========================
+     ORIGEN
+========================= -->
 
 <section class="origen" id="origen">
 
+  <div class="container origen-inner">
 
-<div class="container origen-inner">
+    <div class="eyebrow">
+      ORIGEN
+    </div>
 
-<div class="eyebrow">
-ORIGEN
-</div>
+    <h2>
+      Estamos para hacer<br>
+      más simple la elección<br>
+      de una <em>superficie.</em>
+    </h2>
 
-<h2>
-Estamos para hacer<br>
-más simple la elección<br>
-de una <em>superficie.</em>
-</h2>
+    <p>
+      ORIGEN SURFACES nace para conectar proyectos con materiales,
+      superficies y soluciones.
 
-<p>
-ORIGEN SURFACES nace para conectar proyectos con materiales,
-superficies y soluciones. Seleccionamos cada propuesta pensando
-en el espacio, el estilo y la forma en que va a ser vivido.
-<br><br>
-Trabajamos para que elegir una superficie sea un proceso más simple,
-más claro y más conectado con el proyecto.
-<br><br>
-No se trata solamente de elegir un producto.
-Se trata de encontrar juntos la superficie adecuada para cada espacio.
-</p>
+      Seleccionamos cada propuesta pensando en el espacio, el estilo
+      y la forma en que va a ser vivido.
 
-</div>
+      <br><br>
+
+      Trabajamos para que elegir una superficie sea un proceso más simple,
+      más claro y más conectado con el proyecto.
+
+      <br><br>
+
+      No se trata solamente de elegir un producto.
+      Se trata de encontrar juntos la superficie adecuada para cada espacio.
+    </p>
+
+  </div>
 
 </section>
 
 
+<!-- =========================
+     CONTACTO
+========================= -->
+
 <section class="contacto" id="contacto">
 
+  <div class="container">
 
-<div class="container">
+    <div class="eyebrow">
+      HABLEMOS DE TU PROYECTO
+    </div>
 
-<div class="eyebrow">
-HABLEMOS DE TU PROYECTO
-</div>
+    <h2>
+      Una buena elección<br>
+      empieza por conversar.
+    </h2>
 
-<h2>
-Una buena elección<br>
-empieza por conversar.
-</h2>
+    <p>
+      Contanos qué estás proyectando y te ayudamos a encontrar
+      la superficie adecuada.
+    </p>
 
-<p>
-Contanos qué estás proyectando y te ayudamos a encontrar
-la superficie adecuada.
-</p>
+    <p>
+      Nuestro alcance comercial abarca Buenos Aires de norte a sur,
+      Córdoba y alrededores, Catamarca, La Rioja y Entre Ríos.
+    </p>
 
-<p>
-Nuestro alcance comercial abarca Buenos Aires de norte a sur,
-Córdoba y alrededores, Catamarca, La Rioja y Entre Ríos.
-</p>
+    <a
+      href="https://wa.me/5491147004804"
+      class="button"
+      target="_blank"
+      rel="noopener"
+    >
+      HABLAR CON ORIGEN
+    </a>
 
-<a
-href="https://wa.me/5491147004804"
-class="button"
-target="_blank">
-
-HABLAR CON ORIGEN
-
-</a>
-
-</div>
+  </div>
 
 </section>
 
@@ -1276,252 +1636,380 @@ HABLAR CON ORIGEN
 
 <footer>
 
-<div class="container footer-inner">
+  <div class="container footer-inner">
 
-<div>
-ORIGEN SURFACES
-</div>
+    <div>
+      ORIGEN SURFACES
+    </div>
 
-<div>
-SUPERFICIES · MATERIALES · SOLUCIONES
-</div>
+    <div>
+      SUPERFICIES · MATERIALES · SOLUCIONES
+    </div>
 
-</div>
+  </div>
 
 </footer>
 
 
 <script>
 
-function limpiarCalculadora(){
+/* =====================================================
+   CALCULADORA ORIGEN
+   ===================================================== */
+
+
+/* ELEMENTOS */
+
+const largoInput =
+  document.getElementById("largo");
+
+const anchoInput =
+  document.getElementById("ancho");
+
+const revestimientoInput =
+  document.getElementById("revestimiento");
+
+const botonCalcular =
+  document.getElementById("boton-calcular");
 
 const error =
-document.getElementById("error-calculadora");
+  document.getElementById("error-calculadora");
 
 const resultado =
-document.getElementById("resultado-piscina");
+  document.getElementById("resultado-piscina");
 
-error.style.display="none";
-error.textContent="";
+const whatsapp =
+  document.getElementById("whatsapp-calculadora");
 
-resultado.classList.remove("activo");
+
+/* =====================================================
+   LIMPIAR RESULTADO AL MODIFICAR DATOS
+   ===================================================== */
+
+function limpiarCalculadora(){
+
+  error.textContent="";
+  error.classList.remove("activo");
+
+  resultado.classList.remove("activo");
+
+  whatsapp.href="#";
 
 }
 
 
-document
-.getElementById("largo")
-.addEventListener("input",limpiarCalculadora);
+largoInput.addEventListener(
+  "input",
+  limpiarCalculadora
+);
 
 
-document
-.getElementById("ancho")
-.addEventListener("input",limpiarCalculadora);
+anchoInput.addEventListener(
+  "input",
+  limpiarCalculadora
+);
 
 
-document
-.getElementById("revestimiento")
-.addEventListener("change",limpiarCalculadora);
+revestimientoInput.addEventListener(
+  "change",
+  limpiarCalculadora
+);
+
+
+/* =====================================================
+   CALCULAR
+   ===================================================== */
+
+botonCalcular.addEventListener(
+  "click",
+  calcularPiscina
+);
 
 
 function calcularPiscina(){
 
-const largo =
-parseFloat(
-String(
-document.getElementById("largo").value
-).replace(",",".")
-);
+
+  /* LIMPIAR MENSAJES */
+
+  error.textContent="";
+  error.classList.remove("activo");
+
+  resultado.classList.remove("activo");
 
 
-const ancho =
-parseFloat(
-String(
-document.getElementById("ancho").value
-).replace(",",".")
-);
+  /* DATOS */
+
+  const largo =
+    parseFloat(
+      String(largoInput.value)
+        .replace(",",".")
+    );
 
 
-const select =
-document.getElementById("revestimiento");
+  const ancho =
+    parseFloat(
+      String(anchoInput.value)
+        .replace(",",".")
+    );
 
 
-const opcion =
-select.options[
-select.selectedIndex
-];
+  const revestimiento =
+    revestimientoInput.value;
 
 
-const error =
-document.getElementById("error-calculadora");
+  const opcion =
+    revestimientoInput.options[
+      revestimientoInput.selectedIndex
+    ];
 
 
-const resultado =
-document.getElementById("resultado-piscina");
+  /* =====================================================
+     VALIDACIÓN
+     ===================================================== */
+
+  if(
+    !Number.isFinite(largo) ||
+    largo <= 0
+  ){
+
+    mostrarError(
+      "Ingresá un largo mayor a cero."
+    );
+
+    return;
+
+  }
 
 
-error.style.display="none";
-error.textContent="";
+  if(
+    !Number.isFinite(ancho) ||
+    ancho <= 0
+  ){
 
-resultado.classList.remove("activo");
+    mostrarError(
+      "Ingresá un ancho mayor a cero."
+    );
+
+    return;
+
+  }
 
 
-if(
-!Number.isFinite(largo) ||
-largo<=0
-){
+  if(
+    !revestimiento ||
+    !opcion
+  ){
 
-error.textContent=
-"Ingresá un largo mayor a cero.";
+    mostrarError(
+      "Elegí el revestimiento que querés para tu piscina."
+    );
 
-error.style.display="block";
+    return;
 
-return;
+  }
+
+
+  /* =====================================================
+     RENDIMIENTO
+     Se obtiene directamente del producto elegido.
+     ===================================================== */
+
+  const rendimiento =
+    parseFloat(
+      opcion.dataset.rendimiento
+    );
+
+
+  if(
+    !Number.isFinite(rendimiento) ||
+    rendimiento <= 0
+  ){
+
+    mostrarError(
+      "No se pudo obtener el rendimiento del revestimiento seleccionado."
+    );
+
+    return;
+
+  }
+
+
+  /* =====================================================
+     1. SUPERFICIE REAL
+
+     LARGO × ANCHO
+     ===================================================== */
+
+  const superficieReal =
+    largo * ancho;
+
+
+  /* =====================================================
+     2. AGREGAR 10%
+
+     SUPERFICIE REAL × 1.10
+     ===================================================== */
+
+  const superficieDesperdicio =
+    superficieReal * 1.10;
+
+
+  /* =====================================================
+     3. CAJAS
+
+     SIEMPRE HACIA ARRIBA
+     ===================================================== */
+
+  const cajas =
+    Math.ceil(
+      superficieDesperdicio /
+      rendimiento
+    );
+
+
+  /* =====================================================
+     4. METROS REALES COMPRADOS
+
+     CAJAS × RENDIMIENTO
+     ===================================================== */
+
+  const metrosComprados =
+    cajas * rendimiento;
+
+
+  /* =====================================================
+     NOMBRE DEL PRODUCTO
+
+     Usamos exactamente lo que el cliente eligió.
+     ===================================================== */
+
+  const nombreProducto =
+    opcion.textContent
+      .trim();
+
+
+  /* =====================================================
+     MOSTRAR RESULTADOS
+     ===================================================== */
+
+  document
+    .getElementById("resultado-superficie")
+    .textContent =
+      formatearNumero(
+        superficieReal
+      ) + " m²";
+
+
+  document
+    .getElementById("resultado-desperdicio")
+    .textContent =
+      formatearNumero(
+        superficieDesperdicio
+      ) + " m²";
+
+
+  document
+    .getElementById("resultado-cajas")
+    .textContent =
+      cajas +
+      (cajas === 1
+        ? " caja"
+        : " cajas");
+
+
+  document
+    .getElementById("resultado-m2")
+    .textContent =
+      formatearNumero(
+        metrosComprados
+      ) + " m²";
+
+
+  /* =====================================================
+     MENSAJE AUTOMÁTICO DE WHATSAPP
+
+     El cliente toca el botón y se abre WhatsApp
+     con todos los datos del cálculo.
+     ===================================================== */
+
+  const mensaje =
+`Hola ORIGEN, quiero cotizar mi piscina.
+
+Revestimiento: ${nombreProducto}
+
+Largo: ${formatearNumero(largo)} m
+Ancho: ${formatearNumero(ancho)} m
+
+Superficie real: ${formatearNumero(superficieReal)} m²
+Superficie con 10% de desperdicio: ${formatearNumero(superficieDesperdicio)} m²
+
+Cajas a comprar: ${cajas}
+Total de m² que voy a comprar: ${formatearNumero(metrosComprados)} m²`;
+
+
+  const numeroWhatsApp =
+    "5491147004804";
+
+
+  whatsapp.href =
+    "https://wa.me/" +
+    numeroWhatsApp +
+    "?text=" +
+    encodeURIComponent(mensaje);
+
+
+  /* MOSTRAR */
+
+  resultado.classList.add("activo");
+
+
+  /* BAJAR AL RESULTADO */
+
+  setTimeout(function(){
+
+    resultado.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+
+  },100);
 
 }
 
 
-if(
-!Number.isFinite(ancho) ||
-ancho<=0
-){
+/* =====================================================
+   ERROR
+   ===================================================== */
 
-error.textContent=
-"Ingresá un ancho mayor a cero.";
+function mostrarError(mensaje){
 
-error.style.display="block";
+  error.textContent =
+    mensaje;
 
-return;
+  error.classList.add(
+    "activo"
+  );
 
-}
-
-
-if(
-!opcion ||
-!opcion.value
-){
-
-error.textContent=
-"Elegí un revestimiento.";
-
-error.style.display="block";
-
-return;
+  resultado.classList.remove(
+    "activo"
+  );
 
 }
 
 
-const rendimiento =
-parseFloat(
-opcion.dataset.rendimiento
-);
+/* =====================================================
+   FORMATO ARGENTINO
+   ===================================================== */
 
+function formatearNumero(numero){
 
-if(
-!Number.isFinite(rendimiento) ||
-rendimiento<=0
-){
-
-error.textContent=
-"No se pudo obtener el rendimiento del revestimiento seleccionado.";
-
-error.style.display="block";
-
-return;
-
-}
-
-
-/*
-1. SUPERFICIE REAL
-
-Largo × Ancho
-*/
-
-const superficieReal =
-largo * ancho;
-
-
-/*
-2. 10% DE DESPERDICIO
-
-Superficie real × 1.10
-*/
-
-const superficieConDesperdicio =
-superficieReal * 1.10;
-
-
-/*
-3. CAJAS
-
-Math.ceil siempre redondea
-hacia arriba.
-*/
-
-const cajas =
-Math.ceil(
-superficieConDesperdicio /
-rendimiento
-);
-
-
-/*
-4. METROS COMPRADOS
-
-Cajas × rendimiento
-*/
-
-const metrosComprados =
-cajas * rendimiento;
-
-
-document
-.getElementById("resultado-superficie")
-.textContent=
-superficieReal.toLocaleString(
-"es-AR",
-{
-minimumFractionDigits:2,
-maximumFractionDigits:2
-}
-)+" m²";
-
-
-document
-.getElementById("resultado-desperdicio")
-.textContent=
-superficieConDesperdicio.toLocaleString(
-"es-AR",
-{
-minimumFractionDigits:2,
-maximumFractionDigits:2
-}
-)+" m²";
-
-
-document
-.getElementById("resultado-cajas")
-.textContent=
-cajas+
-(cajas===1
-?" caja"
-:" cajas");
-
-
-document
-.getElementById("resultado-m2-comprados")
-.textContent=
-metrosComprados.toLocaleString(
-"es-AR",
-{
-minimumFractionDigits:2,
-maximumFractionDigits:2
-}
-)+" m²";
-
-
-resultado.classList.add("activo");
+  return numero.toLocaleString(
+    "es-AR",
+    {
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    }
+  );
 
 }
 
