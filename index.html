@@ -953,8 +953,9 @@ footer{
         </h2>
 
         <p>
-            Ingresá las medidas de tu piscina y estimá la superficie
-            necesaria para elegir tu revestimiento.
+            Ingresá las medidas de tu piscina y elegí el revestimiento.
+            ORIGEN estima la superficie, el desperdicio y la cantidad
+            de material necesaria.
         </p>
     </div>
 
@@ -962,19 +963,37 @@ footer{
 
         <div class="campo">
             <label for="largo">Largo de la piscina</label>
-            <input type="number" id="largo" placeholder="Ej. 8" min="0" step="0.01">
+            <input
+                type="number"
+                id="largo"
+                placeholder="Ej. 8"
+                min="0"
+                step="0.01"
+            >
             <span>metros</span>
         </div>
 
         <div class="campo">
             <label for="ancho">Ancho de la piscina</label>
-            <input type="number" id="ancho" placeholder="Ej. 4" min="0" step="0.01">
+            <input
+                type="number"
+                id="ancho"
+                placeholder="Ej. 4"
+                min="0"
+                step="0.01"
+            >
             <span>metros</span>
         </div>
 
         <div class="campo">
             <label for="profundidad">Profundidad promedio</label>
-            <input type="number" id="profundidad" placeholder="Ej. 1.50" min="0" step="0.01">
+            <input
+                type="number"
+                id="profundidad"
+                placeholder="Ej. 1.50"
+                min="0"
+                step="0.01"
+            >
             <span>metros</span>
         </div>
 
@@ -982,14 +1001,115 @@ footer{
             <label for="revestimiento">Elegí tu revestimiento</label>
 
             <select id="revestimiento">
-                <option value="">Seleccionar</option>
-                <option value="strufaldi">Strufaldi</option>
-                <option value="blue">Blue / Córsega</option>
-                <option value="java">Java</option>
+
+                <option value="">
+                    Seleccionar
+                </option>
+
+                <optgroup label="STRUFALDI">
+
+                    <option value="strufaldi-10">
+                        Strufaldi · Cerámica 10 × 10
+                    </option>
+
+                    <option value="strufaldi-20">
+                        Strufaldi · Cerámica 20 × 20
+                    </option>
+
+                </optgroup>
+
+                <optgroup label="VENECITAS · SU VENECITA">
+
+                    <option value="algarve">
+                        Algarve · 2,07 m²/caja
+                    </option>
+
+                    <option value="bodrum">
+                        Bodrum · 2,07 m²/caja
+                    </option>
+
+                    <option value="caribbean">
+                        Caribbean · 2,07 m²/caja
+                    </option>
+
+                    <option value="maldivas">
+                        Maldivas · 2,07 m²/caja
+                    </option>
+
+                    <option value="corsega">
+                        Córsega · 2,07 m²/caja
+                    </option>
+
+                    <option value="ibiza">
+                        Ibiza · 2,07 m²/caja
+                    </option>
+
+                    <option value="beige">
+                        Beige · 1,44 m²/caja
+                    </option>
+
+                    <option value="blue">
+                        Blue · 1,44 m²/caja
+                    </option>
+
+                    <option value="seychelles-claro">
+                        Seychelles Claro · 1,44 m²/caja
+                    </option>
+
+                    <option value="seychelles-oscuro">
+                        Seychelles Oscuro · 1,44 m²/caja
+                    </option>
+
+                    <option value="blanco">
+                        Blanco · 1,44 m²/caja
+                    </option>
+
+                    <option value="porcelanato">
+                        Porcelanato · 2,06 m²/caja
+                    </option>
+
+                </optgroup>
+
+                <optgroup label="VENECITA CLÁSICA">
+
+                    <option value="clasica">
+                        Venecita Clásica · 4,28 m²/caja
+                    </option>
+
+                </optgroup>
+
+                <optgroup label="VENECITA PREMIUM">
+
+                    <option value="premium">
+                        Venecita Premium · 2,00 m²/caja
+                    </option>
+
+                </optgroup>
+
+                <optgroup label="PIEDRA NATURAL">
+
+                    <option value="bali">
+                        Piedra Bali Natural · 1,00 m²/caja
+                    </option>
+
+                </optgroup>
+
+                <optgroup label="OTROS">
+
+                    <option value="travertino">
+                        Travertino
+                    </option>
+
+                </optgroup>
+
             </select>
         </div>
 
-        <button type="button" class="button" onclick="calcularPiscina()">
+        <button
+            type="button"
+            class="button"
+            onclick="calcularPiscina()"
+        >
             CALCULAR
         </button>
 
@@ -1025,7 +1145,10 @@ footer{
 
         </div>
 
-        <a href="https://wa.me/5491147004804" class="button">
+        <a
+            href="https://wa.me/5491147004804"
+            class="button"
+        >
             QUIERO COTIZAR MI PISCINA
         </a>
 
@@ -1033,7 +1156,6 @@ footer{
 
 </div>
 </section>
-
 
 <!-- MATERIA -->
 
