@@ -1334,6 +1334,7 @@ footer{
 
 </body>
   <script>
+<script>
 function calcularPiscina() {
 
     const largo = parseFloat(document.getElementById("largo").value);
@@ -1346,38 +1347,131 @@ function calcularPiscina() {
         return;
     }
 
-    /* Superficie real:
-       piso + cuatro paredes
-    */
+    /* ==========================================
+       SUPERFICIE REAL DE LA PISCINA
+       Piso + cuatro paredes
+       ========================================== */
+
     const superficiePiso = largo * ancho;
     const superficieParedes = 2 * (largo + ancho) * profundidad;
     const superficieReal = superficiePiso + superficieParedes;
 
-    /* ORIGEN: 10% de desperdicio */
+    /* ==========================================
+       REGLA ORIGEN
+       10% DE DESPERDICIO
+       ========================================== */
+
     const superficieConDesperdicio = superficieReal * 1.10;
 
-    let nombreMaterial = "";
+    /* ==========================================
+       RENDIMIENTOS POR CAJA
+       ========================================== */
+
+    const rendimientos = {
+
+        /* STRUFALDI */
+        "strufaldi-10": 1.95,
+        "strufaldi-20": 1.50,
+
+        /* VENECITAS · SU VENECITA */
+        "algarve": 2.07,
+        "bodrum": 2.07,
+        "caribbean": 2.07,
+        "maldivas": 2.07,
+        "corsega": 2.07,
+        "ibiza": 2.07,
+
+        "beige": 1.44,
+        "blue": 1.44,
+        "seychelles-claro": 1.44,
+        "seychelles-oscuro": 1.44,
+        "blanco": 1.44,
+
+        "porcelanato": 2.06,
+
+        /* VENECITA CLÁSICA */
+        "clasica": 4.28,
+
+        /* VENECITA PREMIUM */
+        "premium": 2.00,
+
+        /* PIEDRA NATURAL */
+        "bali": 1.00
+    };
+
+    /* ==========================================
+       NOMBRES PARA MOSTRAR
+       ========================================== */
+
+    const nombres = {
+
+        "strufaldi-10": "Strufaldi · Cerámica 10 × 10",
+        "strufaldi-20": "Strufaldi · Cerámica 20 × 20",
+
+        "algarve": "Algarve",
+        "bodrum": "Bodrum",
+        "caribbean": "Caribbean",
+        "maldivas": "Maldivas",
+        "corsega": "Córsega",
+        "ibiza": "Ibiza",
+
+        "beige": "Beige",
+        "blue": "Blue",
+        "seychelles-claro": "Seychelles Claro",
+        "seychelles-oscuro": "Seychelles Oscuro",
+        "blanco": "Blanco",
+
+        "porcelanato": "Porcelanato",
+
+        "clasica": "Venecita Clásica",
+        "premium": "Venecita Premium",
+
+        "bali": "Piedra Bali Natural",
+
+        "travertino": "Travertino"
+    };
+
+    const nombreMaterial = nombres[revestimiento] || "Revestimiento";
+
     let cantidadMaterial = "";
 
-    if (revestimiento === "strufaldi") {
+    /* ==========================================
+       TRAVERTINO
+       Se calcula por m² porque todavía no
+       definimos rendimiento por caja.
+       ========================================== */
 
-        nombreMaterial = "Strufaldi";
-        cantidadMaterial = superficieConDesperdicio.toFixed(2) + " m²";
+    if (revestimiento === "travertino") {
 
-    } else if (revestimiento === "blue") {
+        cantidadMaterial =
+            superficieConDesperdicio.toFixed(2) + " m²";
 
-        nombreMaterial = "Blue / Córsega";
+    } else {
 
-        /* 2,07 m² por caja */
-        const cajas = Math.ceil(superficieConDesperdicio / 2.07);
+        const rendimientoCaja = rendimientos[revestimiento];
 
-        cantidadMaterial = cajas + " cajas";
+        if (!rendimientoCaja) {
+            alert("Todavía no tenemos definido el rendimiento de este revestimiento.");
+            return;
+        }
 
-    } else if (revestimiento === "java") {
+        const cajas = Math.ceil(
+            superficieConDesperdicio / rendimientoCaja
+        );
 
-        nombreMaterial = "Java";
-        cantidadMaterial = superficieConDesperdicio.toFixed(2) + " m²";
+        const metrosComprados = cajas * rendimientoCaja;
+
+        cantidadMaterial =
+            cajas +
+            (cajas === 1 ? " caja" : " cajas") +
+            " · " +
+            metrosComprados.toFixed(2) +
+            " m²";
     }
+
+    /* ==========================================
+       MOSTRAR RESULTADO
+       ========================================== */
 
     document.getElementById("resultado-superficie").textContent =
         superficieReal.toFixed(2) + " m²";
@@ -1394,5 +1488,4 @@ function calcularPiscina() {
     document.getElementById("resultado-piscina").classList.add("activo");
 }
 </script>
-
 </html>
