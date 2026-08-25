@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ORIGEN SURFACES | Superficies · Materiales · Soluciones</title>
 
-<meta name="description" content="ORIGEN SURFACES. Superficies, materiales y soluciones para transformar espacios.">
+<meta
+name="description"
+content="ORIGEN SURFACES. Superficies, materiales y soluciones para transformar espacios."
+>
 
 <style>
+
 :root{
   --fondo:#f7f4ee;
   --fondo-verde:#eef1ec;
@@ -55,6 +62,10 @@ select{
   margin:auto;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 header{
   height:88px;
   position:sticky;
@@ -96,6 +107,10 @@ header{
   color:var(--verde);
 }
 
+/* =========================
+   BOTONES
+========================= */
+
 .button{
   display:inline-flex;
   align-items:center;
@@ -118,6 +133,10 @@ header{
   transform:translateY(-2px);
 }
 
+/* =========================
+   TIPOGRAFÍA
+========================= */
+
 .eyebrow{
   font-size:11px;
   letter-spacing:.34em;
@@ -139,7 +158,9 @@ h3 em{
   font-style:italic;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:calc(100vh - 88px);
@@ -152,7 +173,11 @@ h3 em{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  background:linear-gradient(135deg,#f7f4ee 0%,#eee8dc 100%);
+  background:linear-gradient(
+    135deg,
+    #f7f4ee 0%,
+    #eee8dc 100%
+  );
 }
 
 .hero h1{
@@ -192,7 +217,9 @@ h3 em{
   display:block;
 }
 
-/* INTRO */
+/* =========================
+   INTRO
+========================= */
 
 .intro{
   padding:130px 0;
@@ -218,7 +245,9 @@ h3 em{
   color:#656963;
 }
 
-/* PISCINAS */
+/* =========================
+   PISCINAS
+========================= */
 
 .piscinas{
   padding:120px 0;
@@ -257,7 +286,9 @@ h3 em{
   font-size:17px;
 }
 
-/* CALCULADORA */
+/* =========================
+   CALCULADORA
+========================= */
 
 .calculadora-piscina{
   margin-top:70px;
@@ -267,6 +298,7 @@ h3 em{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:55px;
+  align-items:start;
 }
 
 .calculadora-intro .eyebrow{
@@ -322,6 +354,7 @@ h3 em{
   background:#fff;
   color:var(--texto);
   outline:none;
+  transition:.2s ease;
 }
 
 .campo input:focus,
@@ -352,7 +385,9 @@ h3 em{
   width:100%;
 }
 
-/* RESULTADO */
+/* =========================
+   RESULTADO
+========================= */
 
 .resultado-piscina{
   grid-column:1 / -1;
@@ -404,7 +439,9 @@ h3 em{
   width:auto !important;
 }
 
-/* MATERIA */
+/* =========================
+   MATERIA
+========================= */
 
 .materia{
   padding:130px 0;
@@ -442,7 +479,9 @@ h3 em{
   font-size:17px;
 }
 
-/* PROYECTOS */
+/* =========================
+   PROYECTOS
+========================= */
 
 .proyectos{
   padding:130px 0;
@@ -493,7 +532,9 @@ h3 em{
   color:#d9dfdb;
 }
 
-/* ORIGEN */
+/* =========================
+   ORIGEN
+========================= */
 
 .origen{
   padding:150px 0;
@@ -518,7 +559,9 @@ h3 em{
   line-height:1.75;
 }
 
-/* CONTACTO */
+/* =========================
+   CONTACTO
+========================= */
 
 .contacto{
   padding:120px 0;
@@ -548,7 +591,9 @@ h3 em{
   color:var(--verde);
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   padding:30px 0;
@@ -563,7 +608,9 @@ footer{
   justify-content:space-between;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:1000px){
 
@@ -592,11 +639,6 @@ footer{
     grid-template-columns:1fr 1fr;
   }
 
-  .piscina-copy,
-  .materia-copy,
-  .proyecto-copy{
-    padding:55px 35px;
-  }
 }
 
 @media(max-width:650px){
@@ -657,13 +699,17 @@ footer{
     flex-direction:column;
     gap:12px;
   }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
 <header>
+
   <div class="container nav">
 
     <a href="#inicio" class="logo">
@@ -678,11 +724,15 @@ footer{
     </nav>
 
   </div>
+
 </header>
+
 
 <main id="inicio">
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -703,8 +753,9 @@ footer{
     </div>
 
     <p class="hero-text">
-      Seleccionamos superficies y materiales para ayudarte a encontrar
-      la solución adecuada para tu espacio, tu estilo y tu proyecto.
+      Seleccionamos superficies y materiales para ayudarte
+      a encontrar la solución adecuada para tu espacio,
+      tu estilo y tu proyecto.
     </p>
 
     <a href="#origen" class="button">
@@ -714,15 +765,20 @@ footer{
   </div>
 
   <div class="hero-photo">
+
     <img
       src="4523e62bbfeec5d5ad60836e75814d5f.jpg"
       alt="Interior contemporáneo"
     >
+
   </div>
 
 </section>
 
-<!-- INTRO -->
+
+<!-- =========================
+     INTRO
+========================= -->
 
 <section class="intro">
 
@@ -744,8 +800,9 @@ footer{
 
       <p>
         Creemos que una superficie no es solamente un acabado.
-        Cambia la manera en que habitamos un espacio, cómo entra la luz,
-        cómo se siente una textura y cómo se relaciona cada elemento.
+        Cambia la manera en que habitamos un espacio,
+        cómo entra la luz, cómo se siente una textura
+        y cómo se relaciona cada elemento.
       </p>
 
       <br>
@@ -761,17 +818,22 @@ footer{
 
 </section>
 
-<!-- PISCINAS -->
+
+<!-- =========================
+     PISCINAS
+========================= -->
 
 <section class="piscinas" id="piscinas">
 
   <div class="container piscina-grid">
 
     <div class="piscina-photo">
+
       <img
         src="10972ded-f193-42f2-8874-64af8b932a44.png"
         alt="Piscina contemporánea"
       >
+
     </div>
 
     <div class="piscina-copy">
@@ -799,11 +861,17 @@ footer{
 
   </div>
 
-  <!-- CALCULADORA -->
+
+  <!-- =========================
+       CALCULADORA ORIGEN
+  ========================= -->
 
   <div class="container">
 
-    <div class="calculadora-piscina" id="calculadora">
+    <div
+      class="calculadora-piscina"
+      id="calculadora"
+    >
 
       <div class="calculadora-intro">
 
@@ -817,16 +885,19 @@ footer{
         </h2>
 
         <p>
-          Ingresá las medidas de tu piscina y elegí el revestimiento.
-          ORIGEN calcula el piso, las paredes, agrega automáticamente
-          un 10% de desperdicio y determina las cajas necesarias.
+          Ingresá el largo, ancho y profundidad promedio
+          de tu piscina y elegí el revestimiento.
+          ORIGEN calcula el piso, las paredes, agrega
+          automáticamente un 10% de desperdicio y determina
+          la cantidad de cajas necesarias.
         </p>
 
       </div>
 
+
       <div class="calculadora-form">
 
-        <!-- MEDIDAS -->
+        <!-- LARGO Y ANCHO -->
 
         <div class="inputs-paralelos">
 
@@ -851,6 +922,7 @@ footer{
 
           </div>
 
+
           <div class="campo">
 
             <label for="ancho">
@@ -874,6 +946,9 @@ footer{
 
         </div>
 
+
+        <!-- PROFUNDIDAD -->
+
         <div class="campo">
 
           <label for="profundidad">
@@ -890,10 +965,11 @@ footer{
           >
 
           <span>
-            metros
+            metros · se utiliza para calcular las paredes
           </span>
 
         </div>
+
 
         <!-- REVESTIMIENTO -->
 
@@ -909,161 +985,269 @@ footer{
               Seleccionar
             </option>
 
+
             <optgroup label="CERÁMICA 10 × 10">
 
-              <option value="1.95" data-nombre="Moorea · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Moorea · 10 × 10"
+              >
                 Moorea · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Tonga · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Tonga · 10 × 10"
+              >
                 Tonga · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Kauai · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Kauai · 10 × 10"
+              >
                 Kauai · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Samoa Bright · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Samoa Bright · 10 × 10"
+              >
                 Samoa Bright · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Malawi · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Malawi · 10 × 10"
+              >
                 Malawi · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Portland · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Portland · 10 × 10"
+              >
                 Portland · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Palau Bright · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Palau Bright · 10 × 10"
+              >
                 Palau Bright · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Vis · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Vis · 10 × 10"
+              >
                 Vis · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Samoa · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Samoa · 10 × 10"
+              >
                 Samoa · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Palau · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Palau · 10 × 10"
+              >
                 Palau · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Mauí · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Mauí · 10 × 10"
+              >
                 Mauí · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Kaimú · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Kaimú · 10 × 10"
+              >
                 Kaimú · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Cobalto · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Cobalto · 10 × 10"
+              >
                 Cobalto · 10 × 10 · 1,95 m²/caja
               </option>
 
-              <option value="1.95" data-nombre="Céu · 10 × 10">
+              <option
+                value="1.95"
+                data-nombre="Céu · 10 × 10"
+              >
                 Céu · 10 × 10 · 1,95 m²/caja
               </option>
 
             </optgroup>
 
+
             <optgroup label="CERÁMICA 20 × 20">
 
-              <option value="1.50" data-nombre="Palau · 20 × 20">
+              <option
+                value="1.50"
+                data-nombre="Palau · 20 × 20"
+              >
                 Palau · 20 × 20 · 1,50 m²/caja
               </option>
 
-              <option value="1.50" data-nombre="Kaimú · 20 × 20">
+              <option
+                value="1.50"
+                data-nombre="Kaimú · 20 × 20"
+              >
                 Kaimú · 20 × 20 · 1,50 m²/caja
               </option>
 
-              <option value="1.50" data-nombre="Vis · 20 × 20">
+              <option
+                value="1.50"
+                data-nombre="Vis · 20 × 20"
+              >
                 Vis · 20 × 20 · 1,50 m²/caja
               </option>
 
-              <option value="1.50" data-nombre="Portland · 20 × 20">
+              <option
+                value="1.50"
+                data-nombre="Portland · 20 × 20"
+              >
                 Portland · 20 × 20 · 1,50 m²/caja
               </option>
 
-              <option value="1.50" data-nombre="Malawi · 20 × 20">
+              <option
+                value="1.50"
+                data-nombre="Malawi · 20 × 20"
+              >
                 Malawi · 20 × 20 · 1,50 m²/caja
               </option>
 
             </optgroup>
 
+
             <optgroup label="REVESTIMIENTOS · 2,07 m²/caja">
 
-              <option value="2.07" data-nombre="Algarve">
+              <option
+                value="2.07"
+                data-nombre="Algarve"
+              >
                 Algarve · 2,07 m²/caja
               </option>
 
-              <option value="2.07" data-nombre="Bodrum">
+              <option
+                value="2.07"
+                data-nombre="Bodrum"
+              >
                 Bodrum · 2,07 m²/caja
               </option>
 
-              <option value="2.07" data-nombre="Caribbean">
+              <option
+                value="2.07"
+                data-nombre="Caribbean"
+              >
                 Caribbean · 2,07 m²/caja
               </option>
 
-              <option value="2.07" data-nombre="Maldivas">
+              <option
+                value="2.07"
+                data-nombre="Maldivas"
+              >
                 Maldivas · 2,07 m²/caja
               </option>
 
-              <option value="2.07" data-nombre="Córsega">
+              <option
+                value="2.07"
+                data-nombre="Córsega"
+              >
                 Córsega · 2,07 m²/caja
               </option>
 
-              <option value="2.07" data-nombre="Ibiza">
+              <option
+                value="2.07"
+                data-nombre="Ibiza"
+              >
                 Ibiza · 2,07 m²/caja
               </option>
 
             </optgroup>
 
+
             <optgroup label="REVESTIMIENTOS · 1,44 m²/caja">
 
-              <option value="1.44" data-nombre="Beige">
+              <option
+                value="1.44"
+                data-nombre="Beige"
+              >
                 Beige · 1,44 m²/caja
               </option>
 
-              <option value="1.44" data-nombre="Blue">
+              <option
+                value="1.44"
+                data-nombre="Blue"
+              >
                 Blue · 1,44 m²/caja
               </option>
 
-              <option value="1.44" data-nombre="Seychelles Claro">
+              <option
+                value="1.44"
+                data-nombre="Seychelles Claro"
+              >
                 Seychelles Claro · 1,44 m²/caja
               </option>
 
-              <option value="1.44" data-nombre="Seychelles Oscuro">
+              <option
+                value="1.44"
+                data-nombre="Seychelles Oscuro"
+              >
                 Seychelles Oscuro · 1,44 m²/caja
               </option>
 
-              <option value="1.44" data-nombre="Blanco">
+              <option
+                value="1.44"
+                data-nombre="Blanco"
+              >
                 Blanco · 1,44 m²/caja
               </option>
 
             </optgroup>
 
+
             <optgroup label="VENECITA">
 
-              <option value="4.28" data-nombre="Venecita Clásica">
+              <option
+                value="4.28"
+                data-nombre="Venecita Clásica"
+              >
                 Venecita Clásica · 4,28 m²/caja
               </option>
 
-              <option value="2.00" data-nombre="Venecita Premium">
+              <option
+                value="2.00"
+                data-nombre="Venecita Premium"
+              >
                 Venecita Premium · 2,00 m²/caja
               </option>
 
             </optgroup>
 
+
             <optgroup label="PIEDRA BALI · 10 × 10">
 
-              <option value="1.00" data-nombre="Piedra Bali Black · 10 × 10">
+              <option
+                value="1.00"
+                data-nombre="Piedra Bali Black · 10 × 10"
+              >
                 Piedra Bali Black · 10 × 10 · 1,00 m²/caja
               </option>
 
-              <option value="1.00" data-nombre="Piedra Bali Green · 10 × 10">
+              <option
+                value="1.00"
+                data-nombre="Piedra Bali Green · 10 × 10"
+              >
                 Piedra Bali Green · 10 × 10 · 1,00 m²/caja
               </option>
 
@@ -1077,10 +1261,12 @@ footer{
 
         </div>
 
+
         <div
           id="errorCalculadora"
           class="error-calculadora"
         ></div>
+
 
         <button
           type="button"
@@ -1092,7 +1278,10 @@ footer{
 
       </div>
 
-      <!-- RESULTADO -->
+
+      <!-- =========================
+           RESULTADO
+      ========================= -->
 
       <div
         id="resultado"
@@ -1102,6 +1291,7 @@ footer{
         <div class="resultado-titulo">
           Tu estimación ORIGEN
         </div>
+
 
         <div class="resultado-datos">
 
@@ -1127,6 +1317,7 @@ footer{
 
         </div>
 
+
         <a
           id="whatsapp"
           href="#"
@@ -1145,17 +1336,22 @@ footer{
 
 </section>
 
-<!-- MATERIA -->
+
+<!-- =========================
+     MATERIA
+========================= -->
 
 <section class="materia">
 
   <div class="container materia-grid">
 
     <div class="materia-photo">
+
       <img
         src="9c7236e83277cf400b03c5c4deff2a32.jpg"
         alt="Materiales y superficies"
       >
+
     </div>
 
     <div class="materia-copy">
@@ -1171,8 +1367,9 @@ footer{
       </h2>
 
       <p>
-        Una misma textura puede transformar completamente su apariencia
-        cuando entra en contacto con el agua, la luz o el entorno.
+        Una misma textura puede transformar completamente
+        su apariencia cuando entra en contacto con el agua,
+        la luz o el entorno.
       </p>
 
     </div>
@@ -1181,7 +1378,10 @@ footer{
 
 </section>
 
-<!-- PROYECTOS -->
+
+<!-- =========================
+     PROYECTOS
+========================= -->
 
 <section class="proyectos">
 
@@ -1200,14 +1400,18 @@ footer{
 
     </div>
 
+
     <div class="proyecto">
 
       <div class="proyecto-photo">
+
         <img
           src="32643f41df2848c16278f4a11da80f01.jpg"
           alt="Proyecto ORIGEN SURFACES"
         >
+
       </div>
+
 
       <div class="proyecto-copy">
 
@@ -1223,8 +1427,8 @@ footer{
 
         <p>
           Acompañamos cada proyecto en la elección de materiales,
-          pensando en la arquitectura, el espacio y la forma en que
-          va a ser vivido.
+          pensando en la arquitectura, el espacio y la forma
+          en que va a ser vivido.
         </p>
 
       </div>
@@ -1235,7 +1439,10 @@ footer{
 
 </section>
 
-<!-- ORIGEN -->
+
+<!-- =========================
+     ORIGEN
+========================= -->
 
 <section class="origen" id="origen">
 
@@ -1255,20 +1462,23 @@ footer{
       ORIGEN SURFACES nace para conectar proyectos con materiales,
       superficies y soluciones.
 
-      Seleccionamos cada propuesta pensando en el espacio, el estilo
-      y la forma en que va a ser vivido.
+      Seleccionamos cada propuesta pensando en el espacio,
+      el estilo y la forma en que va a ser vivido.
 
       <br><br>
 
-      Trabajamos para que elegir una superficie sea un proceso más simple,
-      más claro y más conectado con el proyecto.
+      Trabajamos para que elegir una superficie sea un proceso
+      más simple, más claro y más conectado con el proyecto.
     </p>
 
   </div>
 
 </section>
 
-<!-- CONTACTO -->
+
+<!-- =========================
+     CONTACTO
+========================= -->
 
 <section class="contacto" id="contacto">
 
@@ -1284,8 +1494,8 @@ footer{
     </h2>
 
     <p>
-      Contanos qué estás proyectando y te ayudamos a encontrar
-      la superficie adecuada.
+      Contanos qué estás proyectando y te ayudamos
+      a encontrar la superficie adecuada.
     </p>
 
     <a
@@ -1302,6 +1512,7 @@ footer{
 </section>
 
 </main>
+
 
 <footer>
 
@@ -1328,357 +1539,374 @@ footer{
    PISO + 4 PAREDES + 10% DESPERDICIO
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
 
-  const largoInput =
-    document.getElementById("largo");
+    const largoInput =
+      document.getElementById("largo");
 
-  const anchoInput =
-    document.getElementById("ancho");
+    const anchoInput =
+      document.getElementById("ancho");
 
-  const profundidadInput =
-    document.getElementById("profundidad");
+    const profundidadInput =
+      document.getElementById("profundidad");
 
-  const revestimientoInput =
-    document.getElementById("revestimiento");
+    const revestimientoInput =
+      document.getElementById("revestimiento");
 
-  const botonCalcular =
-    document.getElementById("calcular");
+    const botonCalcular =
+      document.getElementById("calcular");
 
-  const errorBox =
-    document.getElementById("errorCalculadora");
+    const errorBox =
+      document.getElementById("errorCalculadora");
 
-  const resultadoBox =
-    document.getElementById("resultado");
+    const resultadoBox =
+      document.getElementById("resultado");
 
-  const whatsapp =
-    document.getElementById("whatsapp");
+    const whatsapp =
+      document.getElementById("whatsapp");
 
 
-  /* =====================================================
-     FORMATO ARGENTINO
-  ===================================================== */
+    /* =========================
+       FORMATO ARGENTINO
+    ========================= */
 
-  function formato(numero){
+    function formato(numero){
 
-    return numero.toLocaleString(
-      "es-AR",
-      {
-        minimumFractionDigits:2,
-        maximumFractionDigits:2
-      }
+      return numero.toLocaleString(
+        "es-AR",
+        {
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
+        }
+      );
+
+    }
+
+
+    /* =========================
+       CONVERTIR NÚMERO
+    ========================= */
+
+    function convertirNumero(valor){
+
+      return parseFloat(
+        String(valor)
+          .trim()
+          .replace(",", ".")
+      );
+
+    }
+
+
+    /* =========================
+       LIMPIAR ERROR / RESULTADO
+    ========================= */
+
+    function limpiarResultado(){
+
+      errorBox.textContent = "";
+
+      errorBox.classList.remove(
+        "activo"
+      );
+
+      resultadoBox.classList.remove(
+        "activo"
+      );
+
+      whatsapp.href = "#";
+
+    }
+
+
+    /* =========================
+       LIMPIAR AL CAMBIAR DATOS
+    ========================= */
+
+    largoInput.addEventListener(
+      "input",
+      limpiarResultado
     );
 
-  }
-
-
-  /* =====================================================
-     CONVERTIR COMA EN PUNTO
-  ===================================================== */
-
-  function numero(valor){
-
-    return parseFloat(
-      String(valor).replace(",", ".")
+    anchoInput.addEventListener(
+      "input",
+      limpiarResultado
     );
 
-  }
-
-
-  /* =====================================================
-     LIMPIAR RESULTADO
-  ===================================================== */
-
-  function limpiar(){
-
-    errorBox.textContent = "";
-
-    errorBox.classList.remove(
-      "activo"
+    profundidadInput.addEventListener(
+      "input",
+      limpiarResultado
     );
 
-    resultadoBox.classList.remove(
-      "activo"
+    revestimientoInput.addEventListener(
+      "change",
+      limpiarResultado
     );
 
-    whatsapp.href = "#";
 
-  }
+    /* =========================
+       BOTÓN CALCULAR
+    ========================= */
 
+    botonCalcular.addEventListener(
+      "click",
+      function(){
 
-  /* =====================================================
-     LIMPIAR AL MODIFICAR DATOS
-  ===================================================== */
+        limpiarResultado();
 
-  largoInput.addEventListener(
-    "input",
-    limpiar
-  );
 
-  anchoInput.addEventListener(
-    "input",
-    limpiar
-  );
+        const largo =
+          convertirNumero(
+            largoInput.value
+          );
 
-  profundidadInput.addEventListener(
-    "input",
-    limpiar
-  );
+        const ancho =
+          convertirNumero(
+            anchoInput.value
+          );
 
-  revestimientoInput.addEventListener(
-    "change",
-    limpiar
-  );
+        const profundidad =
+          convertirNumero(
+            profundidadInput.value
+          );
 
 
-  /* =====================================================
-     CALCULAR
-  ===================================================== */
+        const opcion =
+          revestimientoInput.options[
+            revestimientoInput.selectedIndex
+          ];
 
-  botonCalcular.addEventListener(
-    "click",
-    function(){
 
-      limpiar();
+        /* =========================
+           VALIDACIONES
+        ========================= */
 
+        if(
+          !Number.isFinite(largo) ||
+          largo <= 0
+        ){
 
-      const largo =
-        numero(largoInput.value);
+          mostrarError(
+            "Ingresá un largo de piscina válido."
+          );
 
-      const ancho =
-        numero(anchoInput.value);
+          return;
 
-      const profundidad =
-        numero(profundidadInput.value);
+        }
 
 
-      const opcion =
-        revestimientoInput.options[
-          revestimientoInput.selectedIndex
-        ];
+        if(
+          !Number.isFinite(ancho) ||
+          ancho <= 0
+        ){
 
+          mostrarError(
+            "Ingresá un ancho de piscina válido."
+          );
 
-      /* ===============================================
-         VALIDACIONES
-      =============================================== */
+          return;
 
-      if(
-        !Number.isFinite(largo) ||
-        largo <= 0
-      ){
+        }
 
-        mostrarError(
-          "Ingresá un largo válido."
-        );
 
-        return;
+        if(
+          !Number.isFinite(profundidad) ||
+          profundidad <= 0
+        ){
 
-      }
+          mostrarError(
+            "Ingresá una profundidad promedio válida."
+          );
 
+          return;
 
-      if(
-        !Number.isFinite(ancho) ||
-        ancho <= 0
-      ){
+        }
 
-        mostrarError(
-          "Ingresá un ancho válido."
-        );
 
-        return;
+        if(
+          !opcion ||
+          !opcion.value
+        ){
 
-      }
+          mostrarError(
+            "Elegí un revestimiento."
+          );
 
+          return;
 
-      if(
-        !Number.isFinite(profundidad) ||
-        profundidad <= 0
-      ){
+        }
 
-        mostrarError(
-          "Ingresá una profundidad promedio válida."
-        );
 
-        return;
+        const rendimiento =
+          convertirNumero(
+            opcion.value
+          );
 
-      }
 
+        if(
+          !Number.isFinite(rendimiento) ||
+          rendimiento <= 0
+        ){
 
-      if(
-        !opcion ||
-        !opcion.value
-      ){
+          mostrarError(
+            "No se pudo obtener el rendimiento del revestimiento."
+          );
 
-        mostrarError(
-          "Elegí un revestimiento."
-        );
+          return;
 
-        return;
+        }
 
-      }
 
+        /* =====================================================
+           1. PISO
+           
+           LARGO × ANCHO
+        ===================================================== */
 
-      const rendimiento =
-        numero(opcion.value);
+        const superficiePiso =
+          largo * ancho;
 
 
-      if(
-        !Number.isFinite(rendimiento) ||
-        rendimiento <= 0
-      ){
+        /* =====================================================
+           2. DOS PAREDES LARGAS
+           
+           LARGO × PROFUNDIDAD × 2
+        ===================================================== */
 
-        mostrarError(
-          "No se pudo obtener el rendimiento del revestimiento."
-        );
+        const superficieParedesLargas =
+          largo *
+          profundidad *
+          2;
 
-        return;
 
-      }
+        /* =====================================================
+           3. DOS PAREDES CORTAS
+           
+           ANCHO × PROFUNDIDAD × 2
+        ===================================================== */
 
+        const superficieParedesCortas =
+          ancho *
+          profundidad *
+          2;
 
-      /* ===============================================
-         1. PISO
-         
-         LARGO × ANCHO
-      =============================================== */
 
-      const piso =
-        largo * ancho;
+        /* =====================================================
+           4. SUPERFICIE REAL TOTAL
+           
+           PISO + PAREDES LARGAS + PAREDES CORTAS
+        ===================================================== */
 
+        const superficieReal =
+          superficiePiso +
+          superficieParedesLargas +
+          superficieParedesCortas;
 
-      /* ===============================================
-         2. PAREDES LARGAS
-         
-         LARGO × PROFUNDIDAD × 2
-      =============================================== */
 
-      const paredesLargas =
-        largo * profundidad * 2;
+        /* =====================================================
+           5. SUMAR 10% DE DESPERDICIO
+        ===================================================== */
 
+        const superficieConDesperdicio =
+          superficieReal * 1.10;
 
-      /* ===============================================
-         3. PAREDES CORTAS
-         
-         ANCHO × PROFUNDIDAD × 2
-      =============================================== */
 
-      const paredesCortas =
-        ancho * profundidad * 2;
+        /* =====================================================
+           REDONDEO VISUAL A 2 DECIMALES
+        ===================================================== */
 
+        const superficieRealFinal =
+          Number(
+            superficieReal.toFixed(2)
+          );
 
-      /* ===============================================
-         4. SUPERFICIE REAL
-         
-         PISO + PAREDES
-      =============================================== */
 
-      const superficieReal =
-        piso +
-        paredesLargas +
-        paredesCortas;
+        const superficieDesperdicioFinal =
+          Number(
+            superficieConDesperdicio.toFixed(2)
+          );
 
 
-      /* ===============================================
-         5. 10% DE DESPERDICIO
-      =============================================== */
+        /* =====================================================
+           6. CALCULAR CAJAS
+           
+           SIEMPRE REDONDEAR HACIA ARRIBA
+        ===================================================== */
 
-      const superficieConDesperdicio =
-        superficieReal * 1.10;
-
-
-      /* ===============================================
-         REDONDEAR A 2 DECIMALES
-      =============================================== */
-
-      const superficieRealRedondeada =
-        Number(
-          superficieReal.toFixed(2)
-        );
-
-      const superficieDesperdicioRedondeada =
-        Number(
-          superficieConDesperdicio.toFixed(2)
-        );
-
-
-      /* ===============================================
-         6. CAJAS
-         
-         SIEMPRE HACIA ARRIBA
-      =============================================== */
-
-      const cajas =
-        Math.ceil(
-          superficieDesperdicioRedondeada /
-          rendimiento
-        );
-
-
-      /* ===============================================
-         7. M² REALMENTE COMPRADOS
-      =============================================== */
-
-      const m2Comprados =
-        Number(
-          (
-            cajas *
+        const cajasNecesarias =
+          Math.ceil(
+            superficieDesperdicioFinal /
             rendimiento
-          ).toFixed(2)
-        );
+          );
 
 
-      /* ===============================================
-         MOSTRAR RESULTADOS
-      =============================================== */
+        /* =====================================================
+           7. METROS CUADRADOS REALMENTE COMPRADOS
+        ===================================================== */
 
-      document.getElementById(
-        "superficieReal"
-      ).textContent =
-        formato(
-          superficieRealRedondeada
-        ) +
-        " m²";
-
-
-      document.getElementById(
-        "superficieDesperdicio"
-      ).textContent =
-        formato(
-          superficieDesperdicioRedondeada
-        ) +
-        " m²";
+        const totalM2Comprados =
+          Number(
+            (
+              cajasNecesarias *
+              rendimiento
+            ).toFixed(2)
+          );
 
 
-      document.getElementById(
-        "cajasNecesarias"
-      ).textContent =
-        cajas +
-        (
-          cajas === 1
-            ? " caja"
-            : " cajas"
-        );
+        /* =====================================================
+           MOSTRAR RESULTADOS
+        ===================================================== */
+
+        document.getElementById(
+          "superficieReal"
+        ).textContent =
+          formato(
+            superficieRealFinal
+          ) +
+          " m²";
 
 
-      document.getElementById(
-        "m2Comprados"
-      ).textContent =
-        formato(
-          m2Comprados
-        ) +
-        " m²";
+        document.getElementById(
+          "superficieDesperdicio"
+        ).textContent =
+          formato(
+            superficieDesperdicioFinal
+          ) +
+          " m²";
 
 
-      /* ===============================================
-         WHATSAPP
-      =============================================== */
+        document.getElementById(
+          "cajasNecesarias"
+        ).textContent =
+          cajasNecesarias +
+          (
+            cajasNecesarias === 1
+              ? " caja"
+              : " cajas"
+          );
 
-      const nombreProducto =
-        opcion.dataset.nombre ||
-        opcion.textContent.trim();
+
+        document.getElementById(
+          "m2Comprados"
+        ).textContent =
+          formato(
+            totalM2Comprados
+          ) +
+          " m²";
 
 
-      const mensaje =
+        /* =====================================================
+           WHATSAPP
+        ===================================================== */
+
+        const nombreProducto =
+          opcion.dataset.nombre ||
+          opcion.textContent.trim();
+
+
+        const mensaje =
 `Hola ORIGEN, usé la calculadora de la web y quiero cotizar mi piscina.
 
 Revestimiento: ${nombreProducto}
@@ -1687,58 +1915,59 @@ Largo: ${formato(largo)} m
 Ancho: ${formato(ancho)} m
 Profundidad promedio: ${formato(profundidad)} m
 
-Superficie real: ${formato(superficieRealRedondeada)} m²
-Superficie con 10% de desperdicio: ${formato(superficieDesperdicioRedondeada)} m²
+Superficie real: ${formato(superficieRealFinal)} m²
+Superficie con 10% de desperdicio: ${formato(superficieDesperdicioFinal)} m²
 
-Cajas a comprar: ${cajas}
-Total de m² que voy a comprar: ${formato(m2Comprados)} m²`;
+Cajas a comprar: ${cajasNecesarias}
+Total de m² que voy a comprar: ${formato(totalM2Comprados)} m²`;
 
 
-      whatsapp.href =
-        "https://wa.me/5491147004804?text=" +
-        encodeURIComponent(
-          mensaje
+        whatsapp.href =
+          "https://wa.me/5491147004804?text=" +
+          encodeURIComponent(
+            mensaje
+          );
+
+
+        /* =====================================================
+           MOSTRAR RESULTADO
+        ===================================================== */
+
+        resultadoBox.classList.add(
+          "activo"
         );
 
 
-      /* ===============================================
-         MOSTRAR RESULTADO
-      =============================================== */
+        resultadoBox.scrollIntoView({
+          behavior:"smooth",
+          block:"nearest"
+        });
 
-      resultadoBox.classList.add(
+      }
+    );
+
+
+    /* =========================
+       MOSTRAR ERROR
+    ========================= */
+
+    function mostrarError(mensaje){
+
+      errorBox.textContent =
+        mensaje;
+
+      errorBox.classList.add(
         "activo"
       );
 
-
-      resultadoBox.scrollIntoView({
-        behavior:"smooth",
-        block:"nearest"
-      });
+      resultadoBox.classList.remove(
+        "activo"
+      );
 
     }
-  );
-
-
-  /* =====================================================
-     MOSTRAR ERROR
-  ===================================================== */
-
-  function mostrarError(mensaje){
-
-    errorBox.textContent =
-      mensaje;
-
-    errorBox.classList.add(
-      "activo"
-    );
-
-    resultadoBox.classList.remove(
-      "activo"
-    );
 
   }
-
-});
+);
 
 </script>
 
