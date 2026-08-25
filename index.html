@@ -1431,47 +1431,47 @@ function calcularPiscina() {
 
            };
 
-    const nombreMaterial = nombres[revestimiento] || "Revestimiento";
+const nombreMaterial = nombres[revestimiento] || "Revestimiento";
 
-   let cantidadMaterial = "";
+let cantidadMaterial = "";
 
 const rendimientoCaja = rendimientos[revestimiento];
 
-       if (!rendimientoCaja) {
-        alert("Todavía no tenemos definido el rendimiento de este revestimiento.");
-        return;
-    }
-
-    const cajas = Math.ceil(
-        superficieConDesperdicio / rendimientoCaja
-    );
-
-    const metrosComprados = cajas * rendimientoCaja;
-
-    cantidadMaterial =
-        cajas +
-        (cajas === 1 ? " caja" : " cajas") +
-        " · " +
-        metrosComprados.toFixed(2) +
-        " m²";
+if (!rendimientoCaja) {
+    alert("Todavía no tenemos definido el rendimiento de este revestimiento.");
+    return;
 }
-    /* ==========================================
-       MOSTRAR RESULTADO
-       ========================================== */
 
-    document.getElementById("resultado-superficie").textContent =
-        superficieReal.toFixed(2) + " m²";
+const cajas = Math.ceil(
+    superficieConDesperdicio / rendimientoCaja
+);
 
-    document.getElementById("resultado-desperdicio").textContent =
-        superficieConDesperdicio.toFixed(2) + " m²";
+const metrosComprados = cajas * rendimientoCaja;
 
-    document.getElementById("resultado-material").textContent =
-        nombreMaterial;
+cantidadMaterial =
+    cajas +
+    (cajas === 1 ? " caja" : " cajas") +
+    " · " +
+    metrosComprados.toFixed(2) +
+    " m²";
 
-    document.getElementById("resultado-cantidad").textContent =
-        cantidadMaterial;
+/* ==========================================
+   MOSTRAR RESULTADO
+   ========================================== */
 
-    document.getElementById("resultado-piscina").classList.add("activo");
+document.getElementById("resultado-superficie").textContent =
+    superficieReal.toFixed(2) + " m²";
+
+document.getElementById("resultado-desperdicio").textContent =
+    superficieConDesperdicio.toFixed(2) + " m²";
+
+document.getElementById("resultado-material").textContent =
+    nombreMaterial;
+
+document.getElementById("resultado-cantidad").textContent =
+    cantidadMaterial;
+
+document.getElementById("resultado-piscina").classList.add("activo");
 }
 </script>
 </html>
