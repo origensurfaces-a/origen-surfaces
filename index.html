@@ -16,6 +16,11 @@ content="ORIGEN SURFACES. Superficies, materiales y soluciones para transformar 
 
 <style>
 
+/* =========================================================
+   ORIGEN SURFACES
+   ESTILOS GENERALES
+========================================================= */
+
 :root{
   --fondo:#f7f4ee;
   --fondo-verde:#eef1ec;
@@ -58,15 +63,21 @@ a{
   text-decoration:none;
 }
 
+button,
+input,
+select{
+  font:inherit;
+}
+
 .container{
-  width:min(1320px,calc(100% - 100px));
+  width:min(1320px,calc(100% - 80px));
   margin:auto;
 }
 
 
-/* =========================
-   NAV
-========================= */
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
   height:96px;
@@ -74,7 +85,7 @@ header{
   background:rgba(247,244,238,.97);
   position:sticky;
   top:0;
-  z-index:20;
+  z-index:100;
 }
 
 .nav{
@@ -101,9 +112,9 @@ header{
 
 .menu{
   display:flex;
-  gap:40px;
+  gap:38px;
   color:#666862;
-  font-size:15px;
+  font-size:14px;
 }
 
 .menu a{
@@ -115,9 +126,9 @@ header{
 }
 
 
-/* =========================
+/* =========================================================
    BOTONES
-========================= */
+========================================================= */
 
 .button{
   display:inline-flex;
@@ -126,48 +137,41 @@ header{
   width:max-content;
   min-height:54px;
   padding:0 30px;
+
   border:0;
+  border-radius:8px;
+
   background:var(--verde-suave);
   color:white;
+
   font-size:12px;
-  letter-spacing:.17em;
+  font-weight:600;
+  letter-spacing:.15em;
+
   cursor:pointer;
-  transition:.25s ease;
+
+  transition:
+    background .25s ease,
+    transform .25s ease,
+    box-shadow .25s ease;
 }
 
 .button:hover{
   background:var(--verde);
   transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(0,0,0,.10);
 }
 
 
-/* =========================
-   HERO
-========================= */
-
-.hero{
-  min-height:calc(100vh - 96px);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-}
-
-.hero-copy{
-  padding:110px 9%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  background:linear-gradient(
-    135deg,
-    #f7f4ee 0%,
-    #eee8dc 100%
-  );
-}
+/* =========================================================
+   TEXTOS
+========================================================= */
 
 .eyebrow{
-  font-size:12px;
-  letter-spacing:.38em;
+  font-size:11px;
+  letter-spacing:.34em;
   color:#64746d;
-  margin-bottom:32px;
+  margin-bottom:28px;
 }
 
 h1,
@@ -178,16 +182,42 @@ h3{
   color:var(--verde);
 }
 
+h1 em,
+h2 em,
+h3 em{
+  font-style:italic;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  min-height:calc(100vh - 96px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.hero-copy{
+  padding:100px 9%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7f4ee 0%,
+      #eee8dc 100%
+    );
+}
+
 .hero h1{
   font-size:clamp(58px,6vw,94px);
   line-height:.92;
   letter-spacing:-.045em;
   max-width:650px;
-}
-
-.hero h1 em,
-h2 em{
-  font-style:italic;
 }
 
 .hero-subtitle{
@@ -208,18 +238,18 @@ h2 em{
 
 .hero-photo{
   height:calc(100vh - 96px);
-  min-height:calc(100vh - 96px);
+  min-height:600px;
   background:#e8e3da;
   overflow:hidden;
 }
 
 
-/* =========================
+/* =========================================================
    INTRO
-========================= */
+========================================================= */
 
 .intro{
-  padding:150px 0;
+  padding:140px 0;
   background:var(--blanco);
 }
 
@@ -245,20 +275,19 @@ h2 em{
 }
 
 
-/* =========================
+/* =========================================================
    PISCINAS
-========================= */
+========================================================= */
 
 .piscinas{
   background:var(--fondo-verde);
-  padding:130px 0;
+  padding:120px 0;
 }
 
 .piscina-grid{
   display:grid;
   grid-template-columns:1.05fr 1fr;
   min-height:650px;
-  align-items:stretch;
 }
 
 .piscina-photo{
@@ -272,10 +301,6 @@ h2 em{
   display:flex;
   flex-direction:column;
   justify-content:center;
-}
-
-.piscina-copy .eyebrow{
-  margin-bottom:25px;
 }
 
 .piscina-copy h2{
@@ -293,20 +318,23 @@ h2 em{
 }
 
 
-/* =========================
-   CALCULADORA ORIGEN
-========================= */
+/* =========================================================
+   CALCULADORA
+========================================================= */
 
 .calculadora-piscina{
-  margin-top:80px;
-  padding:90px 70px;
+  margin-top:70px;
+  padding:80px 60px;
+
   background:var(--verde);
   color:var(--blanco);
 
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:60px;
+  gap:55px;
   align-items:start;
+
+  border-radius:18px;
 }
 
 .calculadora-intro{
@@ -315,7 +343,7 @@ h2 em{
 
 .calculadora-intro .eyebrow{
   color:#b8c9c0;
-  margin-bottom:25px;
+  margin-bottom:24px;
 }
 
 .calculadora-intro h2{
@@ -323,33 +351,47 @@ h2 em{
   font-size:clamp(48px,5vw,76px);
   line-height:.98;
   letter-spacing:-.045em;
-  margin:0 0 30px;
+  margin-bottom:30px;
 }
 
 .calculadora-intro p{
-  max-width:520px;
+  max-width:540px;
   color:#dce5e0;
   font-size:18px;
-  line-height:1.6;
+  line-height:1.65;
 }
+
+
+/* =========================================================
+   FORMULARIO
+========================================================= */
 
 .calculadora-form{
   background:#eef2ee;
   color:var(--texto);
-  padding:45px;
+
+  padding:42px;
 
   display:flex;
   flex-direction:column;
-  gap:25px;
+  gap:24px;
 
   border-radius:18px;
-  box-shadow:0 18px 45px rgba(0,0,0,.12);
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.12);
+}
+
+.inputs-paralelos{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
 }
 
 .campo{
   display:flex;
   flex-direction:column;
-  gap:9px;
+  gap:8px;
 }
 
 .campo label{
@@ -362,53 +404,64 @@ h2 em{
 
   width:100%;
 
-  padding:16px 18px;
+  padding:15px 16px;
 
   border:1px solid #c9d1cc;
-
   border-radius:10px;
 
-  background:#fff;
-
+  background:white;
   color:var(--texto);
-
-  font-family:inherit;
 
   font-size:16px;
 
   outline:none;
 
-  transition:.2s ease;
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease;
 }
 
 .campo input:focus,
 .campo select:focus{
+
   border-color:var(--verde);
-  box-shadow:0 0 0 3px rgba(52,71,63,.10);
+
+  box-shadow:
+    0 0 0 3px rgba(52,71,63,.10);
+
 }
 
 .campo span{
-  font-size:13px;
+  font-size:12px;
   color:#6b7771;
 }
 
-.calculadora-form .button{
+
+/* =========================================================
+   SELECT DE PRODUCTOS
+========================================================= */
+
+.producto-select{
   width:100%;
-  border-radius:10px;
 }
 
+
+/* =========================================================
+   ERROR
+========================================================= */
+
 .error-calculadora{
+
   display:none;
 
-  padding:15px;
+  padding:14px 16px;
 
   background:var(--error-fondo);
-
   color:var(--error);
 
-  font-size:14px;
-
   border-radius:10px;
+
+  font-size:14px;
 }
 
 .error-calculadora.activo{
@@ -416,25 +469,34 @@ h2 em{
 }
 
 
-/* =========================
+/* =========================================================
+   BOTÓN CALCULADORA
+========================================================= */
+
+.calculadora-form .button{
+  width:100%;
+}
+
+
+/* =========================================================
    RESULTADO
-========================= */
+========================================================= */
 
 .resultado-piscina{
 
   grid-column:1 / -1;
 
   background:#f7f4ee;
-
   color:var(--texto);
 
-  padding:45px;
+  padding:42px;
 
   display:none;
 
   border-radius:18px;
 
-  box-shadow:0 18px 45px rgba(0,0,0,.10);
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.10);
 }
 
 .resultado-piscina.activo{
@@ -442,44 +504,60 @@ h2 em{
 }
 
 .resultado-titulo{
-  font-size:13px;
+
+  font-size:12px;
+  font-weight:600;
+
   letter-spacing:.18em;
   text-transform:uppercase;
+
   margin-bottom:30px;
+
   color:#597068;
 }
 
 .resultado-datos{
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:30px;
+
   margin-bottom:35px;
 }
 
 .resultado-datos div{
+
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:8px;
+
 }
 
 .resultado-datos span{
+
   font-size:13px;
   color:#69756f;
+
 }
 
 .resultado-datos strong{
+
   font-size:25px;
   font-weight:500;
+
 }
 
 .whatsapp-calculadora{
-  border-radius:10px;
+  width:max-content;
 }
 
 
-/* =========================
+/* =========================================================
    MATERIA
-========================= */
+========================================================= */
 
 .materia{
   padding:140px 0;
@@ -490,7 +568,6 @@ h2 em{
   display:grid;
   grid-template-columns:1.1fr .9fr;
   gap:80px;
-  align-items:stretch;
 }
 
 .materia-photo{
@@ -502,6 +579,7 @@ h2 em{
 .materia-copy{
   background:var(--arena);
   padding:80px;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -521,9 +599,9 @@ h2 em{
 }
 
 
-/* =========================
+/* =========================================================
    PROYECTOS
-========================= */
+========================================================= */
 
 .proyectos{
   padding:140px 0;
@@ -553,7 +631,9 @@ h2 em{
 .proyecto-copy{
   background:var(--verde);
   color:white;
+
   padding:70px;
+
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
@@ -576,17 +656,17 @@ h2 em{
 }
 
 
-/* =========================
+/* =========================================================
    ORIGEN
-========================= */
+========================================================= */
 
 .origen{
-  padding:170px 0;
+  padding:160px 0;
   background:var(--fondo);
 }
 
 .origen-inner{
-  max-width:1150px;
+  max-width:1100px;
 }
 
 .origen h2{
@@ -604,9 +684,9 @@ h2 em{
 }
 
 
-/* =========================
+/* =========================================================
    CONTACTO
-========================= */
+========================================================= */
 
 .contacto{
   padding:120px 0;
@@ -621,7 +701,7 @@ h2 em{
 }
 
 .contacto p{
-  max-width:600px;
+  max-width:650px;
   margin:30px 0 40px;
   color:#d8dfdb;
   font-size:18px;
@@ -630,13 +710,12 @@ h2 em{
 .contacto .button{
   background:white;
   color:var(--verde);
-  border-radius:10px;
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
   padding:35px 0;
@@ -652,27 +731,14 @@ footer{
 }
 
 
-/* =========================
+/* =========================================================
    RESPONSIVE
-========================= */
+========================================================= */
 
-@media(max-width:900px){
-
-  header{
-    height:80px;
-  }
+@media(max-width:1000px){
 
   .container{
-    width:min(100% - 40px,700px);
-  }
-
-  .menu{
-    gap:15px;
-    font-size:12px;
-  }
-
-  .logo{
-    font-size:20px;
+    width:min(100% - 40px,760px);
   }
 
   .hero{
@@ -688,63 +754,66 @@ footer{
     min-height:500px;
   }
 
-  .intro,
-  .piscinas,
-  .materia,
-  .proyectos,
-  .origen{
-    padding:90px 0;
-  }
-
   .intro-grid,
   .piscina-grid,
   .materia-grid,
   .proyecto{
+
     grid-template-columns:1fr;
-    gap:0;
+
   }
 
-  .piscina-photo,
-  .materia-photo,
-  .proyecto-photo{
-    min-height:450px;
+  .intro{
+    padding:100px 0;
   }
 
   .piscina-copy,
   .materia-copy,
   .proyecto-copy{
-    padding:60px 35px;
-  }
 
-  .proyecto-copy{
-    min-height:400px;
+    padding:60px 35px;
+
   }
 
   .calculadora-piscina{
+
     grid-template-columns:1fr;
-    padding:70px 30px;
+
+    padding:60px 30px;
+
   }
 
   .resultado-piscina{
+
     grid-column:auto;
+
   }
 
   .resultado-datos{
-    grid-template-columns:1fr 1fr;
-  }
 
-  .footer-inner{
-    flex-direction:column;
-    gap:15px;
+    grid-template-columns:1fr 1fr;
+
   }
 
 }
 
 
-@media(max-width:600px){
+@media(max-width:650px){
+
+  header{
+    height:78px;
+  }
 
   .menu{
     display:none;
+  }
+
+  .logo{
+    font-size:21px;
+  }
+
+  .hero-copy{
+    padding:70px 25px;
   }
 
   .hero h1{
@@ -755,14 +824,6 @@ footer{
     font-size:28px;
   }
 
-  .hero-copy{
-    padding:70px 25px;
-  }
-
-  .intro-grid{
-    gap:35px;
-  }
-
   .piscina-copy h2,
   .materia-copy h2,
   .proyectos h2{
@@ -770,20 +831,33 @@ footer{
   }
 
   .calculadora-piscina{
-    padding:60px 20px;
+    padding:50px 18px;
+    border-radius:14px;
   }
 
   .calculadora-form,
   .resultado-piscina{
-    padding:30px 22px;
+    padding:28px 20px;
+  }
+
+  .inputs-paralelos{
+    grid-template-columns:1fr;
   }
 
   .resultado-datos{
     grid-template-columns:1fr;
   }
 
-}
+  .whatsapp-calculadora{
+    width:100%;
+  }
 
+  .footer-inner{
+    flex-direction:column;
+    gap:15px;
+  }
+
+}
 
 </style>
 
@@ -793,20 +867,24 @@ footer{
 <body>
 
 
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
 <header>
 
   <div class="container nav">
 
-    <a href="#inicio" class="logo">
+    <a
+      href="#inicio"
+      class="logo"
+    >
       ORIGEN
       <span>SURFACES</span>
     </a>
 
-    <nav class="menu">
 
-      <a href="#colecciones">
-        Colecciones
-      </a>
+    <nav class="menu">
 
       <a href="#piscinas">
         Piscinas
@@ -830,9 +908,9 @@ footer{
 <main id="inicio">
 
 
-<!-- =========================
+<!-- =========================================================
      HERO
-========================= -->
+========================================================= -->
 
 <section class="hero">
 
@@ -857,11 +935,15 @@ footer{
       la solución adecuada para tu espacio, tu estilo y tu proyecto.
     </p>
 
-    <a href="#origen" class="button">
+    <a
+      href="#origen"
+      class="button"
+    >
       CONOCER ORIGEN
     </a>
 
   </div>
+
 
   <div class="hero-photo">
 
@@ -875,11 +957,14 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      INTRO
-========================= -->
+========================================================= -->
 
-<section class="intro" id="colecciones">
+<section
+  class="intro"
+  id="colecciones"
+>
 
   <div class="container intro-grid">
 
@@ -894,6 +979,7 @@ footer{
       </h2>
 
     </div>
+
 
     <div class="intro-text">
 
@@ -917,13 +1003,17 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      PISCINAS
-========================= -->
+========================================================= -->
 
-<section class="piscinas" id="piscinas">
+<section
+  class="piscinas"
+  id="piscinas"
+>
 
   <div class="container piscina-grid">
+
 
     <div class="piscina-photo">
 
@@ -952,7 +1042,10 @@ footer{
         una experiencia.
       </p>
 
-      <a href="#calculadora" class="button">
+      <a
+        href="#calculadora"
+        class="button"
+      >
         CALCULAR MI PISCINA
       </a>
 
@@ -961,9 +1054,9 @@ footer{
   </div>
 
 
-<!-- =========================
+<!-- =========================================================
      CALCULADORA ORIGEN
-========================= -->
+========================================================= -->
 
 <div
   class="calculadora-piscina"
@@ -994,50 +1087,53 @@ footer{
   <div class="calculadora-form">
 
 
-    <!-- LARGO -->
+    <!-- LARGO Y ANCHO -->
 
-    <div class="campo">
-
-      <label for="largo">
-        Largo de la piscina
-      </label>
-
-      <input
-        type="number"
-        id="largo"
-        placeholder="Ej. 8"
-        min="0"
-        step="0.01"
-        inputmode="decimal"
-      >
-
-      <span>
-        metros
-      </span>
-
-    </div>
+    <div class="inputs-paralelos">
 
 
-    <!-- ANCHO -->
+      <div class="campo">
 
-    <div class="campo">
+        <label for="largo">
+          Largo de la piscina
+        </label>
 
-      <label for="ancho">
-        Ancho de la piscina
-      </label>
+        <input
+          type="number"
+          id="largo"
+          min="0"
+          step="0.01"
+          placeholder="Ej. 15"
+          inputmode="decimal"
+        >
 
-      <input
-        type="number"
-        id="ancho"
-        placeholder="Ej. 4"
-        min="0"
-        step="0.01"
-        inputmode="decimal"
-      >
+        <span>
+          metros
+        </span>
 
-      <span>
-        metros
-      </span>
+      </div>
+
+
+      <div class="campo">
+
+        <label for="ancho">
+          Ancho de la piscina
+        </label>
+
+        <input
+          type="number"
+          id="ancho"
+          min="0"
+          step="0.01"
+          placeholder="Ej. 6"
+          inputmode="decimal"
+        >
+
+        <span>
+          metros
+        </span>
+
+      </div>
 
     </div>
 
@@ -1050,7 +1146,11 @@ footer{
         Elegí tu revestimiento
       </label>
 
-      <select id="revestimiento">
+
+      <select
+        id="revestimiento"
+        class="producto-select"
+      >
 
 
         <option value="">
@@ -1058,9 +1158,9 @@ footer{
         </option>
 
 
-        <!-- =====================
+        <!-- =========================
              CERÁMICA 10 × 10
-        ====================== -->
+        ========================== -->
 
         <optgroup label="CERÁMICA 10 × 10">
 
@@ -1165,9 +1265,9 @@ footer{
         </optgroup>
 
 
-        <!-- =====================
+        <!-- =========================
              CERÁMICA 20 × 20
-        ====================== -->
+        ========================== -->
 
         <optgroup label="CERÁMICA 20 × 20">
 
@@ -1209,9 +1309,9 @@ footer{
         </optgroup>
 
 
-        <!-- =====================
-             VENECITAS 2,07
-        ====================== -->
+        <!-- =========================
+             2,07 m²
+        ========================== -->
 
         <optgroup label="VENECITAS · 2,07 m²/caja">
 
@@ -1260,9 +1360,9 @@ footer{
         </optgroup>
 
 
-        <!-- =====================
-             VENECITAS 1,44
-        ====================== -->
+        <!-- =========================
+             1,44 m²
+        ========================== -->
 
         <optgroup label="VENECITAS · 1,44 m²/caja">
 
@@ -1304,9 +1404,9 @@ footer{
         </optgroup>
 
 
-        <!-- =====================
-             VENECITA CLÁSICA
-        ====================== -->
+        <!-- =========================
+             CLÁSICA
+        ========================== -->
 
         <optgroup label="VENECITA CLÁSICA">
 
@@ -1320,9 +1420,9 @@ footer{
         </optgroup>
 
 
-        <!-- =====================
-             VENECITA PREMIUM
-        ====================== -->
+        <!-- =========================
+             PREMIUM
+        ========================== -->
 
         <optgroup label="VENECITA PREMIUM">
 
@@ -1336,9 +1436,9 @@ footer{
         </optgroup>
 
 
-        <!-- =====================
+        <!-- =========================
              PIEDRA BALI
-        ====================== -->
+        ========================== -->
 
         <optgroup label="PIEDRA BALI · 10 × 10">
 
@@ -1361,6 +1461,7 @@ footer{
 
       </select>
 
+
       <span>
         El rendimiento de cada caja se calcula automáticamente.
       </span>
@@ -1376,7 +1477,7 @@ footer{
     ></div>
 
 
-    <!-- BOTÓN -->
+    <!-- CALCULAR -->
 
     <button
       type="button"
@@ -1390,9 +1491,9 @@ footer{
   </div>
 
 
-  <!-- =========================
+  <!-- =====================================================
        RESULTADO
-  ========================= -->
+  ====================================================== -->
 
   <div
     id="resultado-piscina"
@@ -1467,7 +1568,7 @@ footer{
       href="#"
       class="button whatsapp-calculadora"
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
     >
       QUIERO COTIZAR MI PISCINA
     </a>
@@ -1475,18 +1576,18 @@ footer{
 
   </div>
 
-</div>
 
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      MATERIA
-========================= -->
+========================================================= -->
 
 <section class="materia">
 
   <div class="container materia-grid">
+
 
     <div class="materia-photo">
 
@@ -1522,13 +1623,14 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      PROYECTOS
-========================= -->
+========================================================= -->
 
 <section class="proyectos">
 
   <div class="container">
+
 
     <div class="proyectos-head">
 
@@ -1546,11 +1648,12 @@ footer{
 
     <div class="proyecto">
 
+
       <div class="proyecto-photo">
 
         <img
           src="32643f41df2848c16278f4a11da80f01.jpg"
-          alt="Proyecto arquitectónico acompañado por ORIGEN"
+          alt="Proyecto arquitectónico ORIGEN"
         >
 
       </div>
@@ -1569,16 +1672,9 @@ footer{
         </h3>
 
         <p>
-
           Acompañamos cada proyecto en la elección de materiales,
           pensando en la arquitectura, el espacio y la forma en que
           va a ser vivido.
-
-          <br><br>
-
-          Buscamos que cada superficie no solo se vea bien,
-          sino que tenga sentido dentro del conjunto.
-
         </p>
 
       </div>
@@ -1590,9 +1686,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      ORIGEN
-========================= -->
+========================================================= -->
 
 <section
   class="origen"
@@ -1636,9 +1732,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      CONTACTO
-========================= -->
+========================================================= -->
 
 <section
   class="contacto"
@@ -1661,16 +1757,11 @@ footer{
       la superficie adecuada.
     </p>
 
-    <p>
-      Nuestro alcance comercial abarca Buenos Aires de norte a sur,
-      Córdoba y alrededores, Catamarca, La Rioja y Entre Ríos.
-    </p>
-
     <a
       href="https://wa.me/5491147004804"
       class="button"
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
     >
       HABLAR CON ORIGEN
     </a>
@@ -1683,9 +1774,9 @@ footer{
 </main>
 
 
-<!-- =========================
+<!-- =========================================================
      FOOTER
-========================= -->
+========================================================= -->
 
 <footer>
 
@@ -1704,9 +1795,10 @@ footer{
 </footer>
 
 
-<!-- =========================
+<!-- =========================================================
      JAVASCRIPT
-========================= -->
+     ÚNICO SCRIPT DE LA PÁGINA
+========================================================= -->
 
 <script>
 
@@ -1714,6 +1806,10 @@ document.addEventListener(
   "DOMContentLoaded",
   function(){
 
+
+    /* =====================================================
+       ELEMENTOS
+    ===================================================== */
 
     const largoInput =
       document.getElementById("largo");
@@ -1743,22 +1839,65 @@ document.addEventListener(
       document.getElementById("whatsapp-calculadora");
 
 
-    /* =========================
-       LIMPIAR RESULTADO
-    ========================= */
+    /* =====================================================
+       FORMATO
+    ===================================================== */
+
+    function formatearNumero(numero){
+
+      return numero.toLocaleString(
+        "es-AR",
+        {
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
+        }
+      );
+
+    }
+
+
+    /* =====================================================
+       REDONDEO SEGURO
+       
+       Evita errores internos de JavaScript como:
+
+       99
+       99.00000000000001
+    ===================================================== */
+
+    function redondear2(numero){
+
+      return Math.round(
+        (numero + Number.EPSILON) * 100
+      ) / 100;
+
+    }
+
+
+    /* =====================================================
+       LIMPIAR
+    ===================================================== */
 
     function limpiarCalculadora(){
 
       error.textContent = "";
 
-      error.classList.remove("activo");
+      error.classList.remove(
+        "activo"
+      );
 
-      resultado.classList.remove("activo");
+      resultado.classList.remove(
+        "activo"
+      );
 
       whatsapp.href = "#";
 
     }
 
+
+    /* =====================================================
+       EVENTOS
+    ===================================================== */
 
     largoInput.addEventListener(
       "input",
@@ -1778,15 +1917,15 @@ document.addEventListener(
     );
 
 
-    /* =========================
-       CALCULAR
-    ========================= */
-
     botonCalcular.addEventListener(
       "click",
       calcularPiscina
     );
 
+
+    /* =====================================================
+       CALCULADORA
+    ===================================================== */
 
     function calcularPiscina(){
 
@@ -1794,21 +1933,23 @@ document.addEventListener(
       limpiarCalculadora();
 
 
-      /* =========================
-         LEER DATOS
-      ========================= */
+      /* =================================================
+         DATOS
+      ================================================= */
 
       const largo =
         parseFloat(
-          String(largoInput.value)
-            .replace(",", ".")
+          String(
+            largoInput.value
+          ).replace(",", ".")
         );
 
 
       const ancho =
         parseFloat(
-          String(anchoInput.value)
-            .replace(",", ".")
+          String(
+            anchoInput.value
+          ).replace(",", ".")
         );
 
 
@@ -1818,9 +1959,9 @@ document.addEventListener(
         ];
 
 
-      /* =========================
+      /* =================================================
          VALIDAR LARGO
-      ========================= */
+      ================================================= */
 
       if(
         !Number.isFinite(largo) ||
@@ -1836,9 +1977,9 @@ document.addEventListener(
       }
 
 
-      /* =========================
+      /* =================================================
          VALIDAR ANCHO
-      ========================= */
+      ================================================= */
 
       if(
         !Number.isFinite(ancho) ||
@@ -1854,9 +1995,9 @@ document.addEventListener(
       }
 
 
-      /* =========================
-         VALIDAR PRODUCTO
-      ========================= */
+      /* =================================================
+         VALIDAR REVESTIMIENTO
+      ================================================= */
 
       if(
         !opcion ||
@@ -1872,9 +2013,9 @@ document.addEventListener(
       }
 
 
-      /* =========================
-         RENDIMIENTO
-      ========================= */
+      /* =================================================
+         RENDIMIENTO INTERNO
+      ================================================= */
 
       const rendimiento =
         parseFloat(
@@ -1896,47 +2037,41 @@ document.addEventListener(
       }
 
 
-      /* =========================
-         1.
+      /* =================================================
+         PASO 1
+         
          SUPERFICIE REAL
          
          LARGO × ANCHO
-      ========================= */
+      ================================================= */
 
       const superficieReal =
-        largo * ancho;
+        redondear2(
+          largo * ancho
+        );
 
 
-      /* =========================
-         2.
-         SUMAR 10%
+      /* =================================================
+         PASO 2
          
-         IMPORTANTE:
-         REDONDEAMOS A 2 DECIMALES
-         PARA EVITAR EL ERROR
-         DE PRECISIÓN DE JAVASCRIPT.
+         SUMAR EXACTAMENTE 10%
          
-         Ejemplo:
-         90 × 1.10 puede convertirse
-         internamente en
-         99.00000000000001.
-         
-         Lo corregimos antes de
-         Math.ceil().
-      ========================= */
+         SUPERFICIE × 1.10
+      ================================================= */
 
       const superficieConDesperdicio =
-        Math.round(
-          (superficieReal * 1.10) * 100
-        ) / 100;
+        redondear2(
+          superficieReal * 1.10
+        );
 
 
-      /* =========================
-         3.
-         CAJAS NECESARIAS
+      /* =================================================
+         PASO 3
+         
+         CAJAS
          
          SIEMPRE HACIA ARRIBA
-      ========================= */
+      ================================================= */
 
       const cajas =
         Math.ceil(
@@ -1945,54 +2080,57 @@ document.addEventListener(
         );
 
 
-      /* =========================
-         4.
-         METROS REALES COMPRADOS
+      /* =================================================
+         PASO 4
+         
+         METROS REALMENTE COMPRADOS
          
          CAJAS × RENDIMIENTO
-      ========================= */
+      ================================================= */
 
       const metrosComprados =
-        Math.round(
-          (cajas * rendimiento) * 100
-        ) / 100;
+        redondear2(
+          cajas * rendimiento
+        );
 
 
-      /* =========================
-         NOMBRE DEL PRODUCTO
-      ========================= */
+      /* =================================================
+         PRODUCTO
+      ================================================= */
 
       const nombreProducto =
         opcion.textContent.trim();
 
 
-      /* =========================
-         MOSTRAR SUPERFICIE REAL
-      ========================= */
+      /* =================================================
+         RESULTADO 1
+      ================================================= */
 
       document.getElementById(
         "resultado-superficie"
       ).textContent =
         formatearNumero(
           superficieReal
-        ) + " m²";
+        ) +
+        " m²";
 
 
-      /* =========================
-         MOSTRAR DESPERDICIO
-      ========================= */
+      /* =================================================
+         RESULTADO 2
+      ================================================= */
 
       document.getElementById(
         "resultado-desperdicio"
       ).textContent =
         formatearNumero(
           superficieConDesperdicio
-        ) + " m²";
+        ) +
+        " m²";
 
 
-      /* =========================
-         MOSTRAR CAJAS
-      ========================= */
+      /* =================================================
+         RESULTADO 3
+      ================================================= */
 
       document.getElementById(
         "resultado-cajas"
@@ -2005,21 +2143,22 @@ document.addEventListener(
         );
 
 
-      /* =========================
-         MOSTRAR M² COMPRADOS
-      ========================= */
+      /* =================================================
+         RESULTADO 4
+      ================================================= */
 
       document.getElementById(
         "resultado-m2"
       ).textContent =
         formatearNumero(
           metrosComprados
-        ) + " m²";
+        ) +
+        " m²";
 
 
-      /* =========================
+      /* =================================================
          WHATSAPP
-      ========================= */
+      ================================================= */
 
       const mensaje =
 `Hola ORIGEN, quiero cotizar mi piscina.
@@ -2044,21 +2183,23 @@ Total de m² que voy a comprar: ${formatearNumero(metrosComprados)} m²`;
         "https://wa.me/" +
         numeroWhatsApp +
         "?text=" +
-        encodeURIComponent(mensaje);
+        encodeURIComponent(
+          mensaje
+        );
 
 
-      /* =========================
+      /* =================================================
          MOSTRAR RESULTADO
-      ========================= */
+      ================================================= */
 
       resultado.classList.add(
         "activo"
       );
 
 
-      /* =========================
-         SCROLL SUAVE
-      ========================= */
+      /* =================================================
+         SCROLL
+      ================================================= */
 
       setTimeout(
         function(){
@@ -2075,9 +2216,9 @@ Total de m² que voy a comprar: ${formatearNumero(metrosComprados)} m²`;
     }
 
 
-    /* =========================
+    /* =====================================================
        ERROR
-    ========================= */
+    ===================================================== */
 
     function mostrarError(
       mensaje
@@ -2092,25 +2233,6 @@ Total de m² que voy a comprar: ${formatearNumero(metrosComprados)} m²`;
 
       resultado.classList.remove(
         "activo"
-      );
-
-    }
-
-
-    /* =========================
-       FORMATO ARGENTINO
-    ========================= */
-
-    function formatearNumero(
-      numero
-    ){
-
-      return numero.toLocaleString(
-        "es-AR",
-        {
-          minimumFractionDigits:2,
-          maximumFractionDigits:2
-        }
       );
 
     }
