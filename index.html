@@ -608,6 +608,14 @@ footer{
   font-size:18px;
   line-height:1.7;
 }
+.boton-ver-revestimientos{
+  margin:0 auto 45px;
+  display:block;
+  cursor:pointer;
+}
+.productos-grid[hidden]{
+  display:none;
+}
 .productos-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -1052,7 +1060,9 @@ footer{
 </p>
     </div>
 
-    <div class="productos-grid">
+    <button type="button" class="button boton-ver-revestimientos" onclick="mostrarRevestimientos()">VER REVESTIMIENTOS DE PISCINA</button>
+
+    <div class="productos-grid" id="lista-revestimientos" hidden>
       <article class="producto-card" data-producto="moorea-10">
         <div class="producto-card-photo">
           <img src="moorea.png" alt="Piscina revestida con Moorea">
@@ -2148,6 +2158,15 @@ function seleccionarRevestimiento(id){
     document.querySelector(".calculadora-piscina").scrollIntoView({behavior:"smooth", block:"center"});
     },450);
   }
+}
+
+function mostrarRevestimientos(){
+  const lista = document.getElementById("lista-revestimientos");
+  const boton = document.querySelector(".boton-ver-revestimientos");
+  if(!lista) return;
+  lista.hidden = false;
+  if(boton) boton.style.display = "none";
+  lista.scrollIntoView({behavior:"smooth", block:"start"});
 }
 
 function calcularPiscina(){
