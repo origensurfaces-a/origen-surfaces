@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ORIGEN SURFACES | Superficies · Materiales · Soluciones</title>
+<title>ORIGEN SURFACES | Materiales y superficies para arquitectura</title>
 
 <meta name="description" content="ORIGEN SURFACES. Superficies, materiales y soluciones para transformar espacios.">
 
@@ -797,6 +797,50 @@ footer{
     grid-template-columns:1fr;
   }
 }
+
+/* =========================
+   VIDEO PRINCIPAL
+========================= */
+.video-principal{background:#111;position:relative;overflow:hidden;}
+.video-principal video{display:block;width:100%;max-height:760px;object-fit:cover;aspect-ratio:16/7;}
+.video-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:clamp(25px,5vw,80px);background:linear-gradient(transparent 45%,rgba(0,0,0,.55));color:#fff;pointer-events:none;}
+.video-overlay h2{color:#fff;font-size:clamp(35px,5vw,76px);line-height:.98;max-width:760px;}
+
+/* =========================
+   CATEGORÍAS
+========================= */
+.categorias{padding:130px 0;background:#fffdf9;}
+.categorias-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:55px;}
+.categoria{border:1px solid rgba(52,71,63,.16);background:#f7f4ee;padding:28px;min-height:180px;}
+.categoria summary{cursor:pointer;list-style:none;font-family:Georgia,"Times New Roman",serif;font-size:31px;color:var(--verde);}
+.categoria summary::-webkit-details-marker{display:none;}
+.categoria summary:after{content:'+';float:right;font-family:Arial,sans-serif;font-size:24px;}
+.categoria[open] summary:after{content:'−';}
+.categoria p,.categoria ul{margin-top:18px;color:#626762;font-size:15px;}
+.categoria ul{padding-left:20px;}
+
+/* =========================
+   SÍMIL BALI ARG. / TRAVERTINOS
+========================= */
+.familias-especiales{padding:120px 0;background:#eef1ec;}
+.familia-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px;}
+.familia-card{background:#fffdf9;padding:38px;border:1px solid rgba(52,71,63,.12);}
+.familia-card h3{font-size:40px;line-height:1;margin-bottom:18px;}
+.familia-card p{color:#626762;margin-bottom:18px;}
+.familia-card ul{padding-left:20px;color:#626762;}
+
+/* =========================
+   MARCAS
+========================= */
+.marcas{padding:120px 0;background:#fffdf9;}
+.marcas-intro{max-width:720px;color:#626762;font-size:18px;margin-top:25px;}
+.marcas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:55px;align-items:stretch;}
+.marca-card{min-height:160px;border:1px solid rgba(52,71,63,.14);background:#fff;display:flex;align-items:center;justify-content:center;padding:28px;}
+.marca-card img{width:100%;height:105px;object-fit:contain;}
+.marca-card .marca-text{font-family:Georgia,"Times New Roman",serif;font-size:25px;color:var(--verde);text-align:center;}
+@media(max-width:900px){.categorias-grid,.marcas-grid{grid-template-columns:1fr 1fr}.familia-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.categorias-grid,.marcas-grid{grid-template-columns:1fr}.video-principal video{aspect-ratio:4/3}.categoria summary{font-size:27px}}
+
 </style>
 </head>
 
@@ -811,9 +855,9 @@ footer{
     </a>
 
     <nav class="menu">
-      <a href="#colecciones">Colecciones</a>
+      <a href="#categorias">Categorías</a>
       <a href="#piscinas">Piscinas</a>
-      <a href="#origen">Origen</a>
+      <a href="#marcas">Marcas</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
@@ -863,6 +907,16 @@ footer{
 
 </section>
 
+<!-- VIDEO PRINCIPAL -->
+<section class="video-principal" aria-label="Video de piscinas y espacios exteriores">
+  <video autoplay muted loop playsinline poster="video-piscinas-poster.jpg">
+    <source src="video-piscinas.mp4" type="video/mp4">
+    Tu navegador no admite video HTML5.
+  </video>
+  <div class="video-overlay"><h2>Espacios exteriores que se viven.<br><em>Superficies que transforman.</em></h2></div>
+</section>
+
+
 
 <!-- =========================
      INTRO
@@ -905,6 +959,23 @@ footer{
 
 </section>
 
+<!-- CATEGORÍAS -->
+<section class="categorias" id="categorias">
+  <div class="container">
+    <div class="eyebrow">EXPLORÁ NUESTRAS CATEGORÍAS</div>
+    <h2>Materiales para cada<br><em>forma de habitar.</em></h2>
+    <div class="categorias-grid">
+      <details class="categoria"><summary>Símil Bali Arg.</summary><p>Revestimientos nacionales con identidad mineral y cinco familias de color.</p><ul><li>Mix Bruma</li><li>Mix Oliva</li><li>Mix Alba</li><li>Mix Marfil</li><li>Mix Ónix</li></ul></details>
+      <details class="categoria"><summary>Travertinos</summary><p>Superficies de lenguaje natural para soláriums, bordes y grandes superficies.</p><ul><li>Blanco</li><li>Beige</li><li>Gris Perla</li><li>Gris Ágatha</li></ul></details>
+      <details class="categoria"><summary>Cerámica</summary><p>Selección de revestimientos para piscinas y proyectos exteriores.</p><ul><li>Algarve</li><li>Bodrum</li><li>Caribbean</li><li>Maldivas</li><li>Córsega</li><li>Ibiza</li><li>Seychelles</li></ul></details>
+      <details class="categoria"><summary>Piedras</summary><p>Piedras naturales y superficies de inspiración mineral para proyectos con carácter.</p></details>
+      <details class="categoria"><summary>WPC &amp; Pérgolas</summary><p>Soluciones para ampliar y jerarquizar los espacios exteriores.</p></details>
+      <details class="categoria"><summary>Otras soluciones</summary><p>Estamos incorporando nuevas propuestas para arquitectura, paisajismo y construcción.</p></details>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- =========================
      PISCINAS
@@ -945,430 +1016,25 @@ footer{
   </div>
 
 
-<!-- =========================
-     CALCULADORA ORIGEN
-========================= -->
-
-<div class="calculadora-piscina">
-
-  <div class="calculadora-intro">
-
-    <div class="eyebrow">
-      CALCULADORA ORIGEN
-    </div>
-
-    <h2>
-      Calculá tu piscina<br>
-      <em>de forma simple.</em>
-    </h2>
-
-    <p>
-      Ingresá las medidas de tu piscina y elegí el revestimiento.
-      ORIGEN estima la superficie, agrega un 10% de desperdicio
-      y calcula la cantidad de material necesaria.
-    </p>
-
-  </div>
-
-
-  <div class="calculadora-form">
-
-    <div class="campo">
-
-      <label for="largo">
-        Largo de la piscina
-      </label>
-
-      <input
-        type="number"
-        id="largo"
-        placeholder="Ej. 8"
-        min="0"
-        step="0.01">
-
-      <span>
-        metros
-      </span>
-
-    </div>
-
-
-    <div class="campo">
-
-      <label for="ancho">
-        Ancho de la piscina
-      </label>
-
-      <input
-        type="number"
-        id="ancho"
-        placeholder="Ej. 4"
-        min="0"
-        step="0.01">
-
-      <span>
-        metros
-      </span>
-
-    </div>
-
-
-    <div class="campo">
-
-      <label for="profundidad">
-        Profundidad promedio
-      </label>
-
-      <input
-        type="number"
-        id="profundidad"
-        placeholder="Ej. 1.50"
-        min="0"
-        step="0.01">
-
-      <span>
-        metros
-      </span>
-
-    </div>
-
-
-    <div class="campo">
-
-      <label for="revestimiento">
-        Elegí tu revestimiento
-      </label>
-
-      <select id="revestimiento">
-
-        <option value="">
-          Seleccionar
-        </option>
-
-
-        <!-- =====================
-             CERÁMICA 10 X 10
-        ====================== -->
-
-        <optgroup label="CERÁMICA 10 × 10">
-
-          <option value="moorea-10">
-            Moorea · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="tonga-10">
-            Tonga · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="kauai-10">
-            Kauai · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="samoa-bright-10">
-            Samoa Bright · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="malawi-10">
-            Malawi · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="portland-10">
-            Portland · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="palau-bright-10">
-            Palau Bright · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="vis-10">
-            Vis · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="samoa-10">
-            Samoa · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="palau-10">
-            Palau · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="maui-10">
-            Mauí · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="kaimu-10">
-            Kaimú · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="cobalto-10">
-            Cobalto · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="ceu-10">
-            Céu · 10 × 10 · 1,95 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             CERÁMICA 20 X 20
-        ====================== -->
-
-        <optgroup label="CERÁMICA 20 × 20">
-
-          <option value="palau-20">
-            Palau · 20 × 20 · 1,50 m²/caja
-          </option>
-
-          <option value="kaimu-20">
-            Kaimú · 20 × 20 · 1,50 m²/caja
-          </option>
-
-          <option value="vis-20">
-            Vis · 20 × 20 · 1,50 m²/caja
-          </option>
-
-          <option value="portland-20">
-            Portland · 20 × 20 · 1,50 m²/caja
-          </option>
-
-          <option value="malawi-20">
-            Malawi · 20 × 20 · 1,50 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             VENECITAS
-        ====================== -->
-
-        <optgroup label="CERAMICA">
-
-          <option value="algarve">
-            Algarve · 2,07 m²/caja
-          </option>
-
-          <option value="bodrum">
-            Bodrum · 2,07 m²/caja
-          </option>
-
-          <option value="caribbean">
-            Caribbean · 2,07 m²/caja
-          </option>
-
-          <option value="maldivas">
-            Maldivas · 2,07 m²/caja
-          </option>
-
-          <option value="corsega">
-            Córsega · 2,07 m²/caja
-          </option>
-
-          <option value="ibiza">
-            Ibiza · 2,07 m²/caja
-          </option>
-
-          <option value="beige">
-            Beige · 1,44 m²/caja
-          </option>
-
-          <option value="blue">
-            Blue · 1,44 m²/caja
-          </option>
-
-          <option value="seychelles-claro">
-            Seychelles Claro · 1,44 m²/caja
-          </option>
-
-          <option value="seychelles-oscuro">
-            Seychelles Oscuro · 1,44 m²/caja
-          </option>
-
-          <option value="blanco">
-            Blanco · 1,44 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             PORCELANATO
-        ====================== -->
-
-        <optgroup label="PORCELANATO">
-
-          <option value="porcelanato">
-            Porcelanato · 2,06 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             VENECITA CLÁSICA
-        ====================== -->
-
-        <optgroup label="VENECITA CLÁSICA">
-
-          <option value="clasica">
-            Venecita Clásica · 4,28 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             VENECITA PREMIUM
-        ====================== -->
-
-        <optgroup label="VENECITA PREMIUM">
-
-          <option value="premium">
-            Venecita Premium · 2,00 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             PIEDRA BALI
-        ====================== -->
-
-        <optgroup label="PIEDRA BALI · 10 × 10">
-
-          <option value="bali-black">
-            Piedra Bali Black · 10 × 10 · 1,00 m²/caja
-          </option>
-
-          <option value="bali-green">
-            Piedra Bali Green · 10 × 10 · 1,00 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             TRAVERTINO
-        ====================== -->
-
-        <optgroup label="PIEDRA NATURAL">
-
-          <option value="travertino">
-            Travertino · cálculo por m²
-          </option>
-
-        </optgroup>
-
-      </select>
-
-    </div>
-
-
-    <div
-      id="error-calculadora"
-      class="error-calculadora">
-    </div>
-
-
-    <button
-      type="button"
-      class="button"
-      onclick="calcularPiscina()">
-
-      CALCULAR
-
-    </button>
-
-  </div>
-
-
-  <!-- RESULTADO -->
-
-  <div
-    id="resultado-piscina"
-    class="resultado-piscina">
-
-    <div class="resultado-titulo">
-      Tu estimación ORIGEN
-    </div>
-
-
-    <div class="resultado-datos">
-
-      <div>
-
-        <span>
-          Superficie real
-        </span>
-
-        <strong id="resultado-superficie">
-          —
-        </strong>
-
-      </div>
-
-
-      <div>
-
-        <span>
-          Con 10% de desperdicio
-        </span>
-
-        <strong id="resultado-desperdicio">
-          —
-        </strong>
-
-      </div>
-
-
-      <div>
-
-        <span>
-          Revestimiento
-        </span>
-
-        <strong id="resultado-material">
-          —
-        </strong>
-
-      </div>
-
-
-      <div>
-
-        <span>
-          Material necesario
-        </span>
-
-        <strong id="resultado-cantidad">
-          —
-        </strong>
-
-      </div>
-
-    </div>
-
-
-    <a
-      href="https://wa.me/5491147004804"
-      class="button"
-      target="_blank">
-
-      QUIERO COTIZAR MI PISCINA
-
-    </a>
-
-  </div>
-
-</div>
 
 </section>
 
 
 
 
+
+
+<!-- FAMILIAS DESTACADAS -->
+<section class="familias-especiales" id="familias-destacadas">
+  <div class="container">
+    <div class="eyebrow">SELECCIONES ORIGEN</div>
+    <h2>Texturas que construyen<br><em>atmósferas.</em></h2>
+    <div class="familia-grid">
+      <article class="familia-card"><h3>Símil Bali Arg.</h3><p>Revestimiento marmolítico prensado, pulido suave, fabricación nacional. Piezas de 11 × 11 cm y espesor de 1,4 cm.</p><ul><li>Mix Bruma · azul</li><li>Mix Oliva · verde</li><li>Mix Alba · blanco</li><li>Mix Marfil · beige</li><li>Mix Ónix · negro</li></ul></article>
+      <article class="familia-card"><h3>Travertino</h3><p>Placas de 30 × 60 cm y espesor de 1,6 cm. Terminación pulido natural tipo travertino y superficie texturada.</p><ul><li>Travertino Blanco</li><li>Travertino Beige</li><li>Travertino Gris Perla</li><li>Travertino Gris Ágatha</li></ul></article>
+    </div>
+  </div>
+</section>
 <!-- =========================
      COLECCIÓN DE PISCINAS
 ========================= -->
@@ -1969,7 +1635,445 @@ footer{
 
 </section>
 
+<!-- =========================
+     CALCULADORA ORIGEN
+========================= -->
 
+<div class="calculadora-piscina">
+
+  <div class="calculadora-intro">
+
+    <div class="eyebrow">
+      CALCULADORA ORIGEN
+    </div>
+
+    <h2>
+      Calculá tu piscina<br>
+      <em>de forma simple.</em>
+    </h2>
+
+    <p>
+      Ingresá las medidas de tu piscina y elegí el revestimiento.
+      ORIGEN estima la superficie, agrega un 10% de desperdicio
+      y calcula la cantidad de material necesaria.
+    </p>
+
+  </div>
+
+
+  <div class="calculadora-form">
+
+    <div class="campo">
+
+      <label for="largo">
+        Largo de la piscina
+      </label>
+
+      <input
+        type="number"
+        id="largo"
+        placeholder="Ej. 8"
+        min="0"
+        step="0.01">
+
+      <span>
+        metros
+      </span>
+
+    </div>
+
+
+    <div class="campo">
+
+      <label for="ancho">
+        Ancho de la piscina
+      </label>
+
+      <input
+        type="number"
+        id="ancho"
+        placeholder="Ej. 4"
+        min="0"
+        step="0.01">
+
+      <span>
+        metros
+      </span>
+
+    </div>
+
+
+    <div class="campo">
+
+      <label for="profundidad">
+        Profundidad promedio
+      </label>
+
+      <input
+        type="number"
+        id="profundidad"
+        placeholder="Ej. 1.50"
+        min="0"
+        step="0.01">
+
+      <span>
+        metros
+      </span>
+
+    </div>
+
+
+    <div class="campo">
+
+      <label for="revestimiento">
+        Elegí tu revestimiento
+      </label>
+
+      <select id="revestimiento">
+
+        <option value="">
+          Seleccionar
+        </option>
+
+
+        <!-- =====================
+             CERÁMICA 10 X 10
+        ====================== -->
+
+        <optgroup label="CERÁMICA 10 × 10">
+
+          <option value="moorea-10">
+            Moorea · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="tonga-10">
+            Tonga · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="kauai-10">
+            Kauai · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="samoa-bright-10">
+            Samoa Bright · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="malawi-10">
+            Malawi · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="portland-10">
+            Portland · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="palau-bright-10">
+            Palau Bright · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="vis-10">
+            Vis · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="samoa-10">
+            Samoa · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="palau-10">
+            Palau · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="maui-10">
+            Mauí · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="kaimu-10">
+            Kaimú · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="cobalto-10">
+            Cobalto · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="ceu-10">
+            Céu · 10 × 10 · 1,95 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             CERÁMICA 20 X 20
+        ====================== -->
+
+        <optgroup label="CERÁMICA 20 × 20">
+
+          <option value="palau-20">
+            Palau · 20 × 20 · 1,50 m²/caja
+          </option>
+
+          <option value="kaimu-20">
+            Kaimú · 20 × 20 · 1,50 m²/caja
+          </option>
+
+          <option value="vis-20">
+            Vis · 20 × 20 · 1,50 m²/caja
+          </option>
+
+          <option value="portland-20">
+            Portland · 20 × 20 · 1,50 m²/caja
+          </option>
+
+          <option value="malawi-20">
+            Malawi · 20 × 20 · 1,50 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             VENECITAS
+        ====================== -->
+
+        <optgroup label="CERAMICA">
+
+          <option value="algarve">
+            Algarve · 2,07 m²/caja
+          </option>
+
+          <option value="bodrum">
+            Bodrum · 2,07 m²/caja
+          </option>
+
+          <option value="caribbean">
+            Caribbean · 2,07 m²/caja
+          </option>
+
+          <option value="maldivas">
+            Maldivas · 2,07 m²/caja
+          </option>
+
+          <option value="corsega">
+            Córsega · 2,07 m²/caja
+          </option>
+
+          <option value="ibiza">
+            Ibiza · 2,07 m²/caja
+          </option>
+
+          <option value="beige">
+            Beige · 1,44 m²/caja
+          </option>
+
+          <option value="blue">
+            Blue · 1,44 m²/caja
+          </option>
+
+          <option value="seychelles-claro">
+            Seychelles Claro · 1,44 m²/caja
+          </option>
+
+          <option value="seychelles-oscuro">
+            Seychelles Oscuro · 1,44 m²/caja
+          </option>
+
+          <option value="blanco">
+            Blanco · 1,44 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             PORCELANATO
+        ====================== -->
+
+        <optgroup label="PORCELANATO">
+
+          <option value="porcelanato">
+            Porcelanato · 2,06 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             VENECITA CLÁSICA
+        ====================== -->
+
+        <optgroup label="VENECITA CLÁSICA">
+
+          <option value="clasica">
+            Venecita Clásica · 4,28 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             VENECITA PREMIUM
+        ====================== -->
+
+        <optgroup label="VENECITA PREMIUM">
+
+          <option value="premium">
+            Venecita Premium · 2,00 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             PIEDRA BALI
+        ====================== -->
+
+        <optgroup label="PIEDRA BALI · 10 × 10">
+
+          <option value="bali-black">
+            Piedra Bali Black · 10 × 10 · 1,00 m²/caja
+          </option>
+
+          <option value="bali-green">
+            Piedra Bali Green · 10 × 10 · 1,00 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             TRAVERTINO
+        ====================== -->
+
+        <optgroup label="PIEDRA NATURAL">
+
+          <option value="travertino">
+            Travertino · cálculo por m²
+          </option>
+
+        </optgroup>
+
+      </select>
+
+    </div>
+
+
+    <div
+      id="error-calculadora"
+      class="error-calculadora">
+    </div>
+
+
+    <button
+      type="button"
+      class="button"
+      onclick="calcularPiscina()">
+
+      CALCULAR
+
+    </button>
+
+  </div>
+
+
+  <!-- RESULTADO -->
+
+  <div
+    id="resultado-piscina"
+    class="resultado-piscina">
+
+    <div class="resultado-titulo">
+      Tu estimación ORIGEN
+    </div>
+
+
+    <div class="resultado-datos">
+
+      <div>
+
+        <span>
+          Superficie real
+        </span>
+
+        <strong id="resultado-superficie">
+          —
+        </strong>
+
+      </div>
+
+
+      <div>
+
+        <span>
+          Con 10% de desperdicio
+        </span>
+
+        <strong id="resultado-desperdicio">
+          —
+        </strong>
+
+      </div>
+
+
+      <div>
+
+        <span>
+          Revestimiento
+        </span>
+
+        <strong id="resultado-material">
+          —
+        </strong>
+
+      </div>
+
+
+      <div>
+
+        <span>
+          Material necesario
+        </span>
+
+        <strong id="resultado-cantidad">
+          —
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <a
+      href="https://wa.me/5491147004804"
+      class="button"
+      target="_blank">
+
+      QUIERO COTIZAR MI PISCINA
+
+    </a>
+
+  </div>
+
+</div>
+
+
+
+
+
+<!-- MARCAS -->
+<section class="marcas" id="marcas">
+  <div class="container">
+    <div class="eyebrow">MARCAS</div>
+    <h2>Marcas que forman parte<br><em>de Origen.</em></h2>
+    <p class="marcas-intro">Trabajamos con marcas seleccionadas para acompañar cada proyecto con materiales, diseño y soluciones.</p>
+    <div class="marcas-grid">
+      <div class="marca-card"><img src="marca-tucson.png" alt="Tucson"></div>
+      <div class="marca-card"><img src="marca-vigorita.png" alt="Vigorita"></div>
+      <div class="marca-card"><img src="marca-gs-piedras.png" alt="GS Piedras"></div>
+      <div class="marca-card"><img src="marca-ceracor.png" alt="Ceracor Revestimientos"></div>
+      <div class="marca-card"><img src="marca-agroredes-polcom.png" alt="Grupo AgroRedes Polcom"></div>
+      <div class="marca-card"><img src="marca-rosa-gres.png" alt="Rosa Gres España"></div>
+    </div>
+  </div>
+</section>
 <!-- =========================
      CONTACTO
 ========================= -->
@@ -2041,9 +2145,7 @@ function seleccionarRevestimiento(id){
   const select = document.getElementById("revestimiento");
   if(select){
     select.value = id;
-    document.getElementById("revestimientos-piscina").scrollIntoView({behavior:"smooth", block:"start"});
-    setTimeout(function(){
-      document.querySelector(".calculadora-piscina").scrollIntoView({behavior:"smooth", block:"center"});
+    document.querySelector(".calculadora-piscina").scrollIntoView({behavior:"smooth", block:"center"});
     },450);
   }
 }
