@@ -1,39 +1,76 @@
 <style>
-/* =========================
-   ORIGEN · HEADER + HERO
-========================= */
+
+/* =========================================================
+   ORIGEN SURFACES · HEADER
+========================================================= */
 
 header{
   position:fixed;
   top:0;
   left:0;
   right:0;
-  z-index:20;
-  padding:18px 0;
-  background:rgba(5,13,20,.38);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(200,178,122,.12);
+  z-index:100;
+
+  padding:14px 0;
+
+  background:rgba(5,13,20,.48);
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid rgba(216,182,106,.18);
+
+  transition:.3s ease;
+}
+
+header.scrolled{
+  background:rgba(7,26,43,.94);
 }
 
 .nav{
+  width:min(1380px,92vw);
+  margin:auto;
+
   display:flex;
   align-items:center;
-  justify-content:flex-end;
-  gap:28px;
+  justify-content:space-between;
+  gap:40px;
 }
+
+/* LOGO REAL ARRIBA */
+
+.logo-real{
+  display:flex;
+  align-items:center;
+
+  width:155px;
+  flex:0 0 155px;
+}
+
+.logo-real img{
+  display:block;
+  width:155px;
+  height:auto;
+
+  object-fit:contain;
+}
+
+/* MENU */
 
 .navlinks{
   display:flex;
+  align-items:center;
   gap:30px;
+
   font-size:12px;
   letter-spacing:.12em;
   text-transform:uppercase;
 }
 
 .navlinks a{
-  color:#f4f1ea;
-  opacity:.88;
+  color:#f3efe7;
   text-decoration:none;
+
+  opacity:.88;
+
   transition:.25s ease;
 }
 
@@ -42,109 +79,143 @@ header{
   opacity:1;
 }
 
-/* HERO */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
   min-height:100vh;
+
   position:relative;
   overflow:hidden;
+
+  display:flex;
+  align-items:flex-end;
 
   background:
     linear-gradient(
       180deg,
-      rgba(5,13,20,.18) 0%,
-      rgba(5,13,20,.20) 42%,
-      rgba(5,13,20,.72) 100%
+      rgba(5,13,20,.12) 0%,
+      rgba(5,13,20,.16) 38%,
+      rgba(5,13,20,.68) 100%
     ),
     url("32643f41df2848c16278f4a11da80f01.jpg")
     center center / cover no-repeat;
-
-  display:flex;
-  align-items:flex-end;
 }
 
 .hero::after{
   content:"";
+
   position:absolute;
   inset:0;
+
   pointer-events:none;
 
   background:
     radial-gradient(
-      circle at 55% 35%,
-      rgba(0,0,0,0) 0%,
-      rgba(0,0,0,.08) 45%,
-      rgba(0,0,0,.34) 100%
+      circle at 60% 38%,
+      transparent 0%,
+      rgba(0,0,0,.08) 48%,
+      rgba(0,0,0,.32) 100%
     );
 }
 
-.hero .container{
-  width:min(1180px,92vw);
-  margin:auto;
-  position:relative;
-  z-index:2;
-}
+
+/* CONTENIDO HERO */
 
 .hero-content{
-  padding:0 0 17vh;
-  max-width:1000px;
+  position:relative;
+  z-index:3;
+
+  width:min(1180px,92vw);
+
+  margin:0 auto;
+
+  padding-bottom:15vh;
+
+  max-width:1100px;
 }
 
 .hero-eyebrow{
   color:#e7c56d;
-  text-shadow:
-    0 2px 12px rgba(0,0,0,.9),
-    0 0 8px rgba(0,0,0,.65);
+
+  font-size:12px;
 
   letter-spacing:.24em;
+
   text-transform:uppercase;
-  font-size:12px;
+
   margin-bottom:24px;
+
+  text-shadow:
+    0 2px 12px rgba(0,0,0,.95),
+    0 0 8px rgba(0,0,0,.75);
 }
 
 .hero h1{
-  color:#f7f4ee;
-  font-size:clamp(54px,8vw,112px);
-  line-height:.91;
-  font-weight:300;
-  letter-spacing:-.055em;
   margin:0 0 28px;
 
+  max-width:1000px;
+
+  color:#f6f3ec;
+
+  font-size:clamp(58px,8vw,112px);
+
+  line-height:.91;
+
+  font-weight:300;
+
+  letter-spacing:-.055em;
+
   text-shadow:
-    0 3px 22px rgba(0,0,0,.45);
+    0 4px 24px rgba(0,0,0,.42);
 }
 
 .hero-description{
+  margin:0 0 30px;
+
   color:#f0eee8;
-  font-size:18px;
+
+  font-size:19px;
+
   max-width:760px;
-  margin-bottom:30px;
 
   text-shadow:
-    0 2px 10px rgba(0,0,0,.75);
+    0 2px 10px rgba(0,0,0,.8);
 }
+
+
+/* BOTONES */
 
 .hero-buttons{
   display:flex;
+
   gap:14px;
+
   flex-wrap:wrap;
 }
 
 .hero-button{
   display:inline-flex;
+
   align-items:center;
   justify-content:center;
 
-  padding:15px 22px;
+  padding:15px 23px;
 
   border:1px solid rgba(216,182,106,.9);
 
-  color:#f7f4ee;
+  color:#f7f3eb;
+
   background:rgba(5,13,20,.12);
 
   text-decoration:none;
+
   text-transform:uppercase;
-  letter-spacing:.12em;
+
+  letter-spacing:.13em;
+
   font-size:11px;
 
   transition:.3s ease;
@@ -152,37 +223,185 @@ header{
 
 .hero-button:hover{
   background:#d8b66a;
-  color:#050d14;
+
+  color:#071a2b;
 }
 
-/* LOGO SOBRE EL AGUA */
+
+/* =========================================================
+   LOGO REAL SOBRE EL AGUA
+========================================================= */
 
 .hero-logo-water{
   position:absolute;
 
-  left:0;
-  bottom:3vh;
+  left:7vw;
 
-  width:225px;
+  bottom:5vh;
 
-  z-index:3;
+  width:235px;
+
+  z-index:4;
 
   pointer-events:none;
 
-  filter:
-    drop-shadow(0 3px 10px rgba(0,0,0,.55))
-    drop-shadow(0 0 5px rgba(200,178,122,.18));
-
   opacity:.96;
+
+  filter:
+    drop-shadow(0 4px 12px rgba(0,0,0,.65))
+    drop-shadow(0 0 7px rgba(216,182,106,.18));
 }
 
 .hero-logo-water img{
-  width:100%;
-  height:auto;
   display:block;
+
+  width:100%;
+
+  height:auto;
 }
 
-/* MOBILE */
+
+/* =========================================================
+   CONTACTO · MÁS PRESENCIA
+========================================================= */
+
+.contact{
+  position:relative;
+
+  min-height:72vh;
+
+  display:flex;
+
+  align-items:center;
+
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 50%,
+      rgba(216,182,106,.11),
+      transparent 32%
+    ),
+    #071827;
+
+  color:#f5f1e8;
+
+  text-align:left;
+}
+
+.contact::before{
+  content:"";
+
+  position:absolute;
+
+  width:560px;
+  height:560px;
+
+  right:-220px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  border:1px solid rgba(216,182,106,.18);
+
+  border-radius:50%;
+}
+
+.contact .container{
+  width:min(1180px,92vw);
+
+  margin:auto;
+
+  position:relative;
+
+  z-index:2;
+}
+
+.contact .section-kicker{
+  color:#d8b66a;
+
+  letter-spacing:.25em;
+}
+
+.contact h2{
+  margin:0 0 28px;
+
+  max-width:900px;
+
+  font-size:clamp(58px,8vw,112px);
+
+  line-height:.92;
+
+  font-weight:300;
+
+  letter-spacing:-.055em;
+
+  color:#f5f1e8;
+}
+
+.contact .lead{
+  max-width:680px;
+
+  margin-bottom:24px;
+
+  font-size:20px;
+
+  line-height:1.5;
+
+  color:rgba(245,241,232,.78);
+}
+
+.contact .btn{
+  display:inline-flex;
+
+  margin-top:20px;
+
+  padding:17px 28px;
+
+  border:1px solid #d8b66a;
+
+  background:transparent;
+
+  color:#f5f1e8;
+
+  text-decoration:none;
+
+  text-transform:uppercase;
+
+  letter-spacing:.16em;
+
+  font-size:11px;
+
+  transition:.3s ease;
+}
+
+.contact .btn:hover{
+  background:#d8b66a;
+
+  color:#071827;
+}
+
+.contact::after{
+  content:"ORIGEN SURFACES";
+
+  position:absolute;
+
+  right:7vw;
+  bottom:50px;
+
+  color:rgba(216,182,106,.24);
+
+  font-size:12px;
+
+  letter-spacing:.35em;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:800px){
 
@@ -190,33 +409,25 @@ header{
     justify-content:center;
   }
 
-  .navlinks{
-    gap:14px;
-    font-size:9px;
+  .logo-real{
+    width:125px;
+    flex-basis:125px;
   }
 
-  .hero-content{
-    padding-bottom:20vh;
+  .logo-real img{
+    width:125px;
   }
-
-  .hero h1{
-    font-size:58px;
-  }
-
-  .hero-logo-water{
-    width:165px;
-    bottom:3vh;
-  }
-}
-
-@media(max-width:520px){
 
   .navlinks{
     display:none;
   }
 
+  .hero-content{
+    padding-bottom:19vh;
+  }
+
   .hero h1{
-    font-size:52px;
+    font-size:58px;
   }
 
   .hero-description{
@@ -224,16 +435,72 @@ header{
   }
 
   .hero-logo-water{
-    width:145px;
-    left:0;
+    width:170px;
+
+    left:5vw;
+
+    bottom:3vh;
+  }
+
+  .contact{
+    min-height:75vh;
+  }
+
+  .contact h2{
+    font-size:58px;
+  }
+
+  .contact::after{
+    right:20px;
+    bottom:25px;
   }
 }
+
+@media(max-width:520px){
+
+  .hero h1{
+    font-size:51px;
+  }
+
+  .hero-logo-water{
+    width:145px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .contact h2{
+    font-size:50px;
+  }
+}
+
 </style>
 
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header id="header">
 
-  <div class="container nav">
+  <div class="nav">
+
+    <!-- MISMO LOGO OFICIAL -->
+    <a
+      href="#inicio"
+      class="logo-real"
+      aria-label="ORIGEN SURFACES"
+    >
+
+      <img
+        src="fotos/ChatGPT%20Image%2022%20sept%202026,%2007_38_47%20p.m..png"
+        alt="ORIGEN SURFACES"
+      >
+
+    </a>
+
 
     <nav class="navlinks">
 
@@ -268,35 +535,59 @@ header{
 </header>
 
 
-<section class="hero" id="inicio">
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-  <div class="container hero-content">
+<section
+  class="hero"
+  id="inicio"
+>
+
+  <div class="hero-content">
 
     <div class="hero-eyebrow">
+
       MATERIA · AGUA · LUZ · ARQUITECTURA
+
     </div>
 
+
     <h1>
+
       La materia<br>
       también diseña.
+
     </h1>
 
+
     <p class="hero-description">
-      Superficies seleccionadas para proyectos donde la arquitectura importa.
+
+      Superficies seleccionadas para proyectos
+      donde la arquitectura importa.
+
     </p>
+
 
     <div class="hero-buttons">
 
       <a
         class="hero-button"
-        href="#colecciones">
+        href="#colecciones"
+      >
+
         EXPLORAR COLECCIONES →
+
       </a>
+
 
       <a
         class="hero-button"
-        href="#contacto">
+        href="#contacto"
+      >
+
         CONTANOS TU PROYECTO →
+
       </a>
 
     </div>
@@ -304,14 +595,104 @@ header{
   </div>
 
 
-  <!-- LOGO REAL · SOBRE EL AGUA -->
+  <!-- MISMO LOGO OFICIAL · SOBRE EL AGUA -->
 
-  <div class="hero-logo-water">
+  <div
+    class="hero-logo-water"
+    aria-hidden="true"
+  >
 
     <img
       src="fotos/ChatGPT%20Image%2022%20sept%202026,%2007_38_47%20p.m..png"
-      alt="ORIGEN SURFACES">
+      alt=""
+    >
 
   </div>
 
 </section>
+
+
+<!-- =====================================================
+     CONTACTO
+===================================================== -->
+
+<section
+  class="contact"
+  id="contacto"
+>
+
+  <div class="container">
+
+    <div class="section-kicker">
+      HABLEMOS DE TU PROYECTO
+    </div>
+
+
+    <h2>
+
+      Contanos tu proyecto.
+
+    </h2>
+
+
+    <p class="lead">
+
+      No necesitás llegar con la solución.
+      Empezamos por la idea.
+
+    </p>
+
+
+    <button
+      class="btn"
+      onclick="openQuote('Consulta general ORIGEN')"
+    >
+
+      HABLAR CON ORIGEN →
+
+    </button>
+
+  </div>
+
+</section>
+
+
+<script>
+
+/* HEADER AL HACER SCROLL */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", function(){
+
+  if(window.scrollY > 40){
+
+    header.classList.add("scrolled");
+
+  }else{
+
+    header.classList.remove("scrolled");
+
+  }
+
+});
+
+
+/* WHATSAPP */
+
+function openQuote(subject){
+
+  const phone = "5491147004804";
+
+  const text = encodeURIComponent(
+    "Hola ORIGEN SURFACES. Quiero consultar: " + subject
+  );
+
+  window.open(
+    "https://wa.me/" + phone + "?text=" + text,
+    "_blank"
+  );
+
+}
+
+</script>
