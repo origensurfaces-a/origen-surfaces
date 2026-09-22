@@ -1491,6 +1491,110 @@ header.wow-scrolled .menu{
     padding:120px 0;
   }
 }
+
+/* =====================================================
+   ORIGEN — CINEMATIC HERO
+===================================================== */
+.hero-cinematic{
+  position:relative;
+  min-height:100svh;
+  height:100svh;
+  overflow:hidden;
+  background:#18221f;
+}
+.hero-cinematic-media,
+.hero-material-layer,
+.hero-pool-layer,
+.hero-cinematic-shade{
+  position:absolute;
+  inset:0;
+}
+.hero-material-layer,
+.hero-pool-layer{
+  overflow:hidden;
+}
+.hero-material-layer img,
+.hero-pool-layer img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  will-change:transform,opacity,filter;
+}
+.hero-material-layer img{
+  transform:scale(1.08);
+  filter:saturate(.72) contrast(1.03);
+}
+.hero-pool-layer{
+  opacity:0;
+  clip-path:inset(100% 0 0 0);
+}
+.hero-pool-layer img{
+  transform:scale(1.12);
+  filter:saturate(.9) contrast(1.04);
+}
+.hero-cinematic-shade{
+  background:linear-gradient(90deg,rgba(7,14,12,.82) 0%,rgba(7,14,12,.38) 48%,rgba(7,14,12,.08) 100%);
+  z-index:2;
+}
+.hero-cinematic-word{
+  position:absolute;
+  z-index:3;
+  left:4vw;
+  bottom:2vh;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:clamp(90px,17vw,270px);
+  line-height:.72;
+  letter-spacing:-.09em;
+  font-weight:700;
+  color:rgba(255,255,255,.13);
+  pointer-events:none;
+  white-space:nowrap;
+  will-change:transform,opacity;
+}
+.hero-cinematic-copy{
+  z-index:4;
+}
+.hero-cinematic-copy h1{
+  font-size:clamp(60px,7vw,112px);
+}
+.hero-cinematic-copy .hero-subtitle{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(26px,3vw,44px);
+}
+.hero-cinematic-scroll{
+  position:absolute;
+  right:42px;
+  bottom:38px;
+  z-index:5;
+  color:rgba(255,255,255,.72);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  font-size:9px;
+  letter-spacing:.35em;
+}
+.hero-cinematic-scroll i{
+  display:block;
+  width:1px;
+  height:58px;
+  background:rgba(255,255,255,.65);
+  animation:heroScrollLine 1.8s ease-in-out infinite;
+  transform-origin:top;
+}
+@keyframes heroScrollLine{
+  0%,100%{transform:scaleY(.25);opacity:.3}
+  50%{transform:scaleY(1);opacity:1}
+}
+@media(max-width:600px){
+  .hero-cinematic-word{font-size:25vw;left:5vw;bottom:6vh}
+  .hero-cinematic-shade{background:linear-gradient(180deg,rgba(7,14,12,.18),rgba(7,14,12,.78))}
+  .hero-cinematic-copy{padding:0 25px 90px}
+  .hero-cinematic-copy h1{font-size:58px}
+  .hero-cinematic-scroll{right:18px;bottom:25px}
+}
+
 </style>
 </head>
 
@@ -1524,40 +1628,34 @@ header.wow-scrolled .menu{
      HERO
 ========================= -->
 
-<section class="hero">
+<section class="hero hero-cinematic" id="hero-cinematic">
 
-  <div class="hero-copy">
-
-    <div class="eyebrow">
-      SUPERFICIES · MATERIALES · SOLUCIONES
+  <div class="hero-cinematic-media">
+    <div class="hero-material-layer">
+      <img src="9c7236e83277cf400b03c5c4deff2a32.jpg" alt="Materia y superficies naturales">
     </div>
-
-    <h1>
-      La grandeza<br>
-      de lo <em>simple.</em>
-    </h1>
-
-    <div class="hero-subtitle">
-      Te acompañamos<br>
-      en cada proyecto.
+    <div class="hero-pool-layer">
+      <img src="10972ded-f193-42f2-8874-64af8b932a44.png" alt="Piscina contemporánea">
     </div>
-
-    <p class="hero-text">
-      Seleccionamos superficies y materiales para ayudarte a encontrar
-      la solución adecuada para tu espacio, tu estilo y tu proyecto.
-    </p>
-
-    <a href="#origen" class="button">
-      CONOCER ORIGEN
-    </a>
-
+    <div class="hero-cinematic-shade"></div>
   </div>
 
-  <div class="hero-photo">
-    <img
-      src="Captura de pantalla 2026-08-25 210813.png"
-      alt="Interior contemporáneo con superficies naturales">
+  <div class="hero-cinematic-word">ORIGEN</div>
+
+  <div class="hero-copy hero-cinematic-copy">
+    <div class="eyebrow">SUPERFICIES · MATERIALES · SOLUCIONES</div>
+    <h1>La grandeza<br>de lo <em>simple.</em></h1>
+    <div class="hero-subtitle">Materia que se convierte en arquitectura.</div>
+    <p class="hero-text">Seleccionamos superficies y materiales para crear espacios con identidad.</p>
+    <a href="#colecciones" class="button">EXPLORAR ORIGEN</a>
   </div>
+
+  <div class="hero-cinematic-scroll">
+    <span>SCROLL</span>
+    <i></i>
+  </div>
+
+  <div class="hero-photo" aria-hidden="true"></div>
 
 </section>
 
@@ -3240,5 +3338,34 @@ function calcularPiscina(){
 })();
 </script>
 
-\n<script>\n(function(){\n  const progress=document.querySelector('.wow-progress');\n  function updateProgress(){\n    const scrollTop=window.scrollY;\n    const height=document.documentElement.scrollHeight-window.innerHeight;\n    const percentage=height>0?(scrollTop/height)*100:0;\n    if(progress) progress.style.width=percentage+'%';\n  }\n  window.addEventListener('scroll',updateProgress,{passive:true}); updateProgress();\n\n  const header=document.querySelector('header');\n  function updateHeader(){\n    if(!header) return;\n    header.classList.toggle('wow-scrolled',window.scrollY>80);\n  }\n  window.addEventListener('scroll',updateHeader,{passive:true}); updateHeader();\n\n  const cursor=document.querySelector('.wow-cursor');\n  const ring=document.querySelector('.wow-cursor-ring');\n  let mouseX=window.innerWidth/2,mouseY=window.innerHeight/2,ringX=mouseX,ringY=mouseY;\n  window.addEventListener('mousemove',function(e){\n    mouseX=e.clientX; mouseY=e.clientY;\n    if(cursor){cursor.style.left=mouseX+'px';cursor.style.top=mouseY+'px';}\n  });\n  function animateCursor(){\n    ringX+=(mouseX-ringX)*.15; ringY+=(mouseY-ringY)*.15;\n    if(ring){ring.style.left=ringX+'px';ring.style.top=ringY+'px';}\n    requestAnimationFrame(animateCursor);\n  }\n  if(ring) animateCursor();\n\n  document.querySelectorAll('a, button, input, select, .producto-card').forEach(el=>{\n    el.addEventListener('mouseenter',()=>document.body.classList.add('wow-hover'));\n    el.addEventListener('mouseleave',()=>document.body.classList.remove('wow-hover'));\n  });\n\n  const revealTargets=document.querySelectorAll('.intro-grid, .piscina-grid, .calculadora-piscina, .materia-grid, .proyectos, .origen-inner, .contacto > .container, .wow-head, .wow-cat, .producto-card');\n  revealTargets.forEach(el=>el.classList.add('wow-reveal'));\n  if('IntersectionObserver' in window){\n    const observer=new IntersectionObserver(entries=>{\n      entries.forEach(entry=>{\n        if(entry.isIntersecting){entry.target.classList.add('wow-visible');observer.unobserve(entry.target);}\n      });\n    },{threshold:.12,rootMargin:'0px 0px -60px 0px'});\n    revealTargets.forEach(el=>observer.observe(el));\n  }else{\n    revealTargets.forEach(el=>el.classList.add('wow-visible'));\n  }\n\n  const heroImage=document.querySelector('.hero-photo img');\n  window.addEventListener('scroll',function(){\n    if(!heroImage) return;\n    const y=window.scrollY;\n    if(y<window.innerHeight) heroImage.style.transform='scale(1.04) translateY('+(y*.10)+'px)';\n  },{passive:true});\n\n  document.querySelectorAll('.button').forEach(button=>{\n    button.addEventListener('mousemove',function(e){\n      const rect=button.getBoundingClientRect();\n      const x=e.clientX-rect.left-rect.width/2;\n      const y=e.clientY-rect.top-rect.height/2;\n      button.style.transform='translate('+(x*.08)+'px,'+(y*.08)+'px)';\n    });\n    button.addEventListener('mouseleave',function(){button.style.transform='';});\n  });\n\n  document.querySelectorAll('.wow-cat').forEach(card=>{\n    card.addEventListener('mouseenter',function(){\n      document.querySelectorAll('.wow-cat').forEach(other=>{if(other!==card) other.style.filter='brightness(.65)';});\n    });\n    card.addEventListener('mouseleave',function(){\n      document.querySelectorAll('.wow-cat').forEach(other=>other.style.filter='');\n    });\n  });\n\n  document.querySelectorAll('a[href^="#"]').forEach(link=>{\n    link.addEventListener('click',function(e){\n      const target=document.querySelector(this.getAttribute('href'));\n      if(!target) return;\n      e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'});\n    });\n  });\n\n  document.querySelectorAll('.wow-cat, .producto-card').forEach(card=>{\n    card.addEventListener('mousemove',function(e){\n      if(window.innerWidth<900) return;\n      const rect=card.getBoundingClientRect();\n      const x=(e.clientX-rect.left)/rect.width-.5;\n      const y=(e.clientY-rect.top)/rect.height-.5;\n      card.style.transform='perspective(1000px) rotateX('+(-y*2)+'deg) rotateY('+(x*2)+'deg) translateY(-5px)';\n    });\n    card.addEventListener('mouseleave',function(){card.style.transform='';});\n  });\n})();\n</script>\n</body>
+\n<script>\n(function(){\n  const progress=document.querySelector('.wow-progress');\n  function updateProgress(){\n    const scrollTop=window.scrollY;\n    const height=document.documentElement.scrollHeight-window.innerHeight;\n    const percentage=height>0?(scrollTop/height)*100:0;\n    if(progress) progress.style.width=percentage+'%';\n  }\n  window.addEventListener('scroll',updateProgress,{passive:true}); updateProgress();\n\n  const header=document.querySelector('header');\n  function updateHeader(){\n    if(!header) return;\n    header.classList.toggle('wow-scrolled',window.scrollY>80);\n  }\n  window.addEventListener('scroll',updateHeader,{passive:true}); updateHeader();\n\n  const cursor=document.querySelector('.wow-cursor');\n  const ring=document.querySelector('.wow-cursor-ring');\n  let mouseX=window.innerWidth/2,mouseY=window.innerHeight/2,ringX=mouseX,ringY=mouseY;\n  window.addEventListener('mousemove',function(e){\n    mouseX=e.clientX; mouseY=e.clientY;\n    if(cursor){cursor.style.left=mouseX+'px';cursor.style.top=mouseY+'px';}\n  });\n  function animateCursor(){\n    ringX+=(mouseX-ringX)*.15; ringY+=(mouseY-ringY)*.15;\n    if(ring){ring.style.left=ringX+'px';ring.style.top=ringY+'px';}\n    requestAnimationFrame(animateCursor);\n  }\n  if(ring) animateCursor();\n\n  document.querySelectorAll('a, button, input, select, .producto-card').forEach(el=>{\n    el.addEventListener('mouseenter',()=>document.body.classList.add('wow-hover'));\n    el.addEventListener('mouseleave',()=>document.body.classList.remove('wow-hover'));\n  });\n\n  const revealTargets=document.querySelectorAll('.intro-grid, .piscina-grid, .calculadora-piscina, .materia-grid, .proyectos, .origen-inner, .contacto > .container, .wow-head, .wow-cat, .producto-card');\n  revealTargets.forEach(el=>el.classList.add('wow-reveal'));\n  if('IntersectionObserver' in window){\n    const observer=new IntersectionObserver(entries=>{\n      entries.forEach(entry=>{\n        if(entry.isIntersecting){entry.target.classList.add('wow-visible');observer.unobserve(entry.target);}\n      });\n    },{threshold:.12,rootMargin:'0px 0px -60px 0px'});\n    revealTargets.forEach(el=>observer.observe(el));\n  }else{\n    revealTargets.forEach(el=>el.classList.add('wow-visible'));\n  }\n\n  const heroImage=document.querySelector('.hero-photo img');\n  window.addEventListener('scroll',function(){\n    if(!heroImage) return;\n    const y=window.scrollY;\n    if(y<window.innerHeight) heroImage.style.transform='scale(1.04) translateY('+(y*.10)+'px)';\n  },{passive:true});\n\n  document.querySelectorAll('.button').forEach(button=>{\n    button.addEventListener('mousemove',function(e){\n      const rect=button.getBoundingClientRect();\n      const x=e.clientX-rect.left-rect.width/2;\n      const y=e.clientY-rect.top-rect.height/2;\n      button.style.transform='translate('+(x*.08)+'px,'+(y*.08)+'px)';\n    });\n    button.addEventListener('mouseleave',function(){button.style.transform='';});\n  });\n\n  document.querySelectorAll('.wow-cat').forEach(card=>{\n    card.addEventListener('mouseenter',function(){\n      document.querySelectorAll('.wow-cat').forEach(other=>{if(other!==card) other.style.filter='brightness(.65)';});\n    });\n    card.addEventListener('mouseleave',function(){\n      document.querySelectorAll('.wow-cat').forEach(other=>other.style.filter='');\n    });\n  });\n\n  document.querySelectorAll('a[href^="#"]').forEach(link=>{\n    link.addEventListener('click',function(e){\n      const target=document.querySelector(this.getAttribute('href'));\n      if(!target) return;\n      e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'});\n    });\n  });\n\n  document.querySelectorAll('.wow-cat, .producto-card').forEach(card=>{\n    card.addEventListener('mousemove',function(e){\n      if(window.innerWidth<900) return;\n      const rect=card.getBoundingClientRect();\n      const x=(e.clientX-rect.left)/rect.width-.5;\n      const y=(e.clientY-rect.top)/rect.height-.5;\n      card.style.transform='perspective(1000px) rotateX('+(-y*2)+'deg) rotateY('+(x*2)+'deg) translateY(-5px)';\n    });\n    card.addEventListener('mouseleave',function(){card.style.transform='';});\n  });\n})();\n</script>\n
+/* =====================================================
+   CINEMATIC HERO — SCROLL TRANSITION
+===================================================== */
+(function(){
+  const hero=document.querySelector('.hero-cinematic');
+  if(!hero) return;
+  const material=document.querySelector('.hero-material-layer');
+  const pool=document.querySelector('.hero-pool-layer');
+  const word=document.querySelector('.hero-cinematic-word');
+  const copy=document.querySelector('.hero-cinematic-copy');
+
+  function cinematicHero(){
+    const rect=hero.getBoundingClientRect();
+    const progress=Math.min(1,Math.max(0,(-rect.top)/(hero.offsetHeight*.72)));
+    material.style.transform='translateY('+(progress*5)+'%)';
+    material.querySelector('img').style.transform='scale('+(1.08-progress*.06)+') translateY('+(progress*-2)+'%)';
+    pool.style.opacity=Math.min(1,progress*1.25);
+    pool.style.clipPath='inset('+(100-progress*100)+'% 0 0 0)';
+    pool.querySelector('img').style.transform='scale('+(1.12-progress*.12)+') translateY('+(progress*-3)+'%)';
+    word.style.transform='translateY('+(progress*-20)+'px) scale('+(1-progress*.08)+')';
+    word.style.opacity=String(.13-progress*.05);
+    copy.style.transform='translateY('+(progress*-35)+'px)';
+    copy.style.opacity=String(1-progress*.55);
+  }
+  window.addEventListener('scroll',cinematicHero,{passive:true});
+  cinematicHero();
+})();
+
+</body>
 </html>
