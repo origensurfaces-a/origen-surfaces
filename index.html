@@ -54,6 +54,16 @@ h2{font-size:clamp(36px,5vw,68px);font-weight:300;line-height:1.02;letter-spacin
 .calc-panel{display:none;border:1px solid var(--line);padding:28px;background:rgba(255,255,255,.025)} .calc-panel.active{display:block}
 .form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px} label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)} input,select{width:100%;margin-top:7px;padding:13px;background:#071a2b;border:1px solid #315064;color:var(--cream)}
 .result{margin-top:20px;padding:18px;border-left:2px solid var(--champ);display:none} .result strong{font-size:25px;color:var(--champ)}
+
+.conservacion{background:var(--cream);color:var(--black)}
+.conservacion-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:start}
+.conservacion-box{border:1px solid #d8d3c9;padding:34px;background:#f7f3eb}
+.conservacion-box h3{font-size:25px;font-weight:400;margin-bottom:18px}
+.conservacion-box ul{list-style:none;margin:0;padding:0}
+.conservacion-box li{padding:12px 0;border-top:1px solid #ddd8ce;color:#4f514f}
+.conservacion-box li:first-child{border-top:0}
+.conservacion-note{font-size:22px;line-height:1.45;margin-top:34px}
+@media(max-width:800px){.conservacion-grid{grid-template-columns:1fr;gap:35px}}
 .contact{background:var(--cream);color:var(--black);text-align:center} .contact .section-kicker{color:#796a45}
 footer{padding:45px 0;background:var(--black);border-top:1px solid var(--line);text-align:center;color:#98a6ae;font-size:12px}
 .logo-footer{height:62px;margin:0 auto 18px}
@@ -67,7 +77,7 @@ footer{padding:45px 0;background:var(--black);border-top:1px solid var(--line);t
 <header id="header"><div class="container nav">
   <a href="#inicio" aria-label="ORIGEN SURFACES"><img class="logo" src="logo_origen_blanco_transparente.png" alt="ORIGEN SURFACES"></a>
   <nav class="navlinks">
-    <a href="#colecciones">Colecciones</a><a href="#piscinas">Piscinas</a><a href="#proyectos">Proyectos</a><a href="#origen">Origen</a><a href="#contacto">Contacto</a>
+    <a href="#colecciones">Colecciones</a><a href="#piscinas">Piscinas</a><a href="#proyectos">Proyectos</a><a href="#conservacion">Conservación</a><a href="#origen">Origen</a><a href="#contacto">Contacto</a>
   </nav>
 </div></header>
 
@@ -118,9 +128,49 @@ footer{padding:45px 0;background:var(--black);border-top:1px solid var(--line);t
 <details><summary>¿Puedo consultar aunque todavía no tenga decidido el material?</summary><p>Sí. El asesoramiento comienza antes de elegir.</p></details>
 </div></section>
 
-<section class="contact" id="contacto"><div class="container"><div class="section-kicker">09 · Proyecto</div><h2>Contanos tu proyecto.</h2><p class="lead" style="margin:0 auto 30px;color:#333">No necesitás llegar con la solución. Empezamos por la idea.</p><button class="btn" style="color:#111" onclick="openQuote('Consulta general ORIGEN')">Hablar con ORIGEN →</button></div></section>
 
-<section class="calculator-wrap" id="calculadora"><div class="container"><div class="section-kicker">10 · Calculadora ORIGEN</div><h2>Calculá tu superficie.</h2><p class="lead">Una herramienta para estimar tu proyecto. Elegí una superficie y se despliega únicamente ese cálculo.</p>
+<section class="conservacion" id="conservacion">
+  <div class="container">
+    <div class="section-kicker">09 · Conservación</div>
+    <div class="conservacion-grid">
+      <div>
+        <h2>Cuidar la inversión<br>también es parte<br>del proyecto.</h2>
+        <p class="lead" style="color:#4f514f">
+          Una piscina no termina cuando se coloca el último revestimiento.
+          Contamos con especialistas para el mantenimiento y la conservación
+          de piscinas, según el tipo de revestimiento y las necesidades de cada proyecto.
+        </p>
+        <p class="conservacion-note">
+          <em>Invertir en una piscina es crear un espacio para disfrutar.
+          Cuidarla es ayudar a que esa inversión siga valiendo la pena.</em>
+        </p>
+      </div>
+      <div class="conservacion-box">
+        <h3>¿Cada cuánto conviene revisarla?</h3>
+        <p style="color:#4f514f;margin-bottom:18px">
+          Como criterio general, recomendamos una revisión completa al menos una vez al año,
+          idealmente antes de la temporada de uso.
+        </p>
+        <ul>
+          <li>Juntas y piezas</li>
+          <li>Bordes y sectores críticos</li>
+          <li>Estado de la superficie</li>
+          <li>Señales de filtraciones</li>
+          <li>Manchas o deterioros</li>
+          <li>Estado general de la piscina</li>
+        </ul>
+        <p style="color:#4f514f;margin-top:20px">
+          Si aparece un problema antes de la revisión anual, conviene evaluarlo sin esperar.
+          El mantenimiento específico depende del material y del tratamiento de cada superficie.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto"><div class="container"><div class="section-kicker">10 · Proyecto</div><h2>Contanos tu proyecto.</h2><p class="lead" style="margin:0 auto 30px;color:#333">No necesitás llegar con la solución. Empezamos por la idea.</p><button class="btn" style="color:#111" onclick="openQuote('Consulta general ORIGEN')">Hablar con ORIGEN →</button></div></section>
+
+<section class="calculator-wrap" id="calculadora"><div class="container"><div class="section-kicker">11 · Calculadora ORIGEN</div><h2>Calculá tu superficie.</h2><p class="lead">Una herramienta para estimar tu proyecto. Elegí una superficie y se despliega únicamente ese cálculo.</p>
 <div class="calc-tabs"><button class="calc-tab active" data-panel="pool">Piscina</button><button class="calc-tab" data-panel="floor">Piso</button><button class="calc-tab" data-panel="wall">Pared</button></div>
 <div id="pool" class="calc-panel active"><p><strong>Piscina</strong> · cálculo de piso + paredes, con 10% de desperdicio y selección de revestimiento.</p><div class="form-grid"><label>Largo (m)<input id="pl" type="number" step=".01"></label><label>Ancho (m)<input id="pa" type="number" step=".01"></label><label>Profundidad promedio (m)<input id="pp" type="number" step=".01"></label></div><div style="margin-top:18px"><button class="btn" onclick="calcPool()">Calcular →</button></div><div id="poolResult" class="result"></div><p style="margin-top:18px;color:var(--muted)">Rosa Gres y proyectos con piezas especiales: <button class="text-link" style="background:none;border:0;color:var(--champ);cursor:pointer" onclick="openQuote('Proyecto Rosa Gres')">Consultar proyecto →</button></p></div>
 <div id="floor" class="calc-panel"><p><strong>Piso</strong> · aplicamos el rendimiento correspondiente al material seleccionado cuando está confirmado.</p><div class="form-grid"><label>Largo (m)<input id="fl" type="number" step=".01"></label><label>Ancho (m)<input id="fa" type="number" step=".01"></label><label>Desperdicio<select id="fw"><option value=".05">5%</option><option value=".10" selected>10%</option><option value=".15">15%</option></select></label></div><div style="margin-top:18px"><button class="btn" onclick="calcArea('floor')">Calcular →</button></div><div id="floorResult" class="result"></div></div>
