@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ORIGEN SURFACES | Materiales y superficies para arquitectura</title>
+<title>ORIGEN SURFACES | Superficies · Materiales · Soluciones</title>
 
 <meta name="description" content="ORIGEN SURFACES. Superficies, materiales y soluciones para transformar espacios.">
 
@@ -608,14 +608,6 @@ footer{
   font-size:18px;
   line-height:1.7;
 }
-.boton-ver-revestimientos{
-  margin:0 auto 45px;
-  display:block;
-  cursor:pointer;
-}
-.productos-grid[hidden]{
-  display:none;
-}
 .productos-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -807,76 +799,32 @@ footer{
 }
 
 /* =========================
-   VIDEO PRINCIPAL
+   EXPERIENCIA WOW · CATEGORÍAS
 ========================= */
-.video-principal{background:#111;position:relative;overflow:hidden;}
-.video-principal video{display:block;width:100%;max-height:760px;object-fit:cover;aspect-ratio:16/7;}
-.video-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:clamp(25px,5vw,80px);background:linear-gradient(transparent 45%,rgba(0,0,0,.55));color:#fff;pointer-events:none;}
-.video-overlay h2{color:#fff;font-size:clamp(35px,5vw,76px);line-height:.98;max-width:760px;}
-
-/* =========================
-   CATEGORÍAS WOW
-========================= */
-.categorias{padding:140px 0;background:#fffdf9;}
-.categorias-intro{max-width:820px;}
-.categorias-intro h2{font-size:clamp(52px,6vw,88px);line-height:.92;letter-spacing:-.05em;}
-.categorias-intro p{margin-top:28px;max-width:720px;color:#646963;font-size:18px;line-height:1.7;}
-.categorias-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:70px;}
-.categoria{border:0;background:#f2eee7;padding:0;min-height:0;overflow:hidden;position:relative;}
-.categoria summary{cursor:pointer;list-style:none;position:relative;min-height:390px;display:flex;align-items:flex-end;padding:34px;color:white;font-family:Georgia,"Times New Roman",serif;font-size:38px;line-height:1;overflow:hidden;background:#6b746d;}
-.categoria summary::-webkit-details-marker{display:none;}
-.categoria summary:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.03) 25%,rgba(0,0,0,.68) 100%);z-index:1;}
-.categoria summary:after{content:'+';position:absolute;right:25px;top:20px;z-index:3;width:42px;height:42px;border:1px solid rgba(255,255,255,.65);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:25px;font-weight:300;}
-.categoria[open] summary:after{content:'−';}
-.categoria summary .categoria-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease;}
-.categoria summary:hover .categoria-foto{transform:scale(1.04);}
-.categoria summary .categoria-nombre{position:relative;z-index:2;max-width:80%;}
-.categoria-contenido{background:#f4f0e8;padding:34px;}
-.categoria-contenido > p{color:#626762;font-size:16px;line-height:1.65;margin-bottom:25px;max-width:850px;}
-.productos-mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-.producto-mini{background:#fffdf9;border:1px solid rgba(52,71,63,.12);overflow:hidden;}
-.producto-mini-foto{aspect-ratio:1/1;background:#e4ded3;overflow:hidden;}
-.producto-mini-foto img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
-.producto-mini:hover img{transform:scale(1.04);}
-.producto-mini-info{padding:16px;}
-.producto-mini-info strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:22px;color:var(--verde);font-weight:400;line-height:1.05;}
-.producto-mini-info span{display:block;margin-top:7px;color:#737871;font-size:11px;letter-spacing:.12em;text-transform:uppercase;}
-.foto-pendiente{height:100%;min-height:180px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:11px;letter-spacing:.16em;color:#68736d;background:linear-gradient(135deg,#ddd6ca,#f5f1e9);}
-.foto-pendiente strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:21px;letter-spacing:0;color:var(--verde);margin-bottom:8px;}
-.rosa-estilo{margin-top:26px;padding:28px;background:#fffdf9;border-left:3px solid var(--verde);}
-.rosa-estilo h4{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:30px;color:var(--verde);margin-bottom:12px;}
-.rosa-estilo p{color:#626762;line-height:1.65;margin-bottom:12px;}
-.rosa-colores{display:flex;flex-wrap:wrap;gap:9px;}
-.rosa-colores span{padding:8px 12px;border:1px solid rgba(52,71,63,.15);font-size:12px;color:#58635e;background:#f7f4ee;}
-@media(max-width:1100px){.categorias-grid{grid-template-columns:1fr 1fr}.productos-mini-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:700px){.categorias{padding:90px 0}.categorias-grid{grid-template-columns:1fr}.categoria summary{min-height:300px;font-size:32px}.productos-mini-grid{grid-template-columns:1fr 1fr}.categoria-contenido{padding:22px}}
-
-/* =========================
-   SÍMIL BALI ARG. / TRAVERTINOS
-========================= */
-.familias-especiales{padding:120px 0;background:#eef1ec;}
-.familia-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px;}
-.familia-card{background:#fffdf9;padding:38px;border:1px solid rgba(52,71,63,.12);}
-.familia-card h3{font-size:40px;line-height:1;margin-bottom:18px;}
-.familia-card p{color:#626762;margin-bottom:18px;}
-.familia-card ul{padding-left:20px;color:#626762;}
-
-/* =========================
-   MARCAS
-========================= */
-.marcas{padding:120px 0;background:#fffdf9;}
-.marcas-intro{max-width:720px;color:#626762;font-size:18px;margin-top:25px;}
-.marcas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:55px;align-items:stretch;}
-.marca-card{min-height:160px;border:1px solid rgba(52,71,63,.14);background:#fff;display:flex;align-items:center;justify-content:center;padding:28px;}
-.marca-card img{width:100%;height:105px;object-fit:contain;}
-.marca-card .marca-text{font-family:Georgia,"Times New Roman",serif;font-size:25px;color:var(--verde);text-align:center;}
-@media(max-width:900px){.categorias-grid,.marcas-grid{grid-template-columns:1fr 1fr}.familia-grid{grid-template-columns:1fr}}
-@media(max-width:600px){.categorias-grid,.marcas-grid{grid-template-columns:1fr}.video-principal video{aspect-ratio:4/3}.categoria summary{font-size:27px}}
-
-
-    .categoria-fotos .fotos-reserva{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
-    .foto-reserva{min-height:105px;border:1px dashed rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;letter-spacing:.08em;font-size:12px;background:rgba(255,255,255,.04);border-radius:8px}
-    .foto-reserva small{font-size:10px;opacity:.65;letter-spacing:.03em;margin-top:5px}
+.coleccion-wow{padding:140px 0;background:#f7f4ee;}
+.wow-head{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:end;margin-bottom:60px;}
+.wow-head h2{font-size:clamp(52px,5vw,82px);line-height:.95;letter-spacing:-.045em;}
+.wow-head p{max-width:620px;color:#626762;font-size:18px;line-height:1.75;}
+.wow-categorias{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.wow-cat{position:relative;border:0;padding:0;min-height:330px;background:#d9d4ca;overflow:hidden;cursor:pointer;text-align:left;}
+.wow-cat-photo{position:absolute;inset:0;display:block;}
+.wow-cat-photo img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;}
+.wow-placeholder{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#d9d3c8,#9aa39c);font-size:13px;letter-spacing:.22em;color:#fff;text-align:center;padding:20px;}
+.wow-cat-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,25,23,.05),rgba(20,25,23,.72));}
+.wow-cat-title{position:absolute;left:28px;bottom:27px;color:#fff;font-family:Georgia,serif;font-size:29px;line-height:1.05;z-index:2;}
+.wow-cat-plus{position:absolute;right:25px;top:21px;color:#fff;font-size:31px;font-weight:200;z-index:2;}
+.wow-cat:hover .wow-cat-photo img,.wow-cat.active .wow-cat-photo img{transform:scale(1.06);}
+.wow-cat.active{box-shadow:0 0 0 2px #53655d inset;}
+.wow-productos-head{display:flex;justify-content:space-between;align-items:center;margin:70px 0 28px;padding-top:28px;border-top:1px solid rgba(52,71,63,.15);}
+.wow-productos-head .eyebrow{margin:0;}
+.wow-volver{border:0;background:transparent;color:#53655d;letter-spacing:.14em;font-size:11px;cursor:pointer;text-decoration:underline;text-underline-offset:5px;}
+.wow-productos-head + .productos-grid .producto-card{animation:wowIn .35s ease both;}
+@keyframes wowIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.wow-empty{padding:80px 30px;text-align:center;background:#ebe7df;margin-top:30px;}
+.wow-empty-title{font-family:Georgia,serif;font-size:36px;color:#34473f;margin-bottom:15px;}
+.wow-empty p{color:#666b65;}
+@media(max-width:900px){.wow-head{grid-template-columns:1fr;gap:25px}.wow-categorias{grid-template-columns:1fr 1fr}.wow-cat{min-height:280px}}
+@media(max-width:600px){.coleccion-wow{padding:90px 0}.wow-categorias{grid-template-columns:1fr}.wow-cat{min-height:330px}.wow-productos-head{align-items:flex-start;gap:15px;flex-direction:column}}
 </style>
 </head>
 
@@ -891,9 +839,9 @@ footer{
     </a>
 
     <nav class="menu">
-      <a href="#categorias">Categorías</a>
+      <a href="#colecciones">Colecciones</a>
       <a href="#piscinas">Piscinas</a>
-      <a href="#marcas">Marcas</a>
+      <a href="#origen">Origen</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
@@ -943,16 +891,6 @@ footer{
 
 </section>
 
-<!-- VIDEO PRINCIPAL -->
-<section class="video-principal" aria-label="Video de piscinas y espacios exteriores">
-  <video autoplay muted loop playsinline poster="video-piscinas-poster.jpg">
-    <source src="video-piscinas.mp4" type="video/mp4">
-    Tu navegador no admite video HTML5.
-  </video>
-  <div class="video-overlay"><h2>Espacios exteriores que se viven.<br><em>Superficies que transforman.</em></h2></div>
-</section>
-
-
 
 <!-- =========================
      INTRO
@@ -995,149 +933,6 @@ footer{
 
 </section>
 
-<!-- CATEGORÍAS WOW -->
-<section class="categorias" id="categorias">
-  <div class="container">
-    <div class="categorias-intro">
-      <div class="eyebrow">EXPLORÁ ORIGEN SURFACES</div>
-      <h2>Materiales para cada<br><em>forma de habitar.</em></h2>
-      <p>Elegí una categoría. La imagen abre la colección completa y te muestra sus productos.</p>
-    </div>
-
-    <div class="categorias-grid">
-
-      <details class="categoria">
-        <summary>
-          <img class="categoria-foto" src="Captura de pantalla 2026-07-16 220912.png" alt="Símil Bali Arg.">
-          <span class="categoria-nombre">Símil Bali Arg.</span>
-        </summary>
-        <div class="categoria-contenido">
-          <p>Revestimiento marmolítico prensado, pulido suave, fabricación nacional. Cinco familias de color.</p>
-          <div class="productos-mini-grid">
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>Mix Bruma</strong>FOTO DE PIEZA</div></div></div><div class="producto-mini-info"><strong>Mix Bruma</strong><span>Azul</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>Mix Oliva</strong>FOTO DE PIEZA</div></div></div><div class="producto-mini-info"><strong>Mix Oliva</strong><span>Verde</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>Mix Alba</strong>FOTO DE PIEZA</div></div></div><div class="producto-mini-info"><strong>Mix Alba</strong><span>Blanco</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>Mix Marfil</strong>FOTO DE PIEZA</div></div></div><div class="producto-mini-info"><strong>Mix Marfil</strong><span>Beige</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>Mix Ónix</strong>FOTO DE PIEZA</div></div></div><div class="producto-mini-info"><strong>Mix Ónix</strong><span>Negro</span></div></article>
-          </div>
-        </div>
-      </details>
-
-      <details class="categoria">
-        <summary>
-          <img class="categoria-foto" src="Captura de pantalla 2026-08-26 212707.png" alt="Travertinos">
-          <span class="categoria-nombre">Travertinos</span>
-        </summary>
-        <div class="categoria-contenido">
-          <p>Superficies de lenguaje natural para soláriums, bordes y grandes superficies.</p>
-          <div class="productos-mini-grid">
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 212707.png" alt="Travertino Blanco"></div><div class="producto-mini-info"><strong>Travertino Blanco</strong><span>30 × 60 cm</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>Travertino Beige</strong>FOTO DE PIEZA</div></div></div><div class="producto-mini-info"><strong>Travertino Beige</strong><span>30 × 60 cm</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>Gris Perla</strong>FOTO DE PIEZA</div></div></div><div class="producto-mini-info"><strong>Travertino Gris Perla</strong><span>30 × 60 cm</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>Gris Ágatha</strong>FOTO DE PIEZA</div></div></div><div class="producto-mini-info"><strong>Travertino Gris Ágatha</strong><span>30 × 60 cm</span></div></article>
-          </div>
-        </div>
-      </details>
-
-      <details class="categoria">
-        <summary>
-          <img class="categoria-foto" src="Captura de pantalla 2026-08-26 182715.png" alt="Cerámica">
-          <span class="categoria-nombre">Cerámica</span>
-        </summary>
-        <div class="categoria-contenido">
-          <p>La colección de cerámicas para piscinas y proyectos exteriores. Cada pieza se presenta con su propia imagen.</p>
-          <div class="productos-mini-grid">
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 182715.png" alt="Algarve"></div><div class="producto-mini-info"><strong>Algarve</strong><span>Cerámica</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 182740.png" alt="Bodrum"></div><div class="producto-mini-info"><strong>Bodrum</strong><span>Cerámica</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 182822.png" alt="Caribbean"></div><div class="producto-mini-info"><strong>Caribbean</strong><span>Cerámica</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 182846.png" alt="Maldivas"></div><div class="producto-mini-info"><strong>Maldivas</strong><span>Cerámica</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 182921.png" alt="Córsega"></div><div class="producto-mini-info"><strong>Córsega</strong><span>Cerámica</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 182946.png" alt="Ibiza"></div><div class="producto-mini-info"><strong>Ibiza</strong><span>Cerámica</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 183025.png" alt="Beige"></div><div class="producto-mini-info"><strong>Beige</strong><span>Cerámica</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 183052.png" alt="Blue"></div><div class="producto-mini-info"><strong>Blue</strong><span>Cerámica</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 183121.png" alt="Seychelles Claro"></div><div class="producto-mini-info"><strong>Seychelles Claro</strong><span>Cerámica</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 183142.png" alt="Seychelles Oscuro"></div><div class="producto-mini-info"><strong>Seychelles Oscuro</strong><span>Cerámica</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 183236.png" alt="Blanco"></div><div class="producto-mini-info"><strong>Blanco</strong><span>Cerámica</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-08-26 183214.png" alt="Porcelanato"></div><div class="producto-mini-info"><strong>Porcelanato</strong><span>Gran formato</span></div></article>
-          </div>
-        </div>
-      </details>
-
-      <details class="categoria">
-        <summary>
-          <img class="categoria-foto" src="Captura de pantalla 2026-06-29 165415.png" alt="Piedras">
-          <span class="categoria-nombre">Piedras</span>
-        </summary>
-        <div class="categoria-contenido">
-          <p>Piedras y superficies de inspiración mineral para proyectos con carácter.</p>
-          <div class="productos-mini-grid">
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-06-29 165415.png" alt="Piedra Bali Black"></div><div class="producto-mini-info"><strong>Piedra Bali Black</strong><span>Piedra natural</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><img src="Captura de pantalla 2026-07-16 220912.png" alt="Piedra Bali Green"></div><div class="producto-mini-info"><strong>Piedra Bali Green</strong><span>Piedra natural</span></div></article>
-          </div>
-        </div>
-      </details>
-
-      <details class="categoria">
-        <summary>
-          <div class="categoria-foto foto-pendiente"><div><strong>WPC &amp; PÉRGOLAS</strong>FOTO DE PROYECTO</div></div>
-          <span class="categoria-nombre">WPC &amp; Pérgolas</span>
-        </summary>
-        <div class="categoria-contenido">
-          <p>Soluciones para ampliar, proteger y jerarquizar los espacios exteriores.</p>
-          <div class="productos-mini-grid">
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>WPC</strong>FOTO DE PRODUCTO</div></div></div><div class="producto-mini-info"><strong>WPC</strong><span>Exterior</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>Pérgolas</strong>FOTO DE PROYECTO</div></div></div><div class="producto-mini-info"><strong>Pérgolas</strong><span>Exterior</span></div></article>
-          </div>
-        </div>
-      </details>
-
-      <details class="categoria">
-        <summary>
-          <div class="categoria-foto foto-pendiente"><div><strong>ROSA GRES · ESPAÑA</strong>FOTO DE COLECCIÓN</div></div>
-          <span class="categoria-nombre">Rosa Gres · España</span>
-        </summary>
-        <div class="categoria-contenido">
-          <p>Soluciones cerámicas para piscinas y espacios exteriores, donde diseño, tecnología y funcionalidad se encuentran.</p>
-          <div class="rosa-estilo">
-            <h4>ESTILO · La reinvención del estilo rural.</h4>
-            <p>Una vuelta a la autenticidad, inspirada en las texturas de las terracotas.</p>
-            <div class="rosa-colores"><span>Cuore Rosso</span><span>Cuore Beige</span><span>Cuore Verde</span><span>97,9 × 97,9 cm</span><span>Liso Rectificado</span><span>Anti-slip Rectificado</span></div>
-          </div>
-        </div>
-      </details>
-
-      <details class="categoria">
-        <summary>
-          <div class="categoria-foto foto-pendiente"><div><strong>SELECCIÓN EUROPEA</strong>FOTOS DE PIEZAS</div></div>
-          <span class="categoria-nombre">Selección europea</span>
-        </summary>
-        <div class="categoria-contenido">
-          <p>Una selección de piezas para proyectos de arquitectura. Dejamos la identidad visual abierta para incorporar las fotografías reales de cada producto.</p>
-          <div class="productos-mini-grid">
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>FOTO 01</strong>AGREGAR PIEZA</div></div></div><div class="producto-mini-info"><strong>Producto 01</strong><span>Selección europea</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>FOTO 02</strong>AGREGAR PIEZA</div></div></div><div class="producto-mini-info"><strong>Producto 02</strong><span>Selección europea</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>FOTO 03</strong>AGREGAR PIEZA</div></div></div><div class="producto-mini-info"><strong>Producto 03</strong><span>Selección europea</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>FOTO 04</strong>AGREGAR PIEZA</div></div></div><div class="producto-mini-info"><strong>Producto 04</strong><span>Selección europea</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>FOTO 05</strong>AGREGAR PIEZA</div></div></div><div class="producto-mini-info"><strong>Producto 05</strong><span>Selección europea</span></div></article>
-            <article class="producto-mini"><div class="producto-mini-foto"><div class="foto-pendiente"><div><strong>FOTO 06</strong>AGREGAR PIEZA</div></div></div><div class="producto-mini-info"><strong>Producto 06</strong><span>Selección europea</span></div></article>
-          </div>
-        </div>
-      </details>
-
-      <details class="categoria">
-        <summary>
-          <div class="categoria-foto foto-pendiente"><div><strong>OTRAS SOLUCIONES</strong>FOTO DE PROYECTO</div></div>
-          <span class="categoria-nombre">Otras soluciones</span>
-        </summary>
-        <div class="categoria-contenido">
-          <p>Nuevas propuestas que iremos incorporando para arquitectura, paisajismo y construcción.</p>
-        </div>
-      </details>
-
-    </div>
-  </div>
-</section>
-
 
 <!-- =========================
      PISCINAS
@@ -1178,45 +973,488 @@ footer{
   </div>
 
 
-
-</section>
-
-
-
-
-
-
-<!-- FAMILIAS DESTACADAS -->
-<section class="familias-especiales" id="familias-destacadas">
-  <div class="container">
-    <div class="eyebrow">SELECCIONES ORIGEN</div>
-    <h2>Texturas que construyen<br><em>atmósferas.</em></h2>
-    <div class="familia-grid">
-      <article class="familia-card"><h3>Símil Bali Arg.</h3><p>Revestimiento marmolítico prensado, pulido suave, fabricación nacional. Piezas de 11 × 11 cm y espesor de 1,4 cm.</p><ul><li>Mix Bruma · azul</li><li>Mix Oliva · verde</li><li>Mix Alba · blanco</li><li>Mix Marfil · beige</li><li>Mix Ónix · negro</li></ul></article>
-      <article class="familia-card"><h3>Travertino</h3><p>Placas de 30 × 60 cm y espesor de 1,6 cm. Terminación pulido natural tipo travertino y superficie texturada.</p><ul><li>Travertino Blanco</li><li>Travertino Beige</li><li>Travertino Gris Perla</li><li>Travertino Gris Ágatha</li></ul></article>
-    </div>
-  </div>
-</section>
 <!-- =========================
-     COLECCIÓN DE PISCINAS
+     CALCULADORA ORIGEN
 ========================= -->
-<section class="productos-piscina" id="revestimientos-piscina">
-  <div class="container">
-    <div class="productos-head">
+
+<div class="calculadora-piscina">
+
+  <div class="calculadora-intro">
+
+    <div class="eyebrow">
+      CALCULADORA ORIGEN
+    </div>
+
+    <h2>
+      Calculá tu piscina<br>
+      <em>de forma simple.</em>
+    </h2>
+
+    <p>
+      Ingresá las medidas de tu piscina y elegí el revestimiento.
+      ORIGEN estima la superficie, agrega un 10% de desperdicio
+      y calcula la cantidad de material necesaria.
+    </p>
+
+  </div>
+
+
+  <div class="calculadora-form">
+
+    <div class="campo">
+
+      <label for="largo">
+        Largo de la piscina
+      </label>
+
+      <input
+        type="number"
+        id="largo"
+        placeholder="Ej. 8"
+        min="0"
+        step="0.01">
+
+      <span>
+        metros
+      </span>
+
+    </div>
+
+
+    <div class="campo">
+
+      <label for="ancho">
+        Ancho de la piscina
+      </label>
+
+      <input
+        type="number"
+        id="ancho"
+        placeholder="Ej. 4"
+        min="0"
+        step="0.01">
+
+      <span>
+        metros
+      </span>
+
+    </div>
+
+
+    <div class="campo">
+
+      <label for="profundidad">
+        Profundidad promedio
+      </label>
+
+      <input
+        type="number"
+        id="profundidad"
+        placeholder="Ej. 1.50"
+        min="0"
+        step="0.01">
+
+      <span>
+        metros
+      </span>
+
+    </div>
+
+
+    <div class="campo">
+
+      <label for="revestimiento">
+        Elegí tu revestimiento
+      </label>
+
+      <select id="revestimiento">
+
+        <option value="">
+          Seleccionar
+        </option>
+
+
+        <!-- =====================
+             CERÁMICA 10 X 10
+        ====================== -->
+
+        <optgroup label="CERÁMICA 10 × 10">
+
+          <option value="moorea-10">
+            Moorea · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="tonga-10">
+            Tonga · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="kauai-10">
+            Kauai · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="samoa-bright-10">
+            Samoa Bright · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="malawi-10">
+            Malawi · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="portland-10">
+            Portland · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="palau-bright-10">
+            Palau Bright · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="vis-10">
+            Vis · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="samoa-10">
+            Samoa · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="palau-10">
+            Palau · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="maui-10">
+            Mauí · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="kaimu-10">
+            Kaimú · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="cobalto-10">
+            Cobalto · 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="ceu-10">
+            Céu · 10 × 10 · 1,95 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             CERÁMICA 20 X 20
+        ====================== -->
+
+        <optgroup label="CERÁMICA 20 × 20">
+
+          <option value="palau-20">
+            Palau · 20 × 20 · 1,50 m²/caja
+          </option>
+
+          <option value="kaimu-20">
+            Kaimú · 20 × 20 · 1,50 m²/caja
+          </option>
+
+          <option value="vis-20">
+            Vis · 20 × 20 · 1,50 m²/caja
+          </option>
+
+          <option value="portland-20">
+            Portland · 20 × 20 · 1,50 m²/caja
+          </option>
+
+          <option value="malawi-20">
+            Malawi · 20 × 20 · 1,50 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             VENECITAS
+        ====================== -->
+
+        <optgroup label="CERAMICA">
+
+          <option value="algarve">
+            Algarve · 2,07 m²/caja
+          </option>
+
+          <option value="bodrum">
+            Bodrum · 2,07 m²/caja
+          </option>
+
+          <option value="caribbean">
+            Caribbean · 2,07 m²/caja
+          </option>
+
+          <option value="maldivas">
+            Maldivas · 2,07 m²/caja
+          </option>
+
+          <option value="corsega">
+            Córsega · 2,07 m²/caja
+          </option>
+
+          <option value="ibiza">
+            Ibiza · 2,07 m²/caja
+          </option>
+
+          <option value="beige">
+            Beige · 1,44 m²/caja
+          </option>
+
+          <option value="blue">
+            Blue · 1,44 m²/caja
+          </option>
+
+          <option value="seychelles-claro">
+            Seychelles Claro · 1,44 m²/caja
+          </option>
+
+          <option value="seychelles-oscuro">
+            Seychelles Oscuro · 1,44 m²/caja
+          </option>
+
+          <option value="blanco">
+            Blanco · 1,44 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             PORCELANATO
+        ====================== -->
+
+        <optgroup label="PORCELANATO">
+
+          <option value="porcelanato">
+            Porcelanato · 2,06 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             VENECITA CLÁSICA
+        ====================== -->
+
+        <optgroup label="VENECITA CLÁSICA">
+
+          <option value="clasica">
+            Venecita Clásica · 4,28 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             VENECITA PREMIUM
+        ====================== -->
+
+        <optgroup label="VENECITA PREMIUM">
+
+          <option value="premium">
+            Venecita Premium · 2,00 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             PIEDRA BALI
+        ====================== -->
+
+        <optgroup label="PIEDRA BALI · 10 × 10">
+
+          <option value="bali-black">
+            Piedra Bali Black · 10 × 10 · 1,00 m²/caja
+          </option>
+
+          <option value="bali-green">
+            Piedra Bali Green · 10 × 10 · 1,00 m²/caja
+          </option>
+
+        </optgroup>
+
+
+        <!-- =====================
+             TRAVERTINO
+        ====================== -->
+
+        <optgroup label="PIEDRA NATURAL">
+
+          <option value="travertino">
+            Travertino · cálculo por m²
+          </option>
+
+        </optgroup>
+
+      </select>
+
+    </div>
+
+
+    <div
+      id="error-calculadora"
+      class="error-calculadora">
+    </div>
+
+
+    <button
+      type="button"
+      class="button"
+      onclick="calcularPiscina()">
+
+      CALCULAR
+
+    </button>
+
+  </div>
+
+
+  <!-- RESULTADO -->
+
+  <div
+    id="resultado-piscina"
+    class="resultado-piscina">
+
+    <div class="resultado-titulo">
+      Tu estimación ORIGEN
+    </div>
+
+
+    <div class="resultado-datos">
+
       <div>
-        <div class="eyebrow">REVESTIMIENTOS PARA PISCINAS</div>
-        <h2>El agua también<br><em>se diseña.</em></h2>
+
+        <span>
+          Superficie real
+        </span>
+
+        <strong id="resultado-superficie">
+          —
+        </strong>
+
+      </div>
+
+
+      <div>
+
+        <span>
+          Con 10% de desperdicio
+        </span>
+
+        <strong id="resultado-desperdicio">
+          —
+        </strong>
+
+      </div>
+
+
+      <div>
+
+        <span>
+          Revestimiento
+        </span>
+
+        <strong id="resultado-material">
+          —
+        </strong>
+
+      </div>
+
+
+      <div>
+
+        <span>
+          Material necesario
+        </span>
+
+        <strong id="resultado-cantidad">
+          —
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <a
+      href="https://wa.me/5491147004804"
+      class="button"
+      target="_blank">
+
+      QUIERO COTIZAR MI PISCINA
+
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- =========================
+     COLECCIÓN VISUAL ORIGEN
+========================= -->
+<section class="coleccion-wow" id="revestimientos-piscina">
+  <div class="container">
+    <div class="wow-head">
+      <div>
+        <div class="eyebrow">ORIGEN SURFACES · COLECCIONES</div>
+        <h2>Elegí una categoría.<br><em>Descubrí la materia.</em></h2>
       </div>
       <p>
-    El agua nunca es la misma. Cambia con la luz, con la materia y con el espacio que la contiene.
-    Seleccionamos superficies que construyen esa experiencia, creando piscinas donde arquitectura,
-    paisaje y agua encuentran un mismo lenguaje.
-</p>
+        Una experiencia visual para recorrer nuestras superficies.
+        Tocá una categoría para descubrir sus productos, fotografías y opciones.
+      </p>
     </div>
 
-    <button type="button" class="button boton-ver-revestimientos" onclick="mostrarRevestimientos()">VER REVESTIMIENTOS DE PISCINA</button>
+    <div class="wow-categorias">
+      <button class="wow-cat active" data-cat="ceramica" type="button">
+        <span class="wow-cat-photo"><img src="tonga2.png" alt="Cerámica ORIGEN"></span>
+        <span class="wow-cat-overlay"></span><span class="wow-cat-title">CERÁMICA</span><span class="wow-cat-plus">+</span>
+      </button>
+      <button class="wow-cat" data-cat="bali" type="button">
+        <span class="wow-cat-photo"><img src="Captura de pantalla 2026-07-16 220912.png" alt="Símil Bali ORIGEN"></span>
+        <span class="wow-cat-overlay"></span><span class="wow-cat-title">SÍMIL BALI ARG.</span><span class="wow-cat-plus">+</span>
+      </button>
+      <button class="wow-cat" data-cat="travertino" type="button">
+        <span class="wow-cat-photo"><img src="Captura de pantalla 2026-08-26 212707.png" alt="Travertino ORIGEN"></span>
+        <span class="wow-cat-overlay"></span><span class="wow-cat-title">TRAVERTINOS</span><span class="wow-cat-plus">+</span>
+      </button>
+      <button class="wow-cat" data-cat="piedras" type="button">
+        <span class="wow-cat-photo"><img src="Captura de pantalla 2026-06-29 165415.png" alt="Piedras ORIGEN"></span>
+        <span class="wow-cat-overlay"></span><span class="wow-cat-title">PIEDRAS</span><span class="wow-cat-plus">+</span>
+      </button>
+      <button class="wow-cat" data-cat="rosa-gres" type="button">
+        <span class="wow-cat-photo wow-placeholder">ROSA GRES · ESPAÑA</span>
+        <span class="wow-cat-overlay"></span><span class="wow-cat-title">ROSA GRES · ESPAÑA</span><span class="wow-cat-plus">+</span>
+      </button>
+      <button class="wow-cat" data-cat="europea" type="button">
+        <span class="wow-cat-photo wow-placeholder">FOTO DE COLECCIÓN</span>
+        <span class="wow-cat-overlay"></span><span class="wow-cat-title">SELECCIÓN EUROPEA</span><span class="wow-cat-plus">+</span>
+      </button>
+      <button class="wow-cat" data-cat="wpc" type="button">
+        <span class="wow-cat-photo wow-placeholder">FOTO WPC / PÉRGOLA</span>
+        <span class="wow-cat-overlay"></span><span class="wow-cat-title">WPC & PÉRGOLAS</span><span class="wow-cat-plus">+</span>
+      </button>
+      <button class="wow-cat" data-cat="otras" type="button">
+        <span class="wow-cat-photo wow-placeholder">NUEVAS SOLUCIONES</span>
+        <span class="wow-cat-overlay"></span><span class="wow-cat-title">OTRAS SOLUCIONES</span><span class="wow-cat-plus">+</span>
+      </button>
+    </div>
 
-    <div class="productos-grid" id="lista-revestimientos" hidden>
+    <div class="wow-productos-head">
+      <div class="eyebrow" id="wow-productos-label">CERÁMICA · PRODUCTOS</div>
+      <button class="wow-volver" id="wow-volver" type="button">VER TODAS LAS CATEGORÍAS</button>
+    </div>
+
+    <div class="productos-grid" id="wow-productos-grid">
+
       <article class="producto-card" data-producto="moorea-10">
         <div class="producto-card-photo">
           <img src="moorea.png" alt="Piscina revestida con Moorea">
@@ -1650,6 +1888,12 @@ footer{
         </div>
       </article>
     </div>
+    </div>
+
+    <div class="wow-empty" id="wow-empty" hidden>
+      <div class="wow-empty-title">Estamos preparando esta selección.</div>
+      <p>Dejamos el espacio listo para incorporar las fotografías y productos de esta categoría.</p>
+    </div>
   </div>
 </section>
 
@@ -1799,461 +2043,7 @@ footer{
 
 </section>
 
-<!-- =========================
-     CALCULADORA ORIGEN
-========================= -->
 
-<div class="calculadora-piscina">
-
-  <div class="calculadora-intro">
-
-    <div class="eyebrow">
-      CALCULADORA ORIGEN
-    </div>
-
-    <h2>
-      Calculá tu piscina<br>
-      <em>de forma simple.</em>
-    </h2>
-
-    <p>
-      Ingresá las medidas de tu piscina y elegí el revestimiento.
-      ORIGEN estima la superficie, agrega un 10% de desperdicio
-      y calcula la cantidad de material necesaria.
-    </p>
-
-  </div>
-
-
-  <div class="calculadora-form">
-
-    <div class="campo">
-
-      <label for="largo">
-        Largo de la piscina
-      </label>
-
-      <input
-        type="number"
-        id="largo"
-        placeholder="Ej. 8"
-        min="0"
-        step="0.01">
-
-      <span>
-        metros
-      </span>
-
-    </div>
-
-
-    <div class="campo">
-
-      <label for="ancho">
-        Ancho de la piscina
-      </label>
-
-      <input
-        type="number"
-        id="ancho"
-        placeholder="Ej. 4"
-        min="0"
-        step="0.01">
-
-      <span>
-        metros
-      </span>
-
-    </div>
-
-
-    <div class="campo">
-
-      <label for="profundidad">
-        Profundidad promedio
-      </label>
-
-      <input
-        type="number"
-        id="profundidad"
-        placeholder="Ej. 1.50"
-        min="0"
-        step="0.01">
-
-      <span>
-        metros
-      </span>
-
-    </div>
-
-
-    <div class="campo">
-
-      <label for="revestimiento">
-        Elegí tu revestimiento
-      </label>
-
-      <select id="revestimiento">
-
-        <option value="">
-          Seleccionar
-        </option>
-
-
-        <!-- =====================
-             CERÁMICA 10 X 10
-        ====================== -->
-
-        <optgroup label="CERÁMICA 10 × 10">
-
-          <option value="moorea-10">
-            Moorea · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="tonga-10">
-            Tonga · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="kauai-10">
-            Kauai · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="samoa-bright-10">
-            Samoa Bright · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="malawi-10">
-            Malawi · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="portland-10">
-            Portland · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="palau-bright-10">
-            Palau Bright · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="vis-10">
-            Vis · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="samoa-10">
-            Samoa · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="palau-10">
-            Palau · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="maui-10">
-            Mauí · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="kaimu-10">
-            Kaimú · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="cobalto-10">
-            Cobalto · 10 × 10 · 1,95 m²/caja
-          </option>
-
-          <option value="ceu-10">
-            Céu · 10 × 10 · 1,95 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             CERÁMICA 20 X 20
-        ====================== -->
-
-        <optgroup label="CERÁMICA 20 × 20">
-
-          <option value="palau-20">
-            Palau · 20 × 20 · 1,50 m²/caja
-          </option>
-
-          <option value="kaimu-20">
-            Kaimú · 20 × 20 · 1,50 m²/caja
-          </option>
-
-          <option value="vis-20">
-            Vis · 20 × 20 · 1,50 m²/caja
-          </option>
-
-          <option value="portland-20">
-            Portland · 20 × 20 · 1,50 m²/caja
-          </option>
-
-          <option value="malawi-20">
-            Malawi · 20 × 20 · 1,50 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             VENECITAS
-        ====================== -->
-
-        <optgroup label="CERAMICA">
-
-          <option value="algarve">
-            Algarve · 2,07 m²/caja
-          </option>
-
-          <option value="bodrum">
-            Bodrum · 2,07 m²/caja
-          </option>
-
-          <option value="caribbean">
-            Caribbean · 2,07 m²/caja
-          </option>
-
-          <option value="maldivas">
-            Maldivas · 2,07 m²/caja
-          </option>
-
-          <option value="corsega">
-            Córsega · 2,07 m²/caja
-          </option>
-
-          <option value="ibiza">
-            Ibiza · 2,07 m²/caja
-          </option>
-
-          <option value="beige">
-            Beige · 1,44 m²/caja
-          </option>
-
-          <option value="blue">
-            Blue · 1,44 m²/caja
-          </option>
-
-          <option value="seychelles-claro">
-            Seychelles Claro · 1,44 m²/caja
-          </option>
-
-          <option value="seychelles-oscuro">
-            Seychelles Oscuro · 1,44 m²/caja
-          </option>
-
-          <option value="blanco">
-            Blanco · 1,44 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             PORCELANATO
-        ====================== -->
-
-        <optgroup label="PORCELANATO">
-
-          <option value="porcelanato">
-            Porcelanato · 2,06 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             VENECITA CLÁSICA
-        ====================== -->
-
-        <optgroup label="VENECITA CLÁSICA">
-
-          <option value="clasica">
-            Venecita Clásica · 4,28 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             VENECITA PREMIUM
-        ====================== -->
-
-        <optgroup label="VENECITA PREMIUM">
-
-          <option value="premium">
-            Venecita Premium · 2,00 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             PIEDRA BALI
-        ====================== -->
-
-        <optgroup label="PIEDRA BALI · 10 × 10">
-
-          <option value="bali-black">
-            Piedra Bali Black · 10 × 10 · 1,00 m²/caja
-          </option>
-
-          <option value="bali-green">
-            Piedra Bali Green · 10 × 10 · 1,00 m²/caja
-          </option>
-
-        </optgroup>
-
-
-        <!-- =====================
-             TRAVERTINO
-        ====================== -->
-
-        <optgroup label="PIEDRA NATURAL">
-
-          <option value="travertino">
-            Travertino · cálculo por m²
-          </option>
-
-        </optgroup>
-
-      </select>
-
-    </div>
-
-
-    <div
-      id="error-calculadora"
-      class="error-calculadora">
-    </div>
-
-
-    <button
-      type="button"
-      class="button"
-      onclick="calcularPiscina()">
-
-      CALCULAR
-
-    </button>
-
-  </div>
-
-
-  <!-- RESULTADO -->
-
-  <div
-    id="resultado-piscina"
-    class="resultado-piscina">
-
-    <div class="resultado-titulo">
-      Tu estimación ORIGEN
-    </div>
-
-
-    <div class="resultado-datos">
-
-      <div>
-
-        <span>
-          Superficie real
-        </span>
-
-        <strong id="resultado-superficie">
-          —
-        </strong>
-
-      </div>
-
-
-      <div>
-
-        <span>
-          Con 10% de desperdicio
-        </span>
-
-        <strong id="resultado-desperdicio">
-          —
-        </strong>
-
-      </div>
-
-
-      <div>
-
-        <span>
-          Revestimiento
-        </span>
-
-        <strong id="resultado-material">
-          —
-        </strong>
-
-      </div>
-
-
-      <div>
-
-        <span>
-          Material necesario
-        </span>
-
-        <strong id="resultado-cantidad">
-          —
-        </strong>
-
-      </div>
-
-    </div>
-
-
-    <a
-      href="https://wa.me/5491147004804"
-      class="button"
-      target="_blank">
-
-      QUIERO COTIZAR MI PISCINA
-
-    </a>
-
-  </div>
-
-</div>
-
-
-
-
-
-<!-- PREGUNTAS FRECUENTES -->
-<section class="categorias preguntas-frecuentes" id="preguntas-frecuentes">
-  <div class="container">
-    <div class="eyebrow">PREGUNTAS FRECUENTES</div>
-    <h2>Todo lo que necesitás<br><em>saber antes de elegir.</em></h2>
-    <div class="categorias-grid">
-      <details class="categoria"><summary>¿Trabajan con Rosa Gres España?</summary><p>En ORIGEN SURFACES incorporamos soluciones de Rosa Gres España, combinando diseño, tecnología y funcionalidad para transformar espacios exteriores y proyectos de arquitectura.</p></details>
-      <details class="categoria"><summary>¿Qué soluciones ofrece Rosa Gres?</summary><p>Rosa Gres desarrolla soluciones cerámicas para piscinas y espacios exteriores, con opciones que integran estética, durabilidad y diseño arquitectónico.</p></details>
-      <details class="categoria"><summary>¿Realizan envíos a todo el país?</summary><p>Coordinamos envíos a distintos puntos del país. El costo depende del destino, peso, volumen y transporte.</p></details>
-      <details class="categoria"><summary>¿Puedo solicitar una cotización?</summary><p>Claro. Enviános las medidas de tu proyecto y te preparamos una propuesta personalizada.</p></details>
-      <details class="categoria"><summary>¿Me asesoran para elegir un producto?</summary><p>Te acompañamos en la elección del material según tu proyecto, superficie, estilo y necesidades técnicas.</p></details>
-      <details class="categoria"><summary>¿Cómo consulto disponibilidad?</summary><p>Escribinos para confirmar stock, colores, cantidades y plazos antes de realizar tu pedido.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- MARCAS -->
-<section class="marcas" id="marcas">
-  <div class="container">
-    <div class="eyebrow">MARCAS</div>
-    <h2>Marcas que forman parte<br><em>de Origen.</em></h2>
-    <p class="marcas-intro">Trabajamos con marcas seleccionadas para acompañar cada proyecto con materiales, diseño y soluciones.</p>
-    <div class="marcas-grid">
-      <div class="marca-card"><img src="marca-tucson.png" alt="Tucson"></div>
-      <div class="marca-card"><img src="marca-vigorita.png" alt="Vigorita"></div>
-      <div class="marca-card"><img src="marca-gs-piedras.png" alt="GS Piedras"></div>
-      <div class="marca-card"><img src="marca-ceracor.png" alt="Ceracor Revestimientos"></div>
-      <div class="marca-card"><img src="marca-agroredes-polcom.png" alt="Grupo AgroRedes Polcom"></div>
-      <div class="marca-card"><img src="marca-rosa-gres.png" alt="Rosa Gres España"></div>
-    </div>
-  </div>
-</section>
 <!-- =========================
      CONTACTO
 ========================= -->
@@ -2325,18 +2115,11 @@ function seleccionarRevestimiento(id){
   const select = document.getElementById("revestimiento");
   if(select){
     select.value = id;
-    document.querySelector(".calculadora-piscina").scrollIntoView({behavior:"smooth", block:"center"});
+    document.getElementById("revestimientos-piscina").scrollIntoView({behavior:"smooth", block:"start"});
+    setTimeout(function(){
+      document.querySelector(".calculadora-piscina").scrollIntoView({behavior:"smooth", block:"center"});
     },450);
   }
-}
-
-function mostrarRevestimientos(){
-  const lista = document.getElementById("lista-revestimientos");
-  const boton = document.querySelector(".boton-ver-revestimientos");
-  if(!lista) return;
-  lista.hidden = false;
-  if(boton) boton.style.display = "none";
-  lista.scrollIntoView({behavior:"smooth", block:"start"});
 }
 
 function calcularPiscina(){
@@ -2744,6 +2527,47 @@ function calcularPiscina(){
 
 }
 
+
+
+/* =====================================================
+   CATEGORÍAS VISUALES · EXPERIENCIA WOW
+===================================================== */
+(function(){
+  const grid=document.getElementById('wow-productos-grid');
+  const cards=[...grid.querySelectorAll('.producto-card')];
+  const label=document.getElementById('wow-productos-label');
+  const empty=document.getElementById('wow-empty');
+  const cats=document.querySelectorAll('.wow-cat');
+  const volver=document.getElementById('wow-volver');
+  const categoryMap={
+    'moorea-10':'ceramica','tonga-10':'ceramica','kauai-10':'ceramica','samoa-bright-10':'ceramica','malawi-10':'ceramica','portland-10':'ceramica','palau-bright-10':'ceramica','vis-10':'ceramica','samoa-10':'ceramica','palau-10':'ceramica','maui-10':'ceramica','kaimu-10':'ceramica','cobalto-10':'ceramica','ceu-10':'ceramica',
+    'palau-20':'ceramica','kaimu-20':'ceramica','vis-20':'ceramica','portland-20':'ceramica','malawi-20':'ceramica',
+    'algarve':'ceramica','bodrum':'ceramica','caribbean':'ceramica','maldivas':'ceramica','corsega':'ceramica','ibiza':'ceramica','beige':'ceramica','blue':'ceramica','seychelles-claro':'ceramica','seychelles-oscuro':'ceramica','blanco':'ceramica','porcelanato':'ceramica','clasica':'ceramica','premium':'ceramica',
+    'bali-black':'bali','bali-green':'bali','travertino':'travertino'
+  };
+  const labels={ceramica:'CERÁMICA · PRODUCTOS',bali:'SÍMIL BALI ARG. · PRODUCTOS',travertino:'TRAVERTINOS · PRODUCTOS',piedras:'PIEDRAS · PRODUCTOS','rosa-gres':'ROSA GRES · ESPAÑA','europea':'SELECCIÓN EUROPEA',wpc:'WPC & PÉRGOLAS',otras:'OTRAS SOLUCIONES'};
+  function showCategory(cat){
+    cats.forEach(c=>c.classList.toggle('active',c.dataset.cat===cat));
+    let count=0;
+    cards.forEach(card=>{
+      const show=categoryMap[card.dataset.producto]===cat;
+      card.style.display=show?'flex':'none';
+      if(show) count++;
+    });
+    label.textContent=labels[cat]||'PRODUCTOS';
+    empty.hidden=count>0;
+    grid.style.display=count?'grid':'none';
+    document.getElementById('wow-productos-label').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  cats.forEach(c=>c.addEventListener('click',()=>showCategory(c.dataset.cat)));
+  volver.addEventListener('click',()=>{
+    cards.forEach(card=>card.style.display='flex');
+    cats.forEach(c=>c.classList.remove('active'));
+    label.textContent='TODOS LOS PRODUCTOS';
+    empty.hidden=true;grid.style.display='grid';
+  });
+  showCategory('ceramica');
+})();
 </script>
 
 </body>
