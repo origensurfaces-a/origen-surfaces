@@ -17,19 +17,18 @@
 
 :root{
   --black:#10110f;
-  --black2:#181916;
+  --black-soft:#181916;
   --cream:#f4f0e8;
   --white:#faf9f5;
   --stone:#d9d0c2;
   --sand:#c9bdab;
   --green:#34453e;
-  --green2:#41564d;
   --blue:#30474c;
-  --gold:#b9985b;
-  --gold2:#d4bb83;
-  --text:#383934;
+  --gold:#b89a61;
+  --gold-light:#d7bf8b;
+  --text:#373833;
   --muted:#74716a;
-  --line:rgba(30,31,27,.16);
+  --line:rgba(30,31,27,.15);
 
   --serif:Georgia,"Times New Roman",serif;
   --sans:Arial,Helvetica,sans-serif;
@@ -82,17 +81,17 @@ button{
 }
 
 .eyebrow{
-  margin-bottom:22px;
+  margin-bottom:20px;
   color:var(--gold);
   font-size:9px;
-  letter-spacing:.32em;
+  letter-spacing:.28em;
   text-transform:uppercase;
 }
 
 .section-title{
   color:var(--green);
   font-family:var(--serif);
-  font-size:clamp(48px,5vw,76px);
+  font-size:clamp(48px,5vw,74px);
   font-weight:400;
   line-height:.94;
   letter-spacing:-.045em;
@@ -106,7 +105,7 @@ button{
 
 
 /* =========================================================
-   PROGRESS
+   SCROLL
 ========================================================= */
 
 .progress{
@@ -115,7 +114,7 @@ button{
   left:0;
   width:0;
   height:2px;
-  background:var(--gold2);
+  background:var(--gold-light);
   z-index:9999;
 }
 
@@ -131,13 +130,13 @@ header{
   width:100%;
   height:76px;
   z-index:1000;
-  transition:.4s ease;
+  transition:.35s ease;
 }
 
 header.scrolled{
-  background:rgba(16,17,15,.88);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(16,17,15,.82);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(255,255,255,.07);
 }
 
 .nav{
@@ -148,23 +147,25 @@ header.scrolled{
 }
 
 
-/* IMPORTANTE:
-   EL LOGO NUNCA TOMA 100% DE ALTO
+/* LOGO:
+   chico, transparente y con relieve sutil
 */
 
 .logo{
   width:145px;
-  height:auto;
   display:block;
-  flex:none;
 }
 
 .logo img{
-  display:block;
   width:145px !important;
   height:auto !important;
   max-height:58px !important;
   object-fit:contain !important;
+
+  /* relieve muy sutil */
+  filter:
+    drop-shadow(0 1px 1px rgba(255,220,150,.20))
+    drop-shadow(0 2px 3px rgba(0,0,0,.45));
 }
 
 .menu{
@@ -178,12 +179,12 @@ header.scrolled{
 }
 
 .menu a{
-  opacity:.9;
-  transition:.3s ease;
+  opacity:.88;
+  transition:.25s ease;
 }
 
 .menu a:hover{
-  color:var(--gold2);
+  color:var(--gold-light);
   opacity:1;
 }
 
@@ -194,10 +195,10 @@ header.scrolled{
 
 .hero{
   position:relative;
+  min-height:100svh;
   height:100svh;
-  min-height:650px;
   overflow:hidden;
-  background:#151614;
+  background:#11120f;
 }
 
 .hero-image{
@@ -207,34 +208,38 @@ header.scrolled{
   overflow:hidden;
 }
 
-
-/*
-  La imagen ocupa realmente todo el hero.
-*/
-
 .hero-image img{
   width:100%;
   height:100%;
   object-fit:cover;
+
+  /*
+     Si la foto tiene una composición horizontal,
+     queda bien mostrando arquitectura y cielo.
+  */
   object-position:center center;
-  transform:scale(1.02);
-  animation:heroIn 1.5s cubic-bezier(.16,1,.3,1) forwards;
+
+  transform:scale(1.015);
+
+  animation:heroAppear 1.3s ease-out both;
 }
 
-@keyframes heroIn{
+@keyframes heroAppear{
   from{
-    opacity:.55;
-    transform:scale(1.07);
+    opacity:0;
+    transform:scale(1.04);
   }
 
   to{
     opacity:1;
-    transform:scale(1.02);
+    transform:scale(1.015);
   }
 }
 
 
-/* Overlay suave para leer */
+/* Overlay.
+   Oscurece solamente lo necesario para leer.
+*/
 
 .hero-image::after{
   content:"";
@@ -244,73 +249,70 @@ header.scrolled{
   background:
     linear-gradient(
       90deg,
-      rgba(7,8,7,.62) 0%,
-      rgba(7,8,7,.30) 42%,
-      rgba(7,8,7,.06) 75%
+      rgba(7,8,7,.72) 0%,
+      rgba(7,8,7,.47) 34%,
+      rgba(7,8,7,.12) 72%,
+      rgba(7,8,7,.08) 100%
     ),
     linear-gradient(
       0deg,
-      rgba(0,0,0,.32),
-      transparent 50%
+      rgba(0,0,0,.36) 0%,
+      rgba(0,0,0,0) 55%
     );
 }
-
 
 .hero-content{
   position:relative;
   z-index:2;
 
-  height:100%;
-
   width:min(1280px,calc(100% - 72px));
+  height:100%;
   margin:auto;
 
   display:flex;
-  flex-direction:column;
-  justify-content:center;
+  align-items:center;
 
-  padding-top:50px;
+  padding-top:40px;
 }
 
 .hero-copy{
-  max-width:650px;
+  max-width:640px;
 }
 
 .hero .eyebrow{
-  color:rgba(255,255,255,.75);
-  margin-bottom:20px;
+  color:rgba(255,255,255,.78);
 }
 
 .hero h1{
   color:#fff;
   font-family:var(--serif);
-  font-size:clamp(48px,5.8vw,82px);
+  font-size:clamp(50px,5.5vw,80px);
   font-weight:400;
-  line-height:.9;
+  line-height:.91;
   letter-spacing:-.055em;
 }
 
 .hero h1 em{
-  color:var(--gold2);
+  color:var(--gold-light);
   font-style:normal;
 }
 
 .hero-sub{
-  max-width:520px;
+  max-width:540px;
   margin-top:24px;
 
   color:#fff;
 
   font-family:var(--serif);
-  font-size:clamp(21px,2vw,28px);
-  line-height:1.18;
+  font-size:clamp(21px,2vw,27px);
+  line-height:1.16;
 }
 
 .hero-description{
-  max-width:500px;
+  max-width:510px;
   margin-top:14px;
 
-  color:rgba(255,255,255,.75);
+  color:rgba(255,255,255,.76);
 
   font-size:14px;
   line-height:1.7;
@@ -331,16 +333,16 @@ header.scrolled{
   align-items:center;
   justify-content:center;
 
-  border:1px solid rgba(212,187,131,.8);
+  border:1px solid rgba(215,191,139,.78);
 
   background:transparent;
   color:#fff;
 
   font-size:8px;
-  letter-spacing:.17em;
+  letter-spacing:.16em;
   text-transform:uppercase;
 
-  transition:.35s ease;
+  transition:.3s ease;
 }
 
 .button:hover{
@@ -372,9 +374,9 @@ header.scrolled{
   color:var(--green);
 
   font-family:var(--serif);
-  font-size:clamp(47px,5.2vw,74px);
+  font-size:clamp(48px,5.1vw,72px);
   font-weight:400;
-  line-height:.93;
+  line-height:.94;
   letter-spacing:-.05em;
 }
 
@@ -383,6 +385,13 @@ header.scrolled{
   color:var(--muted);
   font-size:16px;
   line-height:1.85;
+}
+
+.intro-copy strong{
+  color:var(--green);
+  font-weight:500;
+  letter-spacing:.05em;
+  font-size:12px;
 }
 
 
@@ -400,8 +409,8 @@ header.scrolled{
 }
 
 .criterio-intro{
-  max-width:610px;
-  margin-top:25px;
+  max-width:620px;
+  margin-top:24px;
 
   color:#aaa79f;
 
@@ -413,14 +422,14 @@ header.scrolled{
   display:grid;
   grid-template-columns:repeat(3,1fr);
 
-  margin-top:60px;
+  margin-top:58px;
 
   border-top:1px solid rgba(255,255,255,.13);
 }
 
 .criterio-card{
-  min-height:220px;
-  padding:38px 35px 35px 0;
+  min-height:210px;
+  padding:35px 35px 30px 0;
   border-right:1px solid rgba(255,255,255,.13);
 }
 
@@ -436,12 +445,12 @@ header.scrolled{
 .criterio-card h3{
   color:#fff;
   font-family:var(--serif);
-  font-size:31px;
+  font-size:30px;
   font-weight:400;
 }
 
 .criterio-card p{
-  max-width:310px;
+  max-width:320px;
   margin-top:14px;
   color:#9c9a93;
   font-size:14px;
@@ -449,10 +458,8 @@ header.scrolled{
 }
 
 .criterio-frase{
-  margin-top:35px;
-
-  color:#b5b1a9;
-
+  margin-top:32px;
+  color:#b8b3a9;
   font-family:var(--serif);
   font-size:21px;
 }
@@ -477,9 +484,9 @@ header.scrolled{
 .magia h2{
   color:var(--green);
   font-family:var(--serif);
-  font-size:clamp(50px,5.5vw,78px);
+  font-size:clamp(50px,5.3vw,76px);
   font-weight:400;
-  line-height:.9;
+  line-height:.91;
   letter-spacing:-.05em;
 }
 
@@ -496,7 +503,7 @@ header.scrolled{
 }
 
 .magia-large{
-  height:600px;
+  height:590px;
 }
 
 .magia-right{
@@ -506,7 +513,7 @@ header.scrolled{
 }
 
 .magia-small{
-  min-height:297px;
+  min-height:292px;
 }
 
 .magia-item img{
@@ -517,7 +524,7 @@ header.scrolled{
 }
 
 .magia-item:hover img{
-  transform:scale(1.04);
+  transform:scale(1.035);
 }
 
 .magia-caption{
@@ -562,9 +569,9 @@ header.scrolled{
 .colecciones h2{
   color:var(--green);
   font-family:var(--serif);
-  font-size:clamp(50px,5.5vw,78px);
+  font-size:clamp(50px,5.3vw,76px);
   font-weight:400;
-  line-height:.88;
+  line-height:.9;
   letter-spacing:-.05em;
 }
 
@@ -593,14 +600,14 @@ header.scrolled{
 .categoria-button h3{
   color:var(--text);
   font-family:var(--serif);
-  font-size:clamp(27px,2.8vw,39px);
+  font-size:clamp(27px,2.7vw,38px);
   font-weight:400;
 }
 
 .plus{
   color:var(--gold);
-  font-size:26px;
-  transition:.35s ease;
+  font-size:25px;
+  transition:.3s ease;
 }
 
 .categoria.open .plus{
@@ -654,7 +661,7 @@ header.scrolled{
   font-family:var(--serif);
   font-size:clamp(42px,4vw,60px);
   font-weight:400;
-  line-height:.88;
+  line-height:.89;
 }
 
 .collection-copy p{
@@ -667,7 +674,7 @@ header.scrolled{
 
 .collection-link{
   margin-top:25px;
-  color:var(--gold2);
+  color:var(--gold-light);
   font-size:8px;
   letter-spacing:.18em;
   text-transform:uppercase;
@@ -682,12 +689,7 @@ header.scrolled{
   align-items:center;
   justify-content:center;
 
-  background:
-    linear-gradient(
-      135deg,
-      #c9c0b2,
-      #aaa092
-    );
+  background:linear-gradient(135deg,#c9c0b2,#aaa092);
 
   color:#625c54;
 
@@ -747,7 +749,7 @@ header.scrolled{
 .bali-label strong{
   display:block;
   font-family:var(--serif);
-  font-size:26px;
+  font-size:25px;
   font-weight:400;
 }
 
@@ -777,12 +779,7 @@ header.scrolled{
 
 .rosa-photo .placeholder{
   min-height:620px;
-  background:
-    linear-gradient(
-      135deg,
-      #b8b1a6,
-      #8d918d
-    );
+  background:linear-gradient(135deg,#b8b1a6,#8d918d);
   color:#f2eee6;
 }
 
@@ -798,7 +795,7 @@ header.scrolled{
 .rosa-copy h2{
   color:var(--cream);
   font-family:var(--serif);
-  font-size:clamp(46px,4.8vw,68px);
+  font-size:clamp(46px,4.7vw,66px);
   font-weight:400;
   line-height:.9;
   letter-spacing:-.045em;
@@ -817,7 +814,7 @@ header.scrolled{
   margin-top:30px;
   padding-top:18px;
   border-top:1px solid rgba(255,255,255,.15);
-  color:var(--gold2);
+  color:var(--gold-light);
   font-size:8px;
   letter-spacing:.18em;
 }
@@ -851,7 +848,7 @@ header.scrolled{
   background:
     linear-gradient(
       90deg,
-      rgba(5,7,6,.65),
+      rgba(5,7,6,.66),
       rgba(5,7,6,.12) 70%
     );
 }
@@ -870,7 +867,7 @@ header.scrolled{
 .pool-copy h2{
   color:#fff;
   font-family:var(--serif);
-  font-size:clamp(52px,5.8vw,82px);
+  font-size:clamp(52px,5.6vw,80px);
   font-weight:400;
   line-height:.9;
   letter-spacing:-.055em;
@@ -943,14 +940,14 @@ header.scrolled{
 .seleccion h2{
   color:var(--cream);
   font-family:var(--serif);
-  font-size:clamp(49px,6vw,82px);
+  font-size:clamp(49px,5.8vw,80px);
   font-weight:400;
-  line-height:.9;
+  line-height:.91;
   letter-spacing:-.055em;
 }
 
 .seleccion h2 em{
-  color:var(--gold2);
+  color:var(--gold-light);
   font-style:normal;
 }
 
@@ -1040,7 +1037,7 @@ header.scrolled{
 .conservacion h2{
   color:var(--green);
   font-family:var(--serif);
-  font-size:clamp(52px,5.5vw,76px);
+  font-size:clamp(52px,5.4vw,75px);
   font-weight:400;
   line-height:.88;
 }
@@ -1201,7 +1198,7 @@ header.scrolled{
   flex-direction:column;
   justify-content:flex-end;
 
-  transition:.4s ease;
+  transition:.35s ease;
 }
 
 .cotizador:hover{
@@ -1237,9 +1234,9 @@ header.scrolled{
 .contacto h2{
   color:var(--cream);
   font-family:var(--serif);
-  font-size:clamp(54px,6vw,82px);
+  font-size:clamp(54px,5.8vw,80px);
   font-weight:400;
-  line-height:.88;
+  line-height:.89;
   letter-spacing:-.055em;
 }
 
@@ -1282,6 +1279,10 @@ footer{
   width:125px !important;
   height:auto !important;
   object-fit:contain !important;
+
+  filter:
+    drop-shadow(0 1px 1px rgba(255,220,150,.18))
+    drop-shadow(0 2px 3px rgba(0,0,0,.45));
 }
 
 .footer-copy{
@@ -1413,7 +1414,7 @@ footer{
 
 .reveal{
   opacity:0;
-  transform:translateY(25px);
+  transform:translateY(22px);
   transition:
     opacity .8s ease,
     transform .8s cubic-bezier(.16,1,.3,1);
@@ -1623,7 +1624,9 @@ footer{
 <body>
 
 
-<!-- PROGRESO -->
+<!-- =========================================================
+     PROGRESO
+========================================================= -->
 
 <div class="progress" id="progress"></div>
 
@@ -1637,20 +1640,42 @@ footer{
   <div class="container nav">
 
     <a href="#inicio" class="logo">
-      <img src="logo pagina.png" alt="ORIGEN SURFACES">
+
+      <img
+        src="logo dorado.png"
+        alt="ORIGEN SURFACES">
+
     </a>
 
+
     <nav class="menu">
-      <a href="#colecciones">Colecciones</a>
-      <a href="#piscinas">Piscinas</a>
-      <a href="#seleccion">Selección</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
+
+      <a href="#colecciones">
+        Colecciones
+      </a>
+
+      <a href="#piscinas">
+        Piscinas
+      </a>
+
+      <a href="#seleccion">
+        Selección
+      </a>
+
+      <a href="#proyectos">
+        Proyectos
+      </a>
+
+      <a href="#contacto">
+        Contacto
+      </a>
+
     </nav>
 
   </div>
 
 </header>
+
 
 
 <main id="inicio">
@@ -1665,9 +1690,11 @@ footer{
 
   <div class="hero-image">
 
+    <!-- FOTO SOLA. SIN TEXTO, SIN LOGO -->
+
     <img
       src="Casa moderna en construcción al atardecer.png"
-      alt="Casa moderna y arquitectura ORIGEN SURFACES">
+      alt="Casa moderna y arquitectura">
 
   </div>
 
@@ -1690,25 +1717,35 @@ footer{
 
 
       <div class="hero-sub">
-        Superficies seleccionadas para proyectos donde la arquitectura importa.
+        Superficies seleccionadas para proyectos
+        donde la arquitectura importa.
       </div>
 
 
       <p class="hero-description">
         Materiales nacionales e internacionales.
-        Una selección pensada para encontrar sentido
-        en cada proyecto.
+        Una selección pensada para encontrar
+        sentido en cada proyecto.
       </p>
 
 
       <div class="hero-actions">
 
-        <a href="#colecciones" class="button">
+        <a
+          href="#colecciones"
+          class="button">
+
           EXPLORAR COLECCIONES
+
         </a>
 
-        <a href="#contacto" class="button">
+
+        <a
+          href="#contacto"
+          class="button">
+
           CONTANOS TU PROYECTO
+
         </a>
 
       </div>
@@ -1724,7 +1761,7 @@ footer{
 
 
 <!-- =========================================================
-     INTRO
+     QUIÉNES SOMOS
 ========================================================= -->
 
 <section class="intro section">
@@ -1735,18 +1772,23 @@ footer{
 
     <div class="reveal">
 
+
       <div class="eyebrow">
         ORIGEN SURFACES
       </div>
 
+
       <h2>
-        ORIGEN nació para elegir mejor.
+        ORIGEN nació
+        para elegir mejor.
       </h2>
+
 
     </div>
 
 
     <div class="intro-copy reveal">
+
 
       <p>
         Una superficie no es solamente un acabado.
@@ -1755,14 +1797,18 @@ footer{
         y cómo se relaciona cada elemento.
       </p>
 
+
       <br>
+
 
       <p>
         Seleccionamos materiales pensando en el conjunto:
         arquitectura, agua, luz, textura, escala y uso.
       </p>
 
+
       <br>
+
 
       <p>
         No vendemos solamente materiales.
@@ -1770,7 +1816,9 @@ footer{
         donde la vida sucede.
       </p>
 
+
       <br>
+
 
       <p>
         <strong>
@@ -1778,7 +1826,9 @@ footer{
         </strong>
       </p>
 
+
     </div>
+
 
   </div>
 
@@ -1810,8 +1860,8 @@ footer{
     <p class="criterio-intro">
       No todo material funciona en todos los espacios.
       Antes de recomendar una superficie, miramos
-      el proyecto completo: arquitectura, agua,
-      luz, textura, uso y escala.
+      el proyecto completo.
+      Arquitectura. Agua. Luz. Textura. Uso. Escala.
     </p>
 
 
@@ -1890,6 +1940,7 @@ footer{
           LA MAGIA DE ORIGEN
         </div>
 
+
         <h2>
           Materiales<br>
           que empiezan<br>
@@ -1903,8 +1954,9 @@ footer{
         Piedra, cerámica, venecita, WPC, LED,
         pintura, porcelanato y todo aquello
         que pueda transformar una idea.
-        No buscamos llenar espacios: buscamos
-        encontrar combinaciones que tengan sentido.
+        No buscamos llenar espacios:
+        buscamos encontrar combinaciones
+        que tengan sentido.
       </p>
 
 
@@ -1916,14 +1968,24 @@ footer{
 
       <article class="magia-item magia-large">
 
+
         <img
           src="La inspiración está en los detalles.png"
-          alt="Inspiración y materiales ORIGEN">
+          alt="Inspiración ORIGEN">
+
 
         <div class="magia-caption">
-          <span>inspiración</span>
-          <h3>Materia + idea</h3>
+
+          <span>
+            inspiración
+          </span>
+
+          <h3>
+            Materia + idea
+          </h3>
+
         </div>
+
 
       </article>
 
@@ -1933,28 +1995,48 @@ footer{
 
         <article class="magia-item magia-small">
 
+
           <img
             src="Publicidad elegante sobre piedra natural.png"
             alt="Piedra natural">
 
+
           <div class="magia-caption">
-            <span>materia</span>
-            <h3>Textura</h3>
+
+            <span>
+              materia
+            </span>
+
+            <h3>
+              Textura
+            </h3>
+
           </div>
+
 
         </article>
 
 
         <article class="magia-item magia-small">
 
+
           <img
             src="Detalles que inspiran diseño arquitectónico.png"
             alt="Detalle arquitectónico">
 
+
           <div class="magia-caption">
-            <span>detalle</span>
-            <h3>Una posibilidad</h3>
+
+            <span>
+              detalle
+            </span>
+
+            <h3>
+              Una posibilidad
+            </h3>
+
           </div>
+
 
         </article>
 
@@ -1974,7 +2056,9 @@ footer{
      COLECCIONES
 ========================================================= -->
 
-<section class="colecciones section" id="colecciones">
+<section
+  class="colecciones section"
+  id="colecciones">
 
 
   <div class="container">
@@ -1988,6 +2072,7 @@ footer{
         <div class="eyebrow">
           COLECCIONES
         </div>
+
 
         <h2>
           Entrá.<br>
@@ -2008,12 +2093,15 @@ footer{
     </div>
 
 
+
     <div class="categorias">
+
 
 
       <!-- CERÁMICAS -->
 
       <div class="categoria">
+
 
         <button class="categoria-button">
 
@@ -2021,36 +2109,44 @@ footer{
             Cerámicas
           </h3>
 
-          <span class="plus">+</span>
+          <span class="plus">
+            +
+          </span>
 
         </button>
 
 
         <div class="categoria-content">
 
+
           <div class="collection">
 
 
             <div class="collection-photo">
 
+
               <img
                 src="moorea.png"
                 alt="Cerámica Moorea">
+
 
             </div>
 
 
             <div class="collection-copy">
 
+
               <div class="eyebrow">
                 CERÁMICAS
               </div>
+
 
               <h3>
                 Color.<br>
                 Textura.<br>
                 Agua.
               </h3>
+
 
               <p>
                 Moorea, Tonga, Kauai, Samoa Bright,
@@ -2059,14 +2155,21 @@ footer{
                 Céu y otras líneas de selección.
               </p>
 
-              <a href="#contacto" class="collection-link">
+
+              <a
+                href="#contacto"
+                class="collection-link">
+
                 ENTRAR AL CATÁLOGO →
+
               </a>
+
 
             </div>
 
 
           </div>
+
 
         </div>
 
@@ -2078,18 +2181,22 @@ footer{
 
       <div class="categoria">
 
+
         <button class="categoria-button">
 
           <h3>
             Símil Bali Arg.
           </h3>
 
-          <span class="plus">+</span>
+          <span class="plus">
+            +
+          </span>
 
         </button>
 
 
         <div class="categoria-content">
+
 
           <div class="collection">
 
@@ -2109,9 +2216,11 @@ footer{
 
             <div class="collection-copy">
 
+
               <div class="eyebrow">
                 INDUSTRIA ARGENTINA
               </div>
+
 
               <h3>
                 Otra forma<br>
@@ -2119,20 +2228,29 @@ footer{
                 el agua.
               </h3>
 
+
               <p>
                 Mix Bruma · Mix Oliva · Mix Alba ·
                 Mix Marfil · Mix Ónix.
-                Piezas de 11 × 11 cm, espesor 1,4 cm.
+                Piezas de 11 × 11 cm,
+                espesor 1,4 cm.
               </p>
 
-              <a href="#bali" class="collection-link">
+
+              <a
+                href="#bali"
+                class="collection-link">
+
                 VER SELECCIÓN →
+
               </a>
+
 
             </div>
 
 
           </div>
+
 
         </div>
 
@@ -2144,36 +2262,44 @@ footer{
 
       <div class="categoria">
 
+
         <button class="categoria-button">
 
           <h3>
             Travertinos
           </h3>
 
-          <span class="plus">+</span>
+          <span class="plus">
+            +
+          </span>
 
         </button>
 
 
         <div class="categoria-content">
 
+
           <div class="collection">
 
 
             <div class="collection-photo">
 
+
               <img
                 src="Captura de pantalla 2026-08-26 212707.png"
                 alt="Travertino">
+
 
             </div>
 
 
             <div class="collection-copy">
 
+
               <div class="eyebrow">
                 PIEDRA NATURAL
               </div>
+
 
               <h3>
                 La piedra<br>
@@ -2181,20 +2307,28 @@ footer{
                 puede ser calma.
               </h3>
 
+
               <p>
                 Travertino Blanco, Beige,
                 Gris Perla y Gris Ágatha.
                 Formato 30 × 60 cm.
               </p>
 
-              <a href="#contacto" class="collection-link">
+
+              <a
+                href="#contacto"
+                class="collection-link">
+
                 CONSULTAR TRAVERTINOS →
+
               </a>
+
 
             </div>
 
 
           </div>
+
 
         </div>
 
@@ -2202,9 +2336,10 @@ footer{
 
 
 
-      <!-- CERÁMICAS GRANDES -->
+      <!-- PIEDRAS -->
 
       <div class="categoria">
+
 
         <button class="categoria-button">
 
@@ -2212,30 +2347,37 @@ footer{
             Piedras
           </h3>
 
-          <span class="plus">+</span>
+          <span class="plus">
+            +
+          </span>
 
         </button>
 
 
         <div class="categoria-content">
 
+
           <div class="collection">
 
 
             <div class="collection-photo">
 
+
               <img
                 src="9c7236e83277cf400b03c5c4deff2a32.jpg"
                 alt="Materia natural">
+
 
             </div>
 
 
             <div class="collection-copy">
 
+
               <div class="eyebrow">
                 MATERIA
               </div>
+
 
               <h3>
                 Lo imperfecto<br>
@@ -2243,20 +2385,28 @@ footer{
                 diseña.
               </h3>
 
+
               <p>
                 Piedra natural y superficies
                 seleccionadas para proyectos
                 donde la textura importa.
               </p>
 
-              <a href="#contacto" class="collection-link">
+
+              <a
+                href="#contacto"
+                class="collection-link">
+
                 CONSULTAR →
+
               </a>
+
 
             </div>
 
 
           </div>
+
 
         </div>
 
@@ -2268,23 +2418,28 @@ footer{
 
       <div class="categoria">
 
+
         <button class="categoria-button">
 
           <h3>
             WPC & Pérgolas
           </h3>
 
-          <span class="plus">+</span>
+          <span class="plus">
+            +
+          </span>
 
         </button>
 
 
         <div class="categoria-content">
 
+
           <div class="collection">
 
 
             <div class="collection-photo">
+
 
               <div
                 class="placeholder"
@@ -2299,9 +2454,11 @@ footer{
 
             <div class="collection-copy">
 
+
               <div class="eyebrow">
                 EXTERIOR
               </div>
+
 
               <h3>
                 La arquitectura<br>
@@ -2309,20 +2466,28 @@ footer{
                 afuera.
               </h3>
 
+
               <p>
                 WPC, pérgolas y soluciones
                 para ampliar el proyecto
                 y construir espacios exteriores.
               </p>
 
-              <a href="#contacto" class="collection-link">
+
+              <a
+                href="#contacto"
+                class="collection-link">
+
                 CONSULTAR →
+
               </a>
+
 
             </div>
 
 
           </div>
+
 
         </div>
 
@@ -2334,23 +2499,28 @@ footer{
 
       <div class="categoria">
 
+
         <button class="categoria-button">
 
           <h3>
             Rosa Gres · España
           </h3>
 
-          <span class="plus">+</span>
+          <span class="plus">
+            +
+          </span>
 
         </button>
 
 
         <div class="categoria-content">
 
+
           <div class="collection">
 
 
             <div class="collection-photo">
+
 
               <div
                 class="placeholder"
@@ -2365,15 +2535,18 @@ footer{
 
             <div class="collection-copy">
 
+
               <div class="eyebrow">
                 ESPAÑA
               </div>
+
 
               <h3>
                 Cuando el material<br>
                 ayuda a pensar<br>
                 el espacio.
               </h3>
+
 
               <p>
                 Soluciones para piscinas,
@@ -2382,14 +2555,21 @@ footer{
                 entre interior y exterior.
               </p>
 
-              <a href="#rosa" class="collection-link">
+
+              <a
+                href="#rosa"
+                class="collection-link">
+
                 CONOCER ROSA GRES →
+
               </a>
+
 
             </div>
 
 
           </div>
+
 
         </div>
 
@@ -2401,23 +2581,28 @@ footer{
 
       <div class="categoria">
 
+
         <button class="categoria-button">
 
           <h3>
             Selección europea
           </h3>
 
-          <span class="plus">+</span>
+          <span class="plus">
+            +
+          </span>
 
         </button>
 
 
         <div class="categoria-content">
 
+
           <div class="collection">
 
 
             <div class="collection-photo">
+
 
               <div
                 class="placeholder"
@@ -2432,9 +2617,11 @@ footer{
 
             <div class="collection-copy">
 
+
               <div class="eyebrow">
                 EUROPA
               </div>
+
 
               <h3>
                 Materiales<br>
@@ -2442,20 +2629,29 @@ footer{
                 posibilidades.
               </h3>
 
+
               <p>
-                Una selección de materiales nacionales
-                e internacionales que iremos ampliando
-                según cada proyecto.
+                Una selección de materiales
+                nacionales e internacionales
+                que iremos ampliando según
+                cada proyecto.
               </p>
 
-              <a href="#seleccion" class="collection-link">
+
+              <a
+                href="#seleccion"
+                class="collection-link">
+
                 EXPLORAR SELECCIÓN →
+
               </a>
+
 
             </div>
 
 
           </div>
+
 
         </div>
 
@@ -2471,10 +2667,12 @@ footer{
 
 
 <!-- =========================================================
-     SÍMIL BALI
+     SÍMIL BALI ARG.
 ========================================================= -->
 
-<section class="bali section" id="bali">
+<section
+  class="bali section"
+  id="bali">
 
 
   <div class="container">
@@ -2493,8 +2691,9 @@ footer{
 
     <p class="bali-intro">
       Bruma y Oliva son industria argentina.
-      La selección se completa con Alba, Marfil
-      y Ónix para construir distintas atmósferas.
+      La selección se completa con Alba,
+      Marfil y Ónix para construir distintas
+      atmósferas.
     </p>
 
 
@@ -2512,8 +2711,15 @@ footer{
         </div>
 
         <div class="bali-label">
-          <strong>Bruma</strong>
-          <span>ARGENTINA</span>
+
+          <strong>
+            Bruma
+          </strong>
+
+          <span>
+            ARGENTINA
+          </span>
+
         </div>
 
       </article>
@@ -2530,8 +2736,15 @@ footer{
         </div>
 
         <div class="bali-label">
-          <strong>Oliva</strong>
-          <span>ARGENTINA</span>
+
+          <strong>
+            Oliva
+          </strong>
+
+          <span>
+            ARGENTINA
+          </span>
+
         </div>
 
       </article>
@@ -2548,8 +2761,15 @@ footer{
         </div>
 
         <div class="bali-label">
-          <strong>Alba</strong>
-          <span>SELECCIÓN ORIGEN</span>
+
+          <strong>
+            Alba
+          </strong>
+
+          <span>
+            SELECCIÓN ORIGEN
+          </span>
+
         </div>
 
       </article>
@@ -2566,8 +2786,15 @@ footer{
         </div>
 
         <div class="bali-label">
-          <strong>Marfil</strong>
-          <span>SELECCIÓN ORIGEN</span>
+
+          <strong>
+            Marfil
+          </strong>
+
+          <span>
+            SELECCIÓN ORIGEN
+          </span>
+
         </div>
 
       </article>
@@ -2584,15 +2811,21 @@ footer{
         </div>
 
         <div class="bali-label">
-          <strong>Ónix</strong>
-          <span>SELECCIÓN ORIGEN</span>
+
+          <strong>
+            Ónix
+          </strong>
+
+          <span>
+            SELECCIÓN ORIGEN
+          </span>
+
         </div>
 
       </article>
 
 
     </div>
-
 
   </div>
 
@@ -2604,7 +2837,9 @@ footer{
      ROSA GRES
 ========================================================= -->
 
-<section class="rosa section" id="rosa">
+<section
+  class="rosa section"
+  id="rosa">
 
 
   <div class="container">
@@ -2638,10 +2873,11 @@ footer{
 
 
         <p>
-          Hay materiales que ayudan a pensar el espacio.
-          Incorporamos soluciones de Rosa Gres España
-          dentro de nuestra selección para proyectos
-          donde arquitectura, diseño y funcionalidad
+          Hay materiales que ayudan a pensar
+          el espacio. Incorporamos soluciones
+          de Rosa Gres España dentro de nuestra
+          selección para proyectos donde
+          arquitectura, diseño y funcionalidad
           necesitan encontrarse.
         </p>
 
@@ -2654,7 +2890,8 @@ footer{
 
 
         <div class="rosa-line">
-          UNA SELECCIÓN PARA PROYECTOS QUE PIDEN OTRA MIRADA.
+          UNA SELECCIÓN PARA PROYECTOS
+          QUE PIDEN OTRA MIRADA.
         </div>
 
 
@@ -2673,7 +2910,9 @@ footer{
      PISCINAS
 ========================================================= -->
 
-<section class="piscinas" id="piscinas">
+<section
+  class="piscinas"
+  id="piscinas">
 
 
   <div class="pool-photo">
@@ -2737,6 +2976,7 @@ footer{
 
     <div>
 
+
       <div class="eyebrow">
         POR QUÉ ESTE MATERIAL
       </div>
@@ -2748,6 +2988,7 @@ footer{
         igual,<br>
         lo es.
       </h2>
+
 
     </div>
 
@@ -2826,6 +3067,7 @@ footer{
 
       </div>
 
+
     </div>
 
 
@@ -2839,7 +3081,9 @@ footer{
      SELECCIÓN ORIGEN
 ========================================================= -->
 
-<section class="seleccion section" id="seleccion">
+<section
+  class="seleccion section"
+  id="seleccion">
 
 
   <div class="seleccion-inner">
@@ -2860,11 +3104,14 @@ footer{
     <div class="seleccion-copy">
 
       <p>
-        Una selección de materiales nacionales e internacionales,
-        elegidos por su materia, su diseño y sus posibilidades.
+        Una selección de materiales nacionales
+        e internacionales, elegidos por su materia,
+        su diseño y sus posibilidades.
       </p>
 
+
       <br>
+
 
       <p>
         <strong>
@@ -2876,8 +3123,12 @@ footer{
     </div>
 
 
-    <a href="#marcas" class="button">
+    <a
+      href="#marcas"
+      class="button">
+
       EXPLORAR SELECCIÓN →
+
     </a>
 
 
@@ -2891,7 +3142,9 @@ footer{
      PROYECTOS
 ========================================================= -->
 
-<section class="proyectos section" id="proyectos">
+<section
+  class="proyectos section"
+  id="proyectos">
 
 
   <div class="container">
@@ -2914,9 +3167,11 @@ footer{
 
       <div class="proyecto-photo">
 
+
         <img
           src="32643f41df2848c16278f4a11da80f01.jpg"
           alt="Proyecto arquitectónico ORIGEN">
+
 
       </div>
 
@@ -2967,6 +3222,7 @@ footer{
 
     <div>
 
+
       <div class="eyebrow">
         CONSERVACIÓN
       </div>
@@ -2979,17 +3235,21 @@ footer{
         durar.
       </h2>
 
+
     </div>
 
 
     <div class="conservacion-copy">
+
 
       <p>
         Contamos con especialistas para el
         mantenimiento y conservación de piscinas.
       </p>
 
+
       <br>
+
 
       <p>
         Porque una inversión así merece seguimiento.
@@ -3002,10 +3262,21 @@ footer{
 
       <div class="tags">
 
-        <span>Mantenimiento</span>
-        <span>Conservación</span>
-        <span>Puesta a punto</span>
-        <span>Revisión</span>
+        <span>
+          Mantenimiento
+        </span>
+
+        <span>
+          Conservación
+        </span>
+
+        <span>
+          Puesta a punto
+        </span>
+
+        <span>
+          Revisión
+        </span>
 
       </div>
 
@@ -3023,7 +3294,9 @@ footer{
      MARCAS
 ========================================================= -->
 
-<section class="marcas section" id="marcas">
+<section
+  class="marcas section"
+  id="marcas">
 
 
   <div class="container">
@@ -3044,50 +3317,106 @@ footer{
 
 
       <div class="marca">
-        <small>NACIONAL</small>
-        <strong>Fedan</strong>
+
+        <small>
+          NACIONAL
+        </small>
+
+        <strong>
+          Fedan
+        </strong>
+
       </div>
 
 
       <div class="marca">
-        <small>NACIONAL</small>
-        <strong>GS</strong>
+
+        <small>
+          NACIONAL
+        </small>
+
+        <strong>
+          GS
+        </strong>
+
       </div>
 
 
       <div class="marca">
-        <small>NACIONAL</small>
-        <strong>Sherwin-Williams</strong>
+
+        <small>
+          NACIONAL
+        </small>
+
+        <strong>
+          Sherwin-Williams
+        </strong>
+
       </div>
 
 
       <div class="marca">
-        <small>BRASIL</small>
-        <strong>Strufaldi</strong>
+
+        <small>
+          BRASIL
+        </small>
+
+        <strong>
+          Strufaldi
+        </strong>
+
       </div>
 
 
       <div class="marca">
-        <small>BRASIL</small>
-        <strong>Ceral</strong>
+
+        <small>
+          BRASIL
+        </small>
+
+        <strong>
+          Ceral
+        </strong>
+
       </div>
 
 
       <div class="marca">
-        <small>ESPAÑA</small>
-        <strong>Rosa Gres</strong>
+
+        <small>
+          ESPAÑA
+        </small>
+
+        <strong>
+          Rosa Gres
+        </strong>
+
       </div>
 
 
       <div class="marca">
-        <small>ITALIA</small>
-        <strong>Cotto Manetti</strong>
+
+        <small>
+          ITALIA
+        </small>
+
+        <strong>
+          Cotto Manetti
+        </strong>
+
       </div>
 
 
       <div class="marca">
-        <small>SELECCIÓN</small>
-        <strong>+</strong>
+
+        <small>
+          SELECCIÓN
+        </small>
+
+        <strong>
+          +
+        </strong>
+
       </div>
 
 
@@ -3126,40 +3455,65 @@ footer{
 
       <div class="faq-item">
 
+
         <div class="faq-question">
+
           ¿Cómo sé si hay stock?
-          <span>+</span>
+
+          <span>
+            +
+          </span>
+
         </div>
+
 
         <div class="faq-answer">
           El stock se confirma para cada proyecto
           antes de avanzar con el pedido.
         </div>
 
+
       </div>
+
 
 
       <div class="faq-item">
 
+
         <div class="faq-question">
+
           ¿Hacen envíos?
-          <span>+</span>
+
+          <span>
+            +
+          </span>
+
         </div>
+
 
         <div class="faq-answer">
           Sí. Coordinamos el transporte según
           producto, volumen, peso y destino.
         </div>
 
+
       </div>
+
 
 
       <div class="faq-item">
 
+
         <div class="faq-question">
+
           ¿Cuánto cuesta el envío?
-          <span>+</span>
+
+          <span>
+            +
+          </span>
+
         </div>
+
 
         <div class="faq-answer">
           Depende del destino, peso, volumen
@@ -3167,15 +3521,25 @@ footer{
           la propuesta.
         </div>
 
+
       </div>
+
 
 
       <div class="faq-item">
 
+
         <div class="faq-question">
-          ¿Puedo consultar aunque todavía no tenga definido el material?
-          <span>+</span>
+
+          ¿Puedo consultar aunque todavía
+          no tenga definido el material?
+
+          <span>
+            +
+          </span>
+
         </div>
+
 
         <div class="faq-answer">
           Sí. Contanos qué estás construyendo,
@@ -3183,15 +3547,24 @@ footer{
           Podemos empezar desde ahí.
         </div>
 
+
       </div>
+
 
 
       <div class="faq-item">
 
+
         <div class="faq-question">
+
           ¿Trabajan por proyecto?
-          <span>+</span>
+
+          <span>
+            +
+          </span>
+
         </div>
+
 
         <div class="faq-answer">
           Sí. Seleccionamos materiales y armamos
@@ -3199,20 +3572,30 @@ footer{
           de cada obra.
         </div>
 
+
       </div>
+
 
 
       <div class="faq-item">
 
+
         <div class="faq-question">
+
           ¿Cómo puedo pagar?
-          <span>+</span>
+
+          <span>
+            +
+          </span>
+
         </div>
+
 
         <div class="faq-answer">
           Las formas de pago disponibles
           se informan en cada cotización.
         </div>
+
 
       </div>
 
@@ -3253,19 +3636,23 @@ footer{
 
       <article class="cotizador">
 
+
         <div class="eyebrow">
           SUPERFICIES
         </div>
+
 
         <h3>
           Piso<br>
           o pared.
         </h3>
 
+
         <p>
           Calculá metros cuadrados y agregá
           automáticamente un 10% de desperdicio.
         </p>
+
 
         <button
           class="button"
@@ -3275,23 +3662,29 @@ footer{
 
         </button>
 
+
       </article>
 
 
+
       <article class="cotizador">
+
 
         <div class="eyebrow">
           PISCINAS
         </div>
 
+
         <h3>
           Tu piscina.
         </h3>
+
 
         <p>
           Calculá piso + paredes, superficie real
           y material estimado con 10% de desperdicio.
         </p>
+
 
         <button
           class="button"
@@ -3301,10 +3694,12 @@ footer{
 
         </button>
 
+
       </article>
 
 
     </div>
+
 
   </div>
 
@@ -3316,7 +3711,9 @@ footer{
      CONTACTO
 ========================================================= -->
 
-<section class="contacto section" id="contacto">
+<section
+  class="contacto section"
+  id="contacto">
 
 
   <div class="container">
@@ -3395,7 +3792,9 @@ footer{
 
 
     <div class="footer-copy">
+
       MATERIA · AGUA · LUZ · ARQUITECTURA
+
     </div>
 
 
@@ -3409,15 +3808,22 @@ footer{
      MODAL CALCULADORAS
 ========================================================= -->
 
-<div class="modal" id="modal">
+<div
+  class="modal"
+  id="modal">
 
 
   <div class="modal-box">
 
 
-    <button class="close" onclick="cerrarModal()">
+    <button
+      class="close"
+      onclick="cerrarModal()">
+
       ×
+
     </button>
+
 
 
     <!-- SUPERFICIE -->
@@ -3524,7 +3930,11 @@ footer{
           ESTIMACIÓN ORIGEN
         </div>
 
-        <strong id="resultadoSupTexto"></strong>
+
+        <strong
+          id="resultadoSupTexto">
+        </strong>
+
 
       </div>
 
@@ -3632,7 +4042,11 @@ footer{
           ESTIMACIÓN ORIGEN
         </div>
 
-        <strong id="resultadoPiscinaTexto"></strong>
+
+        <strong
+          id="resultadoPiscinaTexto">
+        </strong>
+
 
       </div>
 
@@ -3652,17 +4066,23 @@ footer{
    HEADER
 ========================================================= */
 
-const header = document.getElementById("header");
+const header =
+document.getElementById("header");
 
 window.addEventListener("scroll",()=>{
 
   if(window.scrollY > 40){
+
     header.classList.add("scrolled");
+
   }else{
+
     header.classList.remove("scrolled");
+
   }
 
 });
+
 
 
 /* =========================================================
@@ -3683,10 +4103,13 @@ window.addEventListener("scroll",()=>{
     ? (scrollTop / scrollHeight) * 100
     : 0;
 
-  document.getElementById("progress").style.width =
+  document
+    .getElementById("progress")
+    .style.width =
     percent + "%";
 
 });
+
 
 
 /* =========================================================
@@ -3696,22 +4119,34 @@ window.addEventListener("scroll",()=>{
 const observer =
 new IntersectionObserver(
   entries=>{
+
     entries.forEach(entry=>{
+
       if(entry.isIntersecting){
-        entry.target.classList.add("visible");
+
+        entry.target
+          .classList
+          .add("visible");
+
       }
+
     });
+
   },
   {
     threshold:.12
   }
 );
 
+
 document
 .querySelectorAll(".reveal")
 .forEach(element=>{
+
   observer.observe(element);
+
 });
+
 
 
 /* =========================================================
@@ -3730,19 +4165,26 @@ document
     const open =
       current.classList.contains("open");
 
+
     document
       .querySelectorAll(".categoria")
       .forEach(item=>{
+
         item.classList.remove("open");
+
       });
 
+
     if(!open){
+
       current.classList.add("open");
+
     }
 
   });
 
 });
+
 
 
 /* =========================================================
@@ -3763,6 +4205,7 @@ document
   });
 
 });
+
 
 
 /* =========================================================
@@ -3813,10 +4256,13 @@ document
 .addEventListener("click",event=>{
 
   if(event.target.id === "modal"){
+
     cerrarModal();
+
   }
 
 });
+
 
 
 /* =========================================================
@@ -3856,17 +4302,17 @@ function calcularSuperficie(){
     .getElementById("resultadoSupTexto")
     .innerHTML =
 
-    superficie.toFixed(2) +
-    " m² reales" +
+      superficie.toFixed(2) +
+      " m² reales" +
 
-    "<br>" +
+      "<br>" +
 
-    "<span style=\"font-family:Arial;font-size:14px;color:#69655e\">" +
+      "<span style=\"font-family:Arial;font-size:14px;color:#69655e\">" +
 
-    total.toFixed(2) +
-    " m² con 10% de desperdicio" +
+      total.toFixed(2) +
+      " m² con 10% de desperdicio" +
 
-    "</span>";
+      "</span>";
 
 
   document
@@ -3875,6 +4321,7 @@ function calcularSuperficie(){
     .add("show");
 
 }
+
 
 
 /* =========================================================
@@ -3934,17 +4381,17 @@ function calcularPiscina(){
     .getElementById("resultadoPiscinaTexto")
     .innerHTML =
 
-    superficie.toFixed(2) +
-    " m² reales" +
+      superficie.toFixed(2) +
+      " m² reales" +
 
-    "<br>" +
+      "<br>" +
 
-    "<span style=\"font-family:Arial;font-size:14px;color:#69655e\">" +
+      "<span style=\"font-family:Arial;font-size:14px;color:#69655e\">" +
 
-    total.toFixed(2) +
-    " m² con 10% de desperdicio" +
+      total.toFixed(2) +
+      " m² con 10% de desperdicio" +
 
-    "</span>";
+      "</span>";
 
 
   document
