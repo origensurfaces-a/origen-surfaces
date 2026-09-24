@@ -1,160 +1,629 @@
 <!-- =========================================================
-     MATERIA QUE INSPIRA
+     COLECCIÓN · CERÁMICAS
      ========================================================= -->
 
-<section class="materia-inspira" id="materia-que-inspira">
+<section class="coleccion-ceramicas" id="ceramicas">
 
-  <div class="materia-intro">
+  <!-- ENCABEZADO DE LA CATEGORÍA -->
+  <button class="ceramicas-trigger" type="button" aria-expanded="false">
 
-    <span class="materia-kicker">ORIGEN · DISEÑO</span>
+    <div class="ceramicas-trigger-text">
 
-    <h2>
-      MATERIA<br>
-      <em>QUE INSPIRA</em>
-    </h2>
+      <span class="coleccion-kicker">
+        ORIGEN SURFACES · COLECCIÓN
+      </span>
 
-    <div class="materia-copy">
-      <p class="materia-lead">
-        Jugamos con la materia.
-      </p>
+      <h2>CERÁMICAS</h2>
 
       <p>
-        Cerámicas, venecitas, piedras, travertinos, terrazo,
-        WPC, pintura, LED, porcelanatos, madera, metal y más.
+        Color, textura y materia para proyectos donde
+        cada superficie tiene algo que decir.
       </p>
+
+    </div>
+
+    <div class="ceramicas-trigger-action">
+      <span class="ceramicas-label">VER COLECCIÓN</span>
+      <span class="ceramicas-plus">+</span>
+    </div>
+
+  </button>
+
+
+  <!-- =====================================================
+       CATÁLOGO DESPLEGABLE
+       ===================================================== -->
+
+  <div class="ceramicas-content">
+
+    <div class="ceramicas-intro">
+
+      <div>
+        <span>REVESTIMIENTOS PARA PISCINAS</span>
+        <h3>
+          El agua nunca<br>
+          es <em>la misma.</em>
+        </h3>
+      </div>
 
       <p>
-        No pensamos cada material por separado.
-        Los combinamos para crear espacios donde
-        la arquitectura, la luz, la textura y el color
-        encuentran su propio equilibrio.
+        Cambia con la luz, con la materia y con el espacio
+        que la contiene. Seleccionamos superficies que
+        construyen esa experiencia.
       </p>
+
     </div>
 
-  </div>
+
+    <div class="ceramicas-grid">
 
 
-  <!-- DISEÑO 01 -->
+      <!-- MOOREA -->
+      <article class="ceramica-card">
 
-  <article class="materia-proyecto materia-grande">
+        <div class="ceramica-image">
+          <img
+            src="fotos/moorea.png"
+            alt="Cerámica Moorea 10 x 10"
+          >
+        </div>
 
-    <div class="materia-image">
-      <img
-        src="fotos/32643f41df2848c16278f4a11da80f01.jpg"
-        alt="Diseño ORIGEN · Agua, piedra y arquitectura"
-      >
+        <div class="ceramica-info">
 
-      <div class="materia-overlay">
-        <span>01</span>
-        <h3>AGUA · PIEDRA · LUZ</h3>
-        <p>
-          Una composición donde la materia
-          acompaña la arquitectura.
-        </p>
-      </div>
+          <span class="ceramica-type">
+            CERÁMICA 10 × 10
+          </span>
+
+          <h3>Moorea</h3>
+
+          <p>
+            Una superficie pensada para trabajar
+            con el agua y la luz.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('moorea')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- TONGA -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/tonga2.png"
+            alt="Cerámica Tonga 10 x 10"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA 10 × 10
+          </span>
+
+          <h3>Tonga</h3>
+
+          <p>
+            Azul mineral, textura y profundidad.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('tonga')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- KAUAI -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/Kauai.png"
+            alt="Cerámica Kauai 10 x 10"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA 10 × 10
+          </span>
+
+          <h3>Kauai</h3>
+
+          <p>
+            Textura mineral y una lectura luminosa del agua.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('kauai')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- SAMOA BRIGHT -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/samoa bright.png"
+            alt="Cerámica Samoa Bright 10 x 10"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA 10 × 10
+          </span>
+
+          <h3>Samoa Bright</h3>
+
+          <p>
+            Una superficie luminosa para crear
+            profundidad y movimiento.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('samoa-bright')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- MALAWI -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/malawi.png"
+            alt="Cerámica Malawi"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA
+          </span>
+
+          <h3>Malawi</h3>
+
+          <p>
+            Tonos y textura para una superficie
+            con carácter.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('malawi')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PORTLAND -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/portland.png"
+            alt="Cerámica Portland"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA
+          </span>
+
+          <h3>Portland</h3>
+
+          <p>
+            Una lectura contemporánea de la superficie.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('portland')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PALAU BRIGHT -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/palau bright.png"
+            alt="Cerámica Palau Bright"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA
+          </span>
+
+          <h3>Palau Bright</h3>
+
+          <p>
+            Color, luz y profundidad para el agua.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('palau-bright')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- VIS -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/vis.png"
+            alt="Cerámica Vis"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA
+          </span>
+
+          <h3>Vis</h3>
+
+          <p>
+            Una superficie de lectura mineral.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('vis')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- SAMOA -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/somoa.png"
+            alt="Cerámica Samoa"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA
+          </span>
+
+          <h3>Samoa</h3>
+
+          <p>
+            Textura y color para una composición natural.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('samoa')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PALAU -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/palau.png"
+            alt="Cerámica Palau"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA
+          </span>
+
+          <h3>Palau</h3>
+
+          <p>
+            Profundidad y variación tonal.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('palau')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- MAUÍ -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/maui.png"
+            alt="Cerámica Mauí"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA
+          </span>
+
+          <h3>Mauí</h3>
+
+          <p>
+            Una superficie que transforma
+            la percepción del agua.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('maui')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- KAIMÚ -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/kaimú.jpg"
+            alt="Cerámica Kaimú"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA
+          </span>
+
+          <h3>Kaimú</h3>
+
+          <p>
+            Color profundo y textura mineral.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('kaimu')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- COBALTO -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/cobalto.png"
+            alt="Cerámica Cobalto"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA
+          </span>
+
+          <h3>Cobalto</h3>
+
+          <p>
+            Una presencia intensa para trabajar
+            con el color del agua.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('cobalto')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CÉU -->
+      <article class="ceramica-card">
+
+        <div class="ceramica-image">
+          <img
+            src="fotos/ceu.jpg"
+            alt="Cerámica Céu"
+          >
+        </div>
+
+        <div class="ceramica-info">
+
+          <span class="ceramica-type">
+            CERÁMICA
+          </span>
+
+          <h3>Céu</h3>
+
+          <p>
+            Una tonalidad luminosa para crear
+            atmósferas serenas.
+          </p>
+
+          <div class="ceramica-bottom">
+
+            <span>1,95 m² / caja</span>
+
+            <button
+              type="button"
+              onclick="seleccionarRevestimiento('ceu')"
+            >
+              CALCULAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
     </div>
-
-    <div class="materia-tags">
-      <span>Piedra</span>
-      <span>Venecita</span>
-      <span>LED</span>
-      <span>Vegetación</span>
-    </div>
-
-  </article>
-
-
-  <!-- DISEÑO 02 -->
-
-  <article class="materia-proyecto materia-offset">
-
-    <div class="materia-image">
-      <img
-        src="fotos/9c7236e83277cf400b03c5c4deff2a32.jpg"
-        alt="Diseño ORIGEN · Materia y textura"
-      >
-
-      <div class="materia-overlay">
-        <span>02</span>
-        <h3>TEXTURA · COLOR · CONTRASTE</h3>
-        <p>
-          Materiales diferentes,
-          una misma identidad.
-        </p>
-      </div>
-    </div>
-
-    <div class="materia-tags">
-      <span>Cerámica</span>
-      <span>Terrazo</span>
-      <span>Pintura</span>
-      <span>Metal</span>
-    </div>
-
-  </article>
-
-
-  <!-- DISEÑO 03 -->
-
-  <article class="materia-proyecto materia-horizontal">
-
-    <div class="materia-image">
-      <img
-        src="fotos/Captura de pantalla 2026-08-26 212707.png"
-        alt="Travertino · Diseño ORIGEN"
-      >
-
-      <div class="materia-overlay">
-        <span>03</span>
-        <h3>PIEDRA · AGUA · CALIDEZ</h3>
-        <p>
-          Una materia natural que cambia
-          con la luz y el entorno.
-        </p>
-      </div>
-    </div>
-
-    <div class="materia-tags">
-      <span>Travertino</span>
-      <span>Piedra</span>
-      <span>Agua</span>
-      <span>Luz</span>
-    </div>
-
-  </article>
-
-
-  <!-- FRASE CENTRAL -->
-
-  <div class="materia-frase">
-
-    <span>ORIGEN SURFACES</span>
-
-    <h3>
-      No pensamos los materiales<br>
-      <em>por separado.</em>
-    </h3>
-
-    <p>
-      Pensamos el espacio completo.
-    </p>
-
-  </div>
-
-
-  <!-- CIERRE -->
-
-  <div class="materia-cierre">
-
-    <p>
-      Cada proyecto puede empezar con un material.
-      Lo interesante es descubrir con qué puede encontrarse.
-    </p>
-
-    <a href="#contacto" class="materia-button">
-      CONTANOS TU PROYECTO
-      <span>→</span>
-    </a>
 
   </div>
 
@@ -164,313 +633,353 @@
 <style>
 
 /* =========================================================
-   MATERIA QUE INSPIRA · ORIGEN
+   CERÁMICAS · ORIGEN
    ========================================================= */
 
-.materia-inspira {
-  position: relative;
-  background: #10100f;
-  color: #f2eee7;
-  padding: 150px 6vw 170px;
-  overflow: hidden;
+.coleccion-ceramicas {
+  background: #f3efe7;
+  color: #171716;
+  border-top: 1px solid rgba(0,0,0,.12);
 }
 
-.materia-intro {
-  max-width: 1300px;
-  margin: 0 auto 110px;
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 9vw;
-  align-items: end;
+
+/* BOTÓN DE CATEGORÍA */
+
+.ceramicas-trigger {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 70px 6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
 }
 
-.materia-kicker {
+.ceramicas-trigger-text {
+  max-width: 850px;
+}
+
+.coleccion-kicker {
   display: block;
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: .28em;
-  color: #b59a68;
-  margin-bottom: 25px;
+  color: #9b8157;
+  margin-bottom: 20px;
 }
 
-.materia-intro h2 {
+.ceramicas-trigger h2 {
   margin: 0;
-  font-size: clamp(58px, 8vw, 125px);
+  font-size: clamp(55px, 8vw, 115px);
   line-height: .82;
   font-weight: 300;
   letter-spacing: -.055em;
 }
 
-.materia-intro h2 em {
-  color: #b9aa91;
-  font-style: normal;
+.ceramicas-trigger p {
+  max-width: 480px;
+  margin: 28px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(23,23,22,.62);
 }
 
-.materia-copy {
-  max-width: 470px;
-  font-size: 15px;
-  line-height: 1.8;
-  color: rgba(242,238,231,.68);
+.ceramicas-trigger-action {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 5px;
 }
 
-.materia-copy p {
-  margin: 0 0 22px;
+.ceramicas-label {
+  font-size: 9px;
+  letter-spacing: .2em;
 }
 
-.materia-copy .materia-lead {
-  font-family: Georgia, serif;
-  font-size: 29px;
-  line-height: 1.2;
-  color: #f2eee7;
+.ceramicas-plus {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(23,23,22,.3);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 300;
+  transition:
+    transform .5s ease,
+    background .4s ease,
+    color .4s ease;
 }
 
 
-/* PROYECTOS */
+/* CONTENIDO */
 
-.materia-proyecto {
-  max-width: 1350px;
-  margin: 0 auto 150px;
-}
-
-.materia-image {
-  position: relative;
+.ceramicas-content {
+  max-height: 0;
   overflow: hidden;
-  background: #191816;
+  opacity: 0;
+  transition:
+    max-height 1s cubic-bezier(.2,.7,.2,1),
+    opacity .5s ease;
 }
 
-.materia-image img {
+
+/* ABIERTO */
+
+.coleccion-ceramicas.is-open
+.ceramicas-content {
+  max-height: 10000px;
+  opacity: 1;
+}
+
+.coleccion-ceramicas.is-open
+.ceramicas-plus {
+  transform: rotate(45deg);
+  background: #171716;
+  color: #f3efe7;
+}
+
+
+/* INTRO */
+
+.ceramicas-intro {
+  padding: 30px 6vw 75px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+  align-items: end;
+}
+
+.ceramicas-intro span {
+  font-size: 9px;
+  letter-spacing: .28em;
+  color: #9b8157;
+}
+
+.ceramicas-intro h3 {
+  margin: 20px 0 0;
+  font-family: Georgia, serif;
+  font-size: clamp(45px, 6vw, 78px);
+  line-height: .9;
+  font-weight: 400;
+  letter-spacing: -.045em;
+}
+
+.ceramicas-intro h3 em {
+  font-style: italic;
+}
+
+.ceramicas-intro p {
+  max-width: 500px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(23,23,22,.65);
+}
+
+
+/* GRILLA */
+
+.ceramicas-grid {
+  padding: 0 6vw 110px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+
+/* TARJETA */
+
+.ceramica-card {
+  background: #f8f5ee;
+  border: 1px solid rgba(23,23,22,.14);
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease;
+}
+
+.ceramica-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(0,0,0,.08);
+}
+
+
+/* FOTO */
+
+.ceramica-image {
+  aspect-ratio: 1 / 1;
+  padding: 9px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.ceramica-image img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
-  transition:
-    transform 1.2s cubic-bezier(.2,.65,.2,1),
-    filter 1s ease;
+  transition: transform .8s cubic-bezier(.2,.7,.2,1);
 }
 
-.materia-proyecto:hover .materia-image img {
+.ceramica-card:hover .ceramica-image img {
   transform: scale(1.035);
-  filter: brightness(.82);
-}
-
-.materia-grande .materia-image {
-  height: min(72vh, 760px);
-}
-
-.materia-offset {
-  width: 72%;
-  margin-left: 20%;
-}
-
-.materia-offset .materia-image {
-  height: 600px;
-}
-
-.materia-horizontal {
-  width: 82%;
-  margin-left: 3%;
-}
-
-.materia-horizontal .materia-image {
-  height: 560px;
 }
 
 
-/* OVERLAY */
+/* INFO */
 
-.materia-overlay {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 45px;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,.72),
-    rgba(0,0,0,0)
-  );
-  transform: translateY(12px);
-  opacity: .72;
-  transition:
-    transform .6s ease,
-    opacity .6s ease;
+.ceramica-info {
+  padding: 25px 20px 20px;
 }
 
-.materia-proyecto:hover .materia-overlay {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.materia-overlay span {
+.ceramica-type {
   display: block;
-  font-size: 10px;
+  font-size: 8px;
   letter-spacing: .25em;
-  color: #c0a66f;
-  margin-bottom: 12px;
+  color: #9b8157;
+  margin-bottom: 10px;
 }
 
-.materia-overlay h3 {
-  margin: 0 0 8px;
-  font-size: clamp(25px, 3vw, 43px);
-  font-weight: 300;
-  letter-spacing: -.02em;
-}
-
-.materia-overlay p {
-  margin: 0;
-  max-width: 420px;
-  font-size: 13px;
-  color: rgba(255,255,255,.75);
-}
-
-
-/* TAGS */
-
-.materia-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 15px;
-}
-
-.materia-tags span {
-  border: 1px solid rgba(181,154,104,.4);
-  padding: 8px 13px;
-  font-size: 9px;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  color: #b9aa91;
-}
-
-
-/* FRASE */
-
-.materia-frase {
-  max-width: 1100px;
-  margin: 180px auto;
-  text-align: center;
-}
-
-.materia-frase span {
-  display: block;
-  font-size: 9px;
-  letter-spacing: .3em;
-  color: #b59a68;
-  margin-bottom: 30px;
-}
-
-.materia-frase h3 {
-  margin: 0;
-  font-size: clamp(38px, 5.5vw, 78px);
-  line-height: .98;
-  font-weight: 300;
-  letter-spacing: -.04em;
-}
-
-.materia-frase h3 em {
+.ceramica-info h3 {
+  margin: 0 0 12px;
   font-family: Georgia, serif;
+  font-size: 25px;
   font-weight: 400;
-  color: #b9aa91;
 }
 
-.materia-frase p {
-  margin-top: 25px;
-  color: rgba(242,238,231,.55);
-  font-size: 14px;
+.ceramica-info p {
+  min-height: 40px;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(23,23,22,.65);
 }
 
-
-/* CIERRE */
-
-.materia-cierre {
-  max-width: 650px;
-  margin: 0 auto;
-  text-align: center;
+.ceramica-bottom {
+  margin-top: 22px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(23,23,22,.15);
 }
 
-.materia-cierre p {
-  font-family: Georgia, serif;
-  font-size: 23px;
-  line-height: 1.5;
-  color: rgba(242,238,231,.78);
+.ceramica-bottom > span {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 8px;
+  letter-spacing: .08em;
+  color: rgba(23,23,22,.55);
 }
 
-.materia-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 25px;
-  margin-top: 25px;
-  padding: 17px 25px;
-  border: 1px solid rgba(181,154,104,.6);
-  color: #f2eee7;
-  text-decoration: none;
-  font-size: 10px;
-  letter-spacing: .18em;
+.ceramica-bottom button {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid rgba(155,129,87,.6);
+  background: transparent;
+  color: #171716;
+  font-size: 8px;
+  letter-spacing: .2em;
+  cursor: pointer;
   transition:
     background .35s ease,
-    color .35s ease,
-    transform .35s ease;
+    color .35s ease;
 }
 
-.materia-button span {
-  color: #b59a68;
-  font-size: 18px;
-}
-
-.materia-button:hover {
-  background: #b59a68;
-  color: #111;
-  transform: translateY(-3px);
-}
-
-.materia-button:hover span {
-  color: #111;
+.ceramica-bottom button:hover {
+  background: #171716;
+  color: #f3efe7;
 }
 
 
 /* MOBILE */
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
 
-  .materia-inspira {
-    padding: 95px 6vw 110px;
+  .ceramicas-trigger {
+    padding: 55px 6vw;
+    align-items: flex-start;
+    gap: 35px;
   }
 
-  .materia-intro {
+  .ceramicas-trigger-action {
+    flex-shrink: 0;
+  }
+
+  .ceramicas-label {
+    display: none;
+  }
+
+  .ceramicas-intro {
     display: block;
-    margin-bottom: 75px;
+    padding: 10px 6vw 55px;
   }
 
-  .materia-intro h2 {
-    font-size: clamp(52px, 16vw, 82px);
-    margin-bottom: 55px;
+  .ceramicas-intro h3 {
+    margin-bottom: 35px;
   }
 
-  .materia-grande,
-  .materia-offset,
-  .materia-horizontal {
-    width: 100%;
-    margin-left: 0;
-    margin-bottom: 90px;
+  .ceramicas-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 4vw 80px;
   }
 
-  .materia-grande .materia-image,
-  .materia-offset .materia-image,
-  .materia-horizontal .materia-image {
-    height: 62vh;
-  }
-
-  .materia-overlay {
-    padding: 25px;
-    opacity: 1;
-    transform: none;
-  }
-
-  .materia-frase {
-    margin: 110px auto;
-  }
-
-  .materia-frase h3 {
-    font-size: 42px;
+  .ceramica-info {
+    padding: 20px 15px 15px;
   }
 
 }
 
+@media (max-width: 560px) {
+
+  .ceramicas-trigger h2 {
+    font-size: 52px;
+  }
+
+  .ceramicas-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ACCESIBILIDAD */
+
+.ceramicas-trigger:focus-visible,
+.ceramica-bottom button:focus-visible {
+  outline: 2px solid #9b8157;
+  outline-offset: 4px;
+}
+
 </style>
+
+
+<script>
+
+/* =========================================================
+   ABRIR / CERRAR CERÁMICAS
+   ========================================================= */
+
+const ceramicasTrigger =
+  document.querySelector('.ceramicas-trigger');
+
+const ceramicasSection =
+  document.querySelector('.coleccion-ceramicas');
+
+if (ceramicasTrigger && ceramicasSection) {
+
+  ceramicasTrigger.addEventListener('click', () => {
+
+    const abierto =
+      ceramicasSection.classList.toggle('is-open');
+
+    ceramicasTrigger.setAttribute(
+      'aria-expanded',
+      abierto ? 'true' : 'false'
+    );
+
+  });
+
+}
+
+</script>
