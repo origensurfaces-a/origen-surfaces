@@ -1,96 +1,2468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ORIGEN SURFACES | La materia también diseña</title>
+
+<meta
+  name="description"
+  content="ORIGEN SURFACES. Materiales, superficies y soluciones para proyectos donde la arquitectura importa."
+>
+
+<style>
+
+/* =========================================================
+   ORIGEN SURFACES
+   LA MAGIA DE ORIGEN
+   ========================================================= */
+
+:root{
+  --negro:#10100f;
+  --negro-soft:#171715;
+  --carbon:#20201d;
+
+  --marfil:#f3efe7;
+  --marfil-2:#e9e3d8;
+  --blanco:#fbf9f4;
+
+  --piedra:#b8ad9c;
+  --piedra-clara:#d8d0c2;
+
+  --oro:#b79a63;
+  --oro-soft:#c8b28a;
+
+  --agua:#718b8d;
+  --azul-mineral:#526d70;
+
+  --texto:#24231f;
+  --texto-soft:rgba(36,35,31,.64);
+
+  --linea:rgba(36,35,31,.15);
+
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:Arial,Helvetica,sans-serif;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--marfil);
+  color:var(--texto);
+  font-family:var(--sans);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+
+/* =========================================================
+   CURSOR / SCROLL
+   ========================================================= */
+
+.scroll-line{
+  position:fixed;
+  top:0;
+  left:0;
+  width:0;
+  height:2px;
+  background:var(--oro);
+  z-index:9999;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:88px;
+  z-index:1000;
+
+  display:flex;
+  align-items:center;
+
+  background:rgba(16,16,15,.20);
+  backdrop-filter:blur(10px);
+
+  border-bottom:1px solid rgba(255,255,255,.10);
+
+  transition:
+    background .5s ease,
+    height .5s ease;
+}
+
+.site-header.scrolled{
+  height:72px;
+  background:rgba(16,16,15,.92);
+}
+
+.header-inner{
+  width:min(1440px,92%);
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.header-logo{
+  display:flex;
+  align-items:center;
+}
+
+.header-logo img{
+  width:150px;
+  height:auto;
+  object-fit:contain;
+}
+
+.main-nav{
+  display:flex;
+  align-items:center;
+  gap:34px;
+}
+
+.main-nav a{
+  position:relative;
+
+  color:#fff;
+  font-size:9px;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+
+  opacity:.82;
+
+  transition:
+    opacity .3s ease,
+    color .3s ease;
+}
+
+.main-nav a:hover{
+  opacity:1;
+  color:var(--oro-soft);
+}
+
+.main-nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-9px;
+  width:0;
+  height:1px;
+  background:var(--oro);
+
+  transition:width .3s ease;
+}
+
+.main-nav a:hover::after{
+  width:100%;
+}
+
+.menu-mobile{
+  display:none;
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.origen-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+
+  min-height:50px;
+  padding:0 24px;
+
+  border:1px solid rgba(183,154,99,.65);
+
+  font-size:9px;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+
+  transition:
+    background .4s ease,
+    color .4s ease,
+    transform .4s ease;
+}
+
+.origen-btn:hover{
+  background:var(--oro);
+  color:var(--negro);
+  transform:translateY(-3px);
+}
+
+.origen-btn-dark{
+  color:var(--texto);
+}
+
+.origen-btn-light{
+  color:#fff;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+  position:relative;
+  min-height:100vh;
+
+  background:#111;
+
+  overflow:hidden;
+}
+
+.hero-image{
+  position:absolute;
+  inset:0;
+}
+
+.hero-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.68) 0%,
+      rgba(0,0,0,.25) 45%,
+      rgba(0,0,0,.12) 100%
+    );
+
+  z-index:1;
+}
+
+.hero-image img{
+  animation:heroZoom 12s ease-out forwards;
+}
+
+@keyframes heroZoom{
+  from{
+    transform:scale(1.06);
+  }
+
+  to{
+    transform:scale(1);
+  }
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+
+  min-height:100vh;
+
+  width:min(1440px,92%);
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+}
+
+.hero-copy{
+  max-width:760px;
+  color:#fff;
+  padding-top:70px;
+}
+
+.hero-kicker{
+  margin-bottom:27px;
+
+  font-size:9px;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+
+  color:var(--oro-soft);
+}
+
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(64px,8vw,126px);
+  line-height:.84;
+  letter-spacing:-.065em;
+  font-weight:400;
+
+  color:#fff;
+}
+
+.hero h1 em{
+  font-style:italic;
+  color:#ddd4c4;
+}
+
+.hero-subtitle{
+  max-width:600px;
+
+  margin-top:35px;
+
+  font-size:17px;
+  line-height:1.7;
+
+  color:rgba(255,255,255,.78);
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:38px;
+}
+
+.hero-bottom-logo{
+  position:absolute;
+
+  left:50%;
+  bottom:42px;
+
+  transform:translateX(-50%);
+
+  width:220px;
+
+  z-index:3;
+
+  opacity:.92;
+}
+
+.hero-bottom-logo img{
+  object-fit:contain;
+}
+
+.hero-material-line{
+  position:absolute;
+
+  right:30px;
+  bottom:38px;
+
+  writing-mode:vertical-rl;
+
+  color:rgba(255,255,255,.58);
+
+  font-size:8px;
+  letter-spacing:.35em;
+
+  z-index:3;
+}
+
+
+/* =========================================================
+   TRANSICIÓN
+   ========================================================= */
+
+.transition-dark{
+  background:var(--negro);
+  color:#fff;
+  padding:145px 6vw;
+}
+
+.transition-inner{
+  width:min(1200px,100%);
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10vw;
+  align-items:end;
+}
+
+.transition-kicker{
+  font-size:9px;
+  letter-spacing:.3em;
+  color:var(--oro);
+}
+
+.transition h2{
+  margin-top:25px;
+
+  font-family:var(--serif);
+  font-size:clamp(48px,6vw,88px);
+  line-height:.92;
+  font-weight:400;
+  letter-spacing:-.05em;
+}
+
+.transition h2 em{
+  color:#c9bdab;
+  font-style:italic;
+}
+
+.transition-copy{
+  max-width:500px;
+
+  font-size:15px;
+  line-height:1.9;
+
+  color:rgba(255,255,255,.64);
+}
+
+
+/* =========================================================
+   NUESTRO CRITERIO
+   ========================================================= */
+
+.criterio{
+  padding:150px 6vw;
+  background:var(--marfil);
+}
+
+.section-wrap{
+  width:min(1350px,100%);
+  margin:auto;
+}
+
+.section-kicker{
+  font-size:9px;
+  letter-spacing:.3em;
+  color:var(--oro);
+}
+
+.section-title{
+  margin-top:20px;
+
+  font-family:var(--serif);
+  font-weight:400;
+
+  font-size:clamp(54px,7vw,105px);
+  line-height:.88;
+
+  letter-spacing:-.06em;
+}
+
+.section-title em{
+  font-style:italic;
+  color:#918774;
+}
+
+.criterio-grid{
+  margin-top:85px;
+
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:10vw;
+}
+
+.criterio-text{
+  max-width:650px;
+
+  font-family:var(--serif);
+  font-size:28px;
+  line-height:1.45;
+}
+
+.criterio-text strong{
+  color:var(--oro);
+  font-weight:400;
+}
+
+.criterio-side{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+
+  background:var(--linea);
+}
+
+.criterio-item{
+  padding:30px;
+  background:var(--marfil);
+}
+
+.criterio-number{
+  color:var(--oro);
+  font-size:9px;
+  letter-spacing:.2em;
+}
+
+.criterio-item h3{
+  margin-top:35px;
+
+  font-family:var(--serif);
+  font-size:27px;
+  font-weight:400;
+}
+
+.criterio-item p{
+  margin-top:10px;
+
+  font-size:12px;
+  line-height:1.7;
+  color:var(--texto-soft);
+}
+
+
+/* =========================================================
+   LA MAGIA DE ORIGEN
+   ========================================================= */
+
+.magia{
+  position:relative;
+
+  background:var(--negro);
+  color:#fff;
+
+  padding:160px 5vw 180px;
+
+  overflow:hidden;
+}
+
+.magia::before{
+  content:"ORIGEN";
+
+  position:absolute;
+  right:-30px;
+  top:70px;
+
+  font-family:var(--serif);
+  font-size:24vw;
+  line-height:1;
+
+  color:rgba(255,255,255,.018);
+
+  pointer-events:none;
+}
+
+.magia-head{
+  width:min(1250px,100%);
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr .7fr;
+  gap:10vw;
+
+  align-items:end;
+}
+
+.magia-kicker{
+  color:var(--oro);
+
+  font-size:9px;
+  letter-spacing:.32em;
+}
+
+.magia h2{
+  margin-top:22px;
+
+  font-family:var(--serif);
+  font-weight:400;
+
+  font-size:clamp(58px,8vw,125px);
+  line-height:.80;
+
+  letter-spacing:-.065em;
+}
+
+.magia h2 em{
+  color:#b9ad99;
+  font-style:italic;
+}
+
+.magia-intro{
+  max-width:460px;
+
+  color:rgba(255,255,255,.65);
+
+  font-size:14px;
+  line-height:1.9;
+}
+
+.magia-intro strong{
+  display:block;
+
+  margin-bottom:15px;
+
+  font-family:var(--serif);
+  font-size:25px;
+  font-weight:400;
+
+  color:#fff;
+}
+
+
+/* GALERÍA */
+
+.magia-gallery{
+  width:min(1450px,100%);
+  margin:115px auto 0;
+
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:20px;
+}
+
+.magia-main{
+  position:relative;
+  height:720px;
+  overflow:hidden;
+}
+
+.magia-secondary{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  gap:20px;
+}
+
+.magia-card{
+  position:relative;
+  overflow:hidden;
+
+  background:#222;
+}
+
+.magia-card img{
+  transition:
+    transform 1.2s cubic-bezier(.16,1,.3,1),
+    filter .8s ease;
+}
+
+.magia-card:hover img{
+  transform:scale(1.045);
+  filter:brightness(.78);
+}
+
+.magia-secondary .magia-card{
+  min-height:350px;
+}
+
+.magia-overlay{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+
+  padding:42px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.78),
+      transparent
+    );
+}
+
+.magia-number{
+  color:var(--oro);
+
+  font-size:9px;
+  letter-spacing:.25em;
+}
+
+.magia-overlay h3{
+  margin-top:10px;
+
+  font-family:var(--serif);
+  font-size:clamp(25px,3vw,48px);
+  font-weight:400;
+
+  color:#fff;
+}
+
+.magia-overlay p{
+  max-width:430px;
+
+  margin-top:8px;
+
+  color:rgba(255,255,255,.72);
+
+  font-size:12px;
+}
+
+.magia-materiales{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+
+  margin-top:18px;
+}
+
+.magia-materiales span{
+  padding:7px 10px;
+
+  border:1px solid rgba(200,178,138,.42);
+
+  color:#d0c4b1;
+
+  font-size:7px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.magia-frase{
+  max-width:1000px;
+
+  margin:150px auto 0;
+
+  text-align:center;
+}
+
+.magia-frase p{
+  font-family:var(--serif);
+  font-size:clamp(35px,5vw,65px);
+  line-height:1;
+
+  letter-spacing:-.04em;
+}
+
+.magia-frase em{
+  color:var(--oro-soft);
+}
+
+.magia-frase small{
+  display:block;
+
+  margin-top:28px;
+
+  color:rgba(255,255,255,.45);
+
+  font-size:11px;
+  letter-spacing:.12em;
+}
+
+
+/* =========================================================
+   COLECCIONES
+   ========================================================= */
+
+.colecciones{
+  background:var(--marfil);
+  padding:150px 5vw;
+}
+
+.colecciones-head{
+  width:min(1250px,100%);
+  margin:auto;
+}
+
+.colecciones-intro{
+  max-width:650px;
+  margin-top:25px;
+
+  color:var(--texto-soft);
+
+  font-size:14px;
+  line-height:1.8;
+}
+
+.collection-list{
+  width:min(1250px,100%);
+  margin:90px auto 0;
+
+  border-top:1px solid var(--linea);
+}
+
+.collection{
+  border-bottom:1px solid var(--linea);
+}
+
+.collection-trigger{
+  width:100%;
+
+  border:0;
+  background:transparent;
+
+  padding:38px 0;
+
+  display:grid;
+  grid-template-columns:90px 1fr auto;
+
+  align-items:center;
+
+  text-align:left;
+
+  color:var(--texto);
+}
+
+.collection-number{
+  color:var(--oro);
+
+  font-size:9px;
+  letter-spacing:.2em;
+}
+
+.collection-name{
+  font-family:var(--serif);
+  font-size:clamp(28px,4vw,56px);
+  font-weight:400;
+
+  letter-spacing:-.04em;
+}
+
+.collection-desc{
+  margin-top:7px;
+
+  color:var(--texto-soft);
+
+  font-size:11px;
+}
+
+.collection-plus{
+  width:45px;
+  height:45px;
+
+  border:1px solid rgba(36,35,31,.25);
+  border-radius:50%;
+
+  display:grid;
+  place-items:center;
+
+  font-size:24px;
+  font-weight:300;
+
+  transition:
+    transform .5s ease,
+    background .4s ease,
+    color .4s ease;
+}
+
+.collection.open .collection-plus{
+  transform:rotate(45deg);
+
+  background:var(--negro);
+  color:#fff;
+}
+
+.collection-content{
+  max-height:0;
+  overflow:hidden;
+
+  opacity:0;
+
+  transition:
+    max-height 1s cubic-bezier(.16,1,.3,1),
+    opacity .45s ease;
+}
+
+.collection.open .collection-content{
+  max-height:15000px;
+  opacity:1;
+}
+
+.collection-inner{
+  padding:15px 0 80px 90px;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+   ========================================================= */
+
+.product-intro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:10vw;
+
+  padding:20px 0 50px;
+}
+
+.product-intro h3{
+  font-family:var(--serif);
+  font-size:clamp(42px,5vw,70px);
+  font-weight:400;
+  line-height:.92;
+}
+
+.product-intro h3 em{
+  font-style:italic;
+}
+
+.product-intro p{
+  align-self:end;
+
+  max-width:450px;
+
+  color:var(--texto-soft);
+
+  font-size:13px;
+  line-height:1.8;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.product-card{
+  background:#f9f6ef;
+  border:1px solid rgba(36,35,31,.12);
+
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 55px rgba(0,0,0,.09);
+}
+
+.product-image{
+  aspect-ratio:1/1;
+
+  padding:9px;
+
+  background:#fff;
+
+  overflow:hidden;
+}
+
+.product-image img{
+  transition:transform .8s cubic-bezier(.16,1,.3,1);
+}
+
+.product-card:hover .product-image img{
+  transform:scale(1.035);
+}
+
+.product-info{
+  padding:24px 20px 20px;
+}
+
+.product-type{
+  display:block;
+
+  color:var(--oro);
+
+  font-size:7px;
+  letter-spacing:.25em;
+}
+
+.product-info h4{
+  margin-top:10px;
+
+  font-family:var(--serif);
+  font-size:25px;
+  font-weight:400;
+}
+
+.product-info p{
+  min-height:38px;
+
+  margin-top:10px;
+
+  color:var(--texto-soft);
+
+  font-size:10px;
+  line-height:1.6;
+}
+
+.product-bottom{
+  margin-top:20px;
+  padding-top:14px;
+
+  border-top:1px solid var(--linea);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.product-yield{
+  color:var(--texto-soft);
+
+  font-size:8px;
+}
+
+.product-calc{
+  padding:10px 13px;
+
+  border:1px solid rgba(183,154,99,.55);
+
+  background:transparent;
+
+  font-size:7px;
+  letter-spacing:.16em;
+
+  transition:.3s ease;
+}
+
+.product-calc:hover{
+  background:var(--negro);
+  color:#fff;
+}
+
+
+/* =========================================================
+   PISCINAS
+   ========================================================= */
+
+.piscinas{
+  background:var(--negro);
+  color:#fff;
+}
+
+.pool-hero{
+  min-height:90vh;
+
+  position:relative;
+
+  display:flex;
+  align-items:flex-end;
+
+  overflow:hidden;
+}
+
+.pool-hero img{
+  position:absolute;
+  inset:0;
+}
+
+.pool-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.78),
+      rgba(0,0,0,.08)
+    );
+}
+
+.pool-content{
+  position:relative;
+  z-index:2;
+
+  width:min(1350px,90%);
+  margin:auto;
+
+  padding:110px 0;
+}
+
+.pool-content .section-kicker{
+  color:var(--oro-soft);
+}
+
+.pool-content h2{
+  max-width:900px;
+
+  margin-top:20px;
+
+  color:#fff;
+
+  font-family:var(--serif);
+  font-size:clamp(65px,9vw,135px);
+  line-height:.80;
+  letter-spacing:-.065em;
+}
+
+.pool-content h2 em{
+  color:#b7c6c5;
+}
+
+.pool-content p{
+  max-width:570px;
+
+  margin-top:30px;
+
+  color:rgba(255,255,255,.7);
+
+  font-size:14px;
+  line-height:1.8;
+}
+
+.pool-button{
+  margin-top:35px;
+}
+
+
+/* =========================================================
+   EDUCACIÓN
+   ========================================================= */
+
+.materiales{
+  padding:150px 5vw;
+
+  background:#e8e1d5;
+}
+
+.materiales-grid{
+  width:min(1250px,100%);
+  margin:90px auto 0;
+
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:1px;
+
+  background:rgba(36,35,31,.15);
+}
+
+.material-box{
+  padding:50px;
+
+  background:#e8e1d5;
+}
+
+.material-box span{
+  color:var(--oro);
+
+  font-size:8px;
+  letter-spacing:.25em;
+}
+
+.material-box h3{
+  margin-top:18px;
+
+  font-family:var(--serif);
+  font-size:38px;
+  font-weight:400;
+}
+
+.material-box p{
+  margin-top:16px;
+
+  max-width:500px;
+
+  color:var(--texto-soft);
+
+  font-size:12px;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   ROSA GRES
+   ========================================================= */
+
+.rosa{
+  background:var(--marfil);
+
+  padding:160px 5vw;
+}
+
+.rosa-grid{
+  width:min(1300px,100%);
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:10vw;
+
+  align-items:center;
+}
+
+.rosa-copy h2{
+  margin-top:20px;
+
+  font-family:var(--serif);
+  font-size:clamp(55px,6vw,90px);
+  line-height:.87;
+  font-weight:400;
+
+  letter-spacing:-.05em;
+}
+
+.rosa-copy h2 em{
+  color:#918774;
+  font-style:italic;
+}
+
+.rosa-copy p{
+  max-width:560px;
+
+  margin-top:30px;
+
+  color:var(--texto-soft);
+
+  font-size:14px;
+  line-height:1.9;
+}
+
+.rosa-points{
+  margin-top:35px;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:10px;
+}
+
+.rosa-point{
+  padding:17px;
+
+  border-top:1px solid var(--linea);
+
+  font-size:9px;
+  letter-spacing:.08em;
+}
+
+.rosa-image{
+  height:650px;
+}
+
+.rosa-image img{
+  object-position:center;
+}
+
+
+/* =========================================================
+   CONSERVACIÓN
+   ========================================================= */
+
+.conservacion{
+  background:var(--negro);
+  color:#fff;
+
+  padding:150px 5vw;
+}
+
+.conservacion-inner{
+  width:min(1250px,100%);
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr .8fr;
+
+  gap:10vw;
+}
+
+.conservacion h2{
+  margin-top:20px;
+
+  color:#fff;
+
+  font-family:var(--serif);
+  font-size:clamp(55px,7vw,100px);
+  line-height:.86;
+  letter-spacing:-.055em;
+}
+
+.conservacion h2 em{
+  color:#c4b79f;
+  font-style:italic;
+}
+
+.conservacion-copy{
+  align-self:end;
+}
+
+.conservacion-copy p{
+  color:rgba(255,255,255,.64);
+
+  font-size:14px;
+  line-height:1.9;
+}
+
+.conservacion-list{
+  margin-top:35px;
+
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.conservacion-list span{
+  padding:9px 12px;
+
+  border:1px solid rgba(183,154,99,.35);
+
+  color:#c9b998;
+
+  font-size:8px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   PROYECTOS
+   ========================================================= */
+
+.proyectos{
+  padding:150px 5vw;
+  background:#ded7cb;
+}
+
+.proyectos-grid{
+  width:min(1300px,100%);
+  margin:90px auto 0;
+
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+
+  gap:18px;
+}
+
+.proyecto-large{
+  height:700px;
+}
+
+.proyecto-small{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+
+  gap:18px;
+}
+
+.proyecto-item{
+  position:relative;
+  overflow:hidden;
+
+  background:#aaa;
+}
+
+.proyecto-item img{
+  transition:
+    transform 1.2s cubic-bezier(.16,1,.3,1);
+}
+
+.proyecto-item:hover img{
+  transform:scale(1.045);
+}
+
+.proyecto-label{
+  position:absolute;
+
+  left:25px;
+  bottom:22px;
+
+  color:#fff;
+
+  font-size:9px;
+  letter-spacing:.18em;
+
+  text-shadow:0 2px 12px rgba(0,0,0,.5);
+}
+
+
+/* =========================================================
+   MARCAS
+   ========================================================= */
+
+.marcas{
+  padding:130px 5vw;
+
+  background:var(--marfil);
+}
+
+.marcas-grid{
+  width:min(1100px,100%);
+  margin:75px auto 0;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  border-top:1px solid var(--linea);
+  border-left:1px solid var(--linea);
+}
+
+.marca{
+  min-height:130px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+
+  border-right:1px solid var(--linea);
+  border-bottom:1px solid var(--linea);
+
+  text-align:center;
+}
+
+.marca strong{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:400;
+}
+
+.marca small{
+  display:block;
+
+  margin-top:5px;
+
+  color:var(--oro);
+
+  font-size:7px;
+  letter-spacing:.18em;
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.faq{
+  padding:150px 5vw;
+
+  background:#ebe5da;
+}
+
+.faq-list{
+  width:min(1000px,100%);
+  margin:80px auto 0;
+
+  border-top:1px solid var(--linea);
+}
+
+.faq-item{
+  border-bottom:1px solid var(--linea);
+}
+
+.faq-question{
+  width:100%;
+
+  border:0;
+  background:transparent;
+
+  padding:27px 0;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  text-align:left;
+
+  color:var(--texto);
+
+  font-family:var(--serif);
+  font-size:22px;
+}
+
+.faq-icon{
+  color:var(--oro);
+  font-family:var(--sans);
+  font-size:22px;
+
+  transition:transform .4s ease;
+}
+
+.faq-item.open .faq-icon{
+  transform:rotate(45deg);
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+
+  opacity:0;
+
+  transition:
+    max-height .7s ease,
+    opacity .4s ease;
+}
+
+.faq-item.open .faq-answer{
+  max-height:400px;
+  opacity:1;
+}
+
+.faq-answer p{
+  max-width:750px;
+
+  padding:0 0 30px;
+
+  color:var(--texto-soft);
+
+  font-size:12px;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+
+.contacto{
+  background:var(--negro);
+  color:#fff;
+
+  padding:160px 5vw;
+}
+
+.contacto-inner{
+  width:min(1200px,100%);
+  margin:auto;
+
+  text-align:center;
+}
+
+.contacto h2{
+  margin-top:20px;
+
+  color:#fff;
+
+  font-family:var(--serif);
+  font-size:clamp(60px,8vw,120px);
+  line-height:.82;
+  letter-spacing:-.065em;
+}
+
+.contacto h2 em{
+  color:#c1b397;
+  font-style:italic;
+}
+
+.contacto-copy{
+  max-width:580px;
+
+  margin:35px auto 0;
+
+  color:rgba(255,255,255,.62);
+
+  font-size:14px;
+  line-height:1.8;
+}
+
+.contacto-actions{
+  margin-top:40px;
+
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.contacto-email{
+  display:block;
+
+  margin-top:45px;
+
+  color:#c6b38e;
+
+  font-size:11px;
+  letter-spacing:.1em;
+}
+
+
+/* =========================================================
+   CALCULADORA
+   ========================================================= */
+
+.calculadora{
+  padding:150px 5vw;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ddd5c8,
+      #f4f0e8
+    );
+}
+
+.calculadora-head{
+  width:min(1100px,100%);
+  margin:auto;
+}
+
+.calculadora-head p{
+  max-width:600px;
+
+  margin-top:25px;
+
+  color:var(--texto-soft);
+
+  font-size:13px;
+  line-height:1.8;
+}
+
+.calculadora-tabs{
+  width:min(1100px,100%);
+  margin:70px auto 0;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  border:1px solid rgba(36,35,31,.2);
+}
+
+.calc-tab{
+  border:0;
+
+  padding:20px;
+
+  background:transparent;
+
+  color:var(--texto);
+
+  font-size:9px;
+  letter-spacing:.22em;
+
+  transition:.3s ease;
+}
+
+.calc-tab + .calc-tab{
+  border-left:1px solid rgba(36,35,31,.2);
+}
+
+.calc-tab.active{
+  background:var(--negro);
+  color:#fff;
+}
+
+.calc-panel{
+  width:min(1100px,100%);
+  margin:auto;
+
+  display:none;
+
+  background:#f8f5ef;
+
+  border:1px solid rgba(36,35,31,.14);
+
+  padding:50px;
+}
+
+.calc-panel.active{
+  display:block;
+}
+
+.calc-panel h3{
+  font-family:var(--serif);
+  font-size:38px;
+  font-weight:400;
+}
+
+.calc-panel-intro{
+  max-width:600px;
+
+  margin-top:10px;
+
+  color:var(--texto-soft);
+
+  font-size:11px;
+}
+
+.calc-form{
+  margin-top:40px;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:16px;
+}
+
+.calc-field label{
+  display:block;
+
+  margin-bottom:8px;
+
+  font-size:8px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.calc-field input,
+.calc-field select{
+  width:100%;
+
+  min-height:48px;
+
+  padding:0 14px;
+
+  border:1px solid rgba(36,35,31,.2);
+
+  background:#fff;
+
+  color:var(--texto);
+
+  outline:none;
+}
+
+.calc-field input:focus,
+.calc-field select:focus{
+  border-color:var(--oro);
+}
+
+.calc-submit{
+  grid-column:1/-1;
+
+  margin-top:10px;
+
+  min-height:52px;
+
+  border:1px solid var(--negro);
+
+  background:var(--negro);
+
+  color:#fff;
+
+  font-size:9px;
+  letter-spacing:.2em;
+
+  transition:.3s ease;
+}
+
+.calc-submit:hover{
+  background:var(--oro);
+  color:var(--negro);
+  border-color:var(--oro);
+}
+
+.calc-result{
+  display:none;
+
+  margin-top:30px;
+
+  padding:30px;
+
+  background:var(--negro);
+
+  color:#fff;
+}
+
+.calc-result.show{
+  display:block;
+}
+
+.calc-result h4{
+  font-family:var(--serif);
+  font-size:30px;
+  font-weight:400;
+}
+
+.result-grid{
+  margin-top:20px;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:1px;
+
+  background:rgba(255,255,255,.14);
+}
+
+.result-item{
+  padding:20px;
+
+  background:rgba(255,255,255,.04);
+}
+
+.result-item span{
+  display:block;
+
+  color:rgba(255,255,255,.45);
+
+  font-size:8px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.result-item strong{
+  display:block;
+
+  margin-top:8px;
+
+  color:#fff;
+
+  font-family:var(--serif);
+  font-size:23px;
+  font-weight:400;
+}
+
+.calc-note{
+  margin-top:20px;
+
+  color:rgba(255,255,255,.48);
+
+  font-size:9px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+  padding:55px 5vw;
+
+  background:#090909;
+  color:#fff;
+}
+
+.footer-inner{
+  width:min(1400px,100%);
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:30px;
+}
+
+.footer-logo{
+  width:150px;
+}
+
+.footer-logo img{
+  object-fit:contain;
+}
+
+.footer-copy{
+  color:rgba(255,255,255,.45);
+
+  font-size:8px;
+  letter-spacing:.16em;
+}
+
+.footer-mail{
+  color:var(--oro-soft);
+
+  font-size:9px;
+}
+
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(.16,1,.3,1);
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .main-nav{
+    display:none;
+  }
+
+  .menu-mobile{
+    display:block;
+
+    border:1px solid rgba(255,255,255,.3);
+    background:transparent;
+
+    color:#fff;
+
+    width:42px;
+    height:42px;
+  }
+
+  .header-logo img{
+    width:125px;
+  }
+
+  .hero-content{
+    width:88%;
+  }
+
+  .hero-copy{
+    padding-top:100px;
+  }
+
+  .hero-bottom-logo{
+    width:160px;
+    bottom:30px;
+  }
+
+  .transition-inner,
+  .criterio-grid,
+  .magia-head,
+  .rosa-grid,
+  .conservacion-inner{
+    grid-template-columns:1fr;
+  }
+
+  .magia-gallery{
+    grid-template-columns:1fr;
+  }
+
+  .magia-secondary{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:none;
+  }
+
+  .magia-main{
+    height:600px;
+  }
+
+  .magia-secondary .magia-card{
+    min-height:300px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .collection-inner{
+    padding-left:0;
+  }
+
+  .product-intro{
+    grid-template-columns:1fr;
+  }
+
+  .pool-content h2{
+    font-size:70px;
+  }
+
+  .materiales-grid{
+    grid-template-columns:1fr;
+  }
+
+  .proyectos-grid{
+    grid-template-columns:1fr;
+  }
+
+  .proyecto-large{
+    height:550px;
+  }
+
+  .marcas-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .calc-form{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .calc-panel{
+    padding:35px 25px;
+  }
+}
+
+
+@media(max-width:600px){
+
+  .site-header{
+    height:72px;
+  }
+
+  .hero h1{
+    font-size:59px;
+  }
+
+  .hero-subtitle{
+    font-size:14px;
+  }
+
+  .hero-material-line{
+    display:none;
+  }
+
+  .transition-dark,
+  .criterio,
+  .magia,
+  .colecciones,
+  .materiales,
+  .rosa,
+  .conservacion,
+  .proyectos,
+  .marcas,
+  .faq,
+  .contacto,
+  .calculadora{
+    padding-top:100px;
+    padding-bottom:100px;
+  }
+
+  .magia-secondary{
+    grid-template-columns:1fr;
+  }
+
+  .magia-main{
+    height:500px;
+  }
+
+  .magia-secondary .magia-card{
+    min-height:350px;
+  }
+
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+
+  .collection-trigger{
+    grid-template-columns:40px 1fr auto;
+  }
+
+  .collection-name{
+    font-size:34px;
+  }
+
+  .collection-desc{
+    font-size:9px;
+  }
+
+  .collection-inner{
+    padding-bottom:50px;
+  }
+
+  .pool-content h2{
+    font-size:57px;
+  }
+
+  .rosa-image{
+    height:450px;
+  }
+
+  .marcas-grid{
+    grid-template-columns:1fr;
+  }
+
+  .calc-tabs{
+    grid-template-columns:1fr;
+  }
+
+  .calc-tab + .calc-tab{
+    border-left:0;
+    border-top:1px solid rgba(36,35,31,.2);
+  }
+
+  .calc-form{
+    grid-template-columns:1fr;
+  }
+
+  .result-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    text-align:center;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="scroll-line" id="scrollLine"></div>
+
+
 <!-- =========================================================
-     COLECCIÓN · CERÁMICAS
+     HEADER
      ========================================================= -->
 
-<section class="coleccion-ceramicas" id="ceramicas">
+<header class="site-header" id="siteHeader">
 
-  <!-- ENCABEZADO DE LA CATEGORÍA -->
-  <button class="ceramicas-trigger" type="button" aria-expanded="false">
+  <div class="header-inner">
 
-    <div class="ceramicas-trigger-text">
+    <a href="#inicio" class="header-logo">
+      <img
+        src="fotos/ChatGPT Image 22 sept 2026, 07_38_47 p.m..png"
+        alt="ORIGEN SURFACES"
+      >
+    </a>
 
-      <span class="coleccion-kicker">
-        ORIGEN SURFACES · COLECCIÓN
-      </span>
+    <nav class="main-nav">
 
-      <h2>CERÁMICAS</h2>
+      <a href="#magia">La magia</a>
+      <a href="#colecciones">Colecciones</a>
+      <a href="#piscinas">Piscinas</a>
+      <a href="#materiales">Materiales</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#origen">Origen</a>
+      <a href="#contacto">Contacto</a>
 
-      <p>
-        Color, textura y materia para proyectos donde
-        cada superficie tiene algo que decir.
-      </p>
+    </nav>
 
-    </div>
+    <button class="menu-mobile" aria-label="Abrir menú">
+      ☰
+    </button>
 
-    <div class="ceramicas-trigger-action">
-      <span class="ceramicas-label">VER COLECCIÓN</span>
-      <span class="ceramicas-plus">+</span>
-    </div>
+  </div>
 
-  </button>
+</header>
 
 
-  <!-- =====================================================
-       CATÁLOGO DESPLEGABLE
-       ===================================================== -->
+<main id="inicio">
 
-  <div class="ceramicas-content">
 
-    <div class="ceramicas-intro">
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
-      <div>
-        <span>REVESTIMIENTOS PARA PISCINAS</span>
-        <h3>
-          El agua nunca<br>
-          es <em>la misma.</em>
-        </h3>
+<section class="hero">
+
+  <div class="hero-image">
+
+    <img
+      src="fotos/Captura de pantalla 2026-08-25 210813.png"
+      alt="Arquitectura, agua y materia"
+    >
+
+  </div>
+
+
+  <div class="hero-content">
+
+    <div class="hero-copy reveal">
+
+      <div class="hero-kicker">
+        MATERIA · AGUA · LUZ · ARQUITECTURA
       </div>
 
+      <h1>
+        La materia<br>
+        también <em>diseña.</em>
+      </h1>
+
+      <p class="hero-subtitle">
+        Superficies seleccionadas para proyectos
+        donde la arquitectura importa.
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          href="#colecciones"
+          class="origen-btn origen-btn-light"
+        >
+          Explorar colecciones →
+        </a>
+
+        <a
+          href="#contacto"
+          class="origen-btn origen-btn-light"
+        >
+          Contanos tu proyecto →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-bottom-logo">
+
+    <img
+      src="fotos/ChatGPT Image 22 sept 2026, 07_38_47 p.m..png"
+      alt="ORIGEN SURFACES"
+    >
+
+  </div>
+
+
+  <div class="hero-material-line">
+    SUPERFICIES · MATERIALES · SOLUCIONES
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRANSICIÓN
+     ========================================================= -->
+
+<section class="transition-dark reveal">
+
+  <div class="transition-inner">
+
+    <div>
+
+      <span class="transition-kicker">
+        ORIGEN SURFACES
+      </span>
+
+      <h2>
+        Elegir también<br>
+        es <em>diseñar.</em>
+      </h2>
+
+    </div>
+
+    <div class="transition-copy">
+
       <p>
-        Cambia con la luz, con la materia y con el espacio
-        que la contiene. Seleccionamos superficies que
-        construyen esa experiencia.
+        Una superficie no es solamente un acabado.
+        Cambia la manera en que habitamos un espacio,
+        cómo entra la luz, cómo se siente una textura
+        y cómo se relaciona cada elemento.
+      </p>
+
+      <br>
+
+      <p>
+        Por eso seleccionamos materiales pensando
+        en el conjunto: arquitectura, agua, luz,
+        textura, escala y uso.
       </p>
 
     </div>
 
+  </div>
 
-    <div class="ceramicas-grid">
+</section>
 
 
-      <!-- MOOREA -->
-      <article class="ceramica-card">
+<!-- =========================================================
+     NUESTRO CRITERIO
+     ========================================================= -->
 
-        <div class="ceramica-image">
-          <img
-            src="fotos/moorea.png"
-            alt="Cerámica Moorea 10 x 10"
-          >
-        </div>
+<section class="criterio" id="origen">
 
-        <div class="ceramica-info">
+  <div class="section-wrap">
 
-          <span class="ceramica-type">
-            CERÁMICA 10 × 10
-          </span>
+    <span class="section-kicker">
+      NUESTRO CRITERIO
+    </span>
 
-          <h3>Moorea</h3>
+    <h2 class="section-title">
+      Elegir bien<br>
+      también es <em>diseñar.</em>
+    </h2>
+
+
+    <div class="criterio-grid">
+
+      <div class="criterio-text reveal">
+
+        <p>
+          No todo material funciona en todos los espacios.
+          Antes de recomendar una superficie miramos
+          el proyecto completo.
+        </p>
+
+        <br>
+
+        <p>
+          <strong>Arquitectura. Agua. Luz. Textura. Escala. Uso.</strong>
+        </p>
+
+        <br>
+
+        <p>
+          Seleccionamos materiales nacionales e
+          internacionales y buscamos que cada elección
+          tenga sentido dentro del conjunto.
+        </p>
+
+      </div>
+
+
+      <div class="criterio-side reveal">
+
+        <div class="criterio-item">
+
+          <span class="criterio-number">01</span>
+
+          <h3>Criterio</h3>
 
           <p>
-            Una superficie pensada para trabajar
-            con el agua y la luz.
+            Materiales seleccionados con mirada
+            arquitectónica.
           </p>
 
-          <div class="ceramica-bottom">
+        </div>
 
-            <span>1,95 m² / caja</span>
+        <div class="criterio-item">
 
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('moorea')"
-            >
-              CALCULAR
-            </button>
+          <span class="criterio-number">02</span>
+
+          <h3>Asesoramiento</h3>
+
+          <p>
+            Información clara para tomar decisiones
+            con sentido.
+          </p>
+
+        </div>
+
+        <div class="criterio-item">
+
+          <span class="criterio-number">03</span>
+
+          <h3>Compromiso</h3>
+
+          <p>
+            Acompañamiento antes, durante y después
+            del proyecto.
+          </p>
+
+        </div>
+
+        <div class="criterio-item">
+
+          <span class="criterio-number">04</span>
+
+          <h3>Respeto</h3>
+
+          <p>
+            La decisión final siempre pertenece
+            al cliente.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     LA MAGIA DE ORIGEN
+     ========================================================= -->
+
+<section class="magia" id="magia">
+
+  <div class="magia-head">
+
+    <div>
+
+      <span class="magia-kicker">
+        DISEÑOS ORIGEN
+      </span>
+
+      <h2>
+        LA MAGIA<br>
+        <em>DE ORIGEN</em>
+      </h2>
+
+    </div>
+
+
+    <div class="magia-intro">
+
+      <strong>
+        Jugamos con la materia.
+      </strong>
+
+      <p>
+        Cerámicas, venecitas, piedras, travertinos,
+        terrazo, WPC, pintura, LED, porcelanatos,
+        madera, metal y todo aquello que pueda
+        transformar un espacio.
+      </p>
+
+      <br>
+
+      <p>
+        No pensamos cada material por separado.
+        Los combinamos para descubrir nuevas
+        posibilidades.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="magia-gallery">
+
+
+    <!-- DISEÑO PRINCIPAL -->
+
+    <article class="magia-card magia-main">
+
+      <img
+        src="fotos/32643f41df2848c16278f4a11da80f01.jpg"
+        alt="Diseño ORIGEN"
+      >
+
+      <div class="magia-overlay">
+
+        <span class="magia-number">
+          MATERIA 01
+        </span>
+
+        <h3>
+          Agua · Piedra · Luz
+        </h3>
+
+        <p>
+          Una composición donde la materia
+          acompaña la arquitectura.
+        </p>
+
+        <div class="magia-materiales">
+
+          <span>Piedra</span>
+          <span>Agua</span>
+          <span>LED</span>
+          <span>Vegetación</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <div class="magia-secondary">
+
+
+      <article class="magia-card">
+
+        <img
+          src="fotos/9c7236e83277cf400b03c5c4deff2a32.jpg"
+          alt="Materia y superficies ORIGEN"
+        >
+
+        <div class="magia-overlay">
+
+          <span class="magia-number">
+            MATERIA 02
+          </span>
+
+          <h3>
+            Textura · Color
+          </h3>
+
+          <div class="magia-materiales">
+
+            <span>Cerámica</span>
+            <span>Terrazo</span>
+            <span>Pintura</span>
 
           </div>
 
@@ -99,523 +2471,28 @@
       </article>
 
 
-      <!-- TONGA -->
-      <article class="ceramica-card">
+      <article class="magia-card">
 
-        <div class="ceramica-image">
-          <img
-            src="fotos/tonga2.png"
-            alt="Cerámica Tonga 10 x 10"
-          >
-        </div>
+        <img
+          src="fotos/Captura de pantalla 2026-08-26 212707.png"
+          alt="Travertino ORIGEN"
+        >
 
-        <div class="ceramica-info">
+        <div class="magia-overlay">
 
-          <span class="ceramica-type">
-            CERÁMICA 10 × 10
+          <span class="magia-number">
+            MATERIA 03
           </span>
 
-          <h3>Tonga</h3>
-
-          <p>
-            Azul mineral, textura y profundidad.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('tonga')"
-            >
-              CALCULAR
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- KAUAI -->
-      <article class="ceramica-card">
-
-        <div class="ceramica-image">
-          <img
-            src="fotos/Kauai.png"
-            alt="Cerámica Kauai 10 x 10"
-          >
-        </div>
-
-        <div class="ceramica-info">
-
-          <span class="ceramica-type">
-            CERÁMICA 10 × 10
-          </span>
-
-          <h3>Kauai</h3>
-
-          <p>
-            Textura mineral y una lectura luminosa del agua.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('kauai')"
-            >
-              CALCULAR
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- SAMOA BRIGHT -->
-      <article class="ceramica-card">
-
-        <div class="ceramica-image">
-          <img
-            src="fotos/samoa bright.png"
-            alt="Cerámica Samoa Bright 10 x 10"
-          >
-        </div>
-
-        <div class="ceramica-info">
-
-          <span class="ceramica-type">
-            CERÁMICA 10 × 10
-          </span>
-
-          <h3>Samoa Bright</h3>
-
-          <p>
-            Una superficie luminosa para crear
-            profundidad y movimiento.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('samoa-bright')"
-            >
-              CALCULAR
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- MALAWI -->
-      <article class="ceramica-card">
-
-        <div class="ceramica-image">
-          <img
-            src="fotos/malawi.png"
-            alt="Cerámica Malawi"
-          >
-        </div>
-
-        <div class="ceramica-info">
-
-          <span class="ceramica-type">
-            CERÁMICA
-          </span>
-
-          <h3>Malawi</h3>
-
-          <p>
-            Tonos y textura para una superficie
-            con carácter.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('malawi')"
-            >
-              CALCULAR
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- PORTLAND -->
-      <article class="ceramica-card">
-
-        <div class="ceramica-image">
-          <img
-            src="fotos/portland.png"
-            alt="Cerámica Portland"
-          >
-        </div>
-
-        <div class="ceramica-info">
-
-          <span class="ceramica-type">
-            CERÁMICA
-          </span>
-
-          <h3>Portland</h3>
-
-          <p>
-            Una lectura contemporánea de la superficie.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('portland')"
-            >
-              CALCULAR
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- PALAU BRIGHT -->
-      <article class="ceramica-card">
-
-        <div class="ceramica-image">
-          <img
-            src="fotos/palau bright.png"
-            alt="Cerámica Palau Bright"
-          >
-        </div>
-
-        <div class="ceramica-info">
-
-          <span class="ceramica-type">
-            CERÁMICA
-          </span>
-
-          <h3>Palau Bright</h3>
-
-          <p>
-            Color, luz y profundidad para el agua.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('palau-bright')"
-            >
-              CALCULAR
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- VIS -->
-      <article class="ceramica-card">
-
-        <div class="ceramica-image">
-          <img
-            src="fotos/vis.png"
-            alt="Cerámica Vis"
-          >
-        </div>
-
-        <div class="ceramica-info">
-
-          <span class="ceramica-type">
-            CERÁMICA
-          </span>
-
-          <h3>Vis</h3>
-
-          <p>
-            Una superficie de lectura mineral.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('vis')"
-            >
-              CALCULAR
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- SAMOA -->
-      <article class="ceramica-card">
-
-        <div class="ceramica-image">
-          <img
-            src="fotos/somoa.png"
-            alt="Cerámica Samoa"
-          >
-        </div>
-
-        <div class="ceramica-info">
-
-          <span class="ceramica-type">
-            CERÁMICA
-          </span>
-
-          <h3>Samoa</h3>
-
-          <p>
-            Textura y color para una composición natural.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('samoa')"
-            >
-              CALCULAR
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- PALAU -->
-      <article class="ceramica-card">
-
-        <div class="ceramica-image">
-          <img
-            src="fotos/palau.png"
-            alt="Cerámica Palau"
-          >
-        </div>
-
-        <div class="ceramica-info">
-
-          <span class="ceramica-type">
-            CERÁMICA
-          </span>
-
-          <h3>Palau</h3>
-
-          <p>
-            Profundidad y variación tonal.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('palau')"
-            >
-              CALCULAR
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- MAUÍ -->
-      <article class="ceramica-card">
-
-        <div class="ceramica-image">
-          <img
-            src="fotos/maui.png"
-            alt="Cerámica Mauí"
-          >
-        </div>
-
-        <div class="ceramica-info">
-
-          <span class="ceramica-type">
-            CERÁMICA
-          </span>
-
-          <h3>Mauí</h3>
-
-          <p>
-            Una superficie que transforma
-            la percepción del agua.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('maui')"
-            >
-              CALCULAR
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- KAIMÚ -->
-      <article class="ceramica-card">
-
-        <div class="ceramica-image">
-          <img
-            src="fotos/kaimú.jpg"
-            alt="Cerámica Kaimú"
-          >
-        </div>
-
-        <div class="ceramica-info">
-
-          <span class="ceramica-type">
-            CERÁMICA
-          </span>
-
-          <h3>Kaimú</h3>
-
-          <p>
-            Color profundo y textura mineral.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('kaimu')"
-            >
-              CALCULAR
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- COBALTO -->
-      <article class="ceramica-card">
-
-        <div class="ceramica-image">
-          <img
-            src="fotos/cobalto.png"
-            alt="Cerámica Cobalto"
-          >
-        </div>
-
-        <div class="ceramica-info">
-
-          <span class="ceramica-type">
-            CERÁMICA
-          </span>
-
-          <h3>Cobalto</h3>
-
-          <p>
-            Una presencia intensa para trabajar
-            con el color del agua.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('cobalto')"
-            >
-              CALCULAR
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- CÉU -->
-      <article class="ceramica-card">
-
-        <div class="ceramica-image">
-          <img
-            src="fotos/ceu.jpg"
-            alt="Cerámica Céu"
-          >
-        </div>
-
-        <div class="ceramica-info">
-
-          <span class="ceramica-type">
-            CERÁMICA
-          </span>
-
-          <h3>Céu</h3>
-
-          <p>
-            Una tonalidad luminosa para crear
-            atmósferas serenas.
-          </p>
-
-          <div class="ceramica-bottom">
-
-            <span>1,95 m² / caja</span>
-
-            <button
-              type="button"
-              onclick="seleccionarRevestimiento('ceu')"
-            >
-              CALCULAR
-            </button>
+          <h3>
+            Piedra · Agua
+          </h3>
+
+          <div class="magia-materiales">
+
+            <span>Travertino</span>
+            <span>Piedra</span>
+            <span>Luz</span>
 
           </div>
 
@@ -627,359 +2504,2891 @@
 
   </div>
 
+
+  <div class="magia-frase">
+
+    <p>
+      No pensamos los materiales<br>
+      <em>por separado.</em>
+    </p>
+
+    <small>
+      PENSAMOS EL ESPACIO COMPLETO.
+    </small>
+
+  </div>
+
 </section>
 
 
-<style>
-
-/* =========================================================
-   CERÁMICAS · ORIGEN
-   ========================================================= */
-
-.coleccion-ceramicas {
-  background: #f3efe7;
-  color: #171716;
-  border-top: 1px solid rgba(0,0,0,.12);
-}
-
-
-/* BOTÓN DE CATEGORÍA */
-
-.ceramicas-trigger {
-  width: 100%;
-  border: 0;
-  background: transparent;
-  padding: 70px 6vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  text-align: left;
-  cursor: pointer;
-  color: inherit;
-}
-
-.ceramicas-trigger-text {
-  max-width: 850px;
-}
-
-.coleccion-kicker {
-  display: block;
-  font-size: 9px;
-  letter-spacing: .28em;
-  color: #9b8157;
-  margin-bottom: 20px;
-}
-
-.ceramicas-trigger h2 {
-  margin: 0;
-  font-size: clamp(55px, 8vw, 115px);
-  line-height: .82;
-  font-weight: 300;
-  letter-spacing: -.055em;
-}
-
-.ceramicas-trigger p {
-  max-width: 480px;
-  margin: 28px 0 0;
-  font-size: 14px;
-  line-height: 1.7;
-  color: rgba(23,23,22,.62);
-}
-
-.ceramicas-trigger-action {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding-bottom: 5px;
-}
-
-.ceramicas-label {
-  font-size: 9px;
-  letter-spacing: .2em;
-}
-
-.ceramicas-plus {
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(23,23,22,.3);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 24px;
-  font-weight: 300;
-  transition:
-    transform .5s ease,
-    background .4s ease,
-    color .4s ease;
-}
-
-
-/* CONTENIDO */
-
-.ceramicas-content {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition:
-    max-height 1s cubic-bezier(.2,.7,.2,1),
-    opacity .5s ease;
-}
-
-
-/* ABIERTO */
-
-.coleccion-ceramicas.is-open
-.ceramicas-content {
-  max-height: 10000px;
-  opacity: 1;
-}
-
-.coleccion-ceramicas.is-open
-.ceramicas-plus {
-  transform: rotate(45deg);
-  background: #171716;
-  color: #f3efe7;
-}
-
-
-/* INTRO */
-
-.ceramicas-intro {
-  padding: 30px 6vw 75px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8vw;
-  align-items: end;
-}
-
-.ceramicas-intro span {
-  font-size: 9px;
-  letter-spacing: .28em;
-  color: #9b8157;
-}
-
-.ceramicas-intro h3 {
-  margin: 20px 0 0;
-  font-family: Georgia, serif;
-  font-size: clamp(45px, 6vw, 78px);
-  line-height: .9;
-  font-weight: 400;
-  letter-spacing: -.045em;
-}
-
-.ceramicas-intro h3 em {
-  font-style: italic;
-}
-
-.ceramicas-intro p {
-  max-width: 500px;
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.8;
-  color: rgba(23,23,22,.65);
-}
-
-
-/* GRILLA */
-
-.ceramicas-grid {
-  padding: 0 6vw 110px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-
-/* TARJETA */
-
-.ceramica-card {
-  background: #f8f5ee;
-  border: 1px solid rgba(23,23,22,.14);
-  transition:
-    transform .45s ease,
-    box-shadow .45s ease;
-}
-
-.ceramica-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 45px rgba(0,0,0,.08);
-}
-
-
-/* FOTO */
-
-.ceramica-image {
-  aspect-ratio: 1 / 1;
-  padding: 9px;
-  overflow: hidden;
-  background: #fff;
-}
-
-.ceramica-image img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  transition: transform .8s cubic-bezier(.2,.7,.2,1);
-}
-
-.ceramica-card:hover .ceramica-image img {
-  transform: scale(1.035);
-}
-
-
-/* INFO */
-
-.ceramica-info {
-  padding: 25px 20px 20px;
-}
-
-.ceramica-type {
-  display: block;
-  font-size: 8px;
-  letter-spacing: .25em;
-  color: #9b8157;
-  margin-bottom: 10px;
-}
-
-.ceramica-info h3 {
-  margin: 0 0 12px;
-  font-family: Georgia, serif;
-  font-size: 25px;
-  font-weight: 400;
-}
-
-.ceramica-info p {
-  min-height: 40px;
-  margin: 0;
-  font-size: 11px;
-  line-height: 1.6;
-  color: rgba(23,23,22,.65);
-}
-
-.ceramica-bottom {
-  margin-top: 22px;
-  padding-top: 15px;
-  border-top: 1px solid rgba(23,23,22,.15);
-}
-
-.ceramica-bottom > span {
-  display: block;
-  margin-bottom: 14px;
-  font-size: 8px;
-  letter-spacing: .08em;
-  color: rgba(23,23,22,.55);
-}
-
-.ceramica-bottom button {
-  width: 100%;
-  min-height: 42px;
-  border: 1px solid rgba(155,129,87,.6);
-  background: transparent;
-  color: #171716;
-  font-size: 8px;
-  letter-spacing: .2em;
-  cursor: pointer;
-  transition:
-    background .35s ease,
-    color .35s ease;
-}
-
-.ceramica-bottom button:hover {
-  background: #171716;
-  color: #f3efe7;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 850px) {
-
-  .ceramicas-trigger {
-    padding: 55px 6vw;
-    align-items: flex-start;
-    gap: 35px;
-  }
-
-  .ceramicas-trigger-action {
-    flex-shrink: 0;
-  }
-
-  .ceramicas-label {
-    display: none;
-  }
-
-  .ceramicas-intro {
-    display: block;
-    padding: 10px 6vw 55px;
-  }
-
-  .ceramicas-intro h3 {
-    margin-bottom: 35px;
-  }
-
-  .ceramicas-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    padding: 0 4vw 80px;
-  }
-
-  .ceramica-info {
-    padding: 20px 15px 15px;
-  }
-
-}
-
-@media (max-width: 560px) {
-
-  .ceramicas-trigger h2 {
-    font-size: 52px;
-  }
-
-  .ceramicas-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-
-/* ACCESIBILIDAD */
-
-.ceramicas-trigger:focus-visible,
-.ceramica-bottom button:focus-visible {
-  outline: 2px solid #9b8157;
-  outline-offset: 4px;
-}
-
-</style>
+<!-- =========================================================
+     COLECCIONES
+     ========================================================= -->
+
+<section class="colecciones" id="colecciones">
+
+  <div class="colecciones-head">
+
+    <span class="section-kicker">
+      COLECCIONES
+    </span>
+
+    <h2 class="section-title">
+      Materia para<br>
+      <em>imaginar.</em>
+    </h2>
+
+    <p class="colecciones-intro">
+      Una selección de superficies, materiales y soluciones
+      para arquitectura, piscinas, interiores y exteriores.
+      Cada categoría se abre para descubrir sus posibilidades.
+    </p>
+
+  </div>
+
+
+  <div class="collection-list">
+
+
+    <!-- =====================================================
+         01 SÍMIL BALI
+         ===================================================== -->
+
+    <article class="collection">
+
+      <button class="collection-trigger">
+
+        <span class="collection-number">01</span>
+
+        <div>
+
+          <div class="collection-name">
+            Símil Bali Arg.
+          </div>
+
+          <div class="collection-desc">
+            Una lectura mineral del agua.
+          </div>
+
+        </div>
+
+        <span class="collection-plus">+</span>
+
+      </button>
+
+
+      <div class="collection-content">
+
+        <div class="collection-inner">
+
+          <div class="product-grid">
+
+
+            <article class="product-card">
+
+              <div class="product-image">
+                <img
+                  src="fotos/Captura de pantalla 2026-06-29 165415.png"
+                  alt="Símil Bali Arg. Mix Ónix"
+                >
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  SÍMIL BALI ARG.
+                </span>
+
+                <h4>Mix Ónix</h4>
+
+                <p>
+                  Una composición oscura,
+                  profunda y mineral.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+              <div class="product-image">
+                <img
+                  src="fotos/Captura de pantalla 2026-07-16 220912.png"
+                  alt="Símil Bali Arg. Mix Oliva"
+                >
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  SÍMIL BALI ARG.
+                </span>
+
+                <h4>Mix Oliva</h4>
+
+                <p>
+                  Verde mineral inspirado
+                  en superficies naturales.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+              <div class="product-image">
+                <img
+                  src="fotos/9c7236e83277cf400b03c5c4deff2a32.jpg"
+                  alt="Símil Bali Arg."
+                >
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  SÍMIL BALI ARG.
+                </span>
+
+                <h4>Bruma · Alba · Marfil</h4>
+
+                <p>
+                  Variantes para trabajar
+                  diferentes atmósferas.
+                </p>
+
+              </div>
+
+            </article>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- =====================================================
+         02 TRAVERTINOS
+         ===================================================== -->
+
+    <article class="collection">
+
+      <button class="collection-trigger">
+
+        <span class="collection-number">02</span>
+
+        <div>
+
+          <div class="collection-name">
+            Travertinos
+          </div>
+
+          <div class="collection-desc">
+            Piedra, textura y tiempo.
+          </div>
+
+        </div>
+
+        <span class="collection-plus">+</span>
+
+      </button>
+
+
+      <div class="collection-content">
+
+        <div class="collection-inner">
+
+          <div class="product-grid">
+
+
+            <article class="product-card">
+
+              <div class="product-image">
+                <img
+                  src="fotos/Captura de pantalla 2026-08-26 212707.png"
+                  alt="Travertino"
+                >
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  TRAVERTINO
+                </span>
+
+                <h4>Blanco</h4>
+
+                <p>
+                  Piedra natural de lectura
+                  luminosa y atemporal.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  TRAVERTINO
+                </span>
+
+                <h4>Beige</h4>
+
+                <p>
+                  Una tonalidad cálida
+                  para espacios serenos.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  TRAVERTINO
+                </span>
+
+                <h4>Gris Perla</h4>
+
+                <p>
+                  Una lectura mineral
+                  contemporánea.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  TRAVERTINO
+                </span>
+
+                <h4>Gris Ágatha</h4>
+
+                <p>
+                  Profundidad y carácter
+                  para arquitectura.
+                </p>
+
+              </div>
+
+            </article>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- =====================================================
+         03 CERÁMICAS
+         ===================================================== -->
+
+    <article class="collection" id="ceramicas">
+
+      <button class="collection-trigger">
+
+        <span class="collection-number">03</span>
+
+        <div>
+
+          <div class="collection-name">
+            Cerámicas
+          </div>
+
+          <div class="collection-desc">
+            Color, textura y materia.
+          </div>
+
+        </div>
+
+        <span class="collection-plus">+</span>
+
+      </button>
+
+
+      <div class="collection-content">
+
+        <div class="collection-inner">
+
+
+          <div class="product-intro">
+
+            <div>
+
+              <h3>
+                El agua nunca<br>
+                es <em>la misma.</em>
+              </h3>
+
+            </div>
+
+            <p>
+              Cambia con la luz, con la materia y con
+              el espacio que la contiene.
+              Seleccionamos superficies que construyen
+              esa experiencia.
+            </p>
+
+          </div>
+
+
+          <div class="product-grid">
+
+
+            <!-- MOOREA -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/moorea.png"
+                  alt="Moorea"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA 10 × 10
+                </span>
+
+                <h4>Moorea</h4>
+
+                <p>
+                  Una superficie pensada para
+                  trabajar con el agua y la luz.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('moorea-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- TONGA -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/tonga2.png"
+                  alt="Tonga"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA 10 × 10
+                </span>
+
+                <h4>Tonga</h4>
+
+                <p>
+                  Azul mineral, textura
+                  y profundidad.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('tonga-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- KAUAI -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/Kauai.png"
+                  alt="Kauai"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA 10 × 10
+                </span>
+
+                <h4>Kauai</h4>
+
+                <p>
+                  Textura mineral y una lectura
+                  luminosa del agua.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('kauai-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- SAMOA BRIGHT -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/samoa bright.png"
+                  alt="Samoa Bright"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA 10 × 10
+                </span>
+
+                <h4>Samoa Bright</h4>
+
+                <p>
+                  Una superficie luminosa para
+                  crear profundidad y movimiento.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('samoa-bright-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- MALAWI -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/malawi.png"
+                  alt="Malawi"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA
+                </span>
+
+                <h4>Malawi</h4>
+
+                <p>
+                  Tonos y textura para una
+                  superficie con carácter.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('malawi-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- PORTLAND -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/portland.png"
+                  alt="Portland"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA
+                </span>
+
+                <h4>Portland</h4>
+
+                <p>
+                  Una lectura contemporánea
+                  de la superficie.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('portland-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- PALAU BRIGHT -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/palau bright.png"
+                  alt="Palau Bright"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA
+                </span>
+
+                <h4>Palau Bright</h4>
+
+                <p>
+                  Color, luz y profundidad
+                  para el agua.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('palau-bright-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- VIS -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/vis.png"
+                  alt="Vis"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA
+                </span>
+
+                <h4>Vis</h4>
+
+                <p>
+                  Una superficie de lectura
+                  mineral y profunda.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('vis-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- SAMOA -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/somoa.png"
+                  alt="Samoa"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA
+                </span>
+
+                <h4>Samoa</h4>
+
+                <p>
+                  Textura y color para una
+                  composición natural.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('samoa-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- PALAU -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/palau.png"
+                  alt="Palau"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA
+                </span>
+
+                <h4>Palau</h4>
+
+                <p>
+                  Profundidad y variación tonal.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('palau-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- MAUÍ -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/maui.png"
+                  alt="Mauí"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA
+                </span>
+
+                <h4>Mauí</h4>
+
+                <p>
+                  Una superficie que transforma
+                  la percepción del agua.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('maui-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- KAIMÚ -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/kaimú.jpg"
+                  alt="Kaimú"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA
+                </span>
+
+                <h4>Kaimú</h4>
+
+                <p>
+                  Color profundo y textura mineral.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('kaimu-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- COBALTO -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/cobalto.png"
+                  alt="Cobalto"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA
+                </span>
+
+                <h4>Cobalto</h4>
+
+                <p>
+                  Una presencia intensa para
+                  trabajar con el color del agua.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('cobalto-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- CÉU -->
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/ceu.jpg"
+                  alt="Céu"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  CERÁMICA
+                </span>
+
+                <h4>Céu</h4>
+
+                <p>
+                  Una tonalidad luminosa para
+                  crear atmósferas serenas.
+                </p>
+
+                <div class="product-bottom">
+
+                  <span class="product-yield">
+                    1,95 m² / caja
+                  </span>
+
+                  <button
+                    class="product-calc"
+                    onclick="irCalculadora('ceu-10')"
+                  >
+                    CALCULAR
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- =====================================================
+         04 PIEDRAS
+         ===================================================== -->
+
+    <article class="collection">
+
+      <button class="collection-trigger">
+
+        <span class="collection-number">04</span>
+
+        <div>
+
+          <div class="collection-name">
+            Piedras
+          </div>
+
+          <div class="collection-desc">
+            Materia natural para arquitectura.
+          </div>
+
+        </div>
+
+        <span class="collection-plus">+</span>
+
+      </button>
+
+
+      <div class="collection-content">
+
+        <div class="collection-inner">
+
+          <div class="product-grid">
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/Captura de pantalla 2026-07-16 220912.png"
+                  alt="Piedra Bali Green"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  PIEDRA
+                </span>
+
+                <h4>Bali Green</h4>
+
+                <p>
+                  Piedra de carácter mineral
+                  para composiciones naturales.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="product-card">
+
+              <div class="product-image">
+
+                <img
+                  src="fotos/Captura de pantalla 2026-06-29 165415.png"
+                  alt="Piedra Bali Black"
+                >
+
+              </div>
+
+              <div class="product-info">
+
+                <span class="product-type">
+                  PIEDRA
+                </span>
+
+                <h4>Bali Black</h4>
+
+                <p>
+                  Una presencia profunda
+                  para proyectos con contraste.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- =====================================================
+         05 WPC
+         ===================================================== -->
+
+    <article class="collection">
+
+      <button class="collection-trigger">
+
+        <span class="collection-number">05</span>
+
+        <div>
+
+          <div class="collection-name">
+            WPC & Pérgolas
+          </div>
+
+          <div class="collection-desc">
+            Exterior, sombra y arquitectura.
+          </div>
+
+        </div>
+
+        <span class="collection-plus">+</span>
+
+      </button>
+
+
+      <div class="collection-content">
+
+        <div class="collection-inner">
+
+          <div class="product-intro">
+
+            <div>
+
+              <h3>
+                El exterior<br>
+                también <em>se diseña.</em>
+              </h3>
+
+            </div>
+
+            <p>
+              Soluciones para acompañar arquitectura,
+              sombra, recorridos y espacios exteriores.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- =====================================================
+         06 ROSA GRES
+         ===================================================== -->
+
+    <article class="collection">
+
+      <button class="collection-trigger">
+
+        <span class="collection-number">06</span>
+
+        <div>
+
+          <div class="collection-name">
+            Rosa Gres · España
+          </div>
+
+          <div class="collection-desc">
+            Diseño y tecnología para exteriores.
+          </div>
+
+        </div>
+
+        <span class="collection-plus">+</span>
+
+      </button>
+
+
+      <div class="collection-content">
+
+        <div class="collection-inner">
+
+          <div class="product-intro">
+
+            <div>
+
+              <h3>
+                Diseño que<br>
+                continúa <em>afuera.</em>
+              </h3>
+
+            </div>
+
+            <p>
+              Incorporamos soluciones de Rosa Gres
+              España cuando el proyecto requiere
+              determinadas prestaciones, formatos
+              o piezas especiales.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- =====================================================
+         07 SELECCIÓN EUROPEA
+         ===================================================== -->
+
+    <article class="collection">
+
+      <button class="collection-trigger">
+
+        <span class="collection-number">07</span>
+
+        <div>
+
+          <div class="collection-name">
+            Selección europea
+          </div>
+
+          <div class="collection-desc">
+            Materiales que amplían las posibilidades.
+          </div>
+
+        </div>
+
+        <span class="collection-plus">+</span>
+
+      </button>
+
+
+      <div class="collection-content">
+
+        <div class="collection-inner">
+
+          <div class="product-intro">
+
+            <div>
+
+              <h3>
+                Más materia.<br>
+                Más <em>posibilidades.</em>
+              </h3>
+
+            </div>
+
+            <p>
+              Una selección que se amplía según
+              las necesidades de cada proyecto.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PISCINAS
+     ========================================================= -->
+
+<section class="piscinas" id="piscinas">
+
+  <div class="pool-hero">
+
+    <img
+      src="fotos/10972ded-f193-42f2-8874-64af8b932a44.png"
+      alt="Piscina contemporánea"
+    >
+
+    <div class="pool-content reveal">
+
+      <span class="section-kicker">
+        SUPERFICIES PARA PISCINAS
+      </span>
+
+      <h2>
+        El agua también<br>
+        se <em>diseña.</em>
+      </h2>
+
+      <p>
+        Color, textura, luz y materia se encuentran
+        para construir piscinas con identidad propia.
+      </p>
+
+      <a
+        href="#colecciones"
+        class="origen-btn origen-btn-light pool-button"
+      >
+        Ver revestimientos →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     POR QUÉ ESTE MATERIAL
+     ========================================================= -->
+
+<section class="materiales" id="materiales">
+
+  <div class="section-wrap">
+
+    <span class="section-kicker">
+      CONOCIMIENTO ORIGEN
+    </span>
+
+    <h2 class="section-title">
+      ¿Por qué<br>
+      <em>este material?</em>
+    </h2>
+
+    <div class="materiales-grid">
+
+
+      <article class="material-box">
+
+        <span>01 · MOSAICO VÍTREO</span>
+
+        <h3>
+          Luz, agua y profundidad.
+        </h3>
+
+        <p>
+          El mosaico vítreo puede transformar
+          completamente la lectura del agua.
+          Sus reflejos, pequeñas piezas y capacidad
+          de acompañar determinadas geometrías
+          generan una experiencia diferente.
+        </p>
+
+      </article>
+
+
+      <article class="material-box">
+
+        <span>02 · CERÁMICA</span>
+
+        <h3>
+          No todo depende del formato.
+        </h3>
+
+        <p>
+          Miramos absorción, espesor, terminación,
+          superficie, uso previsto y colocación.
+          Una pieza puede verse espectacular,
+          pero primero tiene que ser adecuada
+          para el lugar donde va a vivir.
+        </p>
+
+      </article>
+
+
+      <article class="material-box">
+
+        <span>03 · PORCELANATO</span>
+
+        <h3>
+          Técnica y diseño.
+        </h3>
+
+        <p>
+          En cada proyecto analizamos absorción,
+          espesor, terminación, antideslizamiento,
+          formato, tránsito, uso interior o exterior
+          y sistema de colocación.
+        </p>
+
+      </article>
+
+
+      <article class="material-box">
+
+        <span>04 · PIEDRA</span>
+
+        <h3>
+          La materia tiene historia.
+        </h3>
+
+        <p>
+          La piedra aporta textura, profundidad
+          y una relación particular con la luz.
+          Pero cada piedra tiene características
+          propias y requiere evaluar su aplicación,
+          mantenimiento y colocación.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ROSA GRES
+     ========================================================= -->
+
+<section class="rosa">
+
+  <div class="rosa-grid">
+
+    <div class="rosa-copy reveal">
+
+      <span class="section-kicker">
+        SELECCIÓN ORIGEN
+      </span>
+
+      <h2>
+        ROSA GRES<br>
+        <em>España</em>
+      </h2>
+
+      <p>
+        En ORIGEN SURFACES incorporamos soluciones
+        de Rosa Gres España cuando tienen sentido
+        para el proyecto.
+      </p>
+
+      <p>
+        Piscinas, exteriores, terrazas, escaleras
+        y soluciones que requieren trabajar
+        diseño y prestaciones técnicas
+        dentro de una misma propuesta.
+      </p>
+
+      <div class="rosa-points">
+
+        <div class="rosa-point">
+          Piscina
+        </div>
+
+        <div class="rosa-point">
+          Exterior
+        </div>
+
+        <div class="rosa-point">
+          In & Out
+        </div>
+
+        <div class="rosa-point">
+          Piezas especiales
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="rosa-image">
+
+      <img
+        src="fotos/32643f41df2848c16278f4a11da80f01.jpg"
+        alt="Proyecto exterior ORIGEN"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONSERVACIÓN
+     ========================================================= -->
+
+<section class="conservacion">
+
+  <div class="conservacion-inner">
+
+    <div>
+
+      <span class="section-kicker">
+        DESPUÉS DE LA OBRA
+      </span>
+
+      <h2>
+        Conservamos<br>
+        lo que <em>construís.</em>
+      </h2>
+
+    </div>
+
+
+    <div class="conservacion-copy">
+
+      <p>
+        Contamos con especialistas para el
+        mantenimiento y conservación de piscinas.
+      </p>
+
+      <br>
+
+      <p>
+        Porque una inversión así merece seguimiento.
+        Coordinamos profesionales según el tipo
+        de revestimiento y las necesidades
+        de cada proyecto.
+      </p>
+
+      <div class="conservacion-list">
+
+        <span>Mantenimiento</span>
+        <span>Conservación</span>
+        <span>Puesta a punto</span>
+        <span>Revisión</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROYECTOS
+     ========================================================= -->
+
+<section class="proyectos" id="proyectos">
+
+  <div class="section-wrap">
+
+    <span class="section-kicker">
+      PROYECTOS ORIGEN
+    </span>
+
+    <h2 class="section-title">
+      Donde la materia<br>
+      se convierte en <em>espacio.</em>
+    </h2>
+
+
+    <div class="proyectos-grid">
+
+
+      <article class="proyecto-item proyecto-large">
+
+        <img
+          src="fotos/32643f41df2848c16278f4a11da80f01.jpg"
+          alt="Proyecto ORIGEN"
+        >
+
+        <span class="proyecto-label">
+          ARQUITECTURA · AGUA · MATERIA
+        </span>
+
+      </article>
+
+
+      <div class="proyecto-small">
+
+        <article class="proyecto-item">
+
+          <img
+            src="fotos/9c7236e83277cf400b03c5c4deff2a32.jpg"
+            alt="Materiales ORIGEN"
+          >
+
+          <span class="proyecto-label">
+            MATERIA · TEXTURA
+          </span>
+
+        </article>
+
+
+        <article class="proyecto-item">
+
+          <img
+            src="fotos/Captura de pantalla 2026-08-26 212707.png"
+            alt="Travertino ORIGEN"
+          >
+
+          <span class="proyecto-label">
+            PIEDRA · LUZ
+          </span>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     MARCAS
+     ========================================================= -->
+
+<section class="marcas">
+
+  <div class="section-wrap">
+
+    <span class="section-kicker">
+      NUESTRA SELECCIÓN
+    </span>
+
+    <h2 class="section-title">
+      Marcas que<br>
+      <em>forman parte.</em>
+    </h2>
+
+
+    <div class="marcas-grid">
+
+      <div class="marca">
+        <div>
+          <strong>Tucson</strong>
+        </div>
+      </div>
+
+      <div class="marca">
+        <div>
+          <strong>Vigorita</strong>
+        </div>
+      </div>
+
+      <div class="marca">
+        <div>
+          <strong>GS Piedras</strong>
+        </div>
+      </div>
+
+      <div class="marca">
+        <div>
+          <strong>Ceracor</strong>
+          <small>REVESTIMIENTOS</small>
+        </div>
+      </div>
+
+      <div class="marca">
+        <div>
+          <strong>Grupo AgroRedes</strong>
+          <small>POLCOM</small>
+        </div>
+      </div>
+
+      <div class="marca">
+        <div>
+          <strong>Rosa Gres</strong>
+          <small>ESPAÑA</small>
+        </div>
+      </div>
+
+    </div>
+
+
+    <p
+      style="
+        max-width:650px;
+        margin:45px auto 0;
+        text-align:center;
+        color:rgba(36,35,31,.58);
+        font-size:12px;
+        line-height:1.8;
+      "
+    >
+      Las marcas son parte de nuestra selección.
+      Lo importante es encontrar qué material,
+      qué formato y qué solución tiene sentido
+      para cada obra.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+     ========================================================= -->
+
+<section class="faq">
+
+  <div class="section-wrap">
+
+    <span class="section-kicker">
+      PREGUNTAS FRECUENTES
+    </span>
+
+    <h2 class="section-title">
+      Antes de <em>elegir.</em>
+    </h2>
+
+
+    <div class="faq-list">
+
+
+      <article class="faq-item">
+
+        <button class="faq-question">
+
+          <span>
+            ¿Tienen stock?
+          </span>
+
+          <span class="faq-icon">
+            +
+          </span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            La disponibilidad se confirma antes de realizar
+            cada pedido, porque depende del producto,
+            proveedor y momento de compra.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="faq-item">
+
+        <button class="faq-question">
+
+          <span>
+            ¿Hacen envíos?
+          </span>
+
+          <span class="faq-icon">
+            +
+          </span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            Coordinamos envíos a todo el país.
+            El costo depende del destino, peso,
+            volumen y transporte.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="faq-item">
+
+        <button class="faq-question">
+
+          <span>
+            ¿Me ayudan a elegir el material?
+          </span>
+
+          <span class="faq-icon">
+            +
+          </span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            Sí. Analizamos el proyecto, el uso,
+            la superficie, el entorno y las características
+            de cada material para ayudarte a tomar
+            una decisión informada.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="faq-item">
+
+        <button class="faq-question">
+
+          <span>
+            ¿Trabajan con Rosa Gres España?
+          </span>
+
+          <span class="faq-icon">
+            +
+          </span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            Incorporamos soluciones de Rosa Gres España
+            cuando tienen sentido para determinados
+            proyectos de piscinas y espacios exteriores.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="faq-item">
+
+        <button class="faq-question">
+
+          <span>
+            ¿Puedo consultar un proyecto completo?
+          </span>
+
+          <span class="faq-icon">
+            +
+          </span>
+
+        </button>
+
+        <div class="faq-answer">
+
+          <p>
+            Sí. Podemos trabajar una propuesta
+            personalizada a partir de las características
+            del proyecto, materiales, superficies
+            y necesidades específicas.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACTO
+     ========================================================= -->
+
+<section class="contacto" id="contacto">
+
+  <div class="contacto-inner">
+
+    <span class="section-kicker">
+      ORIGEN SURFACES
+    </span>
+
+    <h2>
+      Contanos<br>
+      tu <em>proyecto.</em>
+    </h2>
+
+    <p class="contacto-copy">
+      Una idea, una obra, una renovación o simplemente
+      ganas de encontrar una combinación diferente.
+      Contanos qué estás imaginando y empezamos
+      a buscar la materia adecuada.
+    </p>
+
+    <div class="contacto-actions">
+
+      <a
+        href="https://wa.me/5491147004804"
+        class="origen-btn origen-btn-light"
+        target="_blank"
+      >
+        WhatsApp →
+      </a>
+
+      <a
+        href="mailto:origen.surfaces@gmail.com"
+        class="origen-btn origen-btn-light"
+      >
+        Escribir por email →
+      </a>
+
+    </div>
+
+    <a
+      href="mailto:origen.surfaces@gmail.com"
+      class="contacto-email"
+    >
+      origen.surfaces@gmail.com
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CALCULADORA
+     ========================================================= -->
+
+<section class="calculadora" id="calculadora">
+
+  <div class="calculadora-head">
+
+    <span class="section-kicker">
+      CALCULADORA ORIGEN
+    </span>
+
+    <h2 class="section-title">
+      Calculá la superficie<br>
+      de tu <em>proyecto.</em>
+    </h2>
+
+    <p>
+      Una herramienta para obtener una primera estimación
+      de material. Para proyectos especiales, piezas,
+      bordes o soluciones específicas, consultanos.
+    </p>
+
+  </div>
+
+
+  <div class="calculadora-tabs">
+
+    <button
+      class="calc-tab active"
+      data-tab="piscina"
+    >
+      PISCINA
+    </button>
+
+    <button
+      class="calc-tab"
+      data-tab="piso"
+    >
+      PISO
+    </button>
+
+    <button
+      class="calc-tab"
+      data-tab="pared"
+    >
+      PARED
+    </button>
+
+  </div>
+
+
+  <!-- PISCINA -->
+
+  <div
+    class="calc-panel active"
+    id="calc-piscina"
+  >
+
+    <h3>
+      Calculá tu piscina.
+    </h3>
+
+    <p class="calc-panel-intro">
+      Ingresá largo, ancho y profundidad promedio.
+      Calculamos piso + paredes y agregamos 10% de desperdicio.
+    </p>
+
+
+    <div class="calc-form">
+
+      <div class="calc-field">
+
+        <label for="piscina-largo">
+          Largo · metros
+        </label>
+
+        <input
+          type="number"
+          id="piscina-largo"
+          min="0"
+          step="0.01"
+          placeholder="Ej. 8"
+        >
+
+      </div>
+
+
+      <div class="calc-field">
+
+        <label for="piscina-ancho">
+          Ancho · metros
+        </label>
+
+        <input
+          type="number"
+          id="piscina-ancho"
+          min="0"
+          step="0.01"
+          placeholder="Ej. 4"
+        >
+
+      </div>
+
+
+      <div class="calc-field">
+
+        <label for="piscina-profundidad">
+          Profundidad promedio
+        </label>
+
+        <input
+          type="number"
+          id="piscina-profundidad"
+          min="0"
+          step="0.01"
+          placeholder="Ej. 1.50"
+        >
+
+      </div>
+
+
+      <div class="calc-field">
+
+        <label for="piscina-revestimiento">
+          Revestimiento
+        </label>
+
+        <select id="piscina-revestimiento">
+
+          <option value="">
+            Seleccionar
+          </option>
+
+          <option value="1.95">
+            Cerámica 10 × 10 · 1,95 m²/caja
+          </option>
+
+          <option value="1.50">
+            Cerámica 20 × 20 · 1,50 m²/caja
+          </option>
+
+          <option value="2.07">
+            Cerámica · 2,07 m²/caja
+          </option>
+
+          <option value="1.44">
+            Cerámica · 1,44 m²/caja
+          </option>
+
+          <option value="2.06">
+            Porcelanato · 2,06 m²/caja
+          </option>
+
+          <option value="4.28">
+            Venecita clásica · 4,28 m²/caja
+          </option>
+
+          <option value="2">
+            Venecita premium · 2,00 m²/caja
+          </option>
+
+          <option value="1">
+            Piedra Bali · 1,00 m²/caja
+          </option>
+
+          <option value="travertino">
+            Travertino · cálculo por m²
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <button
+        class="calc-submit"
+        onclick="calcularPiscina()"
+      >
+        CALCULAR PISCINA
+      </button>
+
+    </div>
+
+
+    <div
+      class="calc-result"
+      id="resultado-piscina"
+    >
+
+      <h4>
+        Resultado ORIGEN
+      </h4>
+
+      <div class="result-grid">
+
+        <div class="result-item">
+
+          <span>
+            Superficie real
+          </span>
+
+          <strong id="res-piscina-real">
+            —
+          </strong>
+
+        </div>
+
+        <div class="result-item">
+
+          <span>
+            Con 10% desperdicio
+          </span>
+
+          <strong id="res-piscina-total">
+            —
+          </strong>
+
+        </div>
+
+        <div class="result-item">
+
+          <span>
+            Material
+          </span>
+
+          <strong id="res-piscina-material">
+            —
+          </strong>
+
+        </div>
+
+      </div>
+
+      <p
+        class="calc-note"
+        id="res-piscina-note"
+      ></p>
+
+    </div>
+
+  </div>
+
+
+  <!-- PISO -->
+
+  <div
+    class="calc-panel"
+    id="calc-piso"
+  >
+
+    <h3>
+      Calculá tu piso.
+    </h3>
+
+    <p class="calc-panel-intro">
+      Calculamos la superficie y agregamos 10% de desperdicio.
+    </p>
+
+
+    <div class="calc-form">
+
+      <div class="calc-field">
+
+        <label for="piso-largo">
+          Largo · metros
+        </label>
+
+        <input
+          type="number"
+          id="piso-largo"
+          min="0"
+          step="0.01"
+          placeholder="Ej. 6"
+        >
+
+      </div>
+
+
+      <div class="calc-field">
+
+        <label for="piso-ancho">
+          Ancho · metros
+        </label>
+
+        <input
+          type="number"
+          id="piso-ancho"
+          min="0"
+          step="0.01"
+          placeholder="Ej. 4"
+        >
+
+      </div>
+
+
+      <button
+        class="calc-submit"
+        onclick="calcularSuperficie('piso')"
+      >
+        CALCULAR PISO
+      </button>
+
+    </div>
+
+
+    <div
+      class="calc-result"
+      id="resultado-piso"
+    >
+
+      <h4>
+        Resultado ORIGEN
+      </h4>
+
+      <div class="result-grid">
+
+        <div class="result-item">
+
+          <span>
+            Superficie
+          </span>
+
+          <strong id="res-piso-real">
+            —
+          </strong>
+
+        </div>
+
+        <div class="result-item">
+
+          <span>
+            Con 10% desperdicio
+          </span>
+
+          <strong id="res-piso-total">
+            —
+          </strong>
+
+        </div>
+
+        <div class="result-item">
+
+          <span>
+            Referencia
+          </span>
+
+          <strong>
+            m²
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- PARED -->
+
+  <div
+    class="calc-panel"
+    id="calc-pared"
+  >
+
+    <h3>
+      Calculá tu pared.
+    </h3>
+
+    <p class="calc-panel-intro">
+      Calculamos ancho × alto y agregamos 10% de desperdicio.
+    </p>
+
+
+    <div class="calc-form">
+
+      <div class="calc-field">
+
+        <label for="pared-ancho">
+          Ancho · metros
+        </label>
+
+        <input
+          type="number"
+          id="pared-ancho"
+          min="0"
+          step="0.01"
+          placeholder="Ej. 4"
+        >
+
+      </div>
+
+
+      <div class="calc-field">
+
+        <label for="pared-alto">
+          Alto · metros
+        </label>
+
+        <input
+          type="number"
+          id="pared-alto"
+          min="0"
+          step="0.01"
+          placeholder="Ej. 2.60"
+        >
+
+      </div>
+
+
+      <button
+        class="calc-submit"
+        onclick="calcularSuperficie('pared')"
+      >
+        CALCULAR PARED
+      </button>
+
+    </div>
+
+
+    <div
+      class="calc-result"
+      id="resultado-pared"
+    >
+
+      <h4>
+        Resultado ORIGEN
+      </h4>
+
+      <div class="result-grid">
+
+        <div class="result-item">
+
+          <span>
+            Superficie
+          </span>
+
+          <strong id="res-pared-real">
+            —
+          </strong>
+
+        </div>
+
+        <div class="result-item">
+
+          <span>
+            Con 10% desperdicio
+          </span>
+
+          <strong id="res-pared-total">
+            —
+          </strong>
+
+        </div>
+
+        <div class="result-item">
+
+          <span>
+            Referencia
+          </span>
+
+          <strong>
+            m²
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-logo">
+
+      <img
+        src="fotos/ChatGPT Image 22 sept 2026, 07_38_47 p.m..png"
+        alt="ORIGEN SURFACES"
+      >
+
+    </div>
+
+    <div class="footer-copy">
+      SUPERFICIES · MATERIALES · SOLUCIONES
+    </div>
+
+    <a
+      href="mailto:origen.surfaces@gmail.com"
+      class="footer-mail"
+    >
+      origen.surfaces@gmail.com
+    </a>
+
+  </div>
+
+</footer>
 
 
 <script>
 
 /* =========================================================
-   ABRIR / CERRAR CERÁMICAS
+   HEADER
    ========================================================= */
 
-const ceramicasTrigger =
-  document.querySelector('.ceramicas-trigger');
+const header =
+  document.getElementById("siteHeader");
 
-const ceramicasSection =
-  document.querySelector('.coleccion-ceramicas');
+const scrollLine =
+  document.getElementById("scrollLine");
 
-if (ceramicasTrigger && ceramicasSection) {
+window.addEventListener("scroll", () => {
 
-  ceramicasTrigger.addEventListener('click', () => {
+  if(window.scrollY > 40){
+    header.classList.add("scrolled");
+  }else{
+    header.classList.remove("scrolled");
+  }
 
-    const abierto =
-      ceramicasSection.classList.toggle('is-open');
+  const height =
+    document.documentElement.scrollHeight -
+    window.innerHeight;
 
-    ceramicasTrigger.setAttribute(
-      'aria-expanded',
-      abierto ? 'true' : 'false'
-    );
+  const progress =
+    height > 0
+      ? (window.scrollY / height) * 100
+      : 0;
+
+  scrollLine.style.width =
+    progress + "%";
+
+});
+
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+const observer =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("visible");
+
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold:.12
+    }
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(el => observer.observe(el));
+
+
+/* =========================================================
+   COLECCIONES
+   ========================================================= */
+
+document
+  .querySelectorAll(".collection-trigger")
+  .forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      const collection =
+        button.closest(".collection");
+
+      const wasOpen =
+        collection.classList.contains("open");
+
+
+      document
+        .querySelectorAll(".collection.open")
+        .forEach(openCollection => {
+
+          openCollection.classList.remove("open");
+
+        });
+
+
+      if(!wasOpen){
+
+        collection.classList.add("open");
+
+        setTimeout(() => {
+
+          const top =
+            collection.getBoundingClientRect().top +
+            window.scrollY -
+            95;
+
+          window.scrollTo({
+            top,
+            behavior:"smooth"
+          });
+
+        },150);
+
+      }
+
+    });
 
   });
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+document
+  .querySelectorAll(".faq-question")
+  .forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      const item =
+        button.closest(".faq-item");
+
+      const wasOpen =
+        item.classList.contains("open");
+
+
+      document
+        .querySelectorAll(".faq-item.open")
+        .forEach(openItem => {
+
+          openItem.classList.remove("open");
+
+        });
+
+
+      if(!wasOpen){
+
+        item.classList.add("open");
+
+      }
+
+    });
+
+  });
+
+
+/* =========================================================
+   CALCULADORA TABS
+   ========================================================= */
+
+document
+  .querySelectorAll(".calc-tab")
+  .forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+      const target =
+        tab.dataset.tab;
+
+
+      document
+        .querySelectorAll(".calc-tab")
+        .forEach(t =>
+          t.classList.remove("active")
+        );
+
+
+      document
+        .querySelectorAll(".calc-panel")
+        .forEach(panel =>
+          panel.classList.remove("active")
+        );
+
+
+      tab.classList.add("active");
+
+      document
+        .getElementById("calc-" + target)
+        .classList.add("active");
+
+    });
+
+  });
+
+
+/* =========================================================
+   IR A CALCULADORA DESDE PRODUCTO
+   ========================================================= */
+
+function irCalculadora(valor){
+
+  const select =
+    document.getElementById(
+      "piscina-revestimiento"
+    );
+
+  if(select){
+
+    select.value = "";
+
+    document
+      .getElementById("calculadora")
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
+  }
+
+}
+
+
+/* =========================================================
+   CALCULADORA PISCINA
+   ========================================================= */
+
+function calcularPiscina(){
+
+  const largo =
+    parseFloat(
+      document.getElementById(
+        "piscina-largo"
+      ).value
+    );
+
+  const ancho =
+    parseFloat(
+      document.getElementById(
+        "piscina-ancho"
+      ).value
+    );
+
+  const profundidad =
+    parseFloat(
+      document.getElementById(
+        "piscina-profundidad"
+      ).value
+    );
+
+  const revestimiento =
+    document.getElementById(
+      "piscina-revestimiento"
+    ).value;
+
+
+  if(
+    !largo ||
+    !ancho ||
+    !profundidad ||
+    !revestimiento
+  ){
+
+    alert(
+      "Completá las medidas y elegí un revestimiento."
+    );
+
+    return;
+
+  }
+
+
+  const piso =
+    largo * ancho;
+
+  const paredes =
+    2 * (largo + ancho) * profundidad;
+
+  const superficieReal =
+    piso + paredes;
+
+  const superficieTotal =
+    superficieReal * 1.10;
+
+
+  document.getElementById(
+    "res-piscina-real"
+  ).textContent =
+    superficieReal.toFixed(2) + " m²";
+
+
+  document.getElementById(
+    "res-piscina-total"
+  ).textContent =
+    superficieTotal.toFixed(2) + " m²";
+
+
+  let materialTexto = "";
+  let nota = "";
+
+
+  if(revestimiento === "travertino"){
+
+    materialTexto =
+      superficieTotal.toFixed(2) + " m²";
+
+    nota =
+      "Para travertino, la cantidad se expresa por m². Bordes, piezas especiales y cortes requieren una revisión específica del proyecto.";
+
+  }else{
+
+    const rendimiento =
+      parseFloat(revestimiento);
+
+    const cajas =
+      Math.ceil(
+        superficieTotal / rendimiento
+      );
+
+    materialTexto =
+      cajas + " cajas";
+
+    nota =
+      "Estimación calculada con 10% de desperdicio y el rendimiento indicado para el material seleccionado.";
+
+  }
+
+
+  document.getElementById(
+    "res-piscina-material"
+  ).textContent =
+    materialTexto;
+
+
+  document.getElementById(
+    "res-piscina-note"
+  ).textContent =
+    nota;
+
+
+  document
+    .getElementById("resultado-piscina")
+    .classList.add("show");
+
+}
+
+
+/* =========================================================
+   CALCULADORA PISO / PARED
+   ========================================================= */
+
+function calcularSuperficie(tipo){
+
+  let real = 0;
+
+  if(tipo === "piso"){
+
+    const largo =
+      parseFloat(
+        document.getElementById(
+          "piso-largo"
+        ).value
+      );
+
+    const ancho =
+      parseFloat(
+        document.getElementById(
+          "piso-ancho"
+        ).value
+      );
+
+
+    if(!largo || !ancho){
+
+      alert(
+        "Completá largo y ancho."
+      );
+
+      return;
+
+    }
+
+
+    real =
+      largo * ancho;
+
+  }
+
+
+  if(tipo === "pared"){
+
+    const ancho =
+      parseFloat(
+        document.getElementById(
+          "pared-ancho"
+        ).value
+      );
+
+    const alto =
+      parseFloat(
+        document.getElementById(
+          "pared-alto"
+        ).value
+      );
+
+
+    if(!ancho || !alto){
+
+      alert(
+        "Completá ancho y alto."
+      );
+
+      return;
+
+    }
+
+
+    real =
+      ancho * alto;
+
+  }
+
+
+  const total =
+    real * 1.10;
+
+
+  document.getElementById(
+    "res-" + tipo + "-real"
+  ).textContent =
+    real.toFixed(2) + " m²";
+
+
+  document.getElementById(
+    "res-" + tipo + "-total"
+  ).textContent =
+    total.toFixed(2) + " m²";
+
+
+  document
+    .getElementById(
+      "resultado-" + tipo
+    )
+    .classList.add("show");
 
 }
 
 </script>
+
+
+</body>
+</html>
