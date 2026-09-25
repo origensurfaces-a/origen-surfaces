@@ -1,37 +1,32 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ORIGEN SURFACES | Materia · Agua · Luz · Arquitectura</title>
+<title>ORIGEN SURFACES — Materia · Arquitectura · Vida</title>
 
-<meta name="description" content="ORIGEN SURFACES. Materiales y superficies seleccionadas para proyectos donde la arquitectura importa.">
+<meta name="description"
+content="ORIGEN SURFACES. Una mirada sobre la materia, la arquitectura y los espacios que habitamos. Buenos Aires, Argentina.">
 
 <style>
 
-/* =========================================================
-   ORIGEN SURFACES
-   SHOWROOM DIGITAL
-========================================================= */
-
 :root{
-  --black:#10110f;
-  --black-soft:#181916;
-  --cream:#f4f0e8;
-  --white:#faf9f5;
-  --stone:#d9d0c2;
-  --sand:#c9bdab;
-  --green:#34453e;
-  --blue:#30474c;
-  --gold:#b89a61;
-  --gold-light:#d7bf8b;
-  --text:#373833;
-  --muted:#74716a;
-  --line:rgba(30,31,27,.15);
+  --black:#0b0c0a;
+  --black-soft:#151713;
+  --cream:#eee9df;
+  --white:#f7f5ef;
+  --sand:#cfc3b1;
+  --stone:#a99f91;
+  --green:#30433b;
+  --blue:#263d42;
+  --gold:#b59a68;
+  --muted:#8b8981;
+  --line:rgba(238,233,223,.16);
 
-  --serif:Georgia,"Times New Roman",serif;
-  --sans:Arial,Helvetica,sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Arial, Helvetica, sans-serif;
 }
 
 *{
@@ -45,15 +40,10 @@ html{
 }
 
 body{
-  background:var(--cream);
-  color:var(--text);
+  background:var(--black);
+  color:var(--cream);
   font-family:var(--sans);
   overflow-x:hidden;
-}
-
-img{
-  display:block;
-  max-width:100%;
 }
 
 a{
@@ -61,51 +51,60 @@ a{
   text-decoration:none;
 }
 
-button,
-input,
-select{
-  font:inherit;
+img{
+  display:block;
+  width:100%;
 }
 
 button{
-  cursor:pointer;
+  font:inherit;
 }
 
 .container{
-  width:min(1280px,calc(100% - 72px));
+  width:min(1380px, calc(100% - 80px));
   margin:auto;
 }
 
-.section{
-  padding:110px 0;
-}
-
-.eyebrow{
-  margin-bottom:20px;
-  color:var(--gold);
-  font-size:9px;
-  letter-spacing:.28em;
-  text-transform:uppercase;
-}
-
-.section-title{
-  color:var(--green);
-  font-family:var(--serif);
-  font-size:clamp(48px,5vw,74px);
-  font-weight:400;
-  line-height:.94;
-  letter-spacing:-.045em;
-}
-
-.body-copy{
-  color:var(--muted);
-  font-size:16px;
-  line-height:1.8;
+section{
+  position:relative;
 }
 
 
 /* =========================================================
-   SCROLL
+   LOADER
+========================================================= */
+
+.loader{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:var(--black);
+
+  animation:loaderOut 1.2s ease 1.4s forwards;
+}
+
+.loader-name{
+  color:var(--cream);
+  font-family:var(--serif);
+  font-size:clamp(42px,7vw,90px);
+  letter-spacing:.08em;
+}
+
+@keyframes loaderOut{
+  to{
+    opacity:0;
+    visibility:hidden;
+  }
+}
+
+
+/* =========================================================
+   PROGRESS
 ========================================================= */
 
 .progress{
@@ -114,8 +113,10 @@ button{
   left:0;
   width:0;
   height:2px;
-  background:var(--gold-light);
-  z-index:9999;
+
+  background:var(--gold);
+
+  z-index:5000;
 }
 
 
@@ -128,64 +129,63 @@ header{
   top:0;
   left:0;
   width:100%;
-  height:76px;
-  z-index:1000;
-  transition:.35s ease;
+  height:82px;
+
+  z-index:4000;
+
+  transition:.5s ease;
 }
 
 header.scrolled{
-  background:rgba(16,17,15,.82);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid rgba(255,255,255,.07);
+  background:rgba(11,12,10,.72);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .nav{
   height:100%;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 
-
-/* LOGO:
-   chico, transparente y con relieve sutil
-*/
-
 .logo{
-  width:145px;
+  font-family:var(--serif);
+  font-size:20px;
+  letter-spacing:.16em;
+}
+
+.logo span{
   display:block;
+
+  margin-top:2px;
+
+  font-family:var(--sans);
+  font-size:6px;
+  letter-spacing:.35em;
+
+  color:var(--gold);
 }
 
-.logo img{
-  width:145px !important;
-  height:auto !important;
-  max-height:58px !important;
-  object-fit:contain !important;
-
-  /* relieve muy sutil */
-  filter:
-    drop-shadow(0 1px 1px rgba(255,220,150,.20))
-    drop-shadow(0 2px 3px rgba(0,0,0,.45));
-}
-
-.menu{
+.nav-right{
   display:flex;
   align-items:center;
-  gap:28px;
-  color:#fff;
-  font-size:9px;
-  letter-spacing:.15em;
+  gap:32px;
+}
+
+.nav-link{
+  color:rgba(255,255,255,.75);
+
+  font-size:8px;
+  letter-spacing:.2em;
   text-transform:uppercase;
+
+  transition:.3s ease;
 }
 
-.menu a{
-  opacity:.88;
-  transition:.25s ease;
-}
-
-.menu a:hover{
-  color:var(--gold-light);
-  opacity:1;
+.nav-link:hover{
+  color:var(--gold);
 }
 
 
@@ -194,70 +194,55 @@ header.scrolled{
 ========================================================= */
 
 .hero{
-  position:relative;
-  min-height:100svh;
   height:100svh;
+  min-height:720px;
+
   overflow:hidden;
-  background:#11120f;
+
+  background:#111;
 }
 
-.hero-image{
+.hero-media{
   position:absolute;
   inset:0;
-  z-index:0;
+
   overflow:hidden;
 }
 
-.hero-image img{
+.hero-media img{
   width:100%;
   height:100%;
+
   object-fit:cover;
 
-  /*
-     Si la foto tiene una composición horizontal,
-     queda bien mostrando arquitectura y cielo.
-  */
-  object-position:center center;
+  transform:scale(1.06);
 
-  transform:scale(1.015);
-
-  animation:heroAppear 1.3s ease-out both;
+  animation:heroZoom 14s ease-out forwards;
 }
 
-@keyframes heroAppear{
-  from{
-    opacity:0;
-    transform:scale(1.04);
-  }
-
+@keyframes heroZoom{
   to{
-    opacity:1;
-    transform:scale(1.015);
+    transform:scale(1);
   }
 }
 
-
-/* Overlay.
-   Oscurece solamente lo necesario para leer.
-*/
-
-.hero-image::after{
+.hero-media::after{
   content:"";
+
   position:absolute;
   inset:0;
 
   background:
     linear-gradient(
       90deg,
-      rgba(7,8,7,.72) 0%,
-      rgba(7,8,7,.47) 34%,
-      rgba(7,8,7,.12) 72%,
-      rgba(7,8,7,.08) 100%
+      rgba(6,7,6,.72),
+      rgba(6,7,6,.28) 52%,
+      rgba(6,7,6,.08)
     ),
     linear-gradient(
       0deg,
-      rgba(0,0,0,.36) 0%,
-      rgba(0,0,0,0) 55%
+      rgba(0,0,0,.58),
+      transparent 55%
     );
 }
 
@@ -265,620 +250,170 @@ header.scrolled{
   position:relative;
   z-index:2;
 
-  width:min(1280px,calc(100% - 72px));
   height:100%;
-  margin:auto;
 
   display:flex;
-  align-items:center;
+  align-items:flex-end;
 
-  padding-top:40px;
+  padding-bottom:100px;
+}
+
+.hero-meta{
+  position:absolute;
+
+  top:115px;
+  left:0;
+
+  color:rgba(255,255,255,.62);
+
+  font-size:7px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
 }
 
 .hero-copy{
-  max-width:640px;
+  max-width:900px;
 }
 
-.hero .eyebrow{
-  color:rgba(255,255,255,.78);
+.hero-kicker{
+  margin-bottom:22px;
+
+  color:var(--gold);
+
+  font-size:8px;
+  letter-spacing:.35em;
+  text-transform:uppercase;
 }
 
 .hero h1{
-  color:#fff;
+  max-width:900px;
+
+  color:var(--white);
+
   font-family:var(--serif);
-  font-size:clamp(50px,5.5vw,80px);
+  font-size:clamp(65px,9vw,135px);
   font-weight:400;
-  line-height:.91;
-  letter-spacing:-.055em;
+  line-height:.82;
+  letter-spacing:-.065em;
 }
 
 .hero h1 em{
-  color:var(--gold-light);
+  color:var(--gold);
   font-style:normal;
 }
 
 .hero-sub{
-  max-width:540px;
-  margin-top:24px;
+  max-width:620px;
 
-  color:#fff;
-
-  font-family:var(--serif);
-  font-size:clamp(21px,2vw,27px);
-  line-height:1.16;
-}
-
-.hero-description{
-  max-width:510px;
-  margin-top:14px;
+  margin-top:30px;
 
   color:rgba(255,255,255,.76);
 
-  font-size:14px;
-  line-height:1.7;
+  font-family:var(--serif);
+  font-size:clamp(20px,2vw,29px);
+  line-height:1.2;
 }
 
-.hero-actions{
+.hero-bottom{
   display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:28px;
+  align-items:center;
+  gap:30px;
+
+  margin-top:38px;
 }
 
 .button{
-  min-height:46px;
-  padding:0 21px;
-
   display:inline-flex;
   align-items:center;
   justify-content:center;
 
-  border:1px solid rgba(215,191,139,.78);
+  min-height:48px;
+  padding:0 22px;
 
-  background:transparent;
+  border:1px solid rgba(213,191,145,.7);
+
   color:#fff;
 
   font-size:8px;
-  letter-spacing:.16em;
+  letter-spacing:.2em;
   text-transform:uppercase;
 
-  transition:.3s ease;
+  transition:.35s ease;
 }
 
 .button:hover{
   background:var(--gold);
   border-color:var(--gold);
   color:var(--black);
+
   transform:translateY(-2px);
 }
 
+.scroll-note{
+  color:rgba(255,255,255,.48);
 
-/* =========================================================
-   INTRO
-========================================================= */
-
-.intro{
-  background:var(--white);
+  font-size:7px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
 }
 
-.intro-grid{
+
+/* =========================================================
+   MANIFIESTO
+========================================================= */
+
+.manifesto{
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+
+  background:var(--cream);
+  color:var(--green);
+}
+
+.manifesto-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:90px;
-  align-items:end;
+  grid-template-columns:.8fr 1.2fr;
+  gap:120px;
+
+  align-items:start;
 }
 
-.intro h2{
-  max-width:650px;
+.eyebrow{
+  color:var(--gold);
 
-  color:var(--green);
-
-  font-family:var(--serif);
-  font-size:clamp(48px,5.1vw,72px);
-  font-weight:400;
-  line-height:.94;
-  letter-spacing:-.05em;
+  font-size:8px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
 }
 
-.intro-copy{
-  max-width:560px;
-  color:var(--muted);
-  font-size:16px;
-  line-height:1.85;
-}
-
-.intro-copy strong{
-  color:var(--green);
-  font-weight:500;
-  letter-spacing:.05em;
-  font-size:12px;
-}
-
-
-/* =========================================================
-   CRITERIO
-========================================================= */
-
-.criterio{
-  background:var(--black);
-  color:#fff;
-}
-
-.criterio .section-title{
-  color:var(--cream);
-}
-
-.criterio-intro{
-  max-width:620px;
+.manifesto-title{
   margin-top:24px;
 
-  color:#aaa79f;
-
-  font-size:16px;
-  line-height:1.8;
-}
-
-.criterio-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-
-  margin-top:58px;
-
-  border-top:1px solid rgba(255,255,255,.13);
-}
-
-.criterio-card{
-  min-height:210px;
-  padding:35px 35px 30px 0;
-  border-right:1px solid rgba(255,255,255,.13);
-}
-
-.criterio-card:nth-child(2),
-.criterio-card:nth-child(3){
-  padding-left:35px;
-}
-
-.criterio-card:last-child{
-  border-right:0;
-}
-
-.criterio-card h3{
-  color:#fff;
   font-family:var(--serif);
-  font-size:30px;
+  font-size:clamp(55px,7vw,105px);
   font-weight:400;
+  line-height:.86;
+  letter-spacing:-.06em;
 }
 
-.criterio-card p{
-  max-width:320px;
-  margin-top:14px;
-  color:#9c9a93;
-  font-size:14px;
-  line-height:1.7;
-}
+.manifesto-text{
+  max-width:690px;
 
-.criterio-frase{
-  margin-top:32px;
-  color:#b8b3a9;
   font-family:var(--serif);
-  font-size:21px;
+  font-size:clamp(26px,3vw,45px);
+  line-height:1.13;
+  letter-spacing:-.025em;
 }
 
-
-/* =========================================================
-   MAGIA
-========================================================= */
-
-.magia{
-  background:#d8cfc0;
+.manifesto-text p{
+  margin-bottom:30px;
 }
 
-.magia-head{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:end;
-  margin-bottom:48px;
-}
-
-.magia h2{
-  color:var(--green);
-  font-family:var(--serif);
-  font-size:clamp(50px,5.3vw,76px);
+.manifesto-text strong{
   font-weight:400;
-  line-height:.91;
-  letter-spacing:-.05em;
-}
-
-.magia-grid{
-  display:grid;
-  grid-template-columns:1.25fr .75fr;
-  gap:6px;
-}
-
-.magia-item{
-  position:relative;
-  overflow:hidden;
-  background:#bdb3a3;
-}
-
-.magia-large{
-  height:590px;
-}
-
-.magia-right{
-  display:grid;
-  grid-template-rows:1fr 1fr;
-  gap:6px;
-}
-
-.magia-small{
-  min-height:292px;
-}
-
-.magia-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:1s ease;
-}
-
-.magia-item:hover img{
-  transform:scale(1.035);
-}
-
-.magia-caption{
-  position:absolute;
-  left:22px;
-  bottom:20px;
-  color:#fff;
-  text-shadow:0 2px 15px rgba(0,0,0,.35);
-}
-
-.magia-caption span{
-  font-size:8px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-}
-
-.magia-caption h3{
-  margin-top:5px;
-  color:#fff;
-  font-family:var(--serif);
-  font-size:28px;
-  font-weight:400;
-}
-
-
-/* =========================================================
-   COLECCIONES
-========================================================= */
-
-.colecciones{
-  background:var(--white);
-}
-
-.colecciones-head{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:end;
-  margin-bottom:55px;
-}
-
-.colecciones h2{
-  color:var(--green);
-  font-family:var(--serif);
-  font-size:clamp(50px,5.3vw,76px);
-  font-weight:400;
-  line-height:.9;
-  letter-spacing:-.05em;
-}
-
-.categorias{
-  border-top:1px solid var(--line);
-}
-
-.categoria{
-  border-bottom:1px solid var(--line);
-}
-
-.categoria-button{
-  width:100%;
-  padding:27px 0;
-
-  border:0;
-  background:transparent;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  text-align:left;
-}
-
-.categoria-button h3{
-  color:var(--text);
-  font-family:var(--serif);
-  font-size:clamp(27px,2.7vw,38px);
-  font-weight:400;
-}
-
-.plus{
-  color:var(--gold);
-  font-size:25px;
-  transition:.3s ease;
-}
-
-.categoria.open .plus{
-  transform:rotate(45deg);
-}
-
-.categoria-content{
-  display:none;
-  padding-bottom:42px;
-}
-
-.categoria.open .categoria-content{
-  display:block;
-}
-
-.collection{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  min-height:470px;
-}
-
-.collection-photo{
-  overflow:hidden;
-  background:#cbc1b2;
-}
-
-.collection-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:1s ease;
-}
-
-.collection-photo:hover img{
-  transform:scale(1.035);
-}
-
-.collection-copy{
-  padding:48px;
-
-  background:var(--black);
-  color:#fff;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-}
-
-.collection-copy h3{
-  color:#fff;
-  font-family:var(--serif);
-  font-size:clamp(42px,4vw,60px);
-  font-weight:400;
-  line-height:.89;
-}
-
-.collection-copy p{
-  max-width:440px;
-  margin-top:20px;
-  color:#aaa79f;
-  font-size:14px;
-  line-height:1.75;
-}
-
-.collection-link{
-  margin-top:25px;
-  color:var(--gold-light);
-  font-size:8px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-.placeholder{
-  width:100%;
-  height:100%;
-  min-height:470px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:linear-gradient(135deg,#c9c0b2,#aaa092);
-
-  color:#625c54;
-
-  font-size:8px;
-  letter-spacing:.2em;
-}
-
-
-/* =========================================================
-   BALI
-========================================================= */
-
-.bali{
-  background:var(--green);
-}
-
-.bali .section-title{
-  color:var(--cream);
-}
-
-.bali-intro{
-  max-width:590px;
-  margin-top:22px;
-
-  color:#c5cdc8;
-
-  font-size:16px;
-  line-height:1.8;
-}
-
-.bali-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:5px;
-  margin-top:50px;
-}
-
-.bali-card{
-  position:relative;
-  height:320px;
-  overflow:hidden;
-  background:#53645c;
-}
-
-.bali-card .placeholder{
-  min-height:320px;
-}
-
-.bali-label{
-  position:absolute;
-  left:18px;
-  bottom:17px;
-  color:#fff;
-  text-shadow:0 2px 15px rgba(0,0,0,.35);
-}
-
-.bali-label strong{
-  display:block;
-  font-family:var(--serif);
-  font-size:25px;
-  font-weight:400;
-}
-
-.bali-label span{
-  font-size:7px;
-  letter-spacing:.18em;
-}
-
-
-/* =========================================================
-   ROSA GRES
-========================================================= */
-
-.rosa{
-  background:var(--white);
-}
-
-.rosa-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:620px;
-}
-
-.rosa-photo{
-  background:#bcb4a8;
-}
-
-.rosa-photo .placeholder{
-  min-height:620px;
-  background:linear-gradient(135deg,#b8b1a6,#8d918d);
-  color:#f2eee6;
-}
-
-.rosa-copy{
-  padding:60px;
-  background:var(--blue);
-
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.rosa-copy h2{
-  color:var(--cream);
-  font-family:var(--serif);
-  font-size:clamp(46px,4.7vw,66px);
-  font-weight:400;
-  line-height:.9;
-  letter-spacing:-.045em;
-}
-
-.rosa-copy p{
-  max-width:500px;
-  margin-top:22px;
-  color:#c7d0ce;
-  font-size:15px;
-  line-height:1.8;
-}
-
-.rosa-line{
-  max-width:500px;
-  margin-top:30px;
-  padding-top:18px;
-  border-top:1px solid rgba(255,255,255,.15);
-  color:var(--gold-light);
-  font-size:8px;
-  letter-spacing:.18em;
-}
-
-
-/* =========================================================
-   PISCINAS
-========================================================= */
-
-.piscinas{
-  background:var(--black);
-}
-
-.pool-photo{
-  position:relative;
-  height:720px;
-  overflow:hidden;
-}
-
-.pool-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.pool-photo::after{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5,7,6,.66),
-      rgba(5,7,6,.12) 70%
-    );
-}
-
-.pool-copy{
-  position:absolute;
-  z-index:2;
-
-  left:6%;
-  top:50%;
-  transform:translateY(-50%);
-
-  max-width:620px;
-}
-
-.pool-copy h2{
-  color:#fff;
-  font-family:var(--serif);
-  font-size:clamp(52px,5.6vw,80px);
-  font-weight:400;
-  line-height:.9;
-  letter-spacing:-.055em;
-}
-
-.pool-copy p{
-  max-width:500px;
-  margin-top:22px;
-  color:#c9c7c0;
-  font-size:16px;
-  line-height:1.8;
+  color:#8e754a;
 }
 
 
@@ -887,85 +422,353 @@ header.scrolled{
 ========================================================= */
 
 .materia{
-  background:#ded6ca;
+  min-height:100vh;
+  padding:130px 0;
+
+  background:var(--black);
 }
 
-.materia-grid{
-  display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:90px;
-  align-items:start;
+.materia-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+
+  gap:80px;
 }
 
-.materia-list{
-  margin-top:40px;
-}
+.materia-title{
+  margin-top:25px;
 
-.materia-row{
-  display:grid;
-  grid-template-columns:170px 1fr;
-  gap:30px;
-  padding:22px 0;
-  border-top:1px solid rgba(30,30,25,.16);
-}
-
-.materia-row strong{
   font-family:var(--serif);
-  font-size:25px;
+  font-size:clamp(55px,7vw,105px);
+  font-weight:400;
+  line-height:.84;
+  letter-spacing:-.06em;
+}
+
+.materia-intro{
+  max-width:430px;
+
+  color:var(--muted);
+
+  font-size:14px;
+  line-height:1.8;
+}
+
+.materia-gallery{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+
+  gap:5px;
+
+  margin-top:70px;
+}
+
+.material-image{
+  position:relative;
+
+  overflow:hidden;
+
+  background:#262823;
+}
+
+.material-image.large{
+  height:680px;
+}
+
+.material-image.small{
+  height:335px;
+}
+
+.material-image img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:
+    transform 1.6s cubic-bezier(.16,1,.3,1);
+}
+
+.material-image:hover img{
+  transform:scale(1.045);
+}
+
+.material-side{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  gap:5px;
+}
+
+.material-caption{
+  position:absolute;
+  left:28px;
+  bottom:26px;
+
+  color:white;
+
+  text-shadow:0 3px 20px rgba(0,0,0,.5);
+}
+
+.material-caption small{
+  font-size:7px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+
+.material-caption h3{
+  margin-top:5px;
+
+  font-family:var(--serif);
+  font-size:32px;
   font-weight:400;
 }
 
-.materia-row span{
-  color:#66625b;
+
+/* =========================================================
+   FRASE
+========================================================= */
+
+.statement{
+  min-height:80vh;
+
+  display:flex;
+  align-items:center;
+
+  background:var(--green);
+}
+
+.statement-inner{
+  max-width:1200px;
+}
+
+.statement p{
+  font-family:var(--serif);
+  font-size:clamp(55px,8vw,125px);
+  line-height:.85;
+  letter-spacing:-.065em;
+}
+
+.statement span{
+  color:var(--gold);
+}
+
+
+/* =========================================================
+   DOS MUNDOS
+========================================================= */
+
+.worlds{
+  background:var(--white);
+  color:var(--green);
+
+  padding:130px 0;
+}
+
+.worlds-header{
+  max-width:800px;
+}
+
+.worlds-title{
+  margin-top:22px;
+
+  font-family:var(--serif);
+  font-size:clamp(55px,7vw,100px);
+  font-weight:400;
+  line-height:.84;
+  letter-spacing:-.06em;
+}
+
+.worlds-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:5px;
+
+  margin-top:70px;
+}
+
+.world-card{
+  position:relative;
+
+  min-height:650px;
+
+  overflow:hidden;
+
+  background:#bbb2a3;
+}
+
+.world-card img{
+  width:100%;
+  height:100%;
+
+  position:absolute;
+  inset:0;
+
+  object-fit:cover;
+
+  transition:transform 1.5s cubic-bezier(.16,1,.3,1);
+}
+
+.world-card:hover img{
+  transform:scale(1.04);
+}
+
+.world-card::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    0deg,
+    rgba(0,0,0,.62),
+    transparent 60%
+  );
+}
+
+.world-content{
+  position:absolute;
+  z-index:2;
+
+  left:38px;
+  right:38px;
+  bottom:38px;
+
+  color:#fff;
+}
+
+.world-content h3{
+  font-family:var(--serif);
+  font-size:55px;
+  font-weight:400;
+  line-height:.9;
+}
+
+.world-content p{
+  max-width:450px;
+
+  margin-top:15px;
+
+  color:rgba(255,255,255,.75);
+
   font-size:14px;
   line-height:1.7;
 }
 
 
 /* =========================================================
-   SELECCIÓN ORIGEN
+   CURADURIA
 ========================================================= */
 
-.seleccion{
-  background:var(--black);
-  text-align:center;
-  color:#fff;
+.curadoria{
+  background:#d7cdbd;
+  color:var(--green);
+
+  padding:150px 0;
 }
 
-.seleccion-inner{
-  width:min(1000px,calc(100% - 40px));
-  margin:auto;
+.curadoria-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+
+  gap:100px;
 }
 
-.seleccion h2{
-  color:var(--cream);
+.curadoria-title{
+  margin-top:25px;
+
   font-family:var(--serif);
-  font-size:clamp(49px,5.8vw,80px);
+  font-size:clamp(55px,7vw,105px);
   font-weight:400;
-  line-height:.91;
-  letter-spacing:-.055em;
+  line-height:.84;
+  letter-spacing:-.06em;
 }
 
-.seleccion h2 em{
-  color:var(--gold-light);
-  font-style:normal;
+.curadoria-copy{
+  max-width:650px;
+
+  font-family:var(--serif);
+  font-size:28px;
+  line-height:1.3;
 }
 
-.seleccion-copy{
-  max-width:620px;
-  margin:30px auto 0;
-  color:#aaa79f;
+.curadoria-copy p{
+  margin-bottom:30px;
+}
+
+.curadoria-list{
+  margin-top:70px;
+
+  border-top:1px solid rgba(48,67,59,.2);
+}
+
+.curadoria-item{
+  padding:25px 0;
+
+  border-bottom:1px solid rgba(48,67,59,.2);
+
+  display:flex;
+  justify-content:space-between;
+
+  font-family:var(--serif);
+  font-size:27px;
+}
+
+.curadoria-item span{
+  color:#7b6b50;
+
+  font-family:var(--sans);
+  font-size:7px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   ARQUITECTOS
+========================================================= */
+
+.architects{
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8,10,9,.88),
+      rgba(8,10,9,.32)
+    ),
+    url("proyecto-arquitectura.jpg") center/cover;
+
+  padding:140px 0;
+}
+
+.architect-copy{
+  max-width:800px;
+}
+
+.architect-title{
+  margin-top:25px;
+
+  font-family:var(--serif);
+  font-size:clamp(60px,8vw,120px);
+  font-weight:400;
+  line-height:.83;
+  letter-spacing:-.06em;
+}
+
+.architect-text{
+  max-width:600px;
+
+  margin-top:30px;
+
+  color:rgba(255,255,255,.72);
+
   font-size:16px;
   line-height:1.8;
-}
-
-.seleccion-copy strong{
-  color:#ded9cf;
-  font-weight:400;
-}
-
-.seleccion .button{
-  margin-top:30px;
 }
 
 
@@ -973,285 +776,228 @@ header.scrolled{
    PROYECTOS
 ========================================================= */
 
-.proyectos{
+.projects{
   background:var(--white);
+  color:var(--green);
+
+  padding:140px 0;
 }
 
-.proyecto{
+.projects-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+
+  gap:70px;
+}
+
+.projects-title{
+  margin-top:24px;
+
+  font-family:var(--serif);
+  font-size:clamp(55px,7vw,100px);
+  font-weight:400;
+  line-height:.84;
+  letter-spacing:-.06em;
+}
+
+.projects-description{
+  max-width:450px;
+
+  color:#77746c;
+
+  font-size:14px;
+  line-height:1.8;
+}
+
+.project-feature{
   display:grid;
   grid-template-columns:1.3fr .7fr;
-  min-height:600px;
-  margin-top:50px;
+
+  min-height:700px;
+
+  margin-top:70px;
 }
 
-.proyecto-photo{
+.project-photo{
   overflow:hidden;
-  background:#c9c0b2;
+
+  background:#b5ac9d;
 }
 
-.proyecto-photo img{
+.project-photo img{
   width:100%;
   height:100%;
+
   object-fit:cover;
+
+  transition:transform 1.5s ease;
 }
 
-.proyecto-copy{
-  padding:50px;
+.project-feature:hover .project-photo img{
+  transform:scale(1.035);
+}
+
+.project-info{
+  padding:55px;
+
   background:var(--green);
+
+  color:#fff;
+
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
 }
 
-.proyecto-copy h3{
-  color:#fff;
+.project-info h3{
   font-family:var(--serif);
-  font-size:clamp(42px,4.5vw,63px);
+  font-size:60px;
   font-weight:400;
-  line-height:.9;
+  line-height:.87;
 }
 
-.proyecto-copy p{
-  margin-top:20px;
-  color:#c5ccc8;
+.project-info p{
+  margin-top:25px;
+
+  color:rgba(255,255,255,.68);
+
   font-size:14px;
-  line-height:1.75;
+  line-height:1.8;
 }
 
 
 /* =========================================================
-   CONSERVACIÓN
+   JOURNAL
 ========================================================= */
 
-.conservacion{
-  background:#d0c5b5;
-}
+.journal{
+  padding:140px 0;
 
-.conservacion-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:100px;
-  align-items:center;
-}
-
-.conservacion h2{
+  background:var(--cream);
   color:var(--green);
+}
+
+.journal-title{
+  margin-top:24px;
+
   font-family:var(--serif);
-  font-size:clamp(52px,5.4vw,75px);
+  font-size:clamp(55px,7vw,100px);
   font-weight:400;
-  line-height:.88;
+  line-height:.84;
+  letter-spacing:-.06em;
 }
 
-.conservacion-copy{
-  color:#5e5a53;
-  font-size:16px;
-  line-height:1.8;
+.journal-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:5px;
+
+  margin-top:70px;
 }
 
-.tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin-top:28px;
+.journal-card{
+  background:#ded6c9;
 }
 
-.tags span{
-  padding:8px 12px;
-  border:1px solid rgba(30,30,25,.25);
+.journal-image{
+  height:420px;
+  overflow:hidden;
+}
+
+.journal-image img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:transform 1.2s ease;
+}
+
+.journal-card:hover img{
+  transform:scale(1.04);
+}
+
+.journal-copy{
+  padding:28px;
+}
+
+.journal-copy small{
+  color:#887451;
+
   font-size:7px;
-  letter-spacing:.14em;
+  letter-spacing:.2em;
   text-transform:uppercase;
 }
 
+.journal-copy h3{
+  margin-top:14px;
 
-/* =========================================================
-   MARCAS
-========================================================= */
-
-.marcas{
-  background:var(--white);
-}
-
-.marcas-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  margin-top:50px;
-  border-top:1px solid var(--line);
-  border-left:1px solid var(--line);
-}
-
-.marca{
-  min-height:130px;
-  padding:25px;
-  border-right:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-
-  transition:.3s ease;
-}
-
-.marca:hover{
-  background:#fff;
-}
-
-.marca small{
-  color:var(--gold);
-  font-size:7px;
-  letter-spacing:.16em;
-}
-
-.marca strong{
   font-family:var(--serif);
-  font-size:25px;
+  font-size:34px;
   font-weight:400;
+  line-height:.95;
 }
 
+.journal-copy p{
+  margin-top:15px;
 
-/* =========================================================
-   FAQ
-========================================================= */
+  color:#6f6c64;
 
-.faq{
-  background:#ebe4d9;
-}
-
-.faq-list{
-  max-width:980px;
-  margin-top:50px;
-  border-top:1px solid rgba(30,30,25,.16);
-}
-
-.faq-item{
-  border-bottom:1px solid rgba(30,30,25,.16);
-}
-
-.faq-question{
-  padding:22px 0;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  color:var(--text);
-
-  font-family:var(--serif);
-  font-size:25px;
-
-  cursor:pointer;
-}
-
-.faq-question span{
-  color:var(--gold);
-  font-family:var(--sans);
-  font-size:23px;
-  transition:.3s ease;
-}
-
-.faq-item.open .faq-question span{
-  transform:rotate(45deg);
-}
-
-.faq-answer{
-  display:none;
-  max-width:700px;
-  padding:0 0 22px;
-  color:#68645d;
-  font-size:14px;
-  line-height:1.8;
-}
-
-.faq-item.open .faq-answer{
-  display:block;
-}
-
-
-/* =========================================================
-   COTIZADORES
-========================================================= */
-
-.cotizadores{
-  background:var(--black);
-}
-
-.cotizadores .section-title{
-  color:var(--cream);
-}
-
-.cotizadores-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:6px;
-  margin-top:50px;
-}
-
-.cotizador{
-  min-height:360px;
-  padding:42px;
-
-  background:#1b1c19;
-  border:1px solid rgba(255,255,255,.07);
-
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-
-  transition:.35s ease;
-}
-
-.cotizador:hover{
-  background:#22231f;
-  transform:translateY(-3px);
-}
-
-.cotizador h3{
-  color:#fff;
-  font-family:var(--serif);
-  font-size:48px;
-  font-weight:400;
-  line-height:.9;
-}
-
-.cotizador p{
-  max-width:420px;
-  margin:18px 0 25px;
-  color:#aaa79f;
-  font-size:14px;
+  font-size:13px;
   line-height:1.7;
 }
 
 
 /* =========================================================
-   CONTACTO
+   CTA
 ========================================================= */
 
-.contacto{
+.cta{
+  min-height:85vh;
+
+  display:flex;
+  align-items:center;
+
   background:var(--blue);
 }
 
-.contacto h2{
-  color:var(--cream);
-  font-family:var(--serif);
-  font-size:clamp(54px,5.8vw,80px);
-  font-weight:400;
-  line-height:.89;
-  letter-spacing:-.055em;
+.cta-inner{
+  max-width:1100px;
 }
 
-.contacto p{
-  max-width:570px;
-  margin-top:23px;
-  color:#c6cecc;
+.cta-title{
+  margin-top:25px;
+
+  font-family:var(--serif);
+  font-size:clamp(65px,9vw,140px);
+  font-weight:400;
+  line-height:.8;
+  letter-spacing:-.065em;
+}
+
+.cta-title em{
+  color:var(--gold);
+  font-style:normal;
+}
+
+.cta-text{
+  max-width:600px;
+
+  margin-top:35px;
+
+  color:rgba(255,255,255,.68);
+
   font-size:16px;
   line-height:1.8;
 }
 
-.contact-buttons{
+.cta-buttons{
   display:flex;
-  gap:9px;
-  margin-top:30px;
+  gap:10px;
+
+  margin-top:35px;
 }
 
 
@@ -1260,151 +1006,41 @@ header.scrolled{
 ========================================================= */
 
 footer{
-  padding:42px 0;
-  background:#0a0b09;
-  color:#85827b;
+  padding:50px 0;
+
+  background:#070806;
 }
 
 .footer{
   display:flex;
-  align-items:center;
+  align-items:flex-end;
   justify-content:space-between;
 }
 
 .footer-logo{
-  width:125px;
-}
-
-.footer-logo img{
-  width:125px !important;
-  height:auto !important;
-  object-fit:contain !important;
-
-  filter:
-    drop-shadow(0 1px 1px rgba(255,220,150,.18))
-    drop-shadow(0 2px 3px rgba(0,0,0,.45));
-}
-
-.footer-copy{
-  font-size:7px;
-  letter-spacing:.17em;
-}
-
-
-/* =========================================================
-   MODAL
-========================================================= */
-
-.modal{
-  position:fixed;
-  inset:0;
-  z-index:5000;
-
-  display:none;
-  align-items:center;
-  justify-content:center;
-
-  padding:20px;
-
-  background:rgba(0,0,0,.78);
-  backdrop-filter:blur(12px);
-}
-
-.modal.active{
-  display:flex;
-}
-
-.modal-box{
-  position:relative;
-
-  width:min(760px,100%);
-  max-height:90vh;
-  overflow:auto;
-
-  padding:45px;
-
-  background:var(--white);
-}
-
-.close{
-  position:absolute;
-  top:13px;
-  right:17px;
-
-  border:0;
-  background:none;
-
-  color:#333;
+  font-family:var(--serif);
   font-size:28px;
-}
-
-.modal-box h3{
-  color:var(--green);
-  font-family:var(--serif);
-  font-size:52px;
-  font-weight:400;
-  line-height:.9;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-top:30px;
-}
-
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-}
-
-.field label{
-  color:#77736b;
-  font-size:7px;
   letter-spacing:.15em;
-  text-transform:uppercase;
 }
 
-.field input,
-.field select{
-  height:48px;
-  padding:0 12px;
-
-  border:1px solid #c8c0b5;
-
-  background:#fff;
-  color:#333;
-
-  outline:none;
-}
-
-.field input:focus,
-.field select:focus{
-  border-color:var(--gold);
-}
-
-.modal-button{
-  margin-top:22px;
-  background:var(--black);
-}
-
-.resultado{
-  display:none;
-  margin-top:22px;
-  padding:23px;
-  background:#e3dbcf;
-}
-
-.resultado.show{
+.footer-logo span{
   display:block;
+
+  margin-top:6px;
+
+  color:var(--gold);
+
+  font-family:var(--sans);
+  font-size:6px;
+  letter-spacing:.3em;
 }
 
-.resultado strong{
-  color:var(--green);
-  font-family:var(--serif);
-  font-size:31px;
-  font-weight:400;
+.footer-right{
+  color:#6f706a;
+
+  font-size:7px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
 }
 
 
@@ -1414,10 +1050,11 @@ footer{
 
 .reveal{
   opacity:0;
-  transform:translateY(22px);
+  transform:translateY(35px);
+
   transition:
-    opacity .8s ease,
-    transform .8s cubic-bezier(.16,1,.3,1);
+    opacity 1s ease,
+    transform 1.2s cubic-bezier(.16,1,.3,1);
 }
 
 .reveal.visible{
@@ -1432,187 +1069,123 @@ footer{
 
 @media(max-width:900px){
 
-  .container,
-  .hero-content{
+  .container{
     width:calc(100% - 40px);
   }
 
-  .menu{
+  .nav-right .nav-link{
     display:none;
   }
 
-  .intro-grid,
-  .magia-head,
-  .colecciones-head,
-  .materia-grid,
-  .conservacion-grid{
+  .hero{
+    min-height:680px;
+  }
+
+  .hero-meta{
+    top:105px;
+  }
+
+  .hero-content{
+    padding-bottom:70px;
+  }
+
+  .manifesto-grid,
+  .curadoria-grid{
     grid-template-columns:1fr;
-    gap:38px;
+    gap:55px;
   }
 
-  .criterio-grid{
+  .materia-header,
+  .projects-header{
+    display:block;
+  }
+
+  .materia-intro,
+  .projects-description{
+    margin-top:30px;
+  }
+
+  .materia-gallery{
     grid-template-columns:1fr;
   }
 
-  .criterio-card,
-  .criterio-card:nth-child(2),
-  .criterio-card:nth-child(3){
-    min-height:auto;
-    padding:30px 0;
-    border-right:0;
-    border-bottom:1px solid rgba(255,255,255,.12);
-  }
-
-  .criterio-card:last-child{
-    border-bottom:0;
-  }
-
-  .magia-grid{
-    grid-template-columns:1fr;
-  }
-
-  .magia-large{
-    height:500px;
-  }
-
-  .magia-right{
+  .material-side{
     grid-template-columns:1fr 1fr;
     grid-template-rows:1fr;
   }
 
-  .magia-small{
-    min-height:260px;
+  .material-image.small{
+    height:300px;
   }
 
-  .collection{
+  .worlds-grid{
     grid-template-columns:1fr;
   }
 
-  .collection-photo{
-    min-height:390px;
+  .world-card{
+    min-height:550px;
   }
 
-  .collection-copy{
-    min-height:390px;
-  }
-
-  .placeholder{
-    min-height:390px;
-  }
-
-  .bali-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .rosa-grid{
+  .project-feature{
     grid-template-columns:1fr;
   }
 
-  .rosa-photo .placeholder{
-    min-height:430px;
+  .project-photo{
+    min-height:500px;
   }
 
-  .pool-photo{
-    height:650px;
+  .project-info{
+    min-height:400px;
   }
 
-  .pool-copy{
-    left:25px;
-    right:25px;
-  }
-
-  .proyecto{
+  .journal-grid{
     grid-template-columns:1fr;
   }
 
-  .proyecto-photo{
-    min-height:430px;
-  }
-
-  .proyecto-copy{
-    min-height:390px;
-  }
-
-  .marcas-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .cotizadores-grid{
-    grid-template-columns:1fr;
-  }
-
-  .footer{
+  .cta-buttons{
     flex-direction:column;
     align-items:flex-start;
-    gap:25px;
   }
 
 }
 
 @media(max-width:600px){
 
-  .section{
-    padding:82px 0;
-  }
-
-  .logo,
-  .logo img{
-    width:120px !important;
-  }
-
-  .hero{
-    min-height:650px;
-  }
-
   .hero h1{
-    font-size:48px;
+    font-size:54px;
   }
 
   .hero-sub{
     font-size:20px;
   }
 
-  .hero-description{
-    font-size:13px;
-  }
-
-  .hero-actions{
-    flex-direction:column;
+  .hero-bottom{
     align-items:flex-start;
-  }
-
-  .magia-right{
-    grid-template-columns:1fr;
-  }
-
-  .bali-grid{
-    grid-template-columns:1fr;
-  }
-
-  .marcas-grid{
-    grid-template-columns:1fr;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .modal-box{
-    padding:38px 22px;
-  }
-
-  .modal-box h3{
-    font-size:43px;
-  }
-
-  .materia-row{
-    grid-template-columns:1fr;
-    gap:8px;
-  }
-
-  .contact-buttons{
     flex-direction:column;
-    align-items:flex-start;
+  }
+
+  .material-side{
+    grid-template-columns:1fr;
+  }
+
+  .statement p{
+    font-size:55px;
+  }
+
+  .world-content h3{
+    font-size:45px;
+  }
+
+  .curadoria-copy{
+    font-size:23px;
+  }
+
+  .curadoria-item{
+    font-size:22px;
+  }
+
+  .project-info h3{
+    font-size:48px;
   }
 
 }
@@ -1620,13 +1193,17 @@ footer{
 </style>
 </head>
 
-
 <body>
 
 
 <!-- =========================================================
-     PROGRESO
+     LOADER
 ========================================================= -->
+
+<div class="loader">
+  <div class="loader-name">ORIGEN</div>
+</div>
+
 
 <div class="progress" id="progress"></div>
 
@@ -1640,34 +1217,26 @@ footer{
   <div class="container nav">
 
     <a href="#inicio" class="logo">
-
-      <img
-        src="logo dorado.png"
-        alt="ORIGEN SURFACES">
-
+      ORIGEN
+      <span>SURFACES · BUENOS AIRES</span>
     </a>
 
+    <nav class="nav-right">
 
-    <nav class="menu">
-
-      <a href="#colecciones">
-        Colecciones
+      <a class="nav-link" href="#materia">
+        Materia
       </a>
 
-      <a href="#piscinas">
-        Piscinas
+      <a class="nav-link" href="#arquitectura">
+        Arquitectura
       </a>
 
-      <a href="#seleccion">
-        Selección
+      <a class="nav-link" href="#journal">
+        Journal
       </a>
 
-      <a href="#proyectos">
-        Proyectos
-      </a>
-
-      <a href="#contacto">
-        Contacto
+      <a class="nav-link" href="#contacto">
+        Proyecto
       </a>
 
     </nav>
@@ -1675,7 +1244,6 @@ footer{
   </div>
 
 </header>
-
 
 
 <main id="inicio">
@@ -1687,26 +1255,31 @@ footer{
 
 <section class="hero">
 
+  <div class="hero-media">
 
-  <div class="hero-image">
-
-    <!-- FOTO SOLA. SIN TEXTO, SIN LOGO -->
+    <!--
+      REEMPLAZAR POR UNA FOTO/VIDEO CINEMATOGRÁFICO.
+      Ideal: arquitectura + agua + luz.
+    -->
 
     <img
       src="Casa moderna en construcción al atardecer.png"
-      alt="Casa moderna y arquitectura">
+      alt="Arquitectura contemporánea">
 
   </div>
 
 
-  <div class="hero-content">
+  <div class="container hero-content">
+
+    <div class="hero-meta">
+      Buenos Aires · Argentina
+    </div>
 
 
     <div class="hero-copy reveal">
 
-
-      <div class="eyebrow">
-        MATERIA · AGUA · LUZ · ARQUITECTURA
+      <div class="hero-kicker">
+        Materia · Arquitectura · Vida
       </div>
 
 
@@ -1716,2052 +1289,688 @@ footer{
       </h1>
 
 
-      <div class="hero-sub">
-        Superficies seleccionadas para proyectos
-        donde la arquitectura importa.
-      </div>
-
-
-      <p class="hero-description">
-        Materiales nacionales e internacionales.
-        Una selección pensada para encontrar
-        sentido en cada proyecto.
+      <p class="hero-sub">
+        Una mirada sobre las superficies,
+        los espacios y todo aquello que
+        empieza antes de construir.
       </p>
 
 
-      <div class="hero-actions">
+      <div class="hero-bottom">
 
         <a
-          href="#colecciones"
+          href="#materia"
           class="button">
-
-          EXPLORAR COLECCIONES
-
+          Entrar a ORIGEN →
         </a>
 
-
-        <a
-          href="#contacto"
-          class="button">
-
-          CONTANOS TU PROYECTO
-
-        </a>
+        <span class="scroll-note">
+          Scroll para descubrir
+        </span>
 
       </div>
 
-
     </div>
-
 
   </div>
 
 </section>
 
 
-
 <!-- =========================================================
-     QUIÉNES SOMOS
+     MANIFIESTO
 ========================================================= -->
 
-<section class="intro section">
+<section class="manifesto">
+
+  <div class="container manifesto-grid">
+
+    <div class="reveal">
+
+      <div class="eyebrow">
+        ORIGEN
+      </div>
+
+      <h2 class="manifesto-title">
+        Elegir<br>
+        también<br>
+        es diseñar.
+      </h2>
+
+    </div>
 
 
-  <div class="container intro-grid">
+    <div class="manifesto-text reveal">
+
+      <p>
+        Una superficie no es solamente
+        un acabado.
+      </p>
+
+      <p>
+        Cambia la manera en que habitamos
+        un espacio, cómo entra la luz,
+        cómo se siente una textura
+        y cómo dialoga cada elemento.
+      </p>
+
+      <p>
+        Por eso no buscamos tenerlo todo.
+        <strong>Buscamos encontrar lo que vale la pena.</strong>
+      </p>
+
+      <p>
+        Seleccionamos, asesoramos,
+        cotizamos y acompañamos.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     MATERIA
+========================================================= -->
+
+<section class="materia" id="materia">
+
+  <div class="container">
+
+    <div class="materia-header reveal">
+
+      <div>
+
+        <div class="eyebrow">
+          Una manera de mirar
+        </div>
+
+        <h2 class="materia-title">
+          Materia.
+        </h2>
+
+      </div>
+
+
+      <p class="materia-intro">
+        Piedra, cerámica, agua, textura,
+        color y luz. Materiales nacionales
+        e internacionales elegidos por lo
+        que pueden hacer cuando encuentran
+        un proyecto.
+      </p>
+
+    </div>
+
+
+    <div class="materia-gallery reveal">
+
+      <article class="material-image large">
+
+        <img
+          src="Publicidad elegante sobre piedra natural.png"
+          alt="Piedra natural">
+
+        <div class="material-caption">
+
+          <small>
+            Piedra
+          </small>
+
+          <h3>
+            La materia permanece.
+          </h3>
+
+        </div>
+
+      </article>
+
+
+      <div class="material-side">
+
+        <article class="material-image small">
+
+          <img
+            src="moorea.png"
+            alt="Cerámica">
+
+          <div class="material-caption">
+
+            <small>
+              Cerámica
+            </small>
+
+            <h3>
+              Color.
+            </h3>
+
+          </div>
+
+        </article>
+
+
+        <article class="material-image small">
+
+          <img
+            src="La inspiración está en los detalles.png"
+            alt="Detalle arquitectónico">
+
+          <div class="material-caption">
+
+            <small>
+              Detalle
+            </small>
+
+            <h3>
+              Todo empieza ahí.
+            </h3>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATEMENT
+========================================================= -->
+
+<section class="statement">
+
+  <div class="container statement-inner reveal">
+
+    <p>
+      No buscamos llenar espacios.
+      <br>
+      Buscamos que los materiales
+      <span>conversen.</span>
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     DOS MUNDOS
+========================================================= -->
+
+<section class="worlds" id="arquitectura">
+
+  <div class="container">
+
+    <div class="worlds-header reveal">
+
+      <div class="eyebrow">
+        Dos maneras de entrar
+      </div>
+
+      <h2 class="worlds-title">
+        El espacio<br>
+        empieza<br>
+        con una idea.
+      </h2>
+
+    </div>
+
+
+    <div class="worlds-grid">
+
+
+      <!-- ARQUITECTOS -->
+
+      <article class="world-card reveal">
+
+        <img
+          src="32643f41df2848c16278f4a11da80f01.jpg"
+          alt="Proyecto arquitectónico">
+
+        <div class="world-content">
+
+          <div class="eyebrow">
+            Para profesionales
+          </div>
+
+          <h3>
+            Diseñás<br>
+            espacios.
+          </h3>
+
+          <p>
+            Trabajemos juntos desde la primera
+            idea hasta la elección del material.
+          </p>
+
+          <br>
+
+          <a class="button" href="#contacto">
+            Trabajar con ORIGEN →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PARTICULARES -->
+
+      <article class="world-card reveal">
+
+        <img
+          src="10972ded-f193-42f2-8874-64af8af8a44.png"
+          alt="Piscina y arquitectura">
+
+        <div class="world-content">
+
+          <div class="eyebrow">
+            Para tu proyecto
+          </div>
+
+          <h3>
+            Estás<br>
+            construyendo.
+          </h3>
+
+          <p>
+            No hace falta que tengas todo definido.
+            Empezamos por una idea, una foto
+            o una medida.
+          </p>
+
+          <br>
+
+          <a class="button" href="#contacto">
+            Contarnos tu proyecto →
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CURADURÍA
+========================================================= -->
+
+<section class="curadoria">
+
+  <div class="container curadoria-grid">
+
+    <div class="reveal">
+
+      <div class="eyebrow">
+        Nuestra mirada
+      </div>
+
+      <h2 class="curadoria-title">
+        Las marcas<br>
+        son parte.<br>
+        La mirada<br>
+        es nuestra.
+      </h2>
+
+    </div>
 
 
     <div class="reveal">
 
+      <div class="curadoria-copy">
+
+        <p>
+          Buscamos en distintos lugares.
+          Miramos arquitectura, diseño,
+          arte, paisaje y oficio.
+        </p>
+
+        <p>
+          A veces encontramos una materia
+          cerca. A veces viene de lejos.
+        </p>
+
+        <p>
+          Lo importante no es solamente
+          de dónde viene.
+        </p>
+
+        <p>
+          <strong>
+            Es lo que puede llegar a crear.
+          </strong>
+        </p>
+
+      </div>
+
+
+      <div class="curadoria-list">
+
+        <div class="curadoria-item">
+          Arquitectura
+          <span>Mirada</span>
+        </div>
+
+        <div class="curadoria-item">
+          Arte
+          <span>Sensibilidad</span>
+        </div>
+
+        <div class="curadoria-item">
+          Oficio
+          <span>Conocimiento</span>
+        </div>
+
+        <div class="curadoria-item">
+          Materia
+          <span>Origen</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ARQUITECTOS
+========================================================= -->
+
+<section class="architects">
+
+  <div class="container">
+
+    <div class="architect-copy reveal">
 
       <div class="eyebrow">
-        ORIGEN SURFACES
+        ORIGEN × ARQUITECTURA
       </div>
 
-
-      <h2>
-        ORIGEN nació
-        para elegir mejor.
+      <h2 class="architect-title">
+        Queremos<br>
+        estar en<br>
+        tus proyectos.
       </h2>
 
-
-    </div>
-
-
-    <div class="intro-copy reveal">
-
-
-      <p>
-        Una superficie no es solamente un acabado.
-        Cambia la manera en que habitamos un espacio,
-        cómo entra la luz, cómo se siente una textura
-        y cómo se relaciona cada elemento.
+      <p class="architect-text">
+        Sabemos que una muestra puede cambiar
+        una decisión. Que un material puede
+        cambiar una idea.
+        Por eso queremos acompañarte antes,
+        durante y después de la obra.
       </p>
-
 
       <br>
 
-
-      <p>
-        Seleccionamos materiales pensando en el conjunto:
-        arquitectura, agua, luz, textura, escala y uso.
-      </p>
-
-
-      <br>
-
-
-      <p>
-        No vendemos solamente materiales.
-        Participamos en la construcción de espacios
-        donde la vida sucede.
-      </p>
-
-
-      <br>
-
-
-      <p>
-        <strong>
-          SELECCIONAMOS · ASESORAMOS · COTIZAMOS · ACOMPAÑAMOS
-        </strong>
-      </p>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     NUESTRO CRITERIO
-========================================================= -->
-
-<section class="criterio section">
-
-
-  <div class="container">
-
-
-    <div class="eyebrow">
-      NUESTRO CRITERIO
-    </div>
-
-
-    <h2 class="section-title">
-      Elegir también<br>
-      es diseñar.
-    </h2>
-
-
-    <p class="criterio-intro">
-      No todo material funciona en todos los espacios.
-      Antes de recomendar una superficie, miramos
-      el proyecto completo.
-      Arquitectura. Agua. Luz. Textura. Uso. Escala.
-    </p>
-
-
-    <div class="criterio-grid reveal">
-
-
-      <article class="criterio-card">
-
-        <h3>
-          Criterio
-        </h3>
-
-        <p>
-          Materiales seleccionados con mirada arquitectónica.
-        </p>
-
-      </article>
-
-
-      <article class="criterio-card">
-
-        <h3>
-          Asesoramiento
-        </h3>
-
-        <p>
-          Información clara para tomar decisiones.
-        </p>
-
-      </article>
-
-
-      <article class="criterio-card">
-
-        <h3>
-          Compromiso
-        </h3>
-
-        <p>
-          Acompañamiento antes, durante y después.
-        </p>
-
-      </article>
-
-
-    </div>
-
-
-    <div class="criterio-frase">
-      La confianza vale más que una venta.
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     LA MAGIA DE ORIGEN
-========================================================= -->
-
-<section class="magia section">
-
-
-  <div class="container">
-
-
-    <div class="magia-head">
-
-
-      <div>
-
-        <div class="eyebrow">
-          LA MAGIA DE ORIGEN
-        </div>
-
-
-        <h2>
-          Materiales<br>
-          que empiezan<br>
-          a conversar.
-        </h2>
-
-      </div>
-
-
-      <p class="body-copy">
-        Piedra, cerámica, venecita, WPC, LED,
-        pintura, porcelanato y todo aquello
-        que pueda transformar una idea.
-        No buscamos llenar espacios:
-        buscamos encontrar combinaciones
-        que tengan sentido.
-      </p>
-
-
-    </div>
-
-
-    <div class="magia-grid reveal">
-
-
-      <article class="magia-item magia-large">
-
-
-        <img
-          src="La inspiración está en los detalles.png"
-          alt="Inspiración ORIGEN">
-
-
-        <div class="magia-caption">
-
-          <span>
-            inspiración
-          </span>
-
-          <h3>
-            Materia + idea
-          </h3>
-
-        </div>
-
-
-      </article>
-
-
-      <div class="magia-right">
-
-
-        <article class="magia-item magia-small">
-
-
-          <img
-            src="Publicidad elegante sobre piedra natural.png"
-            alt="Piedra natural">
-
-
-          <div class="magia-caption">
-
-            <span>
-              materia
-            </span>
-
-            <h3>
-              Textura
-            </h3>
-
-          </div>
-
-
-        </article>
-
-
-        <article class="magia-item magia-small">
-
-
-          <img
-            src="Detalles que inspiran diseño arquitectónico.png"
-            alt="Detalle arquitectónico">
-
-
-          <div class="magia-caption">
-
-            <span>
-              detalle
-            </span>
-
-            <h3>
-              Una posibilidad
-            </h3>
-
-          </div>
-
-
-        </article>
-
-
-      </div>
-
+      <a class="button" href="#contacto">
+        Soy arquitecto / diseñador →
+      </a>
 
     </div>
 
   </div>
 
 </section>
-
-
-
-<!-- =========================================================
-     COLECCIONES
-========================================================= -->
-
-<section
-  class="colecciones section"
-  id="colecciones">
-
-
-  <div class="container">
-
-
-    <div class="colecciones-head">
-
-
-      <div>
-
-        <div class="eyebrow">
-          COLECCIONES
-        </div>
-
-
-        <h2>
-          Entrá.<br>
-          Mirá.<br>
-          Descubrí.
-        </h2>
-
-      </div>
-
-
-      <p class="body-copy">
-        No queremos mostrarte todo de golpe.
-        Queremos que encuentres algo que te haga
-        detenerte, imaginarlo y llevarlo a tu proyecto.
-      </p>
-
-
-    </div>
-
-
-
-    <div class="categorias">
-
-
-
-      <!-- CERÁMICAS -->
-
-      <div class="categoria">
-
-
-        <button class="categoria-button">
-
-          <h3>
-            Cerámicas
-          </h3>
-
-          <span class="plus">
-            +
-          </span>
-
-        </button>
-
-
-        <div class="categoria-content">
-
-
-          <div class="collection">
-
-
-            <div class="collection-photo">
-
-
-              <img
-                src="moorea.png"
-                alt="Cerámica Moorea">
-
-
-            </div>
-
-
-            <div class="collection-copy">
-
-
-              <div class="eyebrow">
-                CERÁMICAS
-              </div>
-
-
-              <h3>
-                Color.<br>
-                Textura.<br>
-                Agua.
-              </h3>
-
-
-              <p>
-                Moorea, Tonga, Kauai, Samoa Bright,
-                Malawi, Portland, Palau Bright, Vis,
-                Samoa, Palau, Mauí, Kaimú, Cobalto,
-                Céu y otras líneas de selección.
-              </p>
-
-
-              <a
-                href="#contacto"
-                class="collection-link">
-
-                ENTRAR AL CATÁLOGO →
-
-              </a>
-
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-
-      <!-- SÍMIL BALI -->
-
-      <div class="categoria">
-
-
-        <button class="categoria-button">
-
-          <h3>
-            Símil Bali Arg.
-          </h3>
-
-          <span class="plus">
-            +
-          </span>
-
-        </button>
-
-
-        <div class="categoria-content">
-
-
-          <div class="collection">
-
-
-            <div class="collection-photo">
-
-              <div
-                class="placeholder"
-                style="background:#56685f;color:#f4f0e8">
-
-                FOTO DE SELECCIÓN
-
-              </div>
-
-            </div>
-
-
-            <div class="collection-copy">
-
-
-              <div class="eyebrow">
-                INDUSTRIA ARGENTINA
-              </div>
-
-
-              <h3>
-                Otra forma<br>
-                de mirar<br>
-                el agua.
-              </h3>
-
-
-              <p>
-                Mix Bruma · Mix Oliva · Mix Alba ·
-                Mix Marfil · Mix Ónix.
-                Piezas de 11 × 11 cm,
-                espesor 1,4 cm.
-              </p>
-
-
-              <a
-                href="#bali"
-                class="collection-link">
-
-                VER SELECCIÓN →
-
-              </a>
-
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-
-      <!-- TRAVERTINOS -->
-
-      <div class="categoria">
-
-
-        <button class="categoria-button">
-
-          <h3>
-            Travertinos
-          </h3>
-
-          <span class="plus">
-            +
-          </span>
-
-        </button>
-
-
-        <div class="categoria-content">
-
-
-          <div class="collection">
-
-
-            <div class="collection-photo">
-
-
-              <img
-                src="Captura de pantalla 2026-08-26 212707.png"
-                alt="Travertino">
-
-
-            </div>
-
-
-            <div class="collection-copy">
-
-
-              <div class="eyebrow">
-                PIEDRA NATURAL
-              </div>
-
-
-              <h3>
-                La piedra<br>
-                también<br>
-                puede ser calma.
-              </h3>
-
-
-              <p>
-                Travertino Blanco, Beige,
-                Gris Perla y Gris Ágatha.
-                Formato 30 × 60 cm.
-              </p>
-
-
-              <a
-                href="#contacto"
-                class="collection-link">
-
-                CONSULTAR TRAVERTINOS →
-
-              </a>
-
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-
-      <!-- PIEDRAS -->
-
-      <div class="categoria">
-
-
-        <button class="categoria-button">
-
-          <h3>
-            Piedras
-          </h3>
-
-          <span class="plus">
-            +
-          </span>
-
-        </button>
-
-
-        <div class="categoria-content">
-
-
-          <div class="collection">
-
-
-            <div class="collection-photo">
-
-
-              <img
-                src="9c7236e83277cf400b03c5c4deff2a32.jpg"
-                alt="Materia natural">
-
-
-            </div>
-
-
-            <div class="collection-copy">
-
-
-              <div class="eyebrow">
-                MATERIA
-              </div>
-
-
-              <h3>
-                Lo imperfecto<br>
-                también<br>
-                diseña.
-              </h3>
-
-
-              <p>
-                Piedra natural y superficies
-                seleccionadas para proyectos
-                donde la textura importa.
-              </p>
-
-
-              <a
-                href="#contacto"
-                class="collection-link">
-
-                CONSULTAR →
-
-              </a>
-
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-
-      <!-- WPC -->
-
-      <div class="categoria">
-
-
-        <button class="categoria-button">
-
-          <h3>
-            WPC & Pérgolas
-          </h3>
-
-          <span class="plus">
-            +
-          </span>
-
-        </button>
-
-
-        <div class="categoria-content">
-
-
-          <div class="collection">
-
-
-            <div class="collection-photo">
-
-
-              <div
-                class="placeholder"
-                style="background:#b5aa99">
-
-                FOTO A ELEGIR
-
-              </div>
-
-            </div>
-
-
-            <div class="collection-copy">
-
-
-              <div class="eyebrow">
-                EXTERIOR
-              </div>
-
-
-              <h3>
-                La arquitectura<br>
-                continúa<br>
-                afuera.
-              </h3>
-
-
-              <p>
-                WPC, pérgolas y soluciones
-                para ampliar el proyecto
-                y construir espacios exteriores.
-              </p>
-
-
-              <a
-                href="#contacto"
-                class="collection-link">
-
-                CONSULTAR →
-
-              </a>
-
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-
-      <!-- ROSA GRES -->
-
-      <div class="categoria">
-
-
-        <button class="categoria-button">
-
-          <h3>
-            Rosa Gres · España
-          </h3>
-
-          <span class="plus">
-            +
-          </span>
-
-        </button>
-
-
-        <div class="categoria-content">
-
-
-          <div class="collection">
-
-
-            <div class="collection-photo">
-
-
-              <div
-                class="placeholder"
-                style="background:#87918e;color:#f4f0e8">
-
-                FOTO ROSA GRES
-
-              </div>
-
-            </div>
-
-
-            <div class="collection-copy">
-
-
-              <div class="eyebrow">
-                ESPAÑA
-              </div>
-
-
-              <h3>
-                Cuando el material<br>
-                ayuda a pensar<br>
-                el espacio.
-              </h3>
-
-
-              <p>
-                Soluciones para piscinas,
-                bordes, escaleras, playas,
-                piezas especiales y continuidad
-                entre interior y exterior.
-              </p>
-
-
-              <a
-                href="#rosa"
-                class="collection-link">
-
-                CONOCER ROSA GRES →
-
-              </a>
-
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-
-      <!-- SELECCIÓN EUROPEA -->
-
-      <div class="categoria">
-
-
-        <button class="categoria-button">
-
-          <h3>
-            Selección europea
-          </h3>
-
-          <span class="plus">
-            +
-          </span>
-
-        </button>
-
-
-        <div class="categoria-content">
-
-
-          <div class="collection">
-
-
-            <div class="collection-photo">
-
-
-              <div
-                class="placeholder"
-                style="background:#aaa198;color:#f4f0e8">
-
-                FOTO A ELEGIR
-
-              </div>
-
-            </div>
-
-
-            <div class="collection-copy">
-
-
-              <div class="eyebrow">
-                EUROPA
-              </div>
-
-
-              <h3>
-                Materiales<br>
-                que abren<br>
-                posibilidades.
-              </h3>
-
-
-              <p>
-                Una selección de materiales
-                nacionales e internacionales
-                que iremos ampliando según
-                cada proyecto.
-              </p>
-
-
-              <a
-                href="#seleccion"
-                class="collection-link">
-
-                EXPLORAR SELECCIÓN →
-
-              </a>
-
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     SÍMIL BALI ARG.
-========================================================= -->
-
-<section
-  class="bali section"
-  id="bali">
-
-
-  <div class="container">
-
-
-    <div class="eyebrow">
-      SÍMIL BALI ARG.
-    </div>
-
-
-    <h2 class="section-title">
-      Una paleta<br>
-      para el agua.
-    </h2>
-
-
-    <p class="bali-intro">
-      Bruma y Oliva son industria argentina.
-      La selección se completa con Alba,
-      Marfil y Ónix para construir distintas
-      atmósferas.
-    </p>
-
-
-    <div class="bali-grid">
-
-
-      <article class="bali-card">
-
-        <div
-          class="placeholder"
-          style="background:#60726a;color:#fff">
-
-          FOTO BRUMA
-
-        </div>
-
-        <div class="bali-label">
-
-          <strong>
-            Bruma
-          </strong>
-
-          <span>
-            ARGENTINA
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <article class="bali-card">
-
-        <div
-          class="placeholder"
-          style="background:#596653;color:#fff">
-
-          FOTO OLIVA
-
-        </div>
-
-        <div class="bali-label">
-
-          <strong>
-            Oliva
-          </strong>
-
-          <span>
-            ARGENTINA
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <article class="bali-card">
-
-        <div
-          class="placeholder"
-          style="background:#88877d;color:#fff">
-
-          FOTO ALBA
-
-        </div>
-
-        <div class="bali-label">
-
-          <strong>
-            Alba
-          </strong>
-
-          <span>
-            SELECCIÓN ORIGEN
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <article class="bali-card">
-
-        <div
-          class="placeholder"
-          style="background:#a99f8f;color:#fff">
-
-          FOTO MARFIL
-
-        </div>
-
-        <div class="bali-label">
-
-          <strong>
-            Marfil
-          </strong>
-
-          <span>
-            SELECCIÓN ORIGEN
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <article class="bali-card">
-
-        <div
-          class="placeholder"
-          style="background:#333330;color:#fff">
-
-          FOTO ÓNIX
-
-        </div>
-
-        <div class="bali-label">
-
-          <strong>
-            Ónix
-          </strong>
-
-          <span>
-            SELECCIÓN ORIGEN
-          </span>
-
-        </div>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     ROSA GRES
-========================================================= -->
-
-<section
-  class="rosa section"
-  id="rosa">
-
-
-  <div class="container">
-
-
-    <div class="eyebrow">
-      ROSA GRES · ESPAÑA
-    </div>
-
-
-    <div class="rosa-grid">
-
-
-      <div class="rosa-photo">
-
-        <div class="placeholder">
-          FOTO ROSA GRES · A ELEGIR
-        </div>
-
-      </div>
-
-
-      <div class="rosa-copy">
-
-
-        <h2>
-          Hay materiales<br>
-          que no solo<br>
-          revisten.
-        </h2>
-
-
-        <p>
-          Hay materiales que ayudan a pensar
-          el espacio. Incorporamos soluciones
-          de Rosa Gres España dentro de nuestra
-          selección para proyectos donde
-          arquitectura, diseño y funcionalidad
-          necesitan encontrarse.
-        </p>
-
-
-        <p>
-          Piscinas, bordes, playas, escaleras,
-          piezas especiales y continuidad
-          entre interior y exterior.
-        </p>
-
-
-        <div class="rosa-line">
-          UNA SELECCIÓN PARA PROYECTOS
-          QUE PIDEN OTRA MIRADA.
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PISCINAS
-========================================================= -->
-
-<section
-  class="piscinas"
-  id="piscinas">
-
-
-  <div class="pool-photo">
-
-
-    <img
-      src="10972ded-f193-42f2-8874-64af8af8a44.png"
-      alt="Piscina ORIGEN SURFACES">
-
-
-    <div class="pool-copy">
-
-
-      <div class="eyebrow">
-        PISCINAS
-      </div>
-
-
-      <h2>
-        El agua<br>
-        también<br>
-        se diseña.
-      </h2>
-
-
-      <p>
-        Seleccionamos superficies que construyen
-        la experiencia del agua: color, textura,
-        luz, materia y arquitectura.
-      </p>
-
-
-      <button
-        class="button"
-        style="margin-top:26px"
-        onclick="abrirModal('piscina')">
-
-        COTIZAR MI PISCINA
-
-      </button>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     POR QUÉ ESTE MATERIAL
-========================================================= -->
-
-<section class="materia section">
-
-
-  <div class="container materia-grid">
-
-
-    <div>
-
-
-      <div class="eyebrow">
-        POR QUÉ ESTE MATERIAL
-      </div>
-
-
-      <h2 class="section-title">
-        No todo<br>
-        lo que parece<br>
-        igual,<br>
-        lo es.
-      </h2>
-
-
-    </div>
-
-
-    <div>
-
-
-      <p class="body-copy">
-        Antes de recomendar una superficie
-        miramos qué necesita realmente
-        el proyecto.
-      </p>
-
-
-      <div class="materia-list">
-
-
-        <div class="materia-row">
-
-          <strong>
-            Cerámica
-          </strong>
-
-          <span>
-            Formato, espesor, terminación,
-            superficie y uso previsto.
-          </span>
-
-        </div>
-
-
-        <div class="materia-row">
-
-          <strong>
-            Porcelanato
-          </strong>
-
-          <span>
-            Absorción, resistencia, terminación,
-            antideslizamiento y colocación.
-          </span>
-
-        </div>
-
-
-        <div class="materia-row">
-
-          <strong>
-            Piedra
-          </strong>
-
-          <span>
-            Textura, materia natural,
-            mantenimiento y relación
-            con el entorno.
-          </span>
-
-        </div>
-
-
-        <div class="materia-row">
-
-          <strong>
-            Agua
-          </strong>
-
-          <span>
-            Lo que funciona en una pared
-            no necesariamente funciona
-            de la misma manera alrededor
-            de una piscina.
-          </span>
-
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     SELECCIÓN ORIGEN
-========================================================= -->
-
-<section
-  class="seleccion section"
-  id="seleccion">
-
-
-  <div class="seleccion-inner">
-
-
-    <div class="eyebrow">
-      SELECCIÓN ORIGEN
-    </div>
-
-
-    <h2>
-      Materiales que elegimos<br>
-      para hacer posible<br>
-      una <em>idea.</em>
-    </h2>
-
-
-    <div class="seleccion-copy">
-
-      <p>
-        Una selección de materiales nacionales
-        e internacionales, elegidos por su materia,
-        su diseño y sus posibilidades.
-      </p>
-
-
-      <br>
-
-
-      <p>
-        <strong>
-          Cada proyecto encuentra sus materiales.
-          Cada material abre una posibilidad.
-        </strong>
-      </p>
-
-    </div>
-
-
-    <a
-      href="#marcas"
-      class="button">
-
-      EXPLORAR SELECCIÓN →
-
-    </a>
-
-
-  </div>
-
-</section>
-
 
 
 <!-- =========================================================
      PROYECTOS
 ========================================================= -->
 
-<section
-  class="proyectos section"
-  id="proyectos">
-
+<section class="projects">
 
   <div class="container">
 
+    <div class="projects-header reveal">
 
-    <div class="eyebrow">
-      PROYECTOS
-    </div>
+      <div>
 
+        <div class="eyebrow">
+          Proyectos
+        </div>
 
-    <h2 class="section-title">
-      Cada proyecto<br>
-      encuentra<br>
-      su superficie.
-    </h2>
-
-
-    <div class="proyecto">
-
-
-      <div class="proyecto-photo">
-
-
-        <img
-          src="32643f41df2848c16278f4a11da80f01.jpg"
-          alt="Proyecto arquitectónico ORIGEN">
-
+        <h2 class="projects-title">
+          Cada proyecto<br>
+          encuentra<br>
+          su materia.
+        </h2>
 
       </div>
 
 
-      <div class="proyecto-copy">
+      <p class="projects-description">
+        No mostramos solamente productos.
+        Mostramos lo que sucede cuando
+        arquitectura y materia encuentran
+        una forma de conversar.
+      </p>
 
+    </div>
+
+
+    <article class="project-feature reveal">
+
+      <div class="project-photo">
+
+        <img
+          src="32643f41df2848c16278f4a11da80f01.jpg"
+          alt="Proyecto ORIGEN">
+
+      </div>
+
+
+      <div class="project-info">
 
         <div class="eyebrow">
           ORIGEN SURFACES
         </div>
 
-
         <h3>
           Una elección<br>
-          bien pensada<br>
-          cambia todo.
+          puede cambiar<br>
+          todo.
         </h3>
 
-
         <p>
-          Seleccionamos, asesoramos, cotizamos
-          y acompañamos el proyecto para que
-          la elección del material sea más simple.
+          Proyecto · Material · Arquitectura
         </p>
-
 
       </div>
 
-
-    </div>
-
+    </article>
 
   </div>
 
 </section>
 
 
-
 <!-- =========================================================
-     CONSERVACIÓN
+     JOURNAL
 ========================================================= -->
 
-<section class="conservacion section">
+<section class="journal" id="journal">
 
+  <div class="container">
 
-  <div class="container conservacion-grid">
-
-
-    <div>
-
+    <div class="reveal">
 
       <div class="eyebrow">
-        CONSERVACIÓN
+        ORIGEN JOURNAL
       </div>
 
-
-      <h2>
-        Lo que<br>
-        construís<br>
-        merece<br>
-        durar.
+      <h2 class="journal-title">
+        Miramos<br>
+        más allá<br>
+        del material.
       </h2>
 
-
     </div>
 
 
-    <div class="conservacion-copy">
+    <div class="journal-grid">
 
 
-      <p>
-        Contamos con especialistas para el
-        mantenimiento y conservación de piscinas.
-      </p>
+      <article class="journal-card reveal">
 
+        <div class="journal-image">
 
-      <br>
-
-
-      <p>
-        Porque una inversión así merece seguimiento.
-        Coordinamos profesionales especializados
-        para revisar, mantener y poner a punto
-        la piscina según el revestimiento
-        y las necesidades.
-      </p>
-
-
-      <div class="tags">
-
-        <span>
-          Mantenimiento
-        </span>
-
-        <span>
-          Conservación
-        </span>
-
-        <span>
-          Puesta a punto
-        </span>
-
-        <span>
-          Revisión
-        </span>
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     MARCAS
-========================================================= -->
-
-<section
-  class="marcas section"
-  id="marcas">
-
-
-  <div class="container">
-
-
-    <div class="eyebrow">
-      PARTE DE NUESTRA SELECCIÓN
-    </div>
-
-
-    <h2 class="section-title">
-      Las marcas son parte.<br>
-      La mirada es nuestra.
-    </h2>
-
-
-    <div class="marcas-grid">
-
-
-      <div class="marca">
-
-        <small>
-          NACIONAL
-        </small>
-
-        <strong>
-          Fedan
-        </strong>
-
-      </div>
-
-
-      <div class="marca">
-
-        <small>
-          NACIONAL
-        </small>
-
-        <strong>
-          GS
-        </strong>
-
-      </div>
-
-
-      <div class="marca">
-
-        <small>
-          NACIONAL
-        </small>
-
-        <strong>
-          Sherwin-Williams
-        </strong>
-
-      </div>
-
-
-      <div class="marca">
-
-        <small>
-          BRASIL
-        </small>
-
-        <strong>
-          Strufaldi
-        </strong>
-
-      </div>
-
-
-      <div class="marca">
-
-        <small>
-          BRASIL
-        </small>
-
-        <strong>
-          Ceral
-        </strong>
-
-      </div>
-
-
-      <div class="marca">
-
-        <small>
-          ESPAÑA
-        </small>
-
-        <strong>
-          Rosa Gres
-        </strong>
-
-      </div>
-
-
-      <div class="marca">
-
-        <small>
-          ITALIA
-        </small>
-
-        <strong>
-          Cotto Manetti
-        </strong>
-
-      </div>
-
-
-      <div class="marca">
-
-        <small>
-          SELECCIÓN
-        </small>
-
-        <strong>
-          +
-        </strong>
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     FAQ
-========================================================= -->
-
-<section class="faq section">
-
-
-  <div class="container">
-
-
-    <div class="eyebrow">
-      PREGUNTAS FRECUENTES
-    </div>
-
-
-    <h2 class="section-title">
-      Hablemos<br>
-      claro.
-    </h2>
-
-
-    <div class="faq-list">
-
-
-      <div class="faq-item">
-
-
-        <div class="faq-question">
-
-          ¿Cómo sé si hay stock?
-
-          <span>
-            +
-          </span>
+          <img
+            src="Detalles que inspiran diseño arquitectónico.png"
+            alt="Arquitectura">
 
         </div>
 
+        <div class="journal-copy">
 
-        <div class="faq-answer">
-          El stock se confirma para cada proyecto
-          antes de avanzar con el pedido.
-        </div>
+          <small>
+            Arquitectura
+          </small>
 
+          <h3>
+            Cuando la materia
+            empieza a conversar.
+          </h3>
 
-      </div>
-
-
-
-      <div class="faq-item">
-
-
-        <div class="faq-question">
-
-          ¿Hacen envíos?
-
-          <span>
-            +
-          </span>
+          <p>
+            Una mirada sobre textura,
+            proporción, luz y espacio.
+          </p>
 
         </div>
-
-
-        <div class="faq-answer">
-          Sí. Coordinamos el transporte según
-          producto, volumen, peso y destino.
-        </div>
-
-
-      </div>
-
-
-
-      <div class="faq-item">
-
-
-        <div class="faq-question">
-
-          ¿Cuánto cuesta el envío?
-
-          <span>
-            +
-          </span>
-
-        </div>
-
-
-        <div class="faq-answer">
-          Depende del destino, peso, volumen
-          y transporte. Se cotiza junto con
-          la propuesta.
-        </div>
-
-
-      </div>
-
-
-
-      <div class="faq-item">
-
-
-        <div class="faq-question">
-
-          ¿Puedo consultar aunque todavía
-          no tenga definido el material?
-
-          <span>
-            +
-          </span>
-
-        </div>
-
-
-        <div class="faq-answer">
-          Sí. Contanos qué estás construyendo,
-          las medidas y qué estás buscando.
-          Podemos empezar desde ahí.
-        </div>
-
-
-      </div>
-
-
-
-      <div class="faq-item">
-
-
-        <div class="faq-question">
-
-          ¿Trabajan por proyecto?
-
-          <span>
-            +
-          </span>
-
-        </div>
-
-
-        <div class="faq-answer">
-          Sí. Seleccionamos materiales y armamos
-          la propuesta según las necesidades
-          de cada obra.
-        </div>
-
-
-      </div>
-
-
-
-      <div class="faq-item">
-
-
-        <div class="faq-question">
-
-          ¿Cómo puedo pagar?
-
-          <span>
-            +
-          </span>
-
-        </div>
-
-
-        <div class="faq-answer">
-          Las formas de pago disponibles
-          se informan en cada cotización.
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     COTIZADORES
-========================================================= -->
-
-<section class="cotizadores section">
-
-
-  <div class="container">
-
-
-    <div class="eyebrow">
-      COTIZAR
-    </div>
-
-
-    <h2 class="section-title">
-      Cuando estés<br>
-      lista para<br>
-      avanzar.
-    </h2>
-
-
-    <div class="cotizadores-grid">
-
-
-      <article class="cotizador">
-
-
-        <div class="eyebrow">
-          SUPERFICIES
-        </div>
-
-
-        <h3>
-          Piso<br>
-          o pared.
-        </h3>
-
-
-        <p>
-          Calculá metros cuadrados y agregá
-          automáticamente un 10% de desperdicio.
-        </p>
-
-
-        <button
-          class="button"
-          onclick="abrirModal('superficie')">
-
-          COTIZAR
-
-        </button>
-
 
       </article>
 
 
+      <article class="journal-card reveal">
 
-      <article class="cotizador">
+        <div class="journal-image">
 
+          <img
+            src="Publicidad elegante sobre piedra natural.png"
+            alt="Piedra">
 
-        <div class="eyebrow">
-          PISCINAS
         </div>
 
+        <div class="journal-copy">
 
-        <h3>
-          Tu piscina.
-        </h3>
+          <small>
+            Materia
+          </small>
+
+          <h3>
+            La belleza
+            de lo imperfecto.
+          </h3>
+
+          <p>
+            Piedras que no necesitan
+            parecerse entre sí.
+          </p>
+
+        </div>
+
+      </article>
 
 
-        <p>
-          Calculá piso + paredes, superficie real
-          y material estimado con 10% de desperdicio.
-        </p>
+      <article class="journal-card reveal">
 
+        <div class="journal-image">
 
-        <button
-          class="button"
-          onclick="abrirModal('piscina')">
+          <img
+            src="10972ded-f193-42f2-8874-64af8af8a44.png"
+            alt="Agua">
 
-          COTIZAR
+        </div>
 
-        </button>
+        <div class="journal-copy">
 
+          <small>
+            Agua
+          </small>
+
+          <h3>
+            El agua
+            también se diseña.
+          </h3>
+
+          <p>
+            Color, profundidad, luz,
+            textura y arquitectura.
+          </p>
+
+        </div>
 
       </article>
 
 
     </div>
 
-
   </div>
 
 </section>
 
 
-
 <!-- =========================================================
-     CONTACTO
+     CTA
 ========================================================= -->
 
-<section
-  class="contacto section"
-  id="contacto">
-
+<section class="cta" id="contacto">
 
   <div class="container">
 
+    <div class="cta-inner reveal">
 
-    <div class="eyebrow">
-      HABLEMOS DE TU PROYECTO
-    </div>
+      <div class="eyebrow">
+        Hablemos de tu proyecto
+      </div>
 
+      <h2 class="cta-title">
+        Contanos<br>
+        qué estás<br>
+        <em>construyendo.</em>
+      </h2>
 
-    <h2>
-      Contanos<br>
-      qué estás<br>
-      construyendo.
-    </h2>
+      <p class="cta-text">
+        Una idea. Una foto. Un plano.
+        Una medida.
+        No necesitás tener todo resuelto
+        para empezar a hablar con ORIGEN.
+      </p>
 
+      <div class="cta-buttons">
 
-    <p>
-      No hace falta que tengas todo definido.
-      Podemos empezar por una idea, una medida,
-      una foto o simplemente una pregunta.
-    </p>
+        <a
+          class="button"
+          href="https://wa.me/5491147004804"
+          target="_blank">
+          WhatsApp →
+        </a>
 
+        <a
+          class="button"
+          href="mailto:hola@origensurfaces.com">
+          Email →
+        </a>
 
-    <div class="contact-buttons">
-
-
-      <a
-        href="https://wa.me/5491147004804"
-        target="_blank"
-        class="button">
-
-        ESCRIBIR POR WHATSAPP
-
-      </a>
-
-
-      <a
-        href="mailto:hola@origensurfaces.com"
-        class="button">
-
-        ENVIAR EMAIL
-
-      </a>
-
+      </div>
 
     </div>
-
 
   </div>
 
@@ -3771,293 +1980,28 @@ footer{
 </main>
 
 
-
 <!-- =========================================================
      FOOTER
 ========================================================= -->
 
 <footer>
 
-
   <div class="container footer">
 
-
     <div class="footer-logo">
-
-      <img
-        src="logo dorado.png"
-        alt="ORIGEN SURFACES">
-
+      ORIGEN
+      <span>
+        SURFACES · BUENOS AIRES · ARGENTINA
+      </span>
     </div>
 
-
-    <div class="footer-copy">
-
-      MATERIA · AGUA · LUZ · ARQUITECTURA
-
+    <div class="footer-right">
+      Materia · Arquitectura · Vida
     </div>
-
 
   </div>
 
 </footer>
-
-
-
-<!-- =========================================================
-     MODAL CALCULADORAS
-========================================================= -->
-
-<div
-  class="modal"
-  id="modal">
-
-
-  <div class="modal-box">
-
-
-    <button
-      class="close"
-      onclick="cerrarModal()">
-
-      ×
-
-    </button>
-
-
-
-    <!-- SUPERFICIE -->
-
-    <div id="superficieBox">
-
-
-      <div class="eyebrow">
-        CALCULADORA ORIGEN
-      </div>
-
-
-      <h3>
-        Piso<br>
-        o pared.
-      </h3>
-
-
-      <div class="form-grid">
-
-
-        <div class="field">
-
-          <label>
-            Largo
-          </label>
-
-          <input
-            type="number"
-            id="supLargo"
-            step="0.01"
-            placeholder="Ej. 5">
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Ancho / alto
-          </label>
-
-          <input
-            type="number"
-            id="supAncho"
-            step="0.01"
-            placeholder="Ej. 3">
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Tipo
-          </label>
-
-          <select id="supTipo">
-
-            <option value="piso">
-              Piso
-            </option>
-
-            <option value="pared">
-              Pared
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Desperdicio
-          </label>
-
-          <input
-            type="text"
-            value="10%"
-            disabled>
-
-        </div>
-
-
-      </div>
-
-
-      <button
-        class="button modal-button"
-        onclick="calcularSuperficie()">
-
-        CALCULAR
-
-      </button>
-
-
-      <div
-        class="resultado"
-        id="resultadoSuperficie">
-
-        <div class="eyebrow">
-          ESTIMACIÓN ORIGEN
-        </div>
-
-
-        <strong
-          id="resultadoSupTexto">
-        </strong>
-
-
-      </div>
-
-
-    </div>
-
-
-
-    <!-- PISCINA -->
-
-    <div
-      id="piscinaBox"
-      style="display:none">
-
-
-      <div class="eyebrow">
-        CALCULADORA ORIGEN · PISCINAS
-      </div>
-
-
-      <h3>
-        Tu piscina.
-      </h3>
-
-
-      <div class="form-grid">
-
-
-        <div class="field">
-
-          <label>
-            Largo
-          </label>
-
-          <input
-            type="number"
-            id="pLargo"
-            step="0.01"
-            placeholder="Ej. 8">
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Ancho
-          </label>
-
-          <input
-            type="number"
-            id="pAncho"
-            step="0.01"
-            placeholder="Ej. 4">
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Profundidad promedio
-          </label>
-
-          <input
-            type="number"
-            id="pProfundidad"
-            step="0.01"
-            placeholder="Ej. 1.50">
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Desperdicio
-          </label>
-
-          <input
-            type="text"
-            value="10%"
-            disabled>
-
-        </div>
-
-
-      </div>
-
-
-      <button
-        class="button modal-button"
-        onclick="calcularPiscina()">
-
-        CALCULAR
-
-      </button>
-
-
-      <div
-        class="resultado"
-        id="resultadoPiscina">
-
-        <div class="eyebrow">
-          ESTIMACIÓN ORIGEN
-        </div>
-
-
-        <strong
-          id="resultadoPiscinaTexto">
-        </strong>
-
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-</div>
-
 
 
 <script>
@@ -4069,64 +2013,57 @@ footer{
 const header =
 document.getElementById("header");
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
-  if(window.scrollY > 40){
-
-    header.classList.add("scrolled");
-
-  }else{
-
-    header.classList.remove("scrolled");
-
-  }
+  header.classList.toggle(
+    "scrolled",
+    window.scrollY > 50
+  );
 
 });
 
 
-
 /* =========================================================
-   PROGRESO
+   PROGRESS
 ========================================================= */
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
-  const scrollTop =
+  const top =
     document.documentElement.scrollTop;
 
-  const scrollHeight =
+  const height =
     document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
 
-  const percent =
-    scrollHeight > 0
-    ? (scrollTop / scrollHeight) * 100
-    : 0;
+  const percentage =
+    height > 0
+      ? (top / height) * 100
+      : 0;
 
   document
     .getElementById("progress")
     .style.width =
-    percent + "%";
+      percentage + "%";
 
 });
-
 
 
 /* =========================================================
    REVEAL
 ========================================================= */
 
-const observer =
+const revealObserver =
 new IntersectionObserver(
-  entries=>{
+  entries => {
 
-    entries.forEach(entry=>{
+    entries.forEach(entry => {
 
       if(entry.isIntersecting){
 
-        entry.target
-          .classList
-          .add("visible");
+        entry.target.classList.add(
+          "visible"
+        );
 
       }
 
@@ -4141,268 +2078,80 @@ new IntersectionObserver(
 
 document
 .querySelectorAll(".reveal")
-.forEach(element=>{
+.forEach(element => {
 
-  observer.observe(element);
+  revealObserver.observe(element);
 
 });
 
 
+/* =========================================================
+   PARALLAX SUAVE
+========================================================= */
+
+const heroImage =
+document.querySelector(".hero-media img");
+
+window.addEventListener("scroll", () => {
+
+  if(!heroImage) return;
+
+  const scroll =
+    window.scrollY;
+
+  if(scroll < window.innerHeight){
+
+    heroImage.style.transform =
+      `scale(1.02) translateY(${scroll * .035}px)`;
+
+  }
+
+});
+
 
 /* =========================================================
-   COLECCIONES
+   MOVIMIENTO SUAVE DE IMÁGENES
 ========================================================= */
 
 document
-.querySelectorAll(".categoria-button")
-.forEach(button=>{
+.querySelectorAll(".material-image img, .world-card img")
+.forEach(image => {
 
-  button.addEventListener("click",()=>{
+  image.parentElement.addEventListener(
+    "mousemove",
+    event => {
 
-    const current =
-      button.parentElement;
+      const rect =
+        image.parentElement.getBoundingClientRect();
 
-    const open =
-      current.classList.contains("open");
+      const x =
+        ((event.clientX - rect.left) / rect.width - .5) * 8;
 
+      const y =
+        ((event.clientY - rect.top) / rect.height - .5) * 8;
 
-    document
-      .querySelectorAll(".categoria")
-      .forEach(item=>{
-
-        item.classList.remove("open");
-
-      });
-
-
-    if(!open){
-
-      current.classList.add("open");
+      image.style.transform =
+        `scale(1.045) translate(${x}px, ${y}px)`;
 
     }
-
-  });
-
-});
+  );
 
 
+  image.parentElement.addEventListener(
+    "mouseleave",
+    () => {
 
-/* =========================================================
-   FAQ
-========================================================= */
+      image.style.transform =
+        "scale(1)";
 
-document
-.querySelectorAll(".faq-question")
-.forEach(question=>{
-
-  question.addEventListener("click",()=>{
-
-    question
-      .parentElement
-      .classList
-      .toggle("open");
-
-  });
+    }
+  );
 
 });
 
-
-
-/* =========================================================
-   MODAL
-========================================================= */
-
-function abrirModal(tipo){
-
-  const modal =
-    document.getElementById("modal");
-
-  const superficie =
-    document.getElementById("superficieBox");
-
-  const piscina =
-    document.getElementById("piscinaBox");
-
-
-  superficie.style.display =
-    tipo === "superficie"
-    ? "block"
-    : "none";
-
-
-  piscina.style.display =
-    tipo === "piscina"
-    ? "block"
-    : "none";
-
-
-  modal.classList.add("active");
-
-}
-
-
-function cerrarModal(){
-
-  document
-    .getElementById("modal")
-    .classList
-    .remove("active");
-
-}
-
-
-document
-.getElementById("modal")
-.addEventListener("click",event=>{
-
-  if(event.target.id === "modal"){
-
-    cerrarModal();
-
-  }
-
-});
-
-
-
-/* =========================================================
-   CALCULADORA SUPERFICIE
-========================================================= */
-
-function calcularSuperficie(){
-
-  const largo =
-    parseFloat(
-      document.getElementById("supLargo").value
-    );
-
-  const ancho =
-    parseFloat(
-      document.getElementById("supAncho").value
-    );
-
-
-  if(!largo || !ancho){
-
-    alert("Completá las medidas.");
-
-    return;
-
-  }
-
-
-  const superficie =
-    largo * ancho;
-
-  const total =
-    superficie * 1.10;
-
-
-  document
-    .getElementById("resultadoSupTexto")
-    .innerHTML =
-
-      superficie.toFixed(2) +
-      " m² reales" +
-
-      "<br>" +
-
-      "<span style=\"font-family:Arial;font-size:14px;color:#69655e\">" +
-
-      total.toFixed(2) +
-      " m² con 10% de desperdicio" +
-
-      "</span>";
-
-
-  document
-    .getElementById("resultadoSuperficie")
-    .classList
-    .add("show");
-
-}
-
-
-
-/* =========================================================
-   CALCULADORA PISCINA
-========================================================= */
-
-function calcularPiscina(){
-
-  const largo =
-    parseFloat(
-      document.getElementById("pLargo").value
-    );
-
-  const ancho =
-    parseFloat(
-      document.getElementById("pAncho").value
-    );
-
-  const profundidad =
-    parseFloat(
-      document.getElementById("pProfundidad").value
-    );
-
-
-  if(
-    !largo ||
-    !ancho ||
-    !profundidad
-  ){
-
-    alert("Completá las medidas.");
-
-    return;
-
-  }
-
-
-  const piso =
-    largo * ancho;
-
-
-  const paredes =
-    2 *
-    (largo + ancho) *
-    profundidad;
-
-
-  const superficie =
-    piso + paredes;
-
-
-  const total =
-    superficie * 1.10;
-
-
-  document
-    .getElementById("resultadoPiscinaTexto")
-    .innerHTML =
-
-      superficie.toFixed(2) +
-      " m² reales" +
-
-      "<br>" +
-
-      "<span style=\"font-family:Arial;font-size:14px;color:#69655e\">" +
-
-      total.toFixed(2) +
-      " m² con 10% de desperdicio" +
-
-      "</span>";
-
-
-  document
-    .getElementById("resultadoPiscina")
-    .classList
-    .add("show");
-
-}
 
 </script>
 
-
 </body>
 </html>
+```
