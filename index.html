@@ -2,32 +2,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ORIGEN SURFACES — Materia · Arquitectura · Vida</title>
+<title>ORIGEN SURFACES — La materia también diseña</title>
 
-<meta name="description"
-content="ORIGEN SURFACES. Una mirada sobre la materia, la arquitectura y los espacios que habitamos. Buenos Aires, Argentina.">
+<meta
+  name="description"
+  content="ORIGEN SURFACES. Una mirada sobre la materia, la arquitectura, la luz y los espacios que habitamos."
+>
 
 <style>
 
-:root{
-  --black:#0b0c0a;
-  --black-soft:#151713;
-  --cream:#eee9df;
-  --white:#f7f5ef;
-  --sand:#cfc3b1;
-  --stone:#a99f91;
-  --green:#30433b;
-  --blue:#263d42;
-  --gold:#b59a68;
-  --muted:#8b8981;
-  --line:rgba(238,233,223,.16);
+/* =========================================================
+   ORIGEN SURFACES
+   NUEVA EXPERIENCIA DIGITAL
+   LA BRÚJULA · ESENCIA · MATERIA · ARQUITECTURA
+========================================================= */
 
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: Arial, Helvetica, sans-serif;
+:root{
+
+  --black:#0c0d0b;
+  --black-2:#131512;
+
+  --cream:#eeeae1;
+  --paper:#f5f2eb;
+  --white:#faf9f5;
+
+  --stone:#cfc7b8;
+  --sand:#b9aa94;
+
+  --green:#34433d;
+  --green-dark:#26332f;
+
+  --gold:#b69a62;
+  --gold-light:#d5bd89;
+
+  --text:#343631;
+  --muted:#77756e;
+
+  --line:rgba(40,42,38,.15);
+  --line-light:rgba(255,255,255,.14);
+
+  --serif:
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  --sans:
+    Arial,
+    Helvetica,
+    sans-serif;
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
   box-sizing:border-box;
@@ -40,15 +72,14 @@ html{
 }
 
 body{
-  background:var(--black);
-  color:var(--cream);
+  background:var(--cream);
+  color:var(--text);
   font-family:var(--sans);
   overflow-x:hidden;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
+body.loading{
+  overflow:hidden;
 }
 
 img{
@@ -56,67 +87,107 @@ img{
   width:100%;
 }
 
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
 button{
   font:inherit;
-}
-
-.container{
-  width:min(1380px, calc(100% - 80px));
-  margin:auto;
-}
-
-section{
-  position:relative;
+  cursor:pointer;
 }
 
 
 /* =========================================================
-   LOADER
+   INTRO / LOGO
 ========================================================= */
 
-.loader{
+.intro-loader{
+
   position:fixed;
+
   inset:0;
-  z-index:9999;
+
+  z-index:10000;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
-  background:var(--black);
+  background:#090a08;
 
-  animation:loaderOut 1.2s ease 1.4s forwards;
+  opacity:1;
+
+  visibility:visible;
+
+  transition:
+    opacity 1.4s ease,
+    visibility 1.4s ease;
 }
 
-.loader-name{
-  color:var(--cream);
-  font-family:var(--serif);
-  font-size:clamp(42px,7vw,90px);
-  letter-spacing:.08em;
+.intro-loader.hide{
+
+  opacity:0;
+
+  visibility:hidden;
+
+  pointer-events:none;
 }
 
-@keyframes loaderOut{
-  to{
+
+.intro-logo{
+
+  width:min(420px,72vw);
+
+  opacity:0;
+
+  transform:scale(.97);
+
+  animation:
+    logoAppear 1.7s ease forwards;
+
+}
+
+
+@keyframes logoAppear{
+
+  0%{
     opacity:0;
-    visibility:hidden;
+    transform:scale(.97);
   }
+
+  35%{
+    opacity:1;
+    transform:scale(1);
+  }
+
+  100%{
+    opacity:1;
+    transform:scale(1);
+  }
+
 }
 
 
 /* =========================================================
-   PROGRESS
+   SCROLL PROGRESS
 ========================================================= */
 
 .progress{
+
   position:fixed;
+
   top:0;
   left:0;
+
   width:0;
   height:2px;
 
-  background:var(--gold);
+  background:var(--gold-light);
 
-  z-index:5000;
+  z-index:9999;
+
 }
 
 
@@ -125,67 +196,176 @@ section{
 ========================================================= */
 
 header{
+
   position:fixed;
+
   top:0;
   left:0;
+
   width:100%;
+
   height:82px;
 
-  z-index:4000;
+  z-index:900;
 
-  transition:.5s ease;
+  color:#fff;
+
+  transition:
+    background .5s ease,
+    border .5s ease,
+    backdrop-filter .5s ease;
 }
 
 header.scrolled{
-  background:rgba(11,12,10,.72);
+
+  background:rgba(12,13,11,.82);
+
   backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(255,255,255,.08);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.08);
 }
 
+
 .nav{
+
+  width:min(1380px,calc(100% - 80px));
+
   height:100%;
 
+  margin:auto;
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
 }
 
-.logo{
-  font-family:var(--serif);
-  font-size:20px;
-  letter-spacing:.16em;
+
+.logo-small img{
+
+  width:150px;
+
+  height:auto;
 }
 
-.logo span{
-  display:block;
-
-  margin-top:2px;
-
-  font-family:var(--sans);
-  font-size:6px;
-  letter-spacing:.35em;
-
-  color:var(--gold);
-}
 
 .nav-right{
+
   display:flex;
+
   align-items:center;
-  gap:32px;
+
+  gap:42px;
 }
 
-.nav-link{
-  color:rgba(255,255,255,.75);
 
-  font-size:8px;
-  letter-spacing:.2em;
+.nav-right a{
+
+  position:relative;
+
+  font-size:10px;
+
+  letter-spacing:.18em;
+
   text-transform:uppercase;
+
+  color:rgba(255,255,255,.82);
 
   transition:.3s ease;
 }
 
-.nav-link:hover{
+.nav-right a:hover{
+
+  color:#fff;
+}
+
+
+.nav-right a::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-8px;
+
+  width:0;
+
+  height:1px;
+
+  background:var(--gold-light);
+
+  transition:.3s ease;
+}
+
+.nav-right a:hover::after{
+
+  width:100%;
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.container{
+
+  width:min(1280px,calc(100% - 80px));
+
+  margin:auto;
+}
+
+
+.section{
+
+  padding:140px 0;
+}
+
+
+.eyebrow{
+
+  margin-bottom:25px;
+
   color:var(--gold);
+
+  font-size:9px;
+
+  font-weight:400;
+
+  letter-spacing:.32em;
+
+  text-transform:uppercase;
+}
+
+
+.section-title{
+
+  color:var(--green);
+
+  font-family:var(--serif);
+
+  font-size:
+    clamp(52px,6vw,92px);
+
+  font-weight:400;
+
+  line-height:.92;
+
+  letter-spacing:-.055em;
+}
+
+
+.body-copy{
+
+  max-width:580px;
+
+  color:var(--muted);
+
+  font-size:16px;
+
+  line-height:1.9;
 }
 
 
@@ -194,167 +374,191 @@ header.scrolled{
 ========================================================= */
 
 .hero{
-  height:100svh;
+
+  position:relative;
+
+  height:100vh;
+
   min-height:720px;
+
+  background:#10120f;
 
   overflow:hidden;
 
-  background:#111;
+  color:#fff;
 }
 
-.hero-media{
+
+.hero-image{
+
   position:absolute;
+
   inset:0;
 
   overflow:hidden;
 }
 
-.hero-media img{
+
+.hero-image::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(5,7,5,.72) 0%,
+      rgba(5,7,5,.30) 55%,
+      rgba(5,7,5,.10) 100%
+    ),
+
+    linear-gradient(
+      0deg,
+      rgba(5,7,5,.62) 0%,
+      transparent 50%
+    );
+}
+
+
+.hero-image img{
+
   width:100%;
   height:100%;
 
   object-fit:cover;
 
-  transform:scale(1.06);
+  transform:
+    scale(1.06);
 
-  animation:heroZoom 14s ease-out forwards;
+  animation:
+    heroReveal 2.2s ease forwards;
 }
 
-@keyframes heroZoom{
-  to{
-    transform:scale(1);
+
+@keyframes heroReveal{
+
+  from{
+    transform:scale(1.1);
   }
+
+  to{
+    transform:scale(1.04);
+  }
+
 }
 
-.hero-media::after{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(6,7,6,.72),
-      rgba(6,7,6,.28) 52%,
-      rgba(6,7,6,.08)
-    ),
-    linear-gradient(
-      0deg,
-      rgba(0,0,0,.58),
-      transparent 55%
-    );
-}
 
 .hero-content{
+
   position:relative;
+
   z-index:2;
 
   height:100%;
 
+  width:min(1380px,calc(100% - 80px));
+
+  margin:auto;
+
   display:flex;
+
   align-items:flex-end;
 
   padding-bottom:100px;
 }
 
-.hero-meta{
-  position:absolute;
-
-  top:115px;
-  left:0;
-
-  color:rgba(255,255,255,.62);
-
-  font-size:7px;
-  letter-spacing:.3em;
-  text-transform:uppercase;
-}
 
 .hero-copy{
-  max-width:900px;
+
+  max-width:820px;
 }
 
+
 .hero-kicker{
-  margin-bottom:22px;
 
-  color:var(--gold);
+  margin-bottom:26px;
 
-  font-size:8px;
-  letter-spacing:.35em;
+  color:var(--gold-light);
+
+  font-size:10px;
+
+  letter-spacing:.32em;
+
   text-transform:uppercase;
 }
 
-.hero h1{
-  max-width:900px;
 
-  color:var(--white);
+.hero h1{
+
+  margin-bottom:28px;
 
   font-family:var(--serif);
-  font-size:clamp(65px,9vw,135px);
+
+  font-size:
+    clamp(70px,9vw,145px);
+
   font-weight:400;
+
   line-height:.82;
+
   letter-spacing:-.065em;
 }
 
+
 .hero h1 em{
-  color:var(--gold);
-  font-style:normal;
+
+  color:var(--gold-light);
+
+  font-style:italic;
 }
 
-.hero-sub{
-  max-width:620px;
 
-  margin-top:30px;
+.hero-intro{
 
-  color:rgba(255,255,255,.76);
+  max-width:600px;
 
-  font-family:var(--serif);
-  font-size:clamp(20px,2vw,29px);
-  line-height:1.2;
+  color:rgba(255,255,255,.78);
+
+  font-size:18px;
+
+  line-height:1.65;
 }
+
 
 .hero-bottom{
+
+  position:absolute;
+
+  right:0;
+  bottom:40px;
+
   display:flex;
+
   align-items:center;
-  gap:30px;
 
-  margin-top:38px;
-}
+  gap:18px;
 
-.button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
+  color:rgba(255,255,255,.65);
 
-  min-height:48px;
-  padding:0 22px;
+  font-size:9px;
 
-  border:1px solid rgba(213,191,145,.7);
-
-  color:#fff;
-
-  font-size:8px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-
-  transition:.35s ease;
-}
-
-.button:hover{
-  background:var(--gold);
-  border-color:var(--gold);
-  color:var(--black);
-
-  transform:translateY(-2px);
-}
-
-.scroll-note{
-  color:rgba(255,255,255,.48);
-
-  font-size:7px;
   letter-spacing:.22em;
+
   text-transform:uppercase;
+}
+
+
+.hero-line{
+
+  width:70px;
+
+  height:1px;
+
+  background:var(--gold);
 }
 
 
@@ -362,165 +566,88 @@ header.scrolled{
    MANIFIESTO
 ========================================================= */
 
-.manifesto{
-  min-height:100vh;
+.manifiesto{
 
-  display:flex;
-  align-items:center;
+  background:var(--paper);
 
-  background:var(--cream);
-  color:var(--green);
+  overflow:hidden;
 }
 
-.manifesto-grid{
+
+.manifiesto-grid{
+
   display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:120px;
+
+  grid-template-columns:
+    .85fr
+    1.15fr;
+
+  gap:100px;
 
   align-items:start;
 }
 
-.eyebrow{
+
+.manifiesto-left{
+
+  position:sticky;
+
+  top:150px;
+}
+
+
+.manifiesto-left h2{
+
+  color:var(--green);
+
+  font-family:var(--serif);
+
+  font-size:
+    clamp(58px,6vw,92px);
+
+  font-weight:400;
+
+  line-height:.9;
+
+  letter-spacing:-.055em;
+}
+
+
+.manifiesto-left h2 em{
+
   color:var(--gold);
 
-  font-size:8px;
-  letter-spacing:.28em;
-  text-transform:uppercase;
+  font-style:italic;
 }
 
-.manifesto-title{
-  margin-top:24px;
 
-  font-family:var(--serif);
-  font-size:clamp(55px,7vw,105px);
-  font-weight:400;
-  line-height:.86;
-  letter-spacing:-.06em;
+.manifiesto-copy{
+
+  max-width:680px;
 }
 
-.manifesto-text{
-  max-width:690px;
 
-  font-family:var(--serif);
-  font-size:clamp(26px,3vw,45px);
-  line-height:1.13;
-  letter-spacing:-.025em;
-}
+.manifiesto-copy p{
 
-.manifesto-text p{
   margin-bottom:30px;
-}
 
-.manifesto-text strong{
-  font-weight:400;
-  color:#8e754a;
-}
-
-
-/* =========================================================
-   MATERIA
-========================================================= */
-
-.materia{
-  min-height:100vh;
-  padding:130px 0;
-
-  background:var(--black);
-}
-
-.materia-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-
-  gap:80px;
-}
-
-.materia-title{
-  margin-top:25px;
+  color:#555650;
 
   font-family:var(--serif);
-  font-size:clamp(55px,7vw,105px);
-  font-weight:400;
-  line-height:.84;
-  letter-spacing:-.06em;
+
+  font-size:
+    clamp(23px,2.1vw,31px);
+
+  line-height:1.35;
+
+  letter-spacing:-.02em;
 }
 
-.materia-intro{
-  max-width:430px;
 
-  color:var(--muted);
+.manifiesto-copy strong{
 
-  font-size:14px;
-  line-height:1.8;
-}
+  color:var(--green);
 
-.materia-gallery{
-  display:grid;
-  grid-template-columns:1.25fr .75fr;
-
-  gap:5px;
-
-  margin-top:70px;
-}
-
-.material-image{
-  position:relative;
-
-  overflow:hidden;
-
-  background:#262823;
-}
-
-.material-image.large{
-  height:680px;
-}
-
-.material-image.small{
-  height:335px;
-}
-
-.material-image img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  transition:
-    transform 1.6s cubic-bezier(.16,1,.3,1);
-}
-
-.material-image:hover img{
-  transform:scale(1.045);
-}
-
-.material-side{
-  display:grid;
-  grid-template-rows:1fr 1fr;
-  gap:5px;
-}
-
-.material-caption{
-  position:absolute;
-  left:28px;
-  bottom:26px;
-
-  color:white;
-
-  text-shadow:0 3px 20px rgba(0,0,0,.5);
-}
-
-.material-caption small{
-  font-size:7px;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-}
-
-.material-caption h3{
-  margin-top:5px;
-
-  font-family:var(--serif);
-  font-size:32px;
   font-weight:400;
 }
 
@@ -530,245 +657,534 @@ header.scrolled{
 ========================================================= */
 
 .statement{
-  min-height:80vh;
+
+  min-height:75vh;
 
   display:flex;
+
   align-items:center;
 
   background:var(--green);
-}
-
-.statement-inner{
-  max-width:1200px;
-}
-
-.statement p{
-  font-family:var(--serif);
-  font-size:clamp(55px,8vw,125px);
-  line-height:.85;
-  letter-spacing:-.065em;
-}
-
-.statement span{
-  color:var(--gold);
-}
-
-
-/* =========================================================
-   DOS MUNDOS
-========================================================= */
-
-.worlds{
-  background:var(--white);
-  color:var(--green);
-
-  padding:130px 0;
-}
-
-.worlds-header{
-  max-width:800px;
-}
-
-.worlds-title{
-  margin-top:22px;
-
-  font-family:var(--serif);
-  font-size:clamp(55px,7vw,100px);
-  font-weight:400;
-  line-height:.84;
-  letter-spacing:-.06em;
-}
-
-.worlds-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-
-  gap:5px;
-
-  margin-top:70px;
-}
-
-.world-card{
-  position:relative;
-
-  min-height:650px;
-
-  overflow:hidden;
-
-  background:#bbb2a3;
-}
-
-.world-card img{
-  width:100%;
-  height:100%;
-
-  position:absolute;
-  inset:0;
-
-  object-fit:cover;
-
-  transition:transform 1.5s cubic-bezier(.16,1,.3,1);
-}
-
-.world-card:hover img{
-  transform:scale(1.04);
-}
-
-.world-card::after{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:linear-gradient(
-    0deg,
-    rgba(0,0,0,.62),
-    transparent 60%
-  );
-}
-
-.world-content{
-  position:absolute;
-  z-index:2;
-
-  left:38px;
-  right:38px;
-  bottom:38px;
 
   color:#fff;
 }
 
-.world-content h3{
-  font-family:var(--serif);
-  font-size:55px;
-  font-weight:400;
-  line-height:.9;
+
+.statement-inner{
+
+  width:min(1100px,calc(100% - 80px));
+
+  margin:auto;
+
+  text-align:center;
 }
 
-.world-content p{
-  max-width:450px;
 
-  margin-top:15px;
+.statement .eyebrow{
 
-  color:rgba(255,255,255,.75);
+  color:var(--gold-light);
+}
 
-  font-size:14px;
-  line-height:1.7;
+
+.statement h2{
+
+  font-family:var(--serif);
+
+  font-size:
+    clamp(55px,8vw,120px);
+
+  font-weight:400;
+
+  line-height:.9;
+
+  letter-spacing:-.06em;
+}
+
+
+.statement h2 em{
+
+  color:var(--gold-light);
+
+  font-style:italic;
 }
 
 
 /* =========================================================
-   CURADURIA
+   NUESTRA MIRADA
 ========================================================= */
 
-.curadoria{
-  background:#d7cdbd;
+.mirada{
+
+  background:var(--cream);
+}
+
+
+.mirada-head{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:80px;
+
+  margin-bottom:100px;
+}
+
+
+.mirada-head h2{
+
   color:var(--green);
 
-  padding:150px 0;
+  font-family:var(--serif);
+
+  font-size:
+    clamp(55px,6vw,90px);
+
+  font-weight:400;
+
+  line-height:.92;
+
+  letter-spacing:-.055em;
 }
 
-.curadoria-grid{
+
+.mirada-intro{
+
+  align-self:end;
+
+  max-width:520px;
+
+  color:var(--muted);
+
+  font-size:17px;
+
+  line-height:1.85;
+}
+
+
+.mirada-grid{
+
   display:grid;
-  grid-template-columns:.8fr 1.2fr;
 
-  gap:100px;
+  grid-template-columns:
+    repeat(3,1fr);
+
+  border-top:1px solid var(--line);
+
+  border-bottom:1px solid var(--line);
 }
 
-.curadoria-title{
-  margin-top:25px;
+
+.mirada-item{
+
+  min-height:260px;
+
+  padding:40px 35px;
+
+  border-right:1px solid var(--line);
+}
+
+
+.mirada-item:last-child{
+
+  border-right:0;
+}
+
+
+.mirada-number{
+
+  margin-bottom:55px;
+
+  color:var(--gold);
+
+  font-size:10px;
+
+  letter-spacing:.2em;
+}
+
+
+.mirada-item h3{
+
+  margin-bottom:18px;
+
+  color:var(--green);
 
   font-family:var(--serif);
-  font-size:clamp(55px,7vw,105px);
+
+  font-size:32px;
+
   font-weight:400;
-  line-height:.84;
+}
+
+
+.mirada-item p{
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  line-height:1.75;
+}
+
+
+/* =========================================================
+   MATERIA
+========================================================= */
+
+.materia{
+
+  background:#11130f;
+
+  color:#fff;
+}
+
+
+.materia-head{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:80px;
+
+  align-items:flex-end;
+
+  margin-bottom:80px;
+}
+
+
+.materia h2{
+
+  color:#fff;
+
+  font-family:var(--serif);
+
+  font-size:
+    clamp(60px,7vw,105px);
+
+  font-weight:400;
+
+  line-height:.88;
+
   letter-spacing:-.06em;
 }
 
-.curadoria-copy{
-  max-width:650px;
 
-  font-family:var(--serif);
-  font-size:28px;
-  line-height:1.3;
+.materia-intro{
+
+  max-width:420px;
+
+  color:rgba(255,255,255,.63);
+
+  font-size:15px;
+
+  line-height:1.85;
 }
 
-.curadoria-copy p{
-  margin-bottom:30px;
+
+.materia-images{
+
+  display:grid;
+
+  grid-template-columns:
+    1.45fr
+    .7fr
+    .7fr;
+
+  gap:14px;
 }
 
-.curadoria-list{
-  margin-top:70px;
 
-  border-top:1px solid rgba(48,67,59,.2);
+.materia-image{
+
+  position:relative;
+
+  height:620px;
+
+  overflow:hidden;
 }
 
-.curadoria-item{
-  padding:25px 0;
 
-  border-bottom:1px solid rgba(48,67,59,.2);
+.materia-image:nth-child(2){
 
-  display:flex;
-  justify-content:space-between;
+  height:470px;
 
-  font-family:var(--serif);
-  font-size:27px;
+  margin-top:150px;
 }
 
-.curadoria-item span{
-  color:#7b6b50;
 
-  font-family:var(--sans);
-  font-size:7px;
-  letter-spacing:.2em;
+.materia-image:nth-child(3){
+
+  height:540px;
+
+  margin-top:60px;
+}
+
+
+.materia-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:
+    transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+
+
+.materia-image:hover img{
+
+  transform:scale(1.045);
+}
+
+
+.materia-label{
+
+  position:absolute;
+
+  left:25px;
+  bottom:23px;
+
+  color:#fff;
+
+  font-size:9px;
+
+  letter-spacing:.22em;
+
   text-transform:uppercase;
 }
 
 
 /* =========================================================
-   ARQUITECTOS
+   SELECCIÓN
 ========================================================= */
 
-.architects{
-  min-height:100vh;
+.seleccion{
 
-  display:flex;
-  align-items:center;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(8,10,9,.88),
-      rgba(8,10,9,.32)
-    ),
-    url("proyecto-arquitectura.jpg") center/cover;
-
-  padding:140px 0;
+  background:var(--paper);
 }
 
-.architect-copy{
-  max-width:800px;
+
+.seleccion-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    .9fr
+    1.1fr;
+
+  gap:100px;
 }
 
-.architect-title{
-  margin-top:25px;
+
+.seleccion h2{
+
+  color:var(--green);
 
   font-family:var(--serif);
-  font-size:clamp(60px,8vw,120px);
+
+  font-size:
+    clamp(58px,6vw,94px);
+
   font-weight:400;
-  line-height:.83;
-  letter-spacing:-.06em;
+
+  line-height:.88;
+
+  letter-spacing:-.055em;
 }
 
-.architect-text{
-  max-width:600px;
 
-  margin-top:30px;
+.seleccion h2 em{
 
-  color:rgba(255,255,255,.72);
+  color:var(--gold);
 
-  font-size:16px;
+  font-style:italic;
+}
+
+
+.seleccion-right{
+
+  padding-top:20px;
+}
+
+
+.seleccion-right > p{
+
+  max-width:620px;
+
+  margin-bottom:60px;
+
+  color:var(--muted);
+
+  font-family:var(--serif);
+
+  font-size:26px;
+
+  line-height:1.4;
+}
+
+
+.selection-list{
+
+  border-top:1px solid var(--line);
+}
+
+
+.selection-row{
+
+  display:grid;
+
+  grid-template-columns:190px 1fr;
+
+  gap:30px;
+
+  padding:27px 0;
+
+  border-bottom:1px solid var(--line);
+}
+
+
+.selection-row strong{
+
+  color:var(--green);
+
+  font-family:var(--serif);
+
+  font-size:22px;
+
+  font-weight:400;
+}
+
+
+.selection-row span{
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   PRODUCTO / MARCAS
+========================================================= */
+
+.marcas{
+
+  background:var(--cream);
+}
+
+
+.marcas-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:60px;
+
+  align-items:flex-end;
+
+  margin-bottom:70px;
+}
+
+
+.marcas-top h2{
+
+  color:var(--green);
+
+  font-family:var(--serif);
+
+  font-size:
+    clamp(54px,6vw,88px);
+
+  font-weight:400;
+
+  line-height:.9;
+
+  letter-spacing:-.055em;
+}
+
+
+.marcas-top p{
+
+  max-width:390px;
+
+  color:var(--muted);
+
+  font-size:15px;
+
   line-height:1.8;
+}
+
+
+.brand-list{
+
+  border-top:1px solid var(--line);
+
+  border-bottom:1px solid var(--line);
+}
+
+
+.brand{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  padding:35px 0;
+
+  border-bottom:1px solid var(--line);
+
+  transition:
+    padding .4s ease,
+    color .4s ease;
+}
+
+
+.brand:last-child{
+
+  border-bottom:0;
+}
+
+
+.brand:hover{
+
+  padding-left:18px;
+
+  padding-right:18px;
+
+  color:var(--gold);
+}
+
+
+.brand small{
+
+  color:var(--gold);
+
+  font-size:9px;
+
+  letter-spacing:.2em;
+
+  text-transform:uppercase;
+}
+
+
+.brand strong{
+
+  color:var(--green);
+
+  font-family:var(--serif);
+
+  font-size:32px;
+
+  font-weight:400;
 }
 
 
@@ -776,137 +1192,77 @@ header.scrolled{
    PROYECTOS
 ========================================================= */
 
-.projects{
-  background:var(--white);
-  color:var(--green);
+.proyectos{
 
-  padding:140px 0;
+  background:var(--black);
+
+  color:#fff;
 }
 
-.projects-header{
+
+.proyectos-head{
+
   display:flex;
+
   justify-content:space-between;
-  align-items:end;
 
-  gap:70px;
+  align-items:flex-end;
+
+  gap:60px;
+
+  margin-bottom:70px;
 }
 
-.projects-title{
-  margin-top:24px;
 
-  font-family:var(--serif);
-  font-size:clamp(55px,7vw,100px);
-  font-weight:400;
-  line-height:.84;
-  letter-spacing:-.06em;
-}
-
-.projects-description{
-  max-width:450px;
-
-  color:#77746c;
-
-  font-size:14px;
-  line-height:1.8;
-}
-
-.project-feature{
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-
-  min-height:700px;
-
-  margin-top:70px;
-}
-
-.project-photo{
-  overflow:hidden;
-
-  background:#b5ac9d;
-}
-
-.project-photo img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  transition:transform 1.5s ease;
-}
-
-.project-feature:hover .project-photo img{
-  transform:scale(1.035);
-}
-
-.project-info{
-  padding:55px;
-
-  background:var(--green);
+.proyectos h2{
 
   color:#fff;
 
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-}
-
-.project-info h3{
   font-family:var(--serif);
-  font-size:60px;
+
+  font-size:
+    clamp(60px,7vw,105px);
+
   font-weight:400;
-  line-height:.87;
+
+  line-height:.88;
+
+  letter-spacing:-.06em;
 }
 
-.project-info p{
-  margin-top:25px;
 
-  color:rgba(255,255,255,.68);
+.proyectos-head p{
 
-  font-size:14px;
+  max-width:400px;
+
+  color:rgba(255,255,255,.58);
+
+  font-size:15px;
+
   line-height:1.8;
 }
 
 
-/* =========================================================
-   JOURNAL
-========================================================= */
+.project-feature{
 
-.journal{
-  padding:140px 0;
-
-  background:var(--cream);
-  color:var(--green);
-}
-
-.journal-title{
-  margin-top:24px;
-
-  font-family:var(--serif);
-  font-size:clamp(55px,7vw,100px);
-  font-weight:400;
-  line-height:.84;
-  letter-spacing:-.06em;
-}
-
-.journal-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
 
-  gap:5px;
+  grid-template-columns:
+    1.5fr
+    .7fr;
 
-  margin-top:70px;
+  min-height:650px;
 }
 
-.journal-card{
-  background:#ded6c9;
-}
 
-.journal-image{
-  height:420px;
+.project-image{
+
   overflow:hidden;
 }
 
-.journal-image img{
+
+.project-image img{
+
   width:100%;
   height:100%;
 
@@ -915,89 +1271,343 @@ header.scrolled{
   transition:transform 1.2s ease;
 }
 
-.journal-card:hover img{
-  transform:scale(1.04);
+
+.project-feature:hover .project-image img{
+
+  transform:scale(1.035);
 }
 
-.journal-copy{
-  padding:28px;
+
+.project-info{
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:flex-end;
+
+  padding:50px;
+
+  background:var(--green-dark);
 }
 
-.journal-copy small{
-  color:#887451;
 
-  font-size:7px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-}
+.project-info h3{
 
-.journal-copy h3{
-  margin-top:14px;
+  margin-bottom:25px;
+
+  color:#fff;
 
   font-family:var(--serif);
-  font-size:34px;
+
+  font-size:48px;
+
   font-weight:400;
+
   line-height:.95;
 }
 
-.journal-copy p{
-  margin-top:15px;
 
-  color:#6f6c64;
+.project-info p{
 
-  font-size:13px;
-  line-height:1.7;
+  max-width:360px;
+
+  color:rgba(255,255,255,.62);
+
+  font-size:14px;
+
+  line-height:1.8;
 }
 
 
 /* =========================================================
-   CTA
+   PARA PROFESIONALES
 ========================================================= */
 
-.cta{
-  min-height:85vh;
+.profesionales{
+
+  background:var(--paper);
+}
+
+
+.profesionales-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  min-height:620px;
+}
+
+
+.prof-card{
+
+  padding:80px;
 
   display:flex;
-  align-items:center;
 
-  background:var(--blue);
+  flex-direction:column;
+
+  justify-content:space-between;
 }
 
-.cta-inner{
-  max-width:1100px;
+
+.prof-card:first-child{
+
+  background:var(--green);
+
+  color:#fff;
 }
 
-.cta-title{
-  margin-top:25px;
+
+.prof-card:last-child{
+
+  background:#ded7ca;
+
+  color:var(--green);
+}
+
+
+.prof-card .eyebrow{
+
+  color:var(--gold-light);
+}
+
+
+.prof-card:last-child .eyebrow{
+
+  color:var(--gold);
+}
+
+
+.prof-card h2{
+
+  max-width:550px;
 
   font-family:var(--serif);
-  font-size:clamp(65px,9vw,140px);
+
+  font-size:
+    clamp(48px,5vw,76px);
+
   font-weight:400;
-  line-height:.8;
-  letter-spacing:-.065em;
+
+  line-height:.9;
+
+  letter-spacing:-.055em;
 }
 
-.cta-title em{
+
+.prof-card p{
+
+  max-width:500px;
+
+  font-size:15px;
+
+  line-height:1.8;
+
+  opacity:.68;
+}
+
+
+/* =========================================================
+   CONFIANZA
+========================================================= */
+
+.confianza{
+
+  padding:190px 0;
+
+  background:var(--cream);
+
+  text-align:center;
+}
+
+
+.confianza h2{
+
+  max-width:900px;
+
+  margin:auto;
+
+  color:var(--green);
+
+  font-family:var(--serif);
+
+  font-size:
+    clamp(55px,7vw,100px);
+
+  font-weight:400;
+
+  line-height:.9;
+
+  letter-spacing:-.06em;
+}
+
+
+.confianza h2 em{
+
   color:var(--gold);
-  font-style:normal;
+
+  font-style:italic;
 }
 
-.cta-text{
-  max-width:600px;
 
-  margin-top:35px;
+.confianza p{
 
-  color:rgba(255,255,255,.68);
+  max-width:570px;
 
-  font-size:16px;
+  margin:45px auto 0;
+
+  color:var(--muted);
+
+  font-size:15px;
+
   line-height:1.8;
 }
 
-.cta-buttons{
-  display:flex;
-  gap:10px;
 
-  margin-top:35px;
+/* =========================================================
+   CONTACTO
+========================================================= */
+
+.contacto{
+
+  position:relative;
+
+  min-height:80vh;
+
+  display:flex;
+
+  align-items:center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10,12,10,.92),
+      rgba(10,12,10,.48)
+    ),
+    url("Casa moderna en construcción al atardecer.png")
+    center/cover;
+
+  color:#fff;
+}
+
+
+.contacto-inner{
+
+  width:min(1280px,calc(100% - 80px));
+
+  margin:auto;
+}
+
+
+.contacto h2{
+
+  max-width:900px;
+
+  margin-bottom:40px;
+
+  font-family:var(--serif);
+
+  font-size:
+    clamp(60px,8vw,115px);
+
+  font-weight:400;
+
+  line-height:.86;
+
+  letter-spacing:-.06em;
+}
+
+
+.contacto h2 em{
+
+  color:var(--gold-light);
+
+  font-style:italic;
+}
+
+
+.contacto-copy{
+
+  max-width:500px;
+
+  margin-bottom:40px;
+
+  color:rgba(255,255,255,.65);
+
+  font-size:16px;
+
+  line-height:1.8;
+}
+
+
+.contact-actions{
+
+  display:flex;
+
+  gap:15px;
+
+  flex-wrap:wrap;
+}
+
+
+.button{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-height:52px;
+
+  padding:0 28px;
+
+  border:1px solid rgba(255,255,255,.35);
+
+  color:#fff;
+
+  font-size:9px;
+
+  letter-spacing:.22em;
+
+  text-transform:uppercase;
+
+  transition:
+    background .3s ease,
+    color .3s ease,
+    border .3s ease;
+}
+
+
+.button:hover{
+
+  background:#fff;
+
+  border-color:#fff;
+
+  color:var(--black);
+}
+
+
+.button.gold{
+
+  background:var(--gold);
+
+  border-color:var(--gold);
+
+  color:#111;
+}
+
+
+.button.gold:hover{
+
+  background:var(--gold-light);
+
+  border-color:var(--gold-light);
 }
 
 
@@ -1006,40 +1616,65 @@ header.scrolled{
 ========================================================= */
 
 footer{
-  padding:50px 0;
 
-  background:#070806;
+  padding:70px 0 35px;
+
+  background:#090a08;
+
+  color:#fff;
 }
 
-.footer{
+
+.footer-top{
+
   display:flex;
-  align-items:flex-end;
+
   justify-content:space-between;
+
+  gap:50px;
+
+  padding-bottom:70px;
 }
 
-.footer-logo{
-  font-family:var(--serif);
-  font-size:28px;
-  letter-spacing:.15em;
+
+.footer-logo img{
+
+  width:180px;
 }
 
-.footer-logo span{
-  display:block;
 
-  margin-top:6px;
+.footer-meta{
 
-  color:var(--gold);
+  text-align:right;
 
-  font-family:var(--sans);
-  font-size:6px;
-  letter-spacing:.3em;
-}
+  color:rgba(255,255,255,.45);
 
-.footer-right{
-  color:#6f706a;
+  font-size:9px;
 
-  font-size:7px;
+  line-height:2;
+
   letter-spacing:.2em;
+
+  text-transform:uppercase;
+}
+
+
+.footer-bottom{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  padding-top:25px;
+
+  border-top:1px solid rgba(255,255,255,.1);
+
+  color:rgba(255,255,255,.3);
+
+  font-size:8px;
+
+  letter-spacing:.16em;
+
   text-transform:uppercase;
 }
 
@@ -1049,17 +1684,22 @@ footer{
 ========================================================= */
 
 .reveal{
+
   opacity:0;
+
   transform:translateY(35px);
 
   transition:
     opacity 1s ease,
-    transform 1.2s cubic-bezier(.16,1,.3,1);
+    transform 1s cubic-bezier(.2,.7,.2,1);
 }
 
+
 .reveal.visible{
+
   opacity:1;
-  transform:none;
+
+  transform:translateY(0);
 }
 
 
@@ -1069,143 +1709,287 @@ footer{
 
 @media(max-width:900px){
 
-  .container{
-    width:calc(100% - 40px);
+  .container,
+  .nav,
+  .hero-content,
+  .contacto-inner{
+
+    width:min(100% - 40px,1280px);
   }
 
-  .nav-right .nav-link{
+
+  header{
+
+    height:68px;
+  }
+
+
+  .logo-small img{
+
+    width:125px;
+  }
+
+
+  .nav-right{
+
     display:none;
   }
 
-  .hero{
-    min-height:680px;
+
+  .section{
+
+    padding:90px 0;
   }
 
-  .hero-meta{
-    top:105px;
+
+  .hero{
+
+    min-height:700px;
   }
+
 
   .hero-content{
-    padding-bottom:70px;
+
+    padding-bottom:65px;
   }
 
-  .manifesto-grid,
-  .curadoria-grid{
+
+  .hero h1{
+
+    font-size:clamp(60px,17vw,100px);
+  }
+
+
+  .hero-intro{
+
+    font-size:15px;
+  }
+
+
+  .hero-bottom{
+
+    display:none;
+  }
+
+
+  .manifiesto-grid,
+  .seleccion-grid,
+  .mirada-head,
+  .proyectos-head{
+
     grid-template-columns:1fr;
-    gap:55px;
+
+    gap:50px;
   }
 
-  .materia-header,
-  .projects-header{
+
+  .manifiesto-left{
+
+    position:static;
+  }
+
+
+  .manifiesto-copy p{
+
+    font-size:22px;
+  }
+
+
+  .mirada-grid{
+
+    grid-template-columns:1fr;
+  }
+
+
+  .mirada-item{
+
+    min-height:auto;
+
+    border-right:0;
+
+    border-bottom:1px solid var(--line);
+  }
+
+
+  .mirada-item:last-child{
+
+    border-bottom:0;
+  }
+
+
+  .materia-head,
+  .marcas-top{
+
     display:block;
   }
 
+
   .materia-intro,
-  .projects-description{
-    margin-top:30px;
+  .marcas-top p{
+
+    margin-top:35px;
   }
 
-  .materia-gallery{
+
+  .materia-images{
+
     grid-template-columns:1fr;
+
+    gap:12px;
   }
 
-  .material-side{
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:1fr;
+
+  .materia-image,
+  .materia-image:nth-child(2),
+  .materia-image:nth-child(3){
+
+    height:450px;
+
+    margin-top:0;
   }
 
-  .material-image.small{
-    height:300px;
-  }
 
-  .worlds-grid{
+  .selection-row{
+
     grid-template-columns:1fr;
+
+    gap:10px;
   }
 
-  .world-card{
-    min-height:550px;
-  }
 
   .project-feature{
+
     grid-template-columns:1fr;
   }
 
-  .project-photo{
-    min-height:500px;
+
+  .project-image{
+
+    height:450px;
   }
+
 
   .project-info{
+
     min-height:400px;
+
+    padding:45px 30px;
   }
 
-  .journal-grid{
+
+  .profesionales-grid{
+
     grid-template-columns:1fr;
   }
 
-  .cta-buttons{
-    flex-direction:column;
-    align-items:flex-start;
+
+  .prof-card{
+
+    min-height:450px;
+
+    padding:50px 30px;
+  }
+
+
+  .confianza{
+
+    padding:120px 20px;
+  }
+
+
+  .contacto{
+
+    min-height:700px;
+  }
+
+
+  .contacto h2{
+
+    font-size:clamp(55px,15vw,90px);
+  }
+
+
+  .footer-top{
+
+    display:block;
+  }
+
+
+  .footer-meta{
+
+    margin-top:50px;
+
+    text-align:left;
+  }
+
+
+  .footer-bottom{
+
+    display:block;
+  }
+
+
+  .footer-bottom span{
+
+    display:block;
+
+    margin-bottom:10px;
   }
 
 }
 
-@media(max-width:600px){
 
-  .hero h1{
-    font-size:54px;
-  }
+@media(prefers-reduced-motion:reduce){
 
-  .hero-sub{
-    font-size:20px;
-  }
+  *,
+  *::before,
+  *::after{
 
-  .hero-bottom{
-    align-items:flex-start;
-    flex-direction:column;
-  }
+    animation-duration:.01ms !important;
 
-  .material-side{
-    grid-template-columns:1fr;
-  }
+    animation-iteration-count:1 !important;
 
-  .statement p{
-    font-size:55px;
-  }
+    transition-duration:.01ms !important;
 
-  .world-content h3{
-    font-size:45px;
-  }
-
-  .curadoria-copy{
-    font-size:23px;
-  }
-
-  .curadoria-item{
-    font-size:22px;
-  }
-
-  .project-info h3{
-    font-size:48px;
+    scroll-behavior:auto !important;
   }
 
 }
 
 </style>
+
 </head>
 
-<body>
+
+<body class="loading">
 
 
 <!-- =========================================================
-     LOADER
+     INTRO
+     LOGO COMPLETO
 ========================================================= -->
 
-<div class="loader">
-  <div class="loader-name">ORIGEN</div>
+<div class="intro-loader" id="introLoader">
+
+  <img
+    class="intro-logo"
+    src="logo dorado.png"
+    alt="ORIGEN SURFACES"
+  >
+
 </div>
 
 
-<div class="progress" id="progress"></div>
+
+<!-- =========================================================
+     PROGRESO
+========================================================= -->
+
+<div
+  class="progress"
+  id="progress">
+</div>
+
 
 
 <!-- =========================================================
@@ -1214,29 +1998,39 @@ footer{
 
 <header id="header">
 
-  <div class="container nav">
+  <div class="nav">
 
-    <a href="#inicio" class="logo">
-      ORIGEN
-      <span>SURFACES · BUENOS AIRES</span>
+    <a
+      href="#inicio"
+      class="logo-small">
+
+      <img
+        src="logo dorado.png"
+        alt="ORIGEN SURFACES">
+
     </a>
+
 
     <nav class="nav-right">
 
-      <a class="nav-link" href="#materia">
+      <a href="#mirada">
+        La mirada
+      </a>
+
+      <a href="#materia">
         Materia
       </a>
 
-      <a class="nav-link" href="#arquitectura">
-        Arquitectura
+      <a href="#seleccion">
+        Selección
       </a>
 
-      <a class="nav-link" href="#journal">
-        Journal
+      <a href="#proyectos">
+        Proyectos
       </a>
 
-      <a class="nav-link" href="#contacto">
-        Proyecto
+      <a href="#contacto">
+        Hablemos
       </a>
 
     </nav>
@@ -1244,6 +2038,7 @@ footer{
   </div>
 
 </header>
+
 
 
 <main id="inicio">
@@ -1255,113 +2050,132 @@ footer{
 
 <section class="hero">
 
-  <div class="hero-media">
-
-    <!--
-      REEMPLAZAR POR UNA FOTO/VIDEO CINEMATOGRÁFICO.
-      Ideal: arquitectura + agua + luz.
-    -->
+  <div class="hero-image">
 
     <img
       src="Casa moderna en construcción al atardecer.png"
-      alt="Arquitectura contemporánea">
+      alt="Arquitectura contemporánea y materia">
 
   </div>
 
 
-  <div class="container hero-content">
-
-    <div class="hero-meta">
-      Buenos Aires · Argentina
-    </div>
-
+  <div class="hero-content">
 
     <div class="hero-copy reveal">
 
       <div class="hero-kicker">
-        Materia · Arquitectura · Vida
+
+        MATERIA · ARQUITECTURA · LUZ · VIDA
+
       </div>
 
 
       <h1>
+
         La materia<br>
         también <em>diseña.</em>
+
       </h1>
 
 
-      <p class="hero-sub">
+      <p class="hero-intro">
+
         Una mirada sobre las superficies,
         los espacios y todo aquello que
         empieza antes de construir.
+
       </p>
 
+    </div>
 
-      <div class="hero-bottom">
 
-        <a
-          href="#materia"
-          class="button">
-          Entrar a ORIGEN →
-        </a>
+    <div class="hero-bottom">
 
-        <span class="scroll-note">
-          Scroll para descubrir
-        </span>
+      <span>
+        Buenos Aires · Argentina
+      </span>
 
-      </div>
+      <div class="hero-line"></div>
+
+      <span>
+        Scroll
+      </span>
 
     </div>
 
   </div>
 
 </section>
+
 
 
 <!-- =========================================================
      MANIFIESTO
 ========================================================= -->
 
-<section class="manifesto">
+<section class="manifiesto section">
 
-  <div class="container manifesto-grid">
+  <div class="container manifiesto-grid">
 
-    <div class="reveal">
+
+    <div class="manifiesto-left reveal">
 
       <div class="eyebrow">
-        ORIGEN
+        ORIGEN SURFACES
       </div>
 
-      <h2 class="manifesto-title">
-        Elegir<br>
-        también<br>
-        es diseñar.
+      <h2>
+
+        ORIGEN<br>
+        nació para<br>
+        <em>elegir mejor.</em>
+
       </h2>
 
     </div>
 
 
-    <div class="manifesto-text reveal">
+    <div class="manifiesto-copy reveal">
 
       <p>
+
         Una superficie no es solamente
         un acabado.
-      </p>
 
-      <p>
         Cambia la manera en que habitamos
         un espacio, cómo entra la luz,
         cómo se siente una textura
-        y cómo dialoga cada elemento.
+        y cómo se relaciona cada elemento.
+
       </p>
 
-      <p>
-        Por eso no buscamos tenerlo todo.
-        <strong>Buscamos encontrar lo que vale la pena.</strong>
-      </p>
 
       <p>
+
+        Por eso no miramos solamente
+        el material.
+
+        Miramos el proyecto completo:
+
+        <strong>
+          arquitectura, agua, luz,
+          textura, escala y uso.
+        </strong>
+
+      </p>
+
+
+      <p>
+
         Seleccionamos, asesoramos,
         cotizamos y acompañamos.
+
+        Porque no vendemos solamente
+        materiales.
+
+        Participamos en la construcción
+        de espacios donde la vida sucede.
+
       </p>
 
     </div>
@@ -1369,229 +2183,304 @@ footer{
   </div>
 
 </section>
+
+
+
+<!-- =========================================================
+     FRASE CENTRAL
+========================================================= -->
+
+<section class="statement">
+
+  <div class="statement-inner reveal">
+
+    <div class="eyebrow">
+      LA BRÚJULA
+    </div>
+
+    <h2>
+
+      Elegir también<br>
+      es <em>diseñar.</em>
+
+    </h2>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     NUESTRA MIRADA
+========================================================= -->
+
+<section
+  class="mirada section"
+  id="mirada">
+
+  <div class="container">
+
+
+    <div class="mirada-head">
+
+      <div class="reveal">
+
+        <div class="eyebrow">
+          NUESTRA MIRADA
+        </div>
+
+        <h2>
+
+          Antes de elegir<br>
+          una superficie,<br>
+          miramos el espacio.
+
+        </h2>
+
+      </div>
+
+
+      <div class="mirada-intro reveal">
+
+        No creemos que exista un material
+        correcto en abstracto.
+
+        Existe el material que tiene sentido
+        para un proyecto determinado.
+
+        Por eso nuestra mirada empieza
+        antes de la muestra.
+
+      </div>
+
+    </div>
+
+
+
+    <div class="mirada-grid reveal">
+
+
+      <article class="mirada-item">
+
+        <div class="mirada-number">
+          01
+        </div>
+
+        <h3>
+          Arquitectura
+        </h3>
+
+        <p>
+
+          Entender la forma,
+          las proporciones,
+          los recorridos y
+          la relación entre espacios.
+
+        </p>
+
+      </article>
+
+
+      <article class="mirada-item">
+
+        <div class="mirada-number">
+          02
+        </div>
+
+        <h3>
+          Luz
+        </h3>
+
+        <p>
+
+          Porque un mismo material
+          puede cambiar completamente
+          cuando cambia la luz.
+
+        </p>
+
+      </article>
+
+
+      <article class="mirada-item">
+
+        <div class="mirada-number">
+          03
+        </div>
+
+        <h3>
+          Textura
+        </h3>
+
+        <p>
+
+          Lo que vemos.
+          Lo que tocamos.
+          Lo que sentimos
+          cuando nos acercamos.
+
+        </p>
+
+      </article>
+
+
+      <article class="mirada-item">
+
+        <div class="mirada-number">
+          04
+        </div>
+
+        <h3>
+          Agua
+        </h3>
+
+        <p>
+
+          Superficies pensadas
+          para convivir con el agua,
+          la luz y la arquitectura.
+
+        </p>
+
+      </article>
+
+
+      <article class="mirada-item">
+
+        <div class="mirada-number">
+          05
+        </div>
+
+        <h3>
+          Escala
+        </h3>
+
+        <p>
+
+          El formato, la repetición,
+          la distancia y la proporción
+          también diseñan.
+
+        </p>
+
+      </article>
+
+
+      <article class="mirada-item">
+
+        <div class="mirada-number">
+          06
+        </div>
+
+        <h3>
+          Uso
+        </h3>
+
+        <p>
+
+          Porque un material tiene
+          que funcionar tan bien
+          como se ve.
+
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
 
 
 <!-- =========================================================
      MATERIA
 ========================================================= -->
 
-<section class="materia" id="materia">
+<section
+  class="materia section"
+  id="materia">
 
   <div class="container">
 
-    <div class="materia-header reveal">
 
-      <div>
+    <div class="materia-head">
+
+      <div class="reveal">
 
         <div class="eyebrow">
-          Una manera de mirar
+          LA MATERIA
         </div>
 
-        <h2 class="materia-title">
-          Materia.
+        <h2>
+
+          No buscamos<br>
+          llenar espacios.<br>
+          Buscamos que<br>
+          <em>conversen.</em>
+
         </h2>
 
       </div>
 
 
-      <p class="materia-intro">
-        Piedra, cerámica, agua, textura,
-        color y luz. Materiales nacionales
-        e internacionales elegidos por lo
-        que pueden hacer cuando encuentran
-        un proyecto.
+      <p class="materia-intro reveal">
+
+        Piedra, cerámica, porcelanato,
+        venecita, WPC, LED, pintura
+        y todo aquello que pueda
+        transformar una idea.
+
+        No todo tiene que entrar.
+
+        Solo aquello que tenga sentido.
+
       </p>
 
     </div>
 
 
-    <div class="materia-gallery reveal">
 
-      <article class="material-image large">
+    <div class="materia-images">
+
+
+      <article class="materia-image reveal">
+
+        <img
+          src="La inspiración está en los detalles.png"
+          alt="Materia y arquitectura">
+
+        <div class="materia-label">
+          materia · idea
+        </div>
+
+      </article>
+
+
+      <article class="materia-image reveal">
 
         <img
           src="Publicidad elegante sobre piedra natural.png"
           alt="Piedra natural">
 
-        <div class="material-caption">
-
-          <small>
-            Piedra
-          </small>
-
-          <h3>
-            La materia permanece.
-          </h3>
-
+        <div class="materia-label">
+          piedra · textura
         </div>
 
       </article>
 
 
-      <div class="material-side">
-
-        <article class="material-image small">
-
-          <img
-            src="moorea.png"
-            alt="Cerámica">
-
-          <div class="material-caption">
-
-            <small>
-              Cerámica
-            </small>
-
-            <h3>
-              Color.
-            </h3>
-
-          </div>
-
-        </article>
-
-
-        <article class="material-image small">
-
-          <img
-            src="La inspiración está en los detalles.png"
-            alt="Detalle arquitectónico">
-
-          <div class="material-caption">
-
-            <small>
-              Detalle
-            </small>
-
-            <h3>
-              Todo empieza ahí.
-            </h3>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     STATEMENT
-========================================================= -->
-
-<section class="statement">
-
-  <div class="container statement-inner reveal">
-
-    <p>
-      No buscamos llenar espacios.
-      <br>
-      Buscamos que los materiales
-      <span>conversen.</span>
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     DOS MUNDOS
-========================================================= -->
-
-<section class="worlds" id="arquitectura">
-
-  <div class="container">
-
-    <div class="worlds-header reveal">
-
-      <div class="eyebrow">
-        Dos maneras de entrar
-      </div>
-
-      <h2 class="worlds-title">
-        El espacio<br>
-        empieza<br>
-        con una idea.
-      </h2>
-
-    </div>
-
-
-    <div class="worlds-grid">
-
-
-      <!-- ARQUITECTOS -->
-
-      <article class="world-card reveal">
+      <article class="materia-image reveal">
 
         <img
-          src="32643f41df2848c16278f4a11da80f01.jpg"
-          alt="Proyecto arquitectónico">
+          src="Detalles que inspiran diseño arquitectónico.png"
+          alt="Detalle arquitectónico">
 
-        <div class="world-content">
-
-          <div class="eyebrow">
-            Para profesionales
-          </div>
-
-          <h3>
-            Diseñás<br>
-            espacios.
-          </h3>
-
-          <p>
-            Trabajemos juntos desde la primera
-            idea hasta la elección del material.
-          </p>
-
-          <br>
-
-          <a class="button" href="#contacto">
-            Trabajar con ORIGEN →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- PARTICULARES -->
-
-      <article class="world-card reveal">
-
-        <img
-          src="10972ded-f193-42f2-8874-64af8af8a44.png"
-          alt="Piscina y arquitectura">
-
-        <div class="world-content">
-
-          <div class="eyebrow">
-            Para tu proyecto
-          </div>
-
-          <h3>
-            Estás<br>
-            construyendo.
-          </h3>
-
-          <p>
-            No hace falta que tengas todo definido.
-            Empezamos por una idea, una foto
-            o una medida.
-          </p>
-
-          <br>
-
-          <a class="button" href="#contacto">
-            Contarnos tu proyecto →
-          </a>
-
+        <div class="materia-label">
+          detalle · luz
         </div>
 
       </article>
@@ -1604,80 +2493,114 @@ footer{
 </section>
 
 
+
 <!-- =========================================================
-     CURADURÍA
+     SELECCIÓN ORIGEN
 ========================================================= -->
 
-<section class="curadoria">
+<section
+  class="seleccion section"
+  id="seleccion">
 
-  <div class="container curadoria-grid">
+  <div class="container seleccion-grid">
+
 
     <div class="reveal">
 
       <div class="eyebrow">
-        Nuestra mirada
+        SELECCIÓN ORIGEN
       </div>
 
-      <h2 class="curadoria-title">
+      <h2>
+
         Las marcas<br>
         son parte.<br>
-        La mirada<br>
-        es nuestra.
+        <em>La mirada<br>
+        es nuestra.</em>
+
       </h2>
 
     </div>
 
 
-    <div class="reveal">
+    <div class="seleccion-right reveal">
 
-      <div class="curadoria-copy">
+      <p>
 
-        <p>
-          Buscamos en distintos lugares.
-          Miramos arquitectura, diseño,
-          arte, paisaje y oficio.
-        </p>
+        Elegimos materiales nacionales
+        e internacionales por su materia,
+        su diseño y sus posibilidades.
 
-        <p>
-          A veces encontramos una materia
-          cerca. A veces viene de lejos.
-        </p>
+        No buscamos tenerlo todo.
 
-        <p>
-          Lo importante no es solamente
-          de dónde viene.
-        </p>
+        Buscamos encontrar lo que vale
+        la pena.
 
-        <p>
+      </p>
+
+
+      <div class="selection-list">
+
+
+        <div class="selection-row">
+
           <strong>
-            Es lo que puede llegar a crear.
+            Piedra
           </strong>
-        </p>
 
-      </div>
+          <span>
+            Materia natural, textura,
+            carácter y relación
+            con el entorno.
+          </span>
 
-
-      <div class="curadoria-list">
-
-        <div class="curadoria-item">
-          Arquitectura
-          <span>Mirada</span>
         </div>
 
-        <div class="curadoria-item">
-          Arte
-          <span>Sensibilidad</span>
+
+        <div class="selection-row">
+
+          <strong>
+            Cerámica
+          </strong>
+
+          <span>
+            Formato, terminación,
+            superficie y posibilidades
+            de composición.
+          </span>
+
         </div>
 
-        <div class="curadoria-item">
-          Oficio
-          <span>Conocimiento</span>
+
+        <div class="selection-row">
+
+          <strong>
+            Porcelanato
+          </strong>
+
+          <span>
+            Prestación, resistencia,
+            terminación y aplicación
+            según cada proyecto.
+          </span>
+
         </div>
 
-        <div class="curadoria-item">
-          Materia
-          <span>Origen</span>
+
+        <div class="selection-row">
+
+          <strong>
+            Piscinas
+          </strong>
+
+          <span>
+            Color, agua, textura,
+            luz y continuidad
+            entre interior y exterior.
+          </span>
+
         </div>
+
 
       </div>
 
@@ -1686,91 +2609,165 @@ footer{
   </div>
 
 </section>
+
 
 
 <!-- =========================================================
-     ARQUITECTOS
+     MARCAS
 ========================================================= -->
 
-<section class="architects">
+<section class="marcas section">
 
   <div class="container">
 
-    <div class="architect-copy reveal">
 
-      <div class="eyebrow">
-        ORIGEN × ARQUITECTURA
+    <div class="marcas-top">
+
+      <div class="reveal">
+
+        <div class="eyebrow">
+          PARTE DE NUESTRA SELECCIÓN
+        </div>
+
+        <h2>
+
+          No elegimos<br>
+          por tener.<br>
+          Elegimos por <em>sentido.</em>
+
+        </h2>
+
       </div>
 
-      <h2 class="architect-title">
-        Queremos<br>
-        estar en<br>
-        tus proyectos.
-      </h2>
 
-      <p class="architect-text">
-        Sabemos que una muestra puede cambiar
-        una decisión. Que un material puede
-        cambiar una idea.
-        Por eso queremos acompañarte antes,
-        durante y después de la obra.
+      <p class="reveal">
+
+        Las marcas forman parte de nuestro
+        universo de materiales.
+
+        La selección, la mirada y la manera
+        de relacionarlas con cada proyecto
+        son parte de ORIGEN.
+
       </p>
 
-      <br>
+    </div>
 
-      <a class="button" href="#contacto">
-        Soy arquitecto / diseñador →
-      </a>
+
+    <div class="brand-list reveal">
+
+
+      <div class="brand">
+
+        <small>
+          Nacional
+        </small>
+
+        <strong>
+          Fedan
+        </strong>
+
+      </div>
+
+
+      <div class="brand">
+
+        <small>
+          Nacional
+        </small>
+
+        <strong>
+          GS
+        </strong>
+
+      </div>
+
+
+      <div class="brand">
+
+        <small>
+          Nacional
+        </small>
+
+        <strong>
+          Sherwin-Williams
+        </strong>
+
+      </div>
+
+
+      <div class="brand">
+
+        <small>
+          Internacional
+        </small>
+
+        <strong>
+          Rosa Gres · España
+        </strong>
+
+      </div>
+
 
     </div>
 
   </div>
 
 </section>
+
 
 
 <!-- =========================================================
      PROYECTOS
 ========================================================= -->
 
-<section class="projects">
+<section
+  class="proyectos section"
+  id="proyectos">
 
   <div class="container">
 
-    <div class="projects-header reveal">
 
-      <div>
+    <div class="proyectos-head">
+
+      <div class="reveal">
 
         <div class="eyebrow">
-          Proyectos
+          PROYECTOS
         </div>
 
-        <h2 class="projects-title">
+        <h2>
+
           Cada proyecto<br>
           encuentra<br>
-          su materia.
+          su <em>materia.</em>
+
         </h2>
 
       </div>
 
 
-      <p class="projects-description">
-        No mostramos solamente productos.
-        Mostramos lo que sucede cuando
-        arquitectura y materia encuentran
-        una forma de conversar.
+      <p class="reveal">
+
+        Una elección bien pensada
+        puede cambiar completamente
+        la manera en que se siente
+        un espacio.
+
       </p>
 
     </div>
 
 
-    <article class="project-feature reveal">
 
-      <div class="project-photo">
+    <div class="project-feature reveal">
+
+
+      <div class="project-image">
 
         <img
           src="32643f41df2848c16278f4a11da80f01.jpg"
-          alt="Proyecto ORIGEN">
+          alt="Proyecto arquitectónico">
 
       </div>
 
@@ -1782,143 +2779,24 @@ footer{
         </div>
 
         <h3>
+
           Una elección<br>
-          puede cambiar<br>
-          todo.
+          bien pensada<br>
+          cambia todo.
+
         </h3>
 
         <p>
-          Proyecto · Material · Arquitectura
+
+          Seleccionamos, asesoramos,
+          cotizamos y acompañamos
+          para que la elección del material
+          sea más simple.
+
         </p>
 
       </div>
 
-    </article>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     JOURNAL
-========================================================= -->
-
-<section class="journal" id="journal">
-
-  <div class="container">
-
-    <div class="reveal">
-
-      <div class="eyebrow">
-        ORIGEN JOURNAL
-      </div>
-
-      <h2 class="journal-title">
-        Miramos<br>
-        más allá<br>
-        del material.
-      </h2>
-
-    </div>
-
-
-    <div class="journal-grid">
-
-
-      <article class="journal-card reveal">
-
-        <div class="journal-image">
-
-          <img
-            src="Detalles que inspiran diseño arquitectónico.png"
-            alt="Arquitectura">
-
-        </div>
-
-        <div class="journal-copy">
-
-          <small>
-            Arquitectura
-          </small>
-
-          <h3>
-            Cuando la materia
-            empieza a conversar.
-          </h3>
-
-          <p>
-            Una mirada sobre textura,
-            proporción, luz y espacio.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <article class="journal-card reveal">
-
-        <div class="journal-image">
-
-          <img
-            src="Publicidad elegante sobre piedra natural.png"
-            alt="Piedra">
-
-        </div>
-
-        <div class="journal-copy">
-
-          <small>
-            Materia
-          </small>
-
-          <h3>
-            La belleza
-            de lo imperfecto.
-          </h3>
-
-          <p>
-            Piedras que no necesitan
-            parecerse entre sí.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <article class="journal-card reveal">
-
-        <div class="journal-image">
-
-          <img
-            src="10972ded-f193-42f2-8874-64af8af8a44.png"
-            alt="Agua">
-
-        </div>
-
-        <div class="journal-copy">
-
-          <small>
-            Agua
-          </small>
-
-          <h3>
-            El agua
-            también se diseña.
-          </h3>
-
-          <p>
-            Color, profundidad, luz,
-            textura y arquitectura.
-          </p>
-
-        </div>
-
-      </article>
-
-
     </div>
 
   </div>
@@ -1926,58 +2804,193 @@ footer{
 </section>
 
 
+
 <!-- =========================================================
-     CTA
+     PROFESIONALES
 ========================================================= -->
 
-<section class="cta" id="contacto">
+<section class="profesionales">
 
-  <div class="container">
+  <div class="profesionales-grid">
 
-    <div class="cta-inner reveal">
 
-      <div class="eyebrow">
-        Hablemos de tu proyecto
+    <article class="prof-card reveal">
+
+      <div>
+
+        <div class="eyebrow">
+          ORIGEN × ARQUITECTURA
+        </div>
+
+        <h2>
+
+          Diseñás<br>
+          espacios.<br>
+          Nosotros<br>
+          miramos<br>
+          la materia.
+
+        </h2>
+
       </div>
 
-      <h2 class="cta-title">
-        Contanos<br>
-        qué estás<br>
-        <em>construyendo.</em>
-      </h2>
 
-      <p class="cta-text">
-        Una idea. Una foto. Un plano.
-        Una medida.
-        No necesitás tener todo resuelto
-        para empezar a hablar con ORIGEN.
+      <p>
+
+        Queremos estar en tus proyectos
+        desde la primera idea hasta
+        la elección del material.
+
       </p>
 
-      <div class="cta-buttons">
+    </article>
 
-        <a
-          class="button"
-          href="https://wa.me/5491147004804"
-          target="_blank">
-          WhatsApp →
-        </a>
 
-        <a
-          class="button"
-          href="mailto:hola@origensurfaces.com">
-          Email →
-        </a>
+
+    <article class="prof-card reveal">
+
+      <div>
+
+        <div class="eyebrow">
+          TU PROYECTO
+        </div>
+
+        <h2>
+
+          No hace falta
+          que tengas
+          todo definido.
+
+        </h2>
 
       </div>
+
+
+      <p>
+
+        Podemos empezar por una idea,
+        una imagen, una obra,
+        un color o simplemente
+        por aquello que querés sentir
+        en el espacio.
+
+      </p>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONFIANZA
+========================================================= -->
+
+<section class="confianza">
+
+  <div class="container reveal">
+
+    <div class="eyebrow">
+      NUESTRA MANERA DE HACER
+    </div>
+
+
+    <h2>
+
+      La confianza<br>
+      vale más que<br>
+      <em>una venta.</em>
+
+    </h2>
+
+
+    <p>
+
+      Elegimos acompañar antes,
+      durante y después.
+
+      Porque para nosotros el vínculo
+      no termina cuando se entrega
+      un material.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACTO
+========================================================= -->
+
+<section
+  class="contacto"
+  id="contacto">
+
+  <div class="contacto-inner reveal">
+
+
+    <div class="eyebrow">
+      EMPECEMOS POR UNA IDEA
+    </div>
+
+
+    <h2>
+
+      Contanos<br>
+      qué estás<br>
+      <em>construyendo.</em>
+
+    </h2>
+
+
+    <p class="contacto-copy">
+
+      No necesitás tener todo definido.
+
+      Podemos empezar por una idea,
+      un proyecto, una imagen,
+      una necesidad o simplemente
+      por algo que te gustó.
+
+    </p>
+
+
+    <div class="contact-actions">
+
+      <a
+        class="button gold"
+        href="https://wa.me/5491100000000"
+        target="_blank">
+
+        HABLAR POR WHATSAPP
+
+      </a>
+
+
+      <a
+        class="button"
+        href="mailto:hola@origensurfaces.com">
+
+        ESCRIBIRNOS
+
+      </a>
 
     </div>
 
   </div>
 
 </section>
+
 
 
 </main>
+
 
 
 <!-- =========================================================
@@ -1986,17 +2999,43 @@ footer{
 
 <footer>
 
-  <div class="container footer">
+  <div class="container">
 
-    <div class="footer-logo">
-      ORIGEN
-      <span>
-        SURFACES · BUENOS AIRES · ARGENTINA
-      </span>
+
+    <div class="footer-top">
+
+
+      <div class="footer-logo">
+
+        <img
+          src="logo dorado.png"
+          alt="ORIGEN SURFACES">
+
+      </div>
+
+
+      <div class="footer-meta">
+
+        ORIGEN SURFACES<br>
+        BUENOS AIRES · ARGENTINA<br>
+        MATERIA · ARQUITECTURA · VIDA
+
+      </div>
+
+
     </div>
 
-    <div class="footer-right">
-      Materia · Arquitectura · Vida
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 ORIGEN SURFACES
+      </span>
+
+      <span>
+        LA MATERIA TAMBIÉN DISEÑA.
+      </span>
+
     </div>
 
   </div>
@@ -2004,21 +3043,51 @@ footer{
 </footer>
 
 
+
 <script>
+
+/* =========================================================
+   INTRO
+   EL LOGO APARECE, PERMANECE Y SE VA
+========================================================= */
+
+const intro = document.getElementById("introLoader");
+
+document.body.classList.add("loading");
+
+
+window.addEventListener("load", function(){
+
+  setTimeout(function(){
+
+    intro.classList.add("hide");
+
+    document.body.classList.remove("loading");
+
+  }, 3600);
+
+});
+
 
 /* =========================================================
    HEADER
 ========================================================= */
 
 const header =
-document.getElementById("header");
+  document.getElementById("header");
 
-window.addEventListener("scroll", () => {
 
-  header.classList.toggle(
-    "scrolled",
-    window.scrollY > 50
-  );
+window.addEventListener("scroll", function(){
+
+  if(window.scrollY > 60){
+
+    header.classList.add("scrolled");
+
+  }else{
+
+    header.classList.remove("scrolled");
+
+  }
 
 });
 
@@ -2027,24 +3096,24 @@ window.addEventListener("scroll", () => {
    PROGRESS
 ========================================================= */
 
-window.addEventListener("scroll", () => {
+const progress =
+  document.getElementById("progress");
 
-  const top =
-    document.documentElement.scrollTop;
+
+window.addEventListener("scroll", function(){
+
+  const scrollTop =
+    window.scrollY;
 
   const height =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
+    document.documentElement.scrollHeight
+    - window.innerHeight;
 
   const percentage =
-    height > 0
-      ? (top / height) * 100
-      : 0;
+    (scrollTop / height) * 100;
 
-  document
-    .getElementById("progress")
-    .style.width =
-      percentage + "%";
+  progress.style.width =
+    percentage + "%";
 
 });
 
@@ -2053,32 +3122,39 @@ window.addEventListener("scroll", () => {
    REVEAL
 ========================================================= */
 
+const reveals =
+  document.querySelectorAll(".reveal");
+
+
 const revealObserver =
-new IntersectionObserver(
-  entries => {
+  new IntersectionObserver(
 
-    entries.forEach(entry => {
+    function(entries){
 
-      if(entry.isIntersecting){
+      entries.forEach(function(entry){
 
-        entry.target.classList.add(
-          "visible"
-        );
+        if(entry.isIntersecting){
 
-      }
+          entry.target.classList.add("visible");
 
-    });
+          revealObserver.unobserve(
+            entry.target
+          );
 
-  },
-  {
-    threshold:.12
-  }
-);
+        }
+
+      });
+
+    },
+
+    {
+      threshold:.12
+    }
+
+  );
 
 
-document
-.querySelectorAll(".reveal")
-.forEach(element => {
+reveals.forEach(function(element){
 
   revealObserver.observe(element);
 
@@ -2086,13 +3162,14 @@ document
 
 
 /* =========================================================
-   PARALLAX SUAVE
+   HERO PARALLAX
 ========================================================= */
 
 const heroImage =
-document.querySelector(".hero-media img");
+  document.querySelector(".hero-image img");
 
-window.addEventListener("scroll", () => {
+
+window.addEventListener("scroll", function(){
 
   if(!heroImage) return;
 
@@ -2102,7 +3179,9 @@ window.addEventListener("scroll", () => {
   if(scroll < window.innerHeight){
 
     heroImage.style.transform =
-      `scale(1.02) translateY(${scroll * .035}px)`;
+      "scale(1.04) translateY(" +
+      (scroll * .08) +
+      "px)";
 
   }
 
@@ -2110,47 +3189,94 @@ window.addEventListener("scroll", () => {
 
 
 /* =========================================================
-   MOVIMIENTO SUAVE DE IMÁGENES
+   IMAGE MICRO MOVEMENT
 ========================================================= */
 
 document
-.querySelectorAll(".material-image img, .world-card img")
-.forEach(image => {
+  .querySelectorAll(".materia-image")
+  .forEach(function(card){
 
-  image.parentElement.addEventListener(
-    "mousemove",
-    event => {
+    card.addEventListener(
+      "mousemove",
+      function(e){
 
-      const rect =
-        image.parentElement.getBoundingClientRect();
+        const rect =
+          card.getBoundingClientRect();
 
-      const x =
-        ((event.clientX - rect.left) / rect.width - .5) * 8;
+        const x =
+          (e.clientX - rect.left)
+          / rect.width
+          - .5;
 
-      const y =
-        ((event.clientY - rect.top) / rect.height - .5) * 8;
+        const y =
+          (e.clientY - rect.top)
+          / rect.height
+          - .5;
 
-      image.style.transform =
-        `scale(1.045) translate(${x}px, ${y}px)`;
+        const image =
+          card.querySelector("img");
 
-    }
-  );
+        image.style.transform =
+          "scale(1.045) translate(" +
+          (x * 8) +
+          "px," +
+          (y * 8) +
+          "px)";
+
+      }
+    );
 
 
-  image.parentElement.addEventListener(
-    "mouseleave",
-    () => {
+    card.addEventListener(
+      "mouseleave",
+      function(){
 
-      image.style.transform =
-        "scale(1)";
+        const image =
+          card.querySelector("img");
 
-    }
-  );
+        image.style.transform =
+          "scale(1)";
 
-});
+      }
+    );
 
+  });
+
+
+/* =========================================================
+   SMOOTH ANCHOR
+========================================================= */
+
+document
+  .querySelectorAll('a[href^="#"]')
+  .forEach(function(link){
+
+    link.addEventListener(
+      "click",
+      function(e){
+
+        const target =
+          document.querySelector(
+            this.getAttribute("href")
+          );
+
+        if(target){
+
+          e.preventDefault();
+
+          target.scrollIntoView({
+            behavior:"smooth"
+          });
+
+        }
+
+      }
+    );
+
+  });
 
 </script>
+
 
 </body>
 </html>
